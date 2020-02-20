@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>包装仕様書閲覧（営業用）</title>
+    <style type="text/css">
+    
+       body {
+	       margin: 0;
+	       padding: 0;
+	       overflow: hidden;
+	       height: 100%;
+	       max-height: 100%;
+	       line-height: 1.5em;
+       }
+
+       #header {
+	       position: absolute;
+	       top: 0;
+	       left: 0;
+	       width: 100%;
+	       height: 50px;
+	       overflow-x: auto;
+	       overflow-y: hidden;
+       }
+       
+       #footer {
+	       position: absolute;
+	       left: 0;
+	       bottom: 0;
+	       width: 100%;
+	       height: 50px;
+	       overflow: hidden;
+       }
+       
+       #nav {
+	       position: absolute;
+	       top: 50px; 
+	       bottom: 50px; 
+	       left: 0;
+	       width: 180px;
+	       overflow: auto;
+	       background: black;
+       }
+                    
+       main {
+	       position: fixed;
+	       top: 50px; 
+	       bottom: 50px; 
+	       left: 180px;
+	       right: 0;
+	       overflow: auto;
+	       background: black;
+       }
+              
+       nav ul {
+       		list-style-type: none;
+       }
+       
+       nav ul a {
+       		color: darkgreen;
+       		text-decoration: none;
+       }
+       
+	   .pagination > li a {
+		  min-width: 2em;
+		  text-align: center;
+	   }
+	 			
+	   .table thead tr th, .table tbody tr td {
+		  border: none;
+	   }
+		
+		#nav li img {
+			border:2px solid gray;
+		}
+		
+		#nav li:hover img {
+		  border: 2px solid red;
+		}		
+
+		.blink {
+		  animation: 2s linear infinite blink_effect;
+		}
+		
+		@keyframes blink_effect {
+		    0% {
+		        visibility: hidden;
+		    }
+		    50% {
+		        visibility: hidden;
+		    }
+		    100% {
+		        visibility: visible;
+		    }
+		}
+								
+     </style>
+ </head>
+ 
+ <body>
+   <label>冷延スケジュール参照</label>
+   <form name="HosoShiyoshoEtsuranEigyoForm" class="form-horizontal" role="form" novalidate>
+      <div style="margin:5px;margin-left:1px;width:300px;">
+         <table class="table">
+            <tr>
+               <td style="width:230px;">
+                  <div class="input-group" nis-has-error="HosoShiyoshoEtsuranEigyoForm.pkgSpecNo">
+                  <span class="input-group-addon" style="padding-left:1px;padding-right:1px;">設備</span>
+	                     	                       
+	                     <input type="text" id="pkgSpecNo" ng-trim="false" class="form-control" ng-model="input.pkgSpecNo" nis-input="HosoShiyoshoHeaderInfo" name="pkgSpecNo" >
+                  
+                  
+                     <span class="input-group-btn">
+                     	
+                     	
+                     	<button class="btn btn-info" type="button" ng-click="action.soapClient()"  ><span class="glyphicon" aria-hidden="true"></span>取得</button>
+                     	
+                     </span>
+                    
+                  </div>
+               </td>
+               <td>
+                {{lots.length}}件
+               </td>
+               <td></td>
+
+            </tr>
+         </table>
+
+      </div>
+   </form>
+
+   
+   <div style="margin-top:10px;height:800px;overflow: auto;margin-left:20px;">
+	 <table border=1>
+	 	  <thead>
+			<tr>
+				<th style="width:200px;">ロール</th>
+				<th style="width:300px;">ロットNO</th>
+				<th style="width:300px;">材質</th>
+			</tr>
+	 	  </thead>
+	 	  <tbody>
+	 	      <tr ng-repeat="info in lots">
+	             <td>
+	               &nbsp;{{info.roll}}
+	             </td>
+	             <td>
+	               &nbsp;{{info.lotNo}}
+	             </td>
+	             <td>
+	               &nbsp;{{info.zaishitsu}}
+	             </td>
+	             
+	          </tr>
+	 	  </tbody>
+
+	</table>
+   </div>
+   
+   <!-- footer -->
+   <footer id="footer"  class="footer">
+      <div class="row" style="margin:5px;">
+         <div class="col-xs-6 text-left">
+         </div>
+         <div class="col-xs-6 text-right">
+            <h4><span class="label label-default">{{now | date:"yyyy年MM月dd日(EEE) HH:mm:ss"}}</span></h4>
+         </div>
+      </div>
+   </footer>
+   
+   <input type="hidden" value="version 1.0">
+   
+</body>
+
+</html>
+

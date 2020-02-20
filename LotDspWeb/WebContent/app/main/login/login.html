@@ -1,0 +1,74 @@
+<style>
+   .form-login {
+       max-width: 420px;
+       padding: 30px 40px 30px;
+       margin: 0 auto;
+       background-color: #eee;
+       border: 3px dotted rgba(0, 0, 0, 0.1);
+   }
+   .form-control {
+       position: relative;
+       height: auto;
+       padding: 6px;
+   }
+   .input-group .form-control {
+       border-radius: 0;
+   }
+</style>
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+   <div id="gnavi" class=" ">
+		<div class="row" style="margin:-10px 10px 0 10px;">
+			<div class="col-md-6 col-sm-6 col-xs-6 text-left" style="margin-top:3px;">
+				<h3 class="" style="color:white;font-size:26px;">{{systemName}}</h3>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6 text-right" style="margin-top:16px;">
+				<h4 style="color:white">{{companyName}}</h4>
+			</div>
+		</div>
+  </div>
+</nav>
+<div class="container">
+    <div class="form-login" style="margin-top:100px;">
+        <form name="loginForm" ng-submit="action.login()">
+        	<div class="text-center"><i class="fa fa-user-circle fa-5x" aria-hidden="true"></i></div>
+            <h4 class="text-center">下記よりログインしてください</h4>
+            <hr class="c-line-colors">
+            <div class="form-group">
+                <div class="icon-addon addon-md" ng-class="{'has-error':!loginForm.userId.$valid}">
+                    <input id="userId" type="text" name="userId" class="form-control" placeholder="ユーザーID" aria-describedby="user-icon" ng-model="userId" nis-init-focus nis-init-focus-if="!userId" required disabled="disabled">
+                    <label for="userId" class="fa fa-user " title="ユーザＩＤ"></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="icon-addon addon-md" ng-class="{'has-error':!loginForm.password.$valid}">
+                    <input id="password" type="password" name="password" class="form-control" placeholder="パスワード" aria-describedby="lock-icon" ng-model="password" nis-init-focus nis-init-focus-if="userId" required disabled="disabled">
+                    <label for="password" class="fa fa-key " title="パスワード"></label>
+                </div>
+            </div>
+			<div class="form-group">
+				<input type="checkbox" class="c-fa-checkbox__default" id="rememberUserId" ng-model="userIdMemory" ng-true-value="'1'" ng-false-value="'0'" ng-click="action.userIdMemoryChange()" disabled="disabled"/>
+    			<label for="rememberUserId">ユーザーIDを記憶する</label>
+			</div>
+            <div class="form-group" style="margin-top:5px;">
+                <button class="btn btn-lg btn-primary btn-block" ng-disabled="!loginForm.$valid"><i class="fa fa-sign-in" aria-hidden="true"></i> ログイン</button>
+            </div>
+        </form>
+        <form name="passwordHenkoForm" class="form-horizontal" style="margin-bottom: 5px">
+            <div class="form-group" style="margin-top:30px;">
+                <div class="col-md-12">
+                	<!--  
+                    <button class="btn btn-lg btn-block btn-default" ng-click="action.passwordHenko()"><i class="fa fa-key" aria-hidden="true"></i> パスワード変更</button>
+                    -->
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		localStorage.setItem("home_menu_index", 0);
+	});
+</script>
+

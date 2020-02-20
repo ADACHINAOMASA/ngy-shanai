@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" name="IIcasApp01SOAPservice" targetNamespace="http://tempuri.org/">
+  <message name="SetKaishi4CM0Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+  </message>
+  <message name="SetKaishi4CM0Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetLotJisseki4CM1Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="JskData" type="xs:string"/>
+  </message>
+  <message name="GetLotJisseki4CM1Response">
+    <part name="JskData" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetLotJisseki4CM2Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="JskData" type="xs:string"/>
+  </message>
+  <message name="SetLotJisseki4CM2Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="TeisiContinue3Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+  </message>
+  <message name="TeisiContinue3Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetJissekiKind4CM4Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="JskKind" type="xs:int"/>
+  </message>
+  <message name="GetJissekiKind4CM4Response">
+    <part name="JskKind" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetTeisiJisseki4CM5Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="JskData" type="xs:string"/>
+  </message>
+  <message name="GetTeisiJisseki4CM5Response">
+    <part name="JskData" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetTeisiJisseki4CM6Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="JskData" type="xs:string"/>
+    <part name="ContKbn" type="xs:int"/>
+  </message>
+  <message name="SetTeisiJisseki4CM6Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetOperatorData7Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="MainOp" type="xs:string"/>
+    <part name="SubOp" type="xs:string"/>
+    <part name="MainOpName" type="xs:string"/>
+    <part name="SubOpName" type="xs:string"/>
+  </message>
+  <message name="GetOperatorData7Response">
+    <part name="MainOpName" type="xs:string"/>
+    <part name="SubOpName" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetOperatorData8Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="MainOp" type="xs:string"/>
+    <part name="SubOp" type="xs:string"/>
+  </message>
+  <message name="SetOperatorData8Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetRollData9Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="WRUNo" type="xs:string"/>
+    <part name="WRDNo" type="xs:string"/>
+    <part name="BRUNo" type="xs:string"/>
+    <part name="BRDNo" type="xs:string"/>
+  </message>
+  <message name="SetRollData9Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <portType name="IIcasApp01SOAP">
+    <operation name="SetKaishi4CM">
+      <input message="tns:SetKaishi4CM0Request"/>
+      <output message="tns:SetKaishi4CM0Response"/>
+    </operation>
+    <operation name="GetLotJisseki4CM">
+      <input message="tns:GetLotJisseki4CM1Request"/>
+      <output message="tns:GetLotJisseki4CM1Response"/>
+    </operation>
+    <operation name="SetLotJisseki4CM">
+      <input message="tns:SetLotJisseki4CM2Request"/>
+      <output message="tns:SetLotJisseki4CM2Response"/>
+    </operation>
+    <operation name="TeisiContinue">
+      <input message="tns:TeisiContinue3Request"/>
+      <output message="tns:TeisiContinue3Response"/>
+    </operation>
+    <operation name="GetJissekiKind4CM">
+      <input message="tns:GetJissekiKind4CM4Request"/>
+      <output message="tns:GetJissekiKind4CM4Response"/>
+    </operation>
+    <operation name="GetTeisiJisseki4CM">
+      <input message="tns:GetTeisiJisseki4CM5Request"/>
+      <output message="tns:GetTeisiJisseki4CM5Response"/>
+    </operation>
+    <operation name="SetTeisiJisseki4CM">
+      <input message="tns:SetTeisiJisseki4CM6Request"/>
+      <output message="tns:SetTeisiJisseki4CM6Response"/>
+    </operation>
+    <operation name="GetOperatorData">
+      <input message="tns:GetOperatorData7Request"/>
+      <output message="tns:GetOperatorData7Response"/>
+    </operation>
+    <operation name="SetOperatorData">
+      <input message="tns:SetOperatorData8Request"/>
+      <output message="tns:SetOperatorData8Response"/>
+    </operation>
+    <operation name="SetRollData">
+      <input message="tns:SetRollData9Request"/>
+      <output message="tns:SetRollData9Response"/>
+    </operation>
+  </portType>
+  <binding name="IIcasApp01SOAPbinding" type="tns:IIcasApp01SOAP">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="SetKaishi4CM">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#SetKaishi4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetLotJisseki4CM">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#GetLotJisseki4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetLotJisseki4CM">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#SetLotJisseki4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="TeisiContinue">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#TeisiContinue" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetJissekiKind4CM">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#GetJissekiKind4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetTeisiJisseki4CM">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#GetTeisiJisseki4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetTeisiJisseki4CM">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#SetTeisiJisseki4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetOperatorData">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#GetOperatorData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetOperatorData">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#SetOperatorData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetRollData">
+      <soap:operation soapAction="urn:IcasApp01SOAPIntf-IIcasApp01SOAP#SetRollData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:IcasApp01SOAPIntf-IIcasApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="IIcasApp01SOAPservice">
+    <port binding="tns:IIcasApp01SOAPbinding" name="IIcasApp01SOAPPort">
+      <soap:address location="http://nlmfangydev3:10080/soap/IcasApp01SOAP.dll/soap/IIcasApp01SOAP"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,689 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+</head>
+<body id="body1">
+  <form id="form1" class="form">
+    <div style="background-color: white; height: 570px; left: 0px; top: 30px; position: absolute; width: 100%" class="tabSet">
+      <!-- タブ項目 -->
+      <div class="MniTabDiv">
+        <table border="0" cellspacing="0" cellpadding="0" class="MniTabTbl" title="">
+          <tr>
+            <td><a class="MniTabLnk TabPad" href="/lotdsp/menu">ICAS情報</a></td>
+            <td class="MniTabTblSelTd">
+              <div class="MniTabSelTxt" title="Current Selection:"><span class=" disabled TabPad">進度情報</span></div>
+            </td>
+            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/ManufacturingInfo.jsp">製造情報</a></td>
+            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/TestInfo.jsp">試験情報</a></td>
+            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/QualityInfo.jsp">品質情報</a></td>
+            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/CladInfo.jsp">クラッド情報</a></td>
+            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/CFInfo.jsp">焼鈍情報</a></td>
+          </tr>
+        </table>
+      </div>
+
+	  <!-- 各タブ固有項目 -->
+      <div style="position: relative; -rave-layout: grid; height: 675px; position: relative; width: 1225px; -rave-layout: grid" class="layoutPanel">
+        <table border="0" cellpadding="5" cellspacing="0" style="left: 5px; top: 150px; position: absolute;" width="960">
+          <tbody>
+            <tr>
+              <td>
+                <table bgcolor="white" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td>
+                      	<!--比重～試験回数-->
+                        <table border="0" cellpadding="0" cellspacing="1">
+                          <tbody>
+                            <tr>
+                              <td class=" prog-label-center"><span>比重</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.hijyu}}</span></td>
+                              <td class=" prog-label-center"><span>設計歩留</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.sbd}}</span></td>
+                              <td class=" prog-label-center"><span>保留日</span></td>
+                              <td class=" prog-value-center"><span>{{staffProgressInfo.hohdt}}</span></td>
+                            </tr>
+                            <tr>
+                              <td class="prog-label-center"><span>単重</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.tanw}}</span></td>
+                              <td class=" prog-label-center"><span>実績保留</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.kbd}}</span></td>
+                              <td class=" prog-label-center"><span>解除日</span></td>
+                              <td class=" prog-value-center"><span>{{staffProgressInfo.hokdt}}</span></td>
+                            </tr>
+                            <tr>
+                              <td class="prog-label-center"><span>投入量</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.sw}}</span></td>
+                              <td class=" prog-label-center"><span>設計対比</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.sraito}}</span></td>
+                              <td class=" prog-label-center"><span>試験回数</span></td>
+                              <td class=" prog-value-center"><span>{{staffProgressInfo.kkn}}</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td><span class="space">*</span></td>
+                      <td>
+                      	<!--納管出荷日～引当-->
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <table border="0" cellpadding="0" cellspacing="1" width="220">
+                                  <tbody>
+                                    <tr>
+                                      <td class="item-label2"><span>納管出荷日</span></td>
+                                      <td class="item-value1"><span style="width:80px;">{{staffProgressInfo.nokiymd}}</span></td>
+                                      <td class="item-value4"><span>{{staffProgressInfo.jcd112}}</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <table border="0" cellspacing="0" style="margin-left:1px; padding: 0px 0px;" width="220">
+                                  <tbody>
+                                    <tr>
+                                      <td class="item-label3"><span>再手配</span></td>
+                                      <td class="item-value1"><input name="com_sun_rave_web_ui_appbase_renderer_CommandLinkRendererer" type="hidden" value="" />
+                                      <a id="form1:tabSet1:tab_ProgressInfo:linkAction1" href="#" onmousedown="window.open(&quot;http://nlmfangyweb1a/lotdsp/?linkkey=&quot;+document.getElementById(&quot;form1:tabSet1:tab_ProgressInfo:saiLinkKey&quot;).value+&quot;&amp;mode=2&quot;,&quot;&#12525;&#12483;&#12488;&#21839;&#21512;&#12379;&quot;);" onclick="document.forms['form1']['com_sun_rave_web_ui_appbase_renderer_CommandLinkRendererer'].value='form1:tabSet1:tab_ProgressInfo:linkAction1';document.forms['form1'].submit(); return false;">
+                                      <span>{{staffProgressInfo.saitehailtno}}</span></a></td>
+                                      <td class="item-value5"><span class="space">*</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <table border="0" cellpadding="0" cellspacing="1" width="220">
+                                  <tbody>
+                                    <tr>
+                                      <td class="item-label2"><span>引当</span></td>
+                                      <td class="item-value1"><span>{{staffProgressInfo.hikikbn}}</span></td>
+                                      <td class="item-value4"><span>{{staffProgressInfo.hikicode}}</span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td><span class="space">*</span></td>
+                      <td>
+                      	<!--仕様～製造-->
+                        <table border="0" cellpadding="0" cellspacing="1" width="180">
+                          <tbody>
+                            <tr>
+                              <td class="item-label2"><span>仕様</span></td>
+                              <td class=" item-value2"><span>{{staffProgressInfo.msnok}}</span></td>
+                            </tr>
+                            <tr>
+                              <td class="item-label2"><span>品質</span></td>
+                              <td class=" item-value2"><span>{{staffProgressInfo.msnoh}}</span></td>
+                            </tr>
+                            <tr>
+                              <td class="item-label2"><span>製造</span></td>
+                              <td class=" item-value2"><span>{{staffProgressInfo.msnos}}</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+            	<td><span class="space">*</span></td>
+            </tr>
+            <tr>
+              <td>
+              	<!--設計～実績-->
+                <table border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td class="prog-column-sbsmbox">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <td class="prog-header-sbsm"><span>設計</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td class=" prog-column-jbsmbox">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tbody>
+                            <tr>
+                              <td class="prog-header-jbsm"><span>実績</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="prog-column-sbsmbox">
+                        <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
+                          <thead>
+                            <tr>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-boxno">№</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbsm">設備</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbmmddc">日付</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbx">板厚</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sby">板幅</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbz">板丈</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbw">重量</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbpat">ﾊﾟ</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbyky">横</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbtty">縦</span></th>
+                              <th class="prog-header-sbsm" scope="col"><span class="prog-label-sbmh">枚本</span></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          	<tr ng-repeat="meisaiInfo in staffProgressBoxInfos track by $index" class='{{meisaiInfo.meisaiClass}}'>
+                              <td class="prog-boxno"><span class="prog-boxno">{{meisaiInfo.boxno}}</span></td>
+                              <td class="prog-sbsm"><span class="prog-sbsm">{{meisaiInfo.sbsm}}</span></td>
+                              <td class="prog-sbmmddc"><span class="prog-sbmmddc">{{meisaiInfo.sbmmdd}}</span></td>
+                              <td class="prog-sbx"><span class="prog-sbx">{{meisaiInfo.sbx}}</span></td>
+                              <td class="prog-sby"><span class="prog-sby">{{meisaiInfo.sby}}</span></td>
+                              <td class="prog-sbz"><span class="prog-sbz">{{meisaiInfo.sbz}}</span></td>
+                              <td class="prog-sbw"><span class="prog-sbw">{{meisaiInfo.sbw}}</span></td>
+                              <td class="prog-sbpat"><span class="prog-sbpat">{{meisaiInfo.sbpat}}</span></td>
+                              <td class="prog-sbyky"><span class="prog-sbyky">{{meisaiInfo.sbyky}}</span></td>
+                              <td class="prog-sbtty"><span class="prog-sbtty">{{meisaiInfo.sbtty}}</span></td>
+                              <td class="prog-sbmh"><span class="prog-sbmh">{{meisaiInfo.sbmh}}</span></td>
+                          	</tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td class=" prog-column-jbsmbox">
+                        <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
+                          <thead>
+                            <tr>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbsm">設備</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbedate">日付</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbx">板厚</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jby">板幅</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbz">板丈</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbrw">重量</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbpat">ﾊﾟ</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbrmh">枚本</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbbn">B</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbfo">長さ</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbfo">前ｵﾌ</span></th>
+                              <th class="prog-header-jbsm" scope="col"><span class="prog-label-jbbo">後ｵﾌ</span></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          	<tr ng-repeat="meisaiInfo in staffProgressJBoxInfos track by $index" class='{{meisaiInfo.meisaiClass}}'>
+                              <td class="prog-jbsm"><span class="prog-jbsm">{{meisaiInfo.jbsm}}</span></td>
+                              <td class="prog-jbedate"><span class="prog-jbedate">{{meisaiInfo.jbedate}}</span></td>
+                              <td class="prog-jbx"><span class="prog-jbx">{{meisaiInfo.jbx}}</span></td>
+                              <td class="prog-jby"><span class="prog-jby">{{meisaiInfo.jby}}</span></td>
+                              <td class="prog-jbz"><span class="prog-jbz">{{meisaiInfo.jbz}}</span></td>
+                              <td class="prog-jbrw"><span class="prog-jbrw">{{meisaiInfo.jbrw}}</span></td>
+                              <td class="prog-jbpat"><span class="prog-jbpat">{{meisaiInfo.jbpat}}</span></td>
+                              <td class="prog-jbrmh"><span class="prog-jbrmh">{{meisaiInfo.jbrmh}}</span></td>
+                              <td class="prog-jbbn"><span class="prog-jbbn">{{meisaiInfo.jbbn}}</span></td>
+                              <td class="prog-jbfo"><span class="prog-jbfo">{{meisaiInfo.jbgood}}</span></td>
+                              <td class="prog-jbbo"><span class="prog-jbfo">{{meisaiInfo.jbfo}}</span></td>
+                              <td class="prog-jbsm"><span class="prog-jbbo">{{meisaiInfo.jbbo}}</span></td>
+                          	</tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+            	<td><span class="space">*</span></td>
+            </tr>
+            <tr>
+              <td>
+              	<!--設備名～送り先名-->
+                <table id="form1:tabSet1:tab_ProgressInfo:progressInfo_Group3" border="0" cellpadding="0" cellspacing="1">
+                  <tbody>
+                    <tr class="gai-header">
+                      <td class="gai-idx-width"><span>№</span></td>
+                      <td class=" gai-setsubi-width"><span>設備名</span></td>
+                      <td class=" gai-cd-width"><span>外注先名</span></td>
+                      <td class=" gai-today-width"><span>手配日</span></td>
+                      <td class=" gai-okuri-width"><span>送り先名</span></td>
+                    </tr>
+                    <tr class=" gai-rows">
+                      <td class="gai-idx-width"><span>{{staffProgressInfo.gai_IDX1}}</span></td>
+                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_setubi1}}</span></td>
+                      <td class=" gai-cd-width"><span>{{staffProgressInfo.gai_CD1}}</span></td>
+                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY1}}</span></td>
+                      <td class=" gai-okuri-width"><span>{{staffProgressInfo.gai_OKURI1}}</span></td>
+                    </tr>
+                    <tr class=" gai-rows">
+                      <td class="gai-idx-width"><span>{{staffProgressInfo.gai_IDX2}}</span></td>
+                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_setubi2}}</span></td>
+                      <td class=" gai-cd-width"><span>{{staffProgressInfo.gai_CD2}}</span></td>
+                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY2}}</span></td>
+                      <td class=" gai-okuri-width"><span>{{staffProgressInfo.gai_OKURI2}}</span></td>
+                    </tr>
+                    <tr class=" gai-rows">
+                      <td class="gai-idx-width"><span>{{staffProgressInfo.gai_IDX3}}</span></td>
+                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_setubi3}}</span></td>
+                      <td class=" gai-cd-width"><span>{{staffProgressInfo.gai_CD3}}</span></td>
+                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY3}}</span></td>
+                      <td class=" gai-okuri-width"><span>{{staffProgressInfo.gai_OKURI3}}</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ICAS情報タブ以外の共通部分 開始-->
+    <!--ロット番号～Yマーク日-->
+    <table border="0" cellpadding="5" cellspacing="0" style="height: 80px; left: 5px; top: 70px; position: absolute;" width="1290">
+      <tbody>
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td class=""><span>ﾛｯﾄ番号</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td class=""><span>{{common.ltno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>鋳造番号</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.cyno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td class=""><span>検査番号</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td class=""><span>{{common.knno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>ｵｰﾀﾞｰ番号</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.juno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>需要</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.jbcd}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width:40px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>BU</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.bucode}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>用途ｺｰﾄﾞ</span></td>
+                        </tr>
+                        <tr class="item-value1">
+                          <td><span>{{common.yotoc}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 150px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>用途名</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.yotoname}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>地区</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.chikucd}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 150px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>販売員</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.jujsno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 80px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td class=""><span>営業納期</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td class=""><span>{{common.enoki}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 75px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>ｶｰﾄﾞ区分</span></td>
+                        </tr>
+                        <tr class="item-value1">
+                          <td><span>{{common.jcd105}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>本数</span></td>
+                        </tr>
+                        <tr class="item-value1">
+                          <td><span>{{common.jup}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 80px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span >Yﾏｰｸ日</span></td>
+                        </tr>
+                        <tr class="item-value1">
+                          <td><span >{{common.ymark}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table bgcolor="white" border="0" cellpadding="0" cellspacing="0" style="vertical-align: top">
+              <tbody>
+                <tr>
+                  <td>
+                    <table bgcolor="white" border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td>
+                          	<!--材質～重量-->
+                            <table id="form1:ommonInfo_Group11" border="0" cellpadding="0" cellspacing="0">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
+                                      <tbody>
+                                        <tr class="item-label1">
+                                          <td class="item-width2"><span></span></td>
+                                        </tr>
+                                        <tr class=" item-label1">
+                                          <td class="item-width2"><span>ｵｰﾀﾞｰ</span></td>
+                                        </tr>
+                                        <tr class=" item-label1">
+                                          <td class="item-width2"><span>製造</span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                  <td>
+                                    <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
+                                      <tbody>
+                                        <tr class="item-label1">
+                                          <td class="item-width2"><span>材質</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>調質</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>板厚</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>板幅</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>板丈</span></td>
+                                          <td class="item-width2"><span>重量</span></td>
+                                        </tr>
+                                        <tr class="item-value1">
+                                          <td class="item-width2"><span>{{common.jua}}</span></td>
+                                          <td class="item-width3"><span>-</span></td>
+                                          <td class="item-width2"><span>{{common.jub}}</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>{{common.jux}}</span></td>
+                                          <td class="item-width3"><span>&times;</span></td>
+                                          <td class="item-width2"><span>{{common.juy}}</span></td>
+                                          <td class="item-width3"><span>&times;</span></td>
+                                          <td class="item-width2"><span>{{common.juz}}</span></td>
+                                          <td class="item-width2"><span>{{common.juw}}</span></td>
+                                        </tr>
+                                        <tr class="item-value1">
+                                          <td class="item-width2"><span>{{common.lta}}</span></td>
+                                          <td class="item-width3"><span>-</span></td>
+                                          <td class="item-width2"><span>{{common.ltb}}</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>{{common.ltx}}</span></td>
+                                          <td class="item-width3"><span>&times;</span></td>
+                                          <td class="item-width2"><span>{{common.lty}}</span></td>
+                                          <td class="item-width3"><span>&times;</span></td>
+                                          <td class="item-width2"><span>{{common.ltz}}</span></td>
+                                          <td class="item-width2"><span>{{common.ryow}}</span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td><span id="form1:space1" class="space">*</span></td>
+                  <td>
+                  	<!--得意先～納入先-->
+                    <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr>
+                          <td class="item-label2"><span>得意先</span></td>
+                          <td class=" com-value-left-w180"><span>{{common.tokui}}</span></td>
+                        </tr>
+                        <tr>
+                          <td class="item-label2"><span>送り先</span></td>
+                          <td class=" com-value-left-w180"><span>{{common.oname}}</span></td>
+                        </tr>
+                        <tr>
+                          <td class="item-label2"><span>納入先</span></td>
+                          <td class=" com-value-left-w180"><span>{{common.nonyu}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td><span id="form1:space2" class="space">*</span></td>
+                  <td>
+                  	<!--倉入日～納期符号-->
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td><span class="DataKbnGreen">{{common.datakbn}}</span></td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span style="width:80px;">倉入日</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.ksd}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span>試験者名</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.juno202}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span>試験No</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.shikenno}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span style="width:50px;">仮梱</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.karikon}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span style="width:100px;">納期符号</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.nokifugo}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <span id="form1:header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
+    <span id="form1:message" class="message"></span>
+    <span id="form1:schItem_Label_Ltno" style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
+    <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno" onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
+	<span id="form1:schItem_Label_Knno" style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
+	<input type="text" ng-model="common.searchKnno" id="common_searchKnno" name="searchKnno" onclick="InputTextSelect(this);"style="height: 25px; left: 200px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="2" />
+	<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
+		<span class="glyphicon" aria-hidden="true">
+		</span>検索
+	</button>
+
+    <span id="form1:edtm" class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm}}</span>
+    <span id="form1:label2" class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
+    <span id="form1:hitCount" class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
+    <span ng-show="util.isPreviewRendered(common);">
+    	<a id="form1:previous_page" style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">
+   		<img id="form1:previous_page_image" src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />前</a>
+    </span>
+    <span ng-show="util.isNextRendered(common);">
+   		<a id="form1:next_page" style="left: 496px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">次
+   		<img id="form1:next_page_image" src="asset/lotdspimg/next.gif" alt="" border="0" align="top" /></a></span>
+    </span>
+    <input id="form1_hidden" name="form1_hidden" value="form1_hidden" type="hidden" />
+    <!-- ICAS情報タブ以外の共通部分 終了-->
+    </form>
+</body>
+</html>

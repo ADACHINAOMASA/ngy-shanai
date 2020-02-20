@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//WebContent/asset/js/index.js=MS932
+encoding//src/org/tempuri/IIcasApp01SOAP.java=UTF-8
+encoding//src/org/tempuri/IIcasApp01SOAPbindingStub.java=UTF-8
+encoding//src/org/tempuri/IIcasApp01SOAPservice.java=UTF-8
+encoding//src/org/tempuri/IIcasApp01SOAPserviceLocator.java=UTF-8
+encoding//src/org/tempuri/ISchApp01SOAP.java=UTF-8
+encoding//src/org/tempuri/ISchApp01SOAPbindingStub.java=UTF-8
+encoding//src/org/tempuri/ISchApp01SOAPservice.java=UTF-8
+encoding//src/org/tempuri/ISchApp01SOAPserviceLocator.java=UTF-8
+encoding//src/resources/sample/lotdsp_excel.properties.sample=UTF-8
+encoding//src/resources/sample/lotdsp_mail.properties.sample=UTF-8
+encoding//src/resources/sample/lotdsp_svf.properties.sample=UTF-8

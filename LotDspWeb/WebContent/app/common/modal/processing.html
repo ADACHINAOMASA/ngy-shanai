@@ -1,0 +1,33 @@
+<style>
+	
+    .modal {
+        text-align: center;
+        padding: 0!important;
+    }
+    .modal:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -4px;
+    }
+    
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        /*width: 200px!important;*/
+    }
+    
+    .modal-body {
+        position: relative;
+        padding: 10px;
+    }
+        
+</style>
+
+<div class="modal-body text-center">
+     <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><br>
+     <label>{{message}}</label>
+</div>
+

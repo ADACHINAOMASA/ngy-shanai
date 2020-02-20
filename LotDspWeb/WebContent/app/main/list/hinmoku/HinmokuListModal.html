@@ -1,0 +1,153 @@
+<div class="modal-header" style="padding:10px;">
+	<h3 class="modal-title"><i class="fa fa-search" aria-hidden="true"></i>{{title}}</h3>
+</div>
+<div class="modal-body" style="padding:0">
+	<!-- 検索条件 -->
+	<div class="row row-padding-lr">
+		<div class="panel panel-primary" style="margin:10px 0 10px 0">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isKensakuJokenCollapsed"></nis-collapse-mark>検索条件
+			</div>
+			<div class="panel-body" uib-collapse="isKensakuJokenCollapsed">
+				<form name="KakoKeisanIchiranForm" class="form-horizontal" role="form" novalidate>
+				
+	 				<div class="form-group" nis-has-error="KakoKeisanIchiranForm.hinmokuCd,KakoKeisanIchiranForm.hinmokuCdHansu,KakoKeisanIchiranForm.hinmokuMei">
+						<label class="col-xs-2 control-label" for="input_hinmokuCd">品目コード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.hinmokuCd" id="input_hinmokuCd" nis-input="KakoKeisanIchiranKensakuInfo" name="hinmokuCd">
+							<input type="text" class="form-control" ng-model="input.hinmokuCdHansu" id="input_hinmokuCdHansu" nis-input="KakoKeisanIchiranKensakuInfo" name="hinmokuCdHansu">
+							<input type="text" class="form-control" ng-model="input.hinmokuMei" id="input_hinmokuMei" nis-input="KakoKeisanIchiranKensakuInfo" name="hinmokuMei">
+							<button type="button" class="btn btn-default " ng-click="action.openHinmokuCdList()">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</button>
+							<nis-validate-messages target="KakoKeisanIchiranForm.hinmokuCd"></nis-validate-messages>
+							<nis-validate-messages target="KakoKeisanIchiranForm.hinmokuCdHansu"></nis-validate-messages>
+							<nis-validate-messages target="KakoKeisanIchiranForm.hinmokuMei"></nis-validate-messages>
+						</div>
+					</div>
+					
+					<div class="form-group" nis-has-error="KakoKeisanIchiranForm.yotoCd">
+						<label class="col-xs-2 control-label" for="input_yotoCd">用途コード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.yotoCd" id="input_yotoCd" nis-input="KakoKeisanIchiranKensakuInfo" name="yotoCd">
+							<button type="button" class="btn btn-default " ng-click="action.openYotoCdList()">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</button>
+							<nis-validate-messages target="KakoKeisanIchiranForm.yotoCd"></nis-validate-messages>
+						</div>
+					</div>
+					
+					<div class="form-group" nis-has-error="KakoKeisanIchiranForm.buhinCd,KakoKeisanIchiranForm.buhinMei">
+						<label class="col-xs-2 control-label" for="input_buhinCd">部品番号</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.buhinCd" id="input_buhinCd" nis-input="KakoKeisanIchiranKensakuInfo" name="buhinCd">
+							<input type="text" class="form-control" ng-model="input.buhinMei" id="input_buhinMei" nis-input="KakoKeisanIchiranKensakuInfo" name="buhinMei">
+							<button type="button" class="btn btn-default " ng-click="action.openbuhinCdList()">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</button>
+							<nis-validate-messages target="KakoKeisanIchiranForm.buhinCd"></nis-validate-messages>
+							<nis-validate-messages target="KakoKeisanIchiranForm.buhinMei"></nis-validate-messages>
+						</div>
+					</div>
+					
+					<div class="form-group" nis-has-error="KakoKeisanIchiranForm.seizoKonyuBunrui1Cd,KakoKeisanIchiranForm.seizoKonyuBunrui2Cd">
+						<label class="col-xs-2 control-label" for="input_seizoKonyuBunrui1Cd">製造購入区分</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.seizoKonyuBunrui1Cd" id="input_seizoKonyuBunrui1Cd" nis-input="KakoKeisanIchiranKensakuInfo" name="seizoKonyuBunrui1Cd" ng-hide="true">
+							<select class="form-control" ng-model="input.seizoKonyuBunrui1Cd" ng-options="option.value as option.label for option in seizoKonyuBunrui1Options" ng-change="action.seizoKonyuBunruiChenge()">
+								<option value=""></option>
+							</select>
+							<input type="text" class="form-control" ng-model="input.seizoKonyuBunrui2Cd" id="input_seizoKonyuBunrui2Cd" nis-input="KakoKeisanIchiranKensakuInfo" name="seizoKonyuBunrui2Cd" ng-hide="true">
+							<select class="form-control" ng-model="input.seizoKonyuBunrui2Cd" ng-options="option.value as option.label for option in seizoKonyuBunrui2Options" nis-disabled="!state.isSeizoKonyuBunrui">
+								<option value=""></option>
+							</select>
+							<nis-validate-messages target="KakoKeisanIchiranForm.seizoKonyuBunrui1Cd"></nis-validate-messages>
+							<nis-validate-messages target="KakoKeisanIchiranForm.seizoKonyuBunrui2Cd"></nis-validate-messages>
+						</div>
+					</div>
+					
+					<div class="form-group" nis-has-error="KakoKeisanIchiranForm.shiiresakiCd,KakoKeisanIchiranForm.shiiresakiMei">
+						<label class="col-xs-2 control-label" for="input_shiiresakiCd">仕入先</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.shiiresakiCd" id="input_shiiresakiCd" nis-input="KakoKeisanIchiranKensakuInfo" name="shiiresakiCd">
+							<input type="text" class="form-control" ng-model="input.shiiresakiMei" id="input_shiiresakiMei" nis-input="KakoKeisanIchiranKensakuInfo" name="shiiresakiMei">
+							<button type="button" class="btn btn-default " ng-click="action.openshiiresakiList()">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</button>
+							<nis-validate-messages target="KakoKeisanIchiranForm.shiiresakiCd"></nis-validate-messages>
+							<nis-validate-messages target="KakoKeisanIchiranForm.shiiresakiMei"></nis-validate-messages>
+						</div>
+					</div>
+					
+					<div class="form-group" nis-has-error="KakoKeisanIchiranForm.gaichusakiCd,KakoKeisanIchiranForm.gaichusakiMei">
+						<label class="col-xs-2 control-label" for="input_gaichusakiCd">外注先</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.gaichusakiCd" id="input_gaichusakiCd" nis-input="KakoKeisanIchiranKensakuInfo" name="gaichusakiCd">
+							<input type="text" class="form-control" ng-model="input.gaichusakiMei" id="input_gaichusakiMei" nis-input="KakoKeisanIchiranKensakuInfo" name="gaichusakiMei">
+							<button type="button" class="btn btn-default " ng-click="action.opengaichusakiList()">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</button>
+							<nis-validate-messages target="KakoKeisanIchiranForm.gaichusakiCd"></nis-validate-messages>
+							<nis-validate-messages target="KakoKeisanIchiranForm.gaichusakiMei"></nis-validate-messages>
+						</div>
+					</div>
+					
+					<div class="form-group" nis-has-error="KakoKeisanIchiranForm.tekioKaishiYmdFrom,KakoKeisanIchiranForm.tekioKaishiYmdTo">
+						<label class="col-xs-2 control-label" for="input_tekioKaishiYmdFrom">適用開始日</label>
+						<div class="col-xs-10 form-inline">
+							<div class="input-group">
+								<input type="text" class="form-control" uib-datepicker-popup ng-model="input.tekioKaishiYmdFrom" name="tekioKaishiYmdFrom" id="input_tekioKaishiYmdFrom" is-open="calOpen['tekioKaishiYmdFrom']" nis-input="KakoKeisanIchiranKensakuInfo" placeholder="YYYY/MM/DD">
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="toggleDatePicker($event, 'tekioKaishiYmdFrom')">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</button>
+								</span>
+							</div>
+							～
+							<div class="input-group">
+								<input type="text" class="form-control" uib-datepicker-popup ng-model="input.tekioKaishiYmdTo" name="tekioKaishiYmdTo" id="input_tekioKaishiYmdTo" is-open="calOpen['tekioKaishiYmdTo']" nis-input="KakoKeisanIchiranKensakuInfo" placeholder="YYYY/MM/DD">
+								<span class="input-group-btn">
+									<button type="button" class="btn btn-default" ng-click="toggleDatePicker($event, 'tekioKaishiYmdTo')">
+										<i class="glyphicon glyphicon-calendar"></i>
+									</button>
+								</span>
+							</div>
+							<nis-validate-messages target="KakoKeisanIchiranForm.tekioKaishiYmdFrom"></nis-validate-messages>
+							<nis-validate-messages target="KakoKeisanIchiranForm.tekioKaishiYmdTo"></nis-validate-messages>
+						</div>
+					</div>
+					
+					<div class="form-group" nis-has-error="KakoKeisanIchiranForm.kakuteiFlg">
+						<label class="col-xs-2 control-label" for="input_kakuteiFlg">ドラフト</label>
+						<div class="col-xs-10 form-inline">
+							<input type="checkbox" class="form-control" ng-model="input.kakuteiFlg" id="input_kakuteiFlg" nis-input="KakoKeisanIchiranKensakuInfo" name="kakuteiFlg" ng-true-value="'0'" ng-false-value="'1'" ng-checked="input.kakuteiFlg == '0'">
+							<nis-validate-messages target="KakoKeisanIchiranForm.kakuteiFlg"></nis-validate-messages>
+						</div>
+					</div>
+					
+					<div class="text-right">
+						<button type="button" class="btn btn-primary" ng-click="action.search()" ng-disabled="KakoKeisanIchiranForm.$invalid">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>検索
+						</button>
+						<button type="reset" value="クリア" class="btn btn-default" ng-click="action.clear()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>クリア</button>
+					</div>
+ 				</form>
+			</div>
+		</div>
+	</div>
+	<!-- 検索結果 -->
+	<div class="row row-padding-lr">
+		<div class="panel panel-success" style="margin:0 0 10px 0">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isKensakuKekkaCollapsed"></nis-collapse-mark>検索結果
+			</div>
+			<div class="panel-body" uib-collapse="isKensakuKekkaCollapsed">
+				<div id="grid1" ui-grid="gridOptions" ui-grid-pagination class="grid" ui-grid-move-columns ui-grid-resize-columns ui-grid-selection ui-grid-pinning style="height:410px!important;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer" style="padding:10px 15px">
+	<button class="btn btn-primary" ng-click="action.ok()" style="width:60px;">OK</button>
+	<button class="btn btn-warning" ng-click="action.cancel()" style="width:60px;">Cancel</button>
+</div>

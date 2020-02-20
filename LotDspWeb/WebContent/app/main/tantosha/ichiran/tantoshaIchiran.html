@@ -1,0 +1,349 @@
+<nis-header></nis-header>
+
+<div class="container-fluid">
+	<!-- ページのタイトル -->
+	<div class="row row-padding-lr text-center">
+		<h3 class="c-heading--default">担当者一覧</h3>
+	</div>
+	<!-- ボタン群（ヘッダー） -->
+	<div class="row row-padding-lr">
+		<div class="col-md-6 col-sm-6 col-xs-6 text-left" style="padding-left:0px;">
+			<button type="button" class="btn btn-info" ng-click="action.back()">
+				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>戻る
+			</button>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-6 text-right">&nbsp;</div>
+	</div>
+	<!-- 検索条件 -->
+	<div class="row row-padding-lr" style="margin-top:5px;">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isKensakuJokenCollapsed"></nis-collapse-mark>検索条件
+			</div>
+			<div class="panel-body" uib-collapse="isKensakuJokenCollapsed">
+				<form name="TantoshaIchiranForm" class="form-horizontal" role="form" novalidate>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.tantoshaCd">
+						<label class="col-xs-2 control-label" for="input_tantoshaCd">担当者コード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.tantoshaCd" id="input_tantoshaCd" nis-input="TantoshaKensakuInfo" name="tantoshaCd">
+							<nis-validate-messages target="TantoshaIchiranForm.tantoshaCd"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.tantoshaMei">
+						<label class="col-xs-2 control-label" for="input_tantoshaMei">担当者名</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.tantoshaMei" id="input_tantoshaMei" nis-input="TantoshaKensakuInfo" name="tantoshaMei">
+							<nis-validate-messages target="TantoshaIchiranForm.tantoshaMei"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.tantoshaKana">
+						<label class="col-xs-2 control-label" for="input_tantoshaKana">担当者カナ</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.tantoshaKana" id="input_tantoshaKana" nis-input="TantoshaKensakuInfo" name="tantoshaKana">
+							<nis-validate-messages target="TantoshaIchiranForm.tantoshaKana"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.jigyoshoCd">
+						<label class="col-xs-2 control-label" for="input_jigyoshoCd">事業所コード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.jigyoshoCd" id="input_jigyoshoCd" nis-input="TantoshaKensakuInfo" name="jigyoshoCd">
+							<nis-validate-messages target="TantoshaIchiranForm.jigyoshoCd"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.bumonCd">
+						<label class="col-xs-2 control-label" for="input_bumonCd">部門コード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.bumonCd" id="input_bumonCd" nis-input="TantoshaKensakuInfo" name="bumonCd">
+							<nis-validate-messages target="TantoshaIchiranForm.bumonCd"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.shiyotanmatsu1">
+						<label class="col-xs-2 control-label" for="input_shiyotanmatsu1">使用端末１</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.shiyotanmatsu1" id="input_shiyotanmatsu1" nis-input="TantoshaKensakuInfo" name="shiyotanmatsu1">
+							<nis-validate-messages target="TantoshaIchiranForm.shiyotanmatsu1"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.shiyotanmatsu2">
+						<label class="col-xs-2 control-label" for="input_shiyotanmatsu2">使用端末２</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.shiyotanmatsu2" id="input_shiyotanmatsu2" nis-input="TantoshaKensakuInfo" name="shiyotanmatsu2">
+							<nis-validate-messages target="TantoshaIchiranForm.shiyotanmatsu2"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.shiyotanmatsu3">
+						<label class="col-xs-2 control-label" for="input_shiyotanmatsu3">使用端末３</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.shiyotanmatsu3" id="input_shiyotanmatsu3" nis-input="TantoshaKensakuInfo" name="shiyotanmatsu3">
+							<nis-validate-messages target="TantoshaIchiranForm.shiyotanmatsu3"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.juchuKengen">
+						<label class="col-xs-2 control-label" for="input_juchuKengen">受注管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.juchuKengen" id="input_juchuKengen" nis-input="TantoshaKensakuInfo" name="juchuKengen">
+							<nis-validate-messages target="TantoshaIchiranForm.juchuKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.kobaiKengen">
+						<label class="col-xs-2 control-label" for="input_kobaiKengen">仕入管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.kobaiKengen" id="input_kobaiKengen" nis-input="TantoshaKensakuInfo" name="kobaiKengen">
+							<nis-validate-messages target="TantoshaIchiranForm.kobaiKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.uriageKengen">
+						<label class="col-xs-2 control-label" for="input_uriageKengen">売上管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.uriageKengen" id="input_uriageKengen" nis-input="TantoshaKensakuInfo" name="uriageKengen">
+							<nis-validate-messages target="TantoshaIchiranForm.uriageKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.zaikoKengen">
+						<label class="col-xs-2 control-label" for="input_zaikoKengen">在庫管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.zaikoKengen" id="input_zaikoKengen" nis-input="TantoshaKensakuInfo" name="zaikoKengen">
+							<nis-validate-messages target="TantoshaIchiranForm.zaikoKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.urikakeKengen">
+						<label class="col-xs-2 control-label" for="input_urikakeKengen">売掛管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.urikakeKengen" id="input_urikakeKengen" nis-input="TantoshaKensakuInfo" name="urikakeKengen">
+							<nis-validate-messages target="TantoshaIchiranForm.urikakeKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.urikakeKengen">
+						<label class="col-xs-2 control-label" for="input_urikakeKengen">売掛管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.urikakeKengen" id="input_urikakeKengen" nis-input="TantoshaKensakuInfo" name="urikakeKengen">
+							<nis-validate-messages target="TantoshaIchiranForm.urikakeKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaIchiranForm.kyotsuKengen">
+						<label class="col-xs-2 control-label" for="input_kyotsuKengen">共通管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.kensakuInfo.kyotsuKengen" id="input_kyotsuKengen" nis-input="TantoshaKensakuInfo" name="kyotsuKengen">
+							<nis-validate-messages target="TantoshaIchiranForm.kyotsuKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="text-right">
+						<button type="button" class="btn btn-primary" ng-click="action.search()" ng-disabled="TantoshaIchiranForm.$invalid">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							検索
+						</button>
+						<button type="reset" value="クリア" class="btn btn-default" ng-click="action.clearKensakuInfo()">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+							クリア
+						</button>
+					</div>
+				</form>			
+			</div>
+		</div>
+	</div>
+	<!-- ボタン群 -->
+	<div class="row row-padding-lr">
+		<div class="col-md-6 col-sm-6 col-xs-10 text-left">&nbsp;</div>
+		<div class="col-md-6 col-sm-6 col-xs-2 text-left">&nbsp;</div>
+	</div>
+	<!-- 検索結果 -->
+	<div class="row row-padding-lr">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isKensakuKekkaCollapsed"></nis-collapse-mark>検索結果
+			</div>
+			<div class="panel-body" uib-collapse="isKensakuKekkaCollapsed">
+				<div id="grid1" ui-grid="gridOptions" ui-grid-pagination class="grid" style="margin-top:20px;height:410px;" ui-grid-move-columns ui-grid-resize-columns ui-grid-pinning ui-grid-exporter ui-grid-save-state></div>
+			</div>
+		</div>
+	</div>
+	<!-- ボタン群 -->
+	<div class="row row-padding-lr">
+		<div class="col-md-6 col-sm-6 col-xs-10 text-left">&nbsp;</div>
+		<div class="col-md-6 col-sm-6 col-xs-2 text-left">&nbsp;</div>
+	</div>
+	<!-- 検索結果 -->
+	<div class="row row-padding-lr">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isTantoshaJohoCollapsed"></nis-collapse-mark>担当者情報
+			</div>
+			<div class="panel-body" uib-collapse="isTantoshaJohoCollapsed">
+				<form name="TantoshaTorokuForm" class="form-horizontal" role="form" novalidate>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.tantoshaCd">
+						<label class="col-xs-2 control-label" for="input_tantoshaCd">担当者コード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.tantoshaCd" id="input_tantoshaCd" nis-disabled="!state.isNew" nis-input="TantoshaInfo" name="tantoshaCd" popover-trigger="focus" required>
+							<nis-validate-messages target="TantoshaTorokuForm.tantoshaCd"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.tantoshaMei">
+						<label class="col-xs-2 control-label" for="input_tantoshaMei">担当者名</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.tantoshaMei" id="input_tantoshaMei" nis-input="TantoshaInfo" name="tantoshaMei">
+							<nis-validate-messages target="TantoshaTorokuForm.tantoshaMei"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.tantoshaKana">
+						<label class="col-xs-2 control-label" for="input_tantoshaKana">担当者カナ</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.tantoshaKana" id="input_tantoshaKana" nis-input="TantoshaInfo" name="tantoshaKana">
+							<nis-validate-messages target="TantoshaTorokuForm.tantoshaKana"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.jigyoshoCd">
+						<label class="col-xs-2 control-label" for="input_jigyoshoCd">事業所コード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.jigyoshoCd" id="input_jigyoshoCd" nis-input="TantoshaInfo" name="jigyoshoCd">
+							<nis-validate-messages target="TantoshaTorokuForm.jigyoshoCd"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.bumonCd">
+						<label class="col-xs-2 control-label" for="input_bumonCd">部門コード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.bumonCd" id="input_bumonCd" nis-input="TantoshaInfo" name="bumonCd">
+							<nis-validate-messages target="TantoshaTorokuForm.bumonCd"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.password" ng-show="!state.isNew">
+						<label class="col-xs-2 control-label" for="input_password">パスワード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="password" class="form-control" ng-model="input.torokuInfo.password" id="input_password" nis-input="TantoshaInfo" name="password">
+							<nis-validate-messages target="TantoshaTorokuForm.password"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.newPassword">
+						<label class="col-xs-2 control-label" for="input_newPassword" ng-show="state.isNew">パスワード</label>
+						<label class="col-xs-2 control-label" for="input_newPassword" ng-show="!state.isNew">新しいパスワード</label>
+						<div class="col-xs-10 form-inline">
+							<input type="password" class="form-control" ng-model="input.torokuInfo.newPassword" id="input_password" nis-input="TantoshaInfo" name="newPassword">
+							<nis-validate-messages target="TantoshaTorokuForm.newPassword"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.newPasswordConfirm">
+						<label class="col-xs-2 control-label" for="input_newPassword" ng-show="state.isNew">パスワード（確認用）</label>
+						<label class="col-xs-2 control-label" for="input_newPassword" ng-show="!state.isNew">新しいパスワード（確認用）</label>
+						<div class="col-xs-10 form-inline">
+							<input type="password" class="form-control" ng-model="input.torokuInfo.newPasswordConfirm" id="input_password" nis-input="TantoshaInfo" name="newPasswordConfirm">
+							<nis-validate-messages target="TantoshaTorokuForm.newPasswordConfirm"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.shiyotanmatsu1">
+						<label class="col-xs-2 control-label" for="input_shiyotanmatsu1">使用端末１</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.shiyotanmatsu1" id="input_shiyotanmatsu1" nis-input="TantoshaInfo" name="shiyotanmatsu1">
+							<nis-validate-messages target="TantoshaTorokuForm.shiyotanmatsu1"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.shiyotanmatsu2">
+						<label class="col-xs-2 control-label" for="input_shiyotanmatsu2">使用端末２</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.shiyotanmatsu2" id="input_shiyotanmatsu2" nis-input="TantoshaInfo" name="shiyotanmatsu2">
+							<nis-validate-messages target="TantoshaTorokuForm.shiyotanmatsu2"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.shiyotanmatsu3">
+						<label class="col-xs-2 control-label" for="input_shiyotanmatsu3">使用端末３</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.shiyotanmatsu3" id="input_shiyotanmatsu3" nis-input="TantoshaInfo" name="shiyotanmatsu3">
+							<nis-validate-messages target="TantoshaTorokuForm.shiyotanmatsu3"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.juchuKengen">
+						<label class="col-xs-2 control-label" for="input_juchuKengen">受注管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.juchuKengen" id="input_juchuKengen" nis-input="TantoshaInfo" name="juchuKengen">
+							<nis-validate-messages target="TantoshaTorokuForm.juchuKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.kobaiKengen">
+						<label class="col-xs-2 control-label" for="input_kobaiKengen">仕入管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.kobaiKengen" id="input_kobaiKengen" nis-input="TantoshaInfo" name="kobaiKengen">
+							<nis-validate-messages target="TantoshaTorokuForm.kobaiKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.uriageKengen">
+						<label class="col-xs-2 control-label" for="input_uriageKengen">売上管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.uriageKengen" id="input_uriageKengen" nis-input="TantoshaInfo" name="uriageKengen">
+							<nis-validate-messages target="TantoshaTorokuForm.uriageKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.zaikoKengen">
+						<label class="col-xs-2 control-label" for="input_zaikoKengen">在庫管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.zaikoKengen" id="input_zaikoKengen" nis-input="TantoshaInfo" name="zaikoKengen">
+							<nis-validate-messages target="TantoshaTorokuForm.zaikoKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.urikakeKengen">
+						<label class="col-xs-2 control-label" for="input_urikakeKengen">売掛管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.urikakeKengen" id="input_urikakeKengen" nis-input="TantoshaInfo" name="urikakeKengen">
+							<nis-validate-messages target="TantoshaTorokuForm.urikakeKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.urikakeKengen">
+						<label class="col-xs-2 control-label" for="input_urikakeKengen">売掛管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.urikakeKengen" id="input_urikakeKengen" nis-input="TantoshaInfo" name="urikakeKengen">
+							<nis-validate-messages target="TantoshaTorokuForm.urikakeKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.kyotsuKengen">
+						<label class="col-xs-2 control-label" for="input_kyotsuKengen">共通管理権限</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.kyotsuKengen" id="input_kyotsuKengen" nis-input="TantoshaInfo" name="kyotsuKengen">
+							<nis-validate-messages target="TantoshaTorokuForm.kyotsuKengen"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="form-group" nis-has-error="TantoshaTorokuForm.biko">
+						<label class="col-xs-2 control-label" for="input_biko">備考</label>
+						<div class="col-xs-10 form-inline">
+							<input type="text" class="form-control" ng-model="input.torokuInfo.biko" id="input_biko" nis-input="TantoshaInfo" name="biko">
+							<nis-validate-messages target="TantoshaTorokuForm.biko"></nis-validate-messages>
+						</div>
+					</div>
+					<div class="text-right">
+						<button type="button" class="btn btn-success" ng-click="action.save('更新')" ng-show="!state.isNew" style="margin-left:0px;">
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+							更新
+						</button>
+						<button type="button" class="btn btn-success" ng-click="action.save('登録')" ng-show="state.isNew" style="margin-left:0px;" ng-disabled="!TantoshaTorokuForm.$valid">
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+							登録
+						</button>
+						<button type="button" class="btn btn-danger" ng-click="action.remove()" ng-show="!state.isNew" style="margin-left:0px;">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+							削除
+						</button>
+						<button type="reset" value="クリア" class="btn btn-default" ng-click="action.clearTorokuInfo()">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+							クリア
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- ボタン群（フッター） -->
+	<div class="row row-padding-lr">
+		<div class="col-md-3 col-sm-3 col-xs-6 text-left" style="padding-left:0px;">
+			<button type="button" class="btn btn-info" ng-click="action.back()">
+				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>戻る
+			</button>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-3 text-center">&nbsp;</div>
+		<div class="col-md-3 col-sm-3 col-xs-3 text-right">&nbsp;</div>
+	</div>
+</div>
+<script type="text/ng-template" id="record_buttons">
+<div class="ui-grid-cell-contents">
+	<div class="btn-group">
+		<button type="button" class="btn btn-mini btn-default" ng-click="grid.appScope.action.list.select(row.entity)" title="修正">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+		</button>
+	</div>
+</div>
+</script>

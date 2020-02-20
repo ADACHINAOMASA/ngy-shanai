@@ -1,0 +1,60 @@
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+
+        <!--ウィンドウ幅に合わせて可変-->
+        <div class="container-fluid">
+            
+          <div class="navbar-header">
+            <!--スマホ用トグルボタンの設置-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!--ロゴ表示の指定-->
+            <a class="navbar-brand" ui-sref="home" title="Homeへ" style="font-size:26px;">{{header.systemName}}</a>
+          </div>
+            
+          <!--スマホ用の画面幅が小さいときの表示を非表示にする-->
+          <div id="navbar" class="navbar-collapse collapse">
+            <!-- 左メニュー -->  
+            <ul class="nav navbar-nav">
+            </ul>
+            <!-- 右メニュー -->
+		    <ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<!-- /.dropdown-messages ↓ -->
+					<a class="dropdown-toggle" data-toggle="dropdown" href="" title="ログ情報">
+					    <i class="fa fa-comment fa-fw"></i>  <i class="fa fa-caret-down"></i> ログ情報
+					    <!--  
+					    <i class="fa fa-history" aria-hidden="true"></i> <i class="fa fa-caret-down"></i> ログ情報
+					    -->
+					</a>
+					<ul class="dropdown-menu dropdown-messages" style="min-width:200px;">
+						 <li><a class="text-center" href="" ng-click="alertLogsClear()"><i class="fa fa-trash-o fa-md"></i> クリア</a></li>
+					  	 <ng-repeat ng-repeat="(i,alertLog) in alertLogs">
+						 	<li class="alertLogs bg-{{alertLog.type}}" >
+						       <div style="padding:5px;">
+						           <strong>{{i+1}}.&nbsp;{{alertLog.label}}</strong>
+						           <span class="pull-right text-muted">
+						               <em><small>{{alertLog.timestamp|date:'yyyy-MM-dd HH:mm:ss'}}</small>&nbsp;</em>
+						           </span>
+						       </div>
+						       <div style="padding-left:20px;padding-right:5px;">{{alertLog.msg}}</div>
+						    </li>
+						    <li class="divider"></li>
+						  </ng-repeat>
+						  
+					</ul>
+					<!-- /.dropdown-messages　↑ -->
+				</li>
+		    	<li><p class="navbar-text" style="padding-left:15px;"><span class="glyphicon glyphicon-user"></span> {{header.userProfile.userId}} {{header.userProfile.userName}}</p></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-log-out" title="ログアウト" style="margin-right:10px;"></span></a></li>
+		    </ul>
+          </div><!--/.nav-collapse -->
+          	
+        </div><!--/.container-fluid -->
+</nav><!-- /.navbar -->
+
+

@@ -1,0 +1,20 @@
+# ====================================================== #
+# \u30e1\u30fc\u30eb\u95a2\u9023\u306e\u30d7\u30ed\u30d1\u30c6\u30a3\u3092\u5b9a\u7fa9\u3059\u308b
+# ====================================================== #
+
+# \u30e1\u30fc\u30eb\u9001\u4fe1(SMTP\u30b5\u30fc\u30d0)
+mail.smtp.server=NlmTokyoHub
+mail.smtp.username=
+mail.smtp.password=
+# 0\u3000:\u3000\u30e6\u30fc\u30b6\u8a8d\u8a3c\u3092\u884c\u308f\u306a\u3044\u30021\u3000:\u3000\u30e6\u30fc\u30b6\u8a8d\u8a3c\u3092\u884c\u3046\u3002
+mail.smtp.user-authentication=0
+
+# \u30a8\u30e9\u30fc\u30e1\u30fc\u30eb
+mail.error.from=cm3sch_system@nis.nikkeikin.co.jp
+mail.error.to=xxxx@nis.nikkeikin.co.jp
+mail.error.subject=\u30e1\u30fc\u30eb\u9001\u4fe1\u306e\u30a8\u30e9\u30fc\u77e5\u3089\u305b\uff01
+mail.error.body=\u30e1\u30fc\u30eb\u9001\u4fe1\u3059\u308b\u969b\u3001\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u30b7\u30b9\u30c6\u30e0\u30ed\u30b0\u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002
+
+# ====================================================== #
+# \u30e1\u30fc\u30eb\u6587\u66f8\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092\u5b9a\u7fa9\u3059\u308b
+# ====================================================== #

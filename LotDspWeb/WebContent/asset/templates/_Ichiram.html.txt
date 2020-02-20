@@ -1,0 +1,78 @@
+<style>
+	.red { color: red; }
+</style>
+
+<nis-header></nis-header>
+<div class="container-fluid">
+	<!-- ページのタイトル -->
+	<div class="row row-padding-lr text-center">
+		<h3 class="c-heading--default">原価登録</h3>
+	</div>
+	<!-- ヘッダーボタン群 -->
+	<div class="row row-padding-lr">
+		<div class="col-md-6 col-sm-6 col-xs-6 text-left" style="padding-left:0px;">
+			<button type="button" class="btn btn-info" ng-click="action.back()">
+				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>戻る
+			</button>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-6 text-right" style="padding-right:0px;">
+			<button type="button" class="btn btn-success" ng-click="action.toroku()">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新規登録
+			</button>
+		</div>
+	</div>
+	<!-- 検索条件 -->
+	<div class="row row-padding-lr" style="margin-top:5px;">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isKensakuJokenCollapsed"></nis-collapse-mark>検索条件
+			</div>
+			<div class="panel-body" uib-collapse="isKensakuJokenCollapsed">
+				<form name="XXXXXForm" class="form-horizontal" role="form" novalidate>
+					<!-- TODO  -->
+					<div class="text-right">
+						<button type="button" class="btn btn-primary" ng-click="action.search()" >
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>検索
+						</button>
+						<button type="button" value="クリア" class="btn btn-default" ng-click="action.clear()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>クリア</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- ボタン群 -->
+	<div class="row row-padding-lr">
+		<div class="col-md-6 col-sm-6 col-xs-10 text-left" style="padding-left:0px;">&nbsp;</div>
+		<div class="col-md-6 col-sm-6 col-xs-2 text-left">&nbsp;</div>
+	</div>
+	<!-- 検索結果 -->
+	<div class="row row-padding-lr">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isKensakuKekkaCollapsed"></nis-collapse-mark>検索結果
+			</div>
+			<div class="panel-body" uib-collapse="isKensakuKekkaCollapsed">
+			<!--  
+			<div id="grid1" ui-grid="gridOptions" ui-grid-pagination class="grid" style="margin-top:10px;height:415px;" ui-grid-move-columns ui-grid-resize-columns ui-grid-pinning ui-grid-exporter ui-grid-save-state></div>
+			-->
+			</div>
+		</div>
+	</div>
+	<!-- フッターボタン群 -->
+	<div class="row row-padding-lr">
+		<div class="col-md-3 col-sm-3 col-xs-6 text-left" style="padding-left:0px;">
+			<button type="button" class="btn btn-info" ng-click="action.back()">
+				<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>戻る
+			</button>
+			<button type="button" class="btn btn-info" ng-click="action.toPageTop()">
+				<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>トップへ
+			</button>
+		</div>
+		<div class="col-md-6 col-sm-6 col-xs-3 text-center">&nbsp;</div>
+		<div class="col-md-3 col-sm-3 col-xs-3 text-right" style="padding-right:0px;">
+			<button type="button" class="btn btn-success" ng-click="action.toroku()">
+				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新規登録
+			</button>
+		</div>
+	</div>
+</div><!-- ./container-fluid -->

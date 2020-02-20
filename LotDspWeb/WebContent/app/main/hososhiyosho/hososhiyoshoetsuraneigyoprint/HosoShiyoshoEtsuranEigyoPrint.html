@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>印刷用ページ</title>
+    <SCRIPT>
+    <!--
+      function putSettings(){
+        with(factory.printing) {
+          // -- basic features
+          header = "";        // Header
+          footer = "";        // footer
+          portrait = true;    // 用紙の向き(true:縦/false:横)
+          leftMargin = 0;     // 余白　左
+          topMargin = 0;      // 余白　上
+          rightMargin = 0;    // 余白　右
+          bottomMargin = 0;   // 余白　下
+
+        }
+      }
+      function print(){
+        if(document.layers){
+          window.print();
+        }else{
+          if(document.all){
+            putSettings();
+            factory.printing.Print(false, window);
+          }
+        }
+        value=print;
+      }
+      function onload(){
+        if (isScriptX()) putSettings();
+      }
+      function isScriptX(){
+        try {
+            //ActiveX ScriptXがｲﾝｽﾄｰﾙ確認
+            var objX = new ActiveXObject("ScriptX.Factory");
+            return true;
+        } catch(e) {
+            window.status = "注意!!! ActiveX ScriptX をインストールしないと余白の関係で画像が小さくなります"
+            return false;
+        }
+      }
+//-->
+</SCRIPT>
+	<object id="factory" style="display:none"
+	  classid="clsid:1663ed61-23eb-11d2-b92f-008048fdd814"
+	  codebase="asset/print/smsx.cab#Version=6,3,435,20">
+	</object>
+  </head>
+  <body background="white" onload="onload()">
+      <div id="imgView" style="position: absolute;top:0px;left:0px;height:100%;"></div>
+      <script><!--//
+        var w = 636;
+        var h = 900;
+        if (isScriptX()) {
+            w = 757;
+            h = 1070;            
+        }
+        var url = location.search;
+        url = url.substring(1,url.length) + '&w=' + w + '&h=' + h;
+        var imgobj = document.getElementById("imgView");
+        imgobj.innerHTML='<a href="#"><img src="' + url +'" id="dynImage" name="dynImage" border="0" style="position:absolute;top:0px;left:0px;"></a>';
+      // --></script>
+  </body>
+</html>

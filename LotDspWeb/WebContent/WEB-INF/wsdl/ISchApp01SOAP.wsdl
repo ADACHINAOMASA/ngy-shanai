@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" name="ISchApp01SOAPservice" targetNamespace="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <message name="GetSchData4CM0Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="SchList" type="xs:string"/>
+  </message>
+  <message name="GetSchData4CM0Response">
+    <part name="SchList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetKaeriData4CM1Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="InAtsu" type="xs:float"/>
+    <part name="OtAtsu" type="xs:float"/>
+    <part name="Haba" type="xs:float"/>
+    <part name="XCompe" type="xs:float"/>
+    <part name="RollTime" type="xs:int"/>
+    <part name="InsLot" type="xs:float"/>
+    <part name="InsPass" type="xs:float"/>
+    <part name="InsDisp" type="xs:float"/>
+    <part name="CycleKey" type="xs:string"/>
+  </message>
+  <message name="SetKaeriData4CM1Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetLotData4CM2Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="LotList" type="xs:string"/>
+  </message>
+  <message name="GetLotData4CM2Response">
+    <part name="LotList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetTenkenData4CM3Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="TenkenList" type="xs:string"/>
+  </message>
+  <message name="GetTenkenData4CM3Response">
+    <part name="TenkenList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetPassModData4CM4Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="LotData" type="xs:string"/>
+    <part name="PassModList" type="xs:string"/>
+    <part name="IsCanModify" type="xs:int"/>
+    <part name="PassCount" type="xs:int"/>
+    <part name="PassOut" type="xs:int"/>
+    <part name="EnablePassCount" type="xs:int"/>
+    <part name="EnablePassOut" type="xs:int"/>
+  </message>
+  <message name="GetPassModData4CM4Response">
+    <part name="PassModList" type="xs:string"/>
+    <part name="IsCanModify" type="xs:int"/>
+    <part name="PassCount" type="xs:int"/>
+    <part name="PassOut" type="xs:int"/>
+    <part name="EnablePassCount" type="xs:int"/>
+    <part name="EnablePassOut" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetPassModData4CM5Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="LotData" type="xs:string"/>
+    <part name="PassModList" type="xs:string"/>
+    <part name="PassCount" type="xs:int"/>
+    <part name="PassOut" type="xs:int"/>
+  </message>
+  <message name="SetPassModData4CM5Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="ModPassCount4CM6Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="LotData" type="xs:string"/>
+    <part name="PassModList" type="xs:string"/>
+    <part name="BeforePassCount" type="xs:int"/>
+    <part name="AfterPassCount" type="xs:int"/>
+    <part name="AfterPassModList" type="xs:string"/>
+    <part name="PassCount" type="xs:int"/>
+    <part name="PassOut" type="xs:int"/>
+    <part name="EnablePassCount" type="xs:int"/>
+    <part name="EnablePassOut" type="xs:int"/>
+  </message>
+  <message name="ModPassCount4CM6Response">
+    <part name="AfterPassModList" type="xs:string"/>
+    <part name="PassCount" type="xs:int"/>
+    <part name="PassOut" type="xs:int"/>
+    <part name="EnablePassCount" type="xs:int"/>
+    <part name="EnablePassOut" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="ModPassOut4CM7Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="PassModList" type="xs:string"/>
+    <part name="AfterPassOut" type="xs:int"/>
+    <part name="AfterPassModList" type="xs:string"/>
+    <part name="PassOut" type="xs:int"/>
+    <part name="EnablePassOut" type="xs:int"/>
+  </message>
+  <message name="ModPassOut4CM7Response">
+    <part name="AfterPassModList" type="xs:string"/>
+    <part name="PassOut" type="xs:int"/>
+    <part name="EnablePassOut" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SchDelete8Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="DelData" type="xs:string"/>
+  </message>
+  <message name="SchDelete8Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetHinData9Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="OpnLinkKey" type="xs:string"/>
+    <part name="HinList" type="xs:string"/>
+  </message>
+  <message name="GetHinData9Response">
+    <part name="HinList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="LotCancel10Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+  </message>
+  <message name="LotCancel10Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="LotDelete11Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="DelData" type="xs:string"/>
+  </message>
+  <message name="LotDelete11Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="MakeSch4CM12Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+  </message>
+  <message name="MakeSch4CM12Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="LotMove13Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="MoveData" type="xs:string"/>
+    <part name="InsNo" type="xs:float"/>
+  </message>
+  <message name="LotMove13Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="LotInsCheck14Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="LtNo" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="LotData" type="xs:string"/>
+  </message>
+  <message name="LotInsCheck14Response">
+    <part name="LotData" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="LotInsert15Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="InsData" type="xs:string"/>
+    <part name="InsNo" type="xs:float"/>
+  </message>
+  <message name="LotInsert15Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SendSch4CM316Request">
+    <part name="AuthInf" type="xs:string"/>
+  </message>
+  <message name="SendSch4CM316Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetTenkenData4CM17Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="InsLot" type="xs:float"/>
+    <part name="InsPass" type="xs:float"/>
+    <part name="InsDisp" type="xs:float"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="TenkenList" type="xs:string"/>
+  </message>
+  <message name="SetTenkenData4CM17Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SchMove18Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="InsLot" type="xs:float"/>
+    <part name="InsPass" type="xs:float"/>
+    <part name="InsDisp" type="xs:float"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="MoveList" type="xs:string"/>
+    <part name="InsKbn" type="xs:int"/>
+  </message>
+  <message name="SchMove18Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="CM_RefreshPassCompe19Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="PassModList" type="xs:string"/>
+  </message>
+  <message name="CM_RefreshPassCompe19Response">
+    <part name="PassModList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="CM_ModifyPassData20Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="BeforePassData" type="xs:string"/>
+    <part name="AfterPassData" type="xs:string"/>
+  </message>
+  <message name="CM_ModifyPassData20Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetAuthInf21Request">
+    <part name="IPAddress" type="xs:string"/>
+    <part name="UserID" type="xs:string"/>
+    <part name="TermID" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="UseKbn" type="xs:string"/>
+    <part name="TermKbn" type="xs:int"/>
+  </message>
+  <message name="GetAuthInf21Response">
+    <part name="UserID" type="xs:string"/>
+    <part name="TermID" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="UseKbn" type="xs:string"/>
+    <part name="TermKbn" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="LotInfCheck22Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="IsLotEdit" type="xs:int"/>
+  </message>
+  <message name="LotInfCheck22Response">
+    <part name="CycleKey" type="xs:string"/>
+    <part name="IsLotEdit" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="LotInfChecks23Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="SelData" type="xs:string"/>
+    <part name="IsEditing" type="xs:int"/>
+  </message>
+  <message name="LotInfChecks23Response">
+    <part name="IsEditing" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="PassInsCheck24Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="LtNo" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="PassData" type="xs:string"/>
+  </message>
+  <message name="PassInsCheck24Response">
+    <part name="PassData" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="PassInsert25Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="InsLot" type="xs:float"/>
+    <part name="InsPass" type="xs:float"/>
+    <part name="InsDisp" type="xs:float"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="InsList" type="xs:string"/>
+    <part name="InsKbn" type="xs:int"/>
+  </message>
+  <message name="PassInsert25Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetPassOrderData26Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="LotList" type="xs:string"/>
+  </message>
+  <message name="GetPassOrderData26Response">
+    <part name="LotList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="CancelPassOrderData27Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+  </message>
+  <message name="CancelPassOrderData27Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="ModifyPassOrderData28Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="LotList" type="xs:string"/>
+  </message>
+  <message name="ModifyPassOrderData28Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetUseStatus29Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="EnableEndSign" type="xs:int"/>
+    <part name="AutoRefresh" type="xs:int"/>
+    <part name="LastUpdate" type="xs:string"/>
+    <part name="ManualResult" type="xs:int"/>
+  </message>
+  <message name="GetUseStatus29Response">
+    <part name="EnableEndSign" type="xs:int"/>
+    <part name="AutoRefresh" type="xs:int"/>
+    <part name="LastUpdate" type="xs:string"/>
+    <part name="ManualResult" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetUseStatus30Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="EnableEndSign" type="xs:int"/>
+    <part name="AutoRefresh" type="xs:int"/>
+  </message>
+  <message name="SetUseStatus30Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetAutoCheck31Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="EnableState" type="xs:int"/>
+  </message>
+  <message name="GetAutoCheck31Response">
+    <part name="EnableState" type="xs:int"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="MakeSchSplit4CM32Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="SplitNo" type="xs:int"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="LotList" type="xs:string"/>
+  </message>
+  <message name="MakeSchSplit4CM32Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetTeisi33Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="TeisiList" type="xs:string"/>
+  </message>
+  <message name="GetTeisi33Response">
+    <part name="TeisiList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="SetTeisi34Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="InsLot" type="xs:float"/>
+    <part name="InsPass" type="xs:float"/>
+    <part name="InsDisp" type="xs:float"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="TeisiCd" type="xs:string"/>
+    <part name="TeisiTime" type="xs:int"/>
+  </message>
+  <message name="SetTeisi34Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetCycleData35Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="CycleList" type="xs:string"/>
+  </message>
+  <message name="GetCycleData35Response">
+    <part name="CycleList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetCycleLotData36Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="CycleKey" type="xs:string"/>
+    <part name="LotList" type="xs:string"/>
+  </message>
+  <message name="GetCycleLotData36Response">
+    <part name="LotList" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="CycleMove37Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="InsNo" type="xs:float"/>
+    <part name="CycleList" type="xs:string"/>
+  </message>
+  <message name="CycleMove37Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="CycleDelete38Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+    <part name="CycleList" type="xs:string"/>
+  </message>
+  <message name="CycleDelete38Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="AutoTeisi4CM39Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="Setsubi" type="xs:string"/>
+  </message>
+  <message name="AutoTeisi4CM39Response">
+    <part name="return" type="xs:int"/>
+  </message>
+  <message name="GetLotDetail40Request">
+    <part name="AuthInf" type="xs:string"/>
+    <part name="SetLinkKey" type="xs:string"/>
+    <part name="PassNo" type="xs:float"/>
+    <part name="LotData" type="xs:string"/>
+  </message>
+  <message name="GetLotDetail40Response">
+    <part name="LotData" type="xs:string"/>
+    <part name="return" type="xs:int"/>
+  </message>
+  <portType name="ISchApp01SOAP">
+    <operation name="GetSchData4CM">
+      <input message="tns:GetSchData4CM0Request"/>
+      <output message="tns:GetSchData4CM0Response"/>
+    </operation>
+    <operation name="SetKaeriData4CM">
+      <input message="tns:SetKaeriData4CM1Request"/>
+      <output message="tns:SetKaeriData4CM1Response"/>
+    </operation>
+    <operation name="GetLotData4CM">
+      <input message="tns:GetLotData4CM2Request"/>
+      <output message="tns:GetLotData4CM2Response"/>
+    </operation>
+    <operation name="GetTenkenData4CM">
+      <input message="tns:GetTenkenData4CM3Request"/>
+      <output message="tns:GetTenkenData4CM3Response"/>
+    </operation>
+    <operation name="GetPassModData4CM">
+      <input message="tns:GetPassModData4CM4Request"/>
+      <output message="tns:GetPassModData4CM4Response"/>
+    </operation>
+    <operation name="SetPassModData4CM">
+      <input message="tns:SetPassModData4CM5Request"/>
+      <output message="tns:SetPassModData4CM5Response"/>
+    </operation>
+    <operation name="ModPassCount4CM">
+      <input message="tns:ModPassCount4CM6Request"/>
+      <output message="tns:ModPassCount4CM6Response"/>
+    </operation>
+    <operation name="ModPassOut4CM">
+      <input message="tns:ModPassOut4CM7Request"/>
+      <output message="tns:ModPassOut4CM7Response"/>
+    </operation>
+    <operation name="SchDelete">
+      <input message="tns:SchDelete8Request"/>
+      <output message="tns:SchDelete8Response"/>
+    </operation>
+    <operation name="GetHinData">
+      <input message="tns:GetHinData9Request"/>
+      <output message="tns:GetHinData9Response"/>
+    </operation>
+    <operation name="LotCancel">
+      <input message="tns:LotCancel10Request"/>
+      <output message="tns:LotCancel10Response"/>
+    </operation>
+    <operation name="LotDelete">
+      <input message="tns:LotDelete11Request"/>
+      <output message="tns:LotDelete11Response"/>
+    </operation>
+    <operation name="MakeSch4CM">
+      <input message="tns:MakeSch4CM12Request"/>
+      <output message="tns:MakeSch4CM12Response"/>
+    </operation>
+    <operation name="LotMove">
+      <input message="tns:LotMove13Request"/>
+      <output message="tns:LotMove13Response"/>
+    </operation>
+    <operation name="LotInsCheck">
+      <input message="tns:LotInsCheck14Request"/>
+      <output message="tns:LotInsCheck14Response"/>
+    </operation>
+    <operation name="LotInsert">
+      <input message="tns:LotInsert15Request"/>
+      <output message="tns:LotInsert15Response"/>
+    </operation>
+    <operation name="SendSch4CM3">
+      <input message="tns:SendSch4CM316Request"/>
+      <output message="tns:SendSch4CM316Response"/>
+    </operation>
+    <operation name="SetTenkenData4CM">
+      <input message="tns:SetTenkenData4CM17Request"/>
+      <output message="tns:SetTenkenData4CM17Response"/>
+    </operation>
+    <operation name="SchMove">
+      <input message="tns:SchMove18Request"/>
+      <output message="tns:SchMove18Response"/>
+    </operation>
+    <operation name="CM_RefreshPassCompe">
+      <input message="tns:CM_RefreshPassCompe19Request"/>
+      <output message="tns:CM_RefreshPassCompe19Response"/>
+    </operation>
+    <operation name="CM_ModifyPassData">
+      <input message="tns:CM_ModifyPassData20Request"/>
+      <output message="tns:CM_ModifyPassData20Response"/>
+    </operation>
+    <operation name="GetAuthInf">
+      <input message="tns:GetAuthInf21Request"/>
+      <output message="tns:GetAuthInf21Response"/>
+    </operation>
+    <operation name="LotInfCheck">
+      <input message="tns:LotInfCheck22Request"/>
+      <output message="tns:LotInfCheck22Response"/>
+    </operation>
+    <operation name="LotInfChecks">
+      <input message="tns:LotInfChecks23Request"/>
+      <output message="tns:LotInfChecks23Response"/>
+    </operation>
+    <operation name="PassInsCheck">
+      <input message="tns:PassInsCheck24Request"/>
+      <output message="tns:PassInsCheck24Response"/>
+    </operation>
+    <operation name="PassInsert">
+      <input message="tns:PassInsert25Request"/>
+      <output message="tns:PassInsert25Response"/>
+    </operation>
+    <operation name="GetPassOrderData">
+      <input message="tns:GetPassOrderData26Request"/>
+      <output message="tns:GetPassOrderData26Response"/>
+    </operation>
+    <operation name="CancelPassOrderData">
+      <input message="tns:CancelPassOrderData27Request"/>
+      <output message="tns:CancelPassOrderData27Response"/>
+    </operation>
+    <operation name="ModifyPassOrderData">
+      <input message="tns:ModifyPassOrderData28Request"/>
+      <output message="tns:ModifyPassOrderData28Response"/>
+    </operation>
+    <operation name="GetUseStatus">
+      <input message="tns:GetUseStatus29Request"/>
+      <output message="tns:GetUseStatus29Response"/>
+    </operation>
+    <operation name="SetUseStatus">
+      <input message="tns:SetUseStatus30Request"/>
+      <output message="tns:SetUseStatus30Response"/>
+    </operation>
+    <operation name="GetAutoCheck">
+      <input message="tns:GetAutoCheck31Request"/>
+      <output message="tns:GetAutoCheck31Response"/>
+    </operation>
+    <operation name="MakeSchSplit4CM">
+      <input message="tns:MakeSchSplit4CM32Request"/>
+      <output message="tns:MakeSchSplit4CM32Response"/>
+    </operation>
+    <operation name="GetTeisi">
+      <input message="tns:GetTeisi33Request"/>
+      <output message="tns:GetTeisi33Response"/>
+    </operation>
+    <operation name="SetTeisi">
+      <input message="tns:SetTeisi34Request"/>
+      <output message="tns:SetTeisi34Response"/>
+    </operation>
+    <operation name="GetCycleData">
+      <input message="tns:GetCycleData35Request"/>
+      <output message="tns:GetCycleData35Response"/>
+    </operation>
+    <operation name="GetCycleLotData">
+      <input message="tns:GetCycleLotData36Request"/>
+      <output message="tns:GetCycleLotData36Response"/>
+    </operation>
+    <operation name="CycleMove">
+      <input message="tns:CycleMove37Request"/>
+      <output message="tns:CycleMove37Response"/>
+    </operation>
+    <operation name="CycleDelete">
+      <input message="tns:CycleDelete38Request"/>
+      <output message="tns:CycleDelete38Response"/>
+    </operation>
+    <operation name="AutoTeisi4CM">
+      <input message="tns:AutoTeisi4CM39Request"/>
+      <output message="tns:AutoTeisi4CM39Response"/>
+    </operation>
+    <operation name="GetLotDetail">
+      <input message="tns:GetLotDetail40Request"/>
+      <output message="tns:GetLotDetail40Response"/>
+    </operation>
+  </portType>
+  <binding name="ISchApp01SOAPbinding" type="tns:ISchApp01SOAP">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetSchData4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetSchData4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetKaeriData4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#SetKaeriData4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetLotData4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetLotData4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetTenkenData4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetTenkenData4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetPassModData4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetPassModData4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetPassModData4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#SetPassModData4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="ModPassCount4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#ModPassCount4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="ModPassOut4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#ModPassOut4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SchDelete">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#SchDelete" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetHinData">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetHinData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="LotCancel">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#LotCancel" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="LotDelete">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#LotDelete" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="MakeSch4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#MakeSch4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="LotMove">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#LotMove" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="LotInsCheck">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#LotInsCheck" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="LotInsert">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#LotInsert" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SendSch4CM3">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#SendSch4CM3" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetTenkenData4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#SetTenkenData4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SchMove">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#SchMove" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="CM_RefreshPassCompe">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#CM_RefreshPassCompe" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="CM_ModifyPassData">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#CM_ModifyPassData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetAuthInf">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetAuthInf" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="LotInfCheck">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#LotInfCheck" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="LotInfChecks">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#LotInfChecks" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="PassInsCheck">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#PassInsCheck" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="PassInsert">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#PassInsert" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetPassOrderData">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetPassOrderData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="CancelPassOrderData">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#CancelPassOrderData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="ModifyPassOrderData">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#ModifyPassOrderData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetUseStatus">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetUseStatus" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetUseStatus">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#SetUseStatus" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetAutoCheck">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetAutoCheck" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="MakeSchSplit4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#MakeSchSplit4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetTeisi">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetTeisi" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="SetTeisi">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#SetTeisi" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetCycleData">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetCycleData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetCycleLotData">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetCycleLotData" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="CycleMove">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#CycleMove" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="CycleDelete">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#CycleDelete" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="AutoTeisi4CM">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#AutoTeisi4CM" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+    <operation name="GetLotDetail">
+      <soap:operation soapAction="urn:SchApp01SOAPIntf-ISchApp01SOAP#GetLotDetail" style="rpc"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:SchApp01SOAPIntf-ISchApp01SOAP" use="encoded"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ISchApp01SOAPservice">
+    <port binding="tns:ISchApp01SOAPbinding" name="ISchApp01SOAPPort">
+      <soap:address location="http://nlmfangydev3:10080/soap/SchApp01SOAP.dll/soap/ISchApp01SOAP"/>
+    </port>
+  </service>
+</definitions>

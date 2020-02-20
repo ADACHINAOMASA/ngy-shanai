@@ -1,0 +1,8 @@
+#無視するディレクトリ
+.apt_generated/
+
+classes/
+bin/
+build/
+
+*.class

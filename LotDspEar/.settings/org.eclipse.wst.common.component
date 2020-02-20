@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="LotDspEar">
+        <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
+        <dependent-module archiveName="NisFramework.jar" deploy-path="/lib" handle="module:/resource/NisFramework/NisFramework">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LotDspWeb.war" deploy-path="/" handle="module:/resource/LotDspWeb/LotDspWeb">
+            <dependent-object>Module_1580971005903</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

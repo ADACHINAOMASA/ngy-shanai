@@ -1,0 +1,55 @@
+<div class="modal-header" style="padding:10px;">
+	<h3 class="modal-title"><i class="fa fa-search" aria-hidden="true"></i>{{title}}</h3>
+</div>
+<div class="modal-body" style="padding:0">
+	<!-- 検索条件 -->
+	<div class="row row-padding-lr">
+		<div class="panel panel-primary" style="margin:10px 0 10px 0">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isKensakuJokenCollapsed"></nis-collapse-mark>検索条件
+			</div>
+			<div class="panel-body" uib-collapse="isKensakuJokenCollapsed">
+				<form name="JuchuNoIchiranForm" class="form-horizontal" role="form" novalidate>
+	 				
+	 				<div class="form-group" nis-has-error="JuchuNoIchiranForm.juchuNo">
+						<label class="col-xs-3 control-label" for="input_juchuNo">受注親番号</label>
+						<div class="col-xs-9 form-inline">
+							<input type="text" class="form-control" ng-model="input.juchuNo" id="input_juchuNo" nis-input="JuchuKensakuInfo" name="juchuNo">
+							<nis-validate-messages target="JuchuNoIchiranForm.juchuNo"></nis-validate-messages>
+						</div>
+					</div>
+							
+					<div class="form-group" nis-has-error="JuchuNoIchiranForm.juchuKoNo">
+						<label class="col-xs-3 control-label" for="input_juchuKoNo">受注子番号</label>
+						<div class="col-xs-9 form-inline">
+							<input type="text" class="form-control" ng-model="input.juchuKoNo" id="input_juchuKoNo" nis-input="JuchuKensakuInfo" name="juchuKoNo">
+							<nis-validate-messages target="JuchuNoIchiranForm.juchuKoNo"></nis-validate-messages>
+						</div>
+					</div>
+							
+					<div class="text-right">
+						<button type="button" class="btn btn-primary" ng-click="action.search()" ng-disabled="JuchuNoIchiranForm.$invalid">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>検索
+						</button>
+						<button type="reset" value="クリア" class="btn btn-default" ng-click="action.clear()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>クリア</button>
+					</div>
+ 				</form>
+			</div>
+		</div>
+	</div>
+	<!-- 検索結果 -->
+	<div class="row row-padding-lr">
+		<div class="panel panel-success" style="margin:0 0 10px 0">
+			<div class="panel-heading">
+				<nis-collapse-mark model="isKensakuKekkaCollapsed"></nis-collapse-mark>検索結果
+			</div>
+			<div class="panel-body" uib-collapse="isKensakuKekkaCollapsed">
+				<div id="grid1" ui-grid="gridOptions" ui-grid-pagination class="grid" ui-grid-move-columns ui-grid-resize-columns ui-grid-selection ui-grid-pinning style="height:410px!important;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer" style="padding:10px 15px">
+	<button class="btn btn-primary" ng-click="action.ok()" style="width:60px;">OK</button>
+	<button class="btn btn-warning" ng-click="action.cancel()" style="width:60px;">Cancel</button>
+</div>

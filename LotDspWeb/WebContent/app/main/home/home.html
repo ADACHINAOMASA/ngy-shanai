@@ -1,0 +1,313 @@
+<style>
+
+	.menu-list {
+	}
+	.menu-list ul {
+	    list-style: none;
+	    border: solid 0px #DDD;
+	    padding: 10px;
+	}
+	.menu-list li a {
+	    color: #666;
+	    display: block;
+	    border-bottom: solid 1px #DDD;
+	    padding: 10px;
+	    -webkit-transition: 0.2s ease-in-out;
+	    -moz-transition: 0.2s ease-in-out;
+	    -o-transition: 0.2s ease-in-out;
+	    transition: 0.2s ease-in-out;
+	    margin-top: 10px;
+	    border: solid 1px #DDD;
+	}
+	.menu-list li a:hover {
+	    background-color: #F2F2F2;
+	}
+	.list-group-item {
+	    padding: 10px 15px;
+	}
+
+
+</style>
+
+<nis-header></nis-header>
+<div class="container-fluid">
+
+	<!-- ◇業務メニュー -->
+	<div class="row row-padding-lr" style="margin-top:10px;margin-bottom:10px;">
+		<h3 class="c-heading--double-round-mark">業務メニュー</h3>
+	</div>
+	<div class="row row-padding-lr">
+		<div class="col-md-12 col-sm-12 col-xs-12 c-tab-container" style="margin-left:0px;margin-top:0px;">
+		    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 c-tab-menu">
+		        <div class="list-group">
+		            <a href="#" class="list-group-item active text-center border-0110" >
+		                <i class="fa fa-calculator c-fa-1_5x"></i>
+		                <br/><span>見積管理</span>
+		            </a>
+		            <a href="#" class="list-group-item text-center border-0110">
+		                <i class="fa fa-industry c-fa-1_5x"></i>
+		                <br/><span>製作指示</span>
+		            </a>
+		            <a href="#" class="list-group-item text-center border-0110">
+		                <i class="fa fa-area-chart c-fa-1_5x"></i>
+		                <br/><span>生産計画</span>
+		            </a>
+		            <a href="#" class="list-group-item text-center border-0110">
+		                <i class="fa fa-folder c-fa-1_5x"></i>
+		                <br/><span>実績管理</span>
+		            </a>
+		            <a href="#" class="list-group-item text-center border-0110">
+		                <i class="fa fa fa-cogs c-fa-1_5x"></i>
+		                <br/><span>マスタ管理</span>
+		            </a>
+		            <a href="#" class="list-group-item text-center border-0100">
+		                <i class="fa fa-jpy c-fa-1_5x"></i>
+		                <br/><span>販売管理</span>
+		            </a>
+		        </div>
+		    </div>
+		    <div class="col-lg-10 col-md-10 col-sm-9 col-xs-8 c-tab" >
+		        <div class="c-tab-content active">
+		            <h4 class="page-header text-center" style="margin-top:0px;">見積管理</h4>
+		            <div class="row" style="margin-top:-20px;height:290px;overflow-y: auto;">
+		                <div class="col-lg-3 col-md-4 col-sm-4 menu-list">
+		                    <ul>
+		                    	<li ><a ui-sref="genkaSekisanIchiran"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&nbsp;原価積算一覧</a></li>
+		                        <li ><a ui-sref="genkaSekisanToroku/create"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>&nbsp;原価積算登録</a></li>
+		                        
+		                        <li ><a ui-sref="mitsumoriIchiran"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&nbsp;見積一覧</a></li>
+		                        <li ><a ui-sref="mitsumoriToroku/create"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>&nbsp;見積登録</a></li>
+
+		                     </ul>   
+		                </div>
+		            </div>
+		        </div>
+		        <div class="c-tab-content">
+		            <h4 class="page-header text-center" style="margin-top:0px">製作指示</h4>
+		            <div class="row" style="margin-top:-20px;height:290px;overflow-y: auto;">
+		                <div class="col-lg-3 col-md-5 col-sm-6 menu-list">
+		                    <ul>
+								<li ><a ui-sref="seisakuShijiIchiran"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&nbsp;製作指示一覧</a></li>
+								<li ><a ui-sref="seisakuShijiToroku/create"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>&nbsp;製作指示登録</a></li>
+								<!--  
+								<li ><a ui-sref="seisakuShijiMeisaiToroku/create"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>&nbsp;製作指示明細登録</a></li>
+								-->
+		                    </ul>
+		                </div>
+	                </div>
+		        </div>
+		        <div class="c-tab-content">
+		            <h4 class="page-header text-center" style="margin-top:0px">生産計画</h4>
+		            <div class="col-lg-3 col-md-5 col-sm-6 menu-list">
+		            	<ul>
+		            		<!--  
+		                    <li><a ui-sref="home"><i class="fa fa-book fa-fw"></i> カレンダー日程計画</a></li>
+		                    <li><a ui-sref="home"><i class="fa fa-book fa-fw"></i> 負荷紹介</a></li>
+		                    <li><a ui-sref="home"><i class="fa fa-book fa-fw"></i> ガントチャート</a></li>
+		                    -->
+		                    <img src="asset/img/under-construction.png"　width="80" height="80" title="以降のステップで提供する予定！">
+		                </ul>
+		            </div>
+		        </div>
+		        <div class="c-tab-content">
+		            <h4 class="page-header text-center" style="margin-top:0px">実績管理</h4>
+		            <div class="col-lg-3 col-md-5 col-sm-6 menu-list">
+		            	<ul>
+		            		<!--
+		                    <li>
+		                    	<a ui-sref="home"><i class="fa fa-book fa-fw"></i> 生産実績訂正</a> 
+		                    </li>
+		                    -->
+		                     <img src="asset/img/under-construction.png"　width="80" height="80" title="以降のステップで提供する予定！">
+		                </ul>
+		            </div>
+		        </div>
+		        <div class="c-tab-content">
+		        	<h4 class="page-header text-center" style="margin-top:0px">マスタ管理</h4>
+		        	<div class="row" style="margin-top:-20px;height:290px;overflow-y: auto;">
+		                <div class="col-lg-3 col-md-4 col-sm-4 menu-list">
+	            			 <ul>
+			                    <li><a ui-sref="kakoKeisanIchiran"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&nbsp;加工計算一覧</a></li>
+		                        <li><a ui-sref="kakokeisanToroku/create"><i class="fa fa-plus fa-fw" aria-hidden="true"></i>&nbsp;加工計算登録</a></li>
+		                        <li></li>
+		                     </ul> 
+		                </div>
+		                <div class="col-lg-3 col-md-4 col-sm-4 menu-list">
+							<ul>
+	                    		<li><a ng-click="action.master.shohinRenkei()" style="cursor: pointer;"><i class="fa fa-handshake-o" aria-hidden="true"></i>&nbsp;商品マスタ連携</a></li>
+							</ul>
+		                </div>
+		                <div class="col-lg-3 col-md-4 col-sm-4 menu-list">
+							<ul>
+								<li><a ui-sref="koteiSetsubiMente"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&nbsp;工程設備マスタ照会・保守</a></li>
+								<li><a ui-sref="buhinSeisakuChokurohiIchiran"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&nbsp;部品製作直労費照会・保守</a></li>
+								<!--  
+								<li><a ui-sref="TantoshaHoshu"><i class="fa fa-search fa-fw" aria-hidden="true"></i>&nbsp;担当者照会・保守</a></li>
+								-->
+	                    		<li><a ng-click="action.refreshComboData()" style="cursor: pointer;"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i>&nbsp;コンボデータの更新</a></li>
+							</ul>
+		                </div>
+		            </div>    
+		        </div>
+		        <div class="c-tab-content">
+		            <h4 class="page-header text-center" style="margin-top:0px">販売管理</h4>
+		            <div class="row" style="margin-top:-20px;height:290px;overflow-y: auto;">
+		                <div class="col-lg-4 col-md-5 col-sm-5 menu-list">
+	            			 <ul>
+			                    <li><a ui-sref="home" ng-click="action.showKikanSystem()"><i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;基幹システムの業務メニュー</a> </li>
+		                     </ul> 
+		                </div>
+		            </div>  
+		        </div>
+		    </div>
+		</div>
+	</div><!-- ./gyomumenu tab end -->
+	
+	<!-- ◇タイムライン -->
+	<div class="row row-padding-lr" style="margin-top:10px;margin-bottom:10px;">
+		<h3 class="c-heading--double-round-mark">タイムライン</h3>
+	</div>	
+	<div class="row row-padding-lr">
+		<div class="panel panel-default">
+			<div class="panel-body"> 
+								
+				<div class="col-md-5">	
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-comments fa-5x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div style="font-size:40px;height:50px;"><div id="todayOshirase">{{todayOshirase || 0}}</div></div>
+									<div>本日の投稿数</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="text-right" style="margin-top:-15px;margin-bottom:10px;">
+						<button type="button" class="btn btn-info"	ng-click="action.oshirase.reload()">
+							<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>更新
+						</button>
+						<button type="button" class="btn btn-success" ng-click="action.oshirase.toroku()">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>投稿
+						</button>
+					</div>
+					<div style="height:340px;">
+						<ul class="list-group">
+							<li class="list-group-item oshirase-list" style="cursor:pointer;" ng-repeat="oshirase in pageingOshirases" ng-click="action.oshirase.scrollNaiyo(oshirase.oshiraseNo)" ng-class="{'list-group-item-warning':oshirase.juyoKbn == '2', 'list-group-item-danger':oshirase.juyoKbn == '3'}">
+								<strong class="primary-font">{{oshirase.title}} <span class="badge" tooltip="返信数">{{oshirase.henshins.length ? oshirase.henshins.length : ''}}</span></strong>
+								<small class="pull-right">{{oshirase.sakuseishaMei}} - <span class="text-muted" tooltip="{{oshirase.koshinYmd | date : 'yyyy/MM/dd HH:mm'}}">{{oshirase.koshinYmd | elapse}}</span></small>
+							</li>
+						</ul>
+					</div>
+					<div style="margin-top:0px;">
+						<ul uib-pagination boundary-links="true" style="margin-top:0px;" total-items="oshirases.length" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" ng-change="action.oshirase.paging()"></ul>
+						<div class="pull-right text-right">
+							<nis-select model="input.haniKbn" selects="hani" blank="false" style-class="form-control" on-change="action.oshirase.reload()"></nis-select>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="panel panel-default">
+						<div class="panel-body" style="height:460px;overflow-y:scroll;" id="oshirase-naiyo">
+							 
+							<ul class="chat">
+								<li class="left clearfix" ng-repeat="oshirase in oshirases" ng-form="oshiraseForm" ng-click="henshuMode[oshirase.oshiraseNo] = true" id="{{oshirase.oshiraseNo}}">
+									<div class="text-right" ng-if="henshuMode[oshirase.oshiraseNo] && oshirase.sakuseishaCd == userProfile.userId">
+										<span class="btn glyphicon glyphicon-minus bg-info" ng-click="henshuMode[oshirase.oshiraseNo] = false;$event.stopPropagation();" tooltip="閉じる"></span>
+										<span class="btn glyphicon glyphicon-pencil bg-info" ng-click="action.oshirase.henshu(oshirase)" tooltip="編集"></span>
+										<span class="btn glyphicon glyphicon-remove bg-danger" ng-click="action.oshirase.sakujo(oshirase)" tooltip="削除"></span>
+									</div>
+									<span class="chat-img pull-left" style="border:0px solid red;width:120px;margin-left:-10px;" >
+										<!--  
+										<img src="service/tantosha/icon/{{oshirase.sakuseishaCd}}" alt="読込エラー" style="height:48px;width:48px;">
+										-->
+										<i class="fa fa-user fa-3x" aria-hidden="true"></i><br>
+										<strong>{{oshirase.sakuseishaMei}}</strong>
+									</span>
+									<div class="chat-body " style="border:0px sokid green;margin-left:110px;">
+										<div class="header">
+											<strong class="primary-font">{{oshirase.title}}</strong>
+											<small class="pull-right">{{oshirase.sakuseishaMei}} - <span class="text-muted" tooltip="{{oshirase.koshinYmd | date : 'yyyy/MM/dd HH:mm'}}">{{oshirase.koshinYmd | elapse}}</span></small>
+										</div>
+										<pre ng-class="{'bg-warning':oshirase.juyoKbn == '2', 'bg-danger':oshirase.juyoKbn == '3'}" style="white-space:pre-line">{{oshirase.naiyo}}</pre>
+										<ul class="chat">
+											<li class="left clearfix" ng-repeat="henshin in oshirase.henshins">
+												<span class="chat-img pull-left">
+													<!--  
+													<img src="service/tantosha/icon/{{henshin.sakuseishaCd}}" alt="読込エラー" style="height:48px;width:48px;">
+													-->
+													<i class="fa fa-user fa-2x" aria-hidden="true"></i><br>
+													<strong>{{henshin.sakuseishaMei}}</strong>
+												</span>
+												<div class="chat-body clearfix">
+													<div class="header">
+														<strong class="primary-font">返信：{{henshin.sakuseishaMei}}</strong>
+														<small class="pull-right">{{henshin.sakuseishaMei}} - <span class="text-muted" tooltip="{{henshin.koshinYmd | date : 'yyyy/MM/dd HH:mm'}}">{{henshin.koshinYmd | elapse}}</span></small>
+													</div>
+													<pre style="white-space:pre-line">{{henshin.naiyo}}</pre>
+												</div>
+											</li>
+										</ul>
+										<div class="text-right" ng-if="henshuMode[oshirase.oshiraseNo]">
+											<span class="btn glyphicon glyphicon-minus pull-left" ng-click="henshuMode[oshirase.oshiraseNo] = false;$event.stopPropagation();"></span>
+											<span class="btn glyphicon glyphicon-resize-vertical pull-left" ng-click="areaMode = !areaMode"></span>
+											<div class="input-group" ng-if="!areaMode">
+												<input type="text" class="form-control" ng-model="$parent.henshinNaiyo" nis-input="OshiraseInfo" name="naiyo">
+												<span class="input-group-btn">
+													<button class="btn btn-warning" type="button" ng-click="action.oshirase.henshin(oshirase, henshinNaiyo)" ng-disabled="!henshinNaiyo || henshinNaiyo.length > 800">返信</button>
+												</span>
+											</div>
+											<div ng-if="areaMode" class="col-md-10">
+												<textarea class="form-control" ng-model="$parent.henshinNaiyo" nis-input="OshiraseInfo" name="naiyo"></textarea>
+												<button class="btn btn-warning" type="button" ng-click="action.oshirase.henshin(oshirase, henshinNaiyo)" ng-disabled="!henshinNaiyo || henshinNaiyo.length > 800">返信</button>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</div><!-- ./right-block end -->
+				
+			</div><!-- ./panel-body end -->
+		</div>
+	</div><!-- ./timeline end -->
+	
+</div><!-- ./container-fluid end -->
+
+<script>
+	
+	$(document).ready(function() {
+	    $("div.c-tab-menu>div.list-group>a").click(function(e) {
+	        e.preventDefault();
+	        $(this).siblings('a.active').removeClass("active");
+	        $(this).addClass("active");
+	        var index = $(this).index();
+	        $("div.c-tab>div.c-tab-content").removeClass("active");
+	        $("div.c-tab>div.c-tab-content").eq(index).addClass("active");
+	        
+	        //console.log('menu clicked.....'+index);
+	        localStorage.setItem("home_menu_index", index);　
+	    });
+	    
+	    //console.log(localStorage.getItem("home_menu_index"));
+	    var menuIndex=localStorage.getItem("home_menu_index");
+	    if(menuIndex){	
+	    	$("div.c-tab-menu>div.list-group>a").each(function(index, element){
+	    		if(index==menuIndex){
+	    			$(element).addClass("active");
+	    			$(element).click();
+	    		}
+	    		else{
+	    			$(element).removeClass("active");
+	    		}
+	        });
+	    }
+	    
+	});
+	
+</script>
+
