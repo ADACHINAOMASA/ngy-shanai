@@ -1,0 +1,792 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+</head>
+<body id="body1">
+  <form id="form1" class="form">
+    <div style="background-color: white; height: 570px; left: 0px; top: 30px; position: absolute; width: 100%" class="tabSet">
+      <!-- タブ項目 -->
+      <div class="MniTabDiv">
+        <table border="0" cellspacing="0" cellpadding="0" class="MniTabTbl" title="">
+          <tr>
+            <td><a class="MniTabLnk TabPad" href="/lotdsp/menu">ICAS情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showProgressInfo();">進度情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showManufacturingInfo();">製造情報</a></td>
+            <td class="MniTabTblSelTd">
+            	<div class="MniTabSelTxt" title="Current Selection:"><span class=" disabled TabPad">試験情報</span></div>
+            </td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showQualityInfo();">品質情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showCladInfo();">クラッド情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showCFInfo();">焼鈍情報</a></td>
+          </tr>
+        </table>
+      </div>
+
+	  <!-- 各タブ固有項目 -->
+      <div style="position: relative; -rave-layout: grid; height: 540px; position: relative; width: 980px; -rave-layout: grid" class="layoutPanel">
+		<table border="0" cellpadding="3" cellspacing="0" style="left: 5px; top: 150px; position: absolute" width="980">
+			<tbody>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="1" width="833">
+							<tbody>
+								<tr class="item-label1">
+									<td><span>生地外観 </span></td>
+									<td><span>ﾌﾗｯﾄﾈｽ </span></td>
+									<td><span>付着油 </span></td>
+									<td><span>切断面 </span></td>
+									<td><span>板厚公差 </span></td>
+									<td><span>巾丈公差 </span></td>
+									<td><span>ﾗﾃﾗﾙﾎﾞｰ </span></td>
+									<td><span>直角度 </span></td>
+									<td><span>方向性 </span></td>
+									<td><span>強度 </span></td>
+									<td><span>ｱﾙﾏｲﾄ </span></td>
+									<td><span>表面 </span></td>
+								</tr>
+								<tr class=" item-value1">
+									<td><span>{{staffTestInfo.qccod01}}</span></td>
+									<td><span>{{staffTestInfo.qccod02}}</span></td>
+									<td><span>{{staffTestInfo.qccod03}}</span></td>
+									<td><span>{{staffTestInfo.qccod04}}</span></td>
+									<td><span>{{staffTestInfo.qccod05}}</span></td>
+									<td><span>{{staffTestInfo.qccod06}}</span></td>
+									<td><span>{{staffTestInfo.qccod07}}</span></td>
+									<td><span>{{staffTestInfo.qccod08}}</span></td>
+									<td><span>{{staffTestInfo.qccod09}}</span></td>
+									<td><span>{{staffTestInfo.qccod10}}</span></td>
+									<td><span>{{staffTestInfo.qccod11}}</span></td>
+									<td><span>{{staffTestInfo.qccod15}}</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td>
+										<table border="0" cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr>
+													<td>
+														<table border="0" cellpadding="0" cellspacing="1">
+															<tbody>
+															<tr>
+															<td class="test-label-center-w60" ><span> </span></td>
+															<td class="test-label-center-w100"><span>実績</span></td>
+															<td class="test-label-center-w60" ><span> </span></td>
+															<td class="test-label-center-w100"><span>実績</span></td>
+															</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table border="0" cellpadding="0" cellspacing="1">
+															<tbody>
+																<tr>
+																	<td class="test-label-center-w60"><span>Cu</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_CU | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Na</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_NA | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Si</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_SI | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Ca</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_CA | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Fe</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_FE | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Ni</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_NI | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Mn</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_MN | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Pb</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_PB | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Mg</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_MG | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Bi</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_BI | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Zn</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_ZN | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Cd</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_CD | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Cr</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_CR | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Sn</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_SN | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Ti</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_TI | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Li</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_LI | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>B </span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_B | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Mo</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_MO | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>V</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_V | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Co</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_AG | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Ga </span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_GA | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>P</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_P | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Zr</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_ZR | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Other</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_OTHER | dotNumber:6}}</span></td>
+																</tr>
+																<tr>
+																	<td class="test-label-center-w60"><span>Be</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_BE | dotNumber:6}}</span></td>
+																	<td class=" test-label-center-w60"><span>Al</span></td>
+																	<td class=" test-value-right-w100"><span>{{staffTestInfo.kei_AL | dotNumber:6}}</span></td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+									<td>
+										<table border="0" cellpadding="8" cellspacing="0">
+											<tbody>
+												<tr>
+													<td>
+														<table border="0" cellpadding="0" cellspacing="1">
+															<tbody>
+																<tr>
+																	<td>
+																		<table border="0" cellpadding="0" cellspacing="1">
+																			<tbody>
+																				<tr>
+																					<td class="item-label2"><span> </span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>抗張力</span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>伸び</span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>耐力</span></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																	<td>
+																		<table border="0" cellpadding="0" cellspacing="1">
+																			<tbody>
+																				<tr class="item-label1">
+																					<td class="test-w60"><span>入力Min</span></td>
+																					<td class="test-w60"><span>入力Avg</span></td>
+																					<td class="test-w60"><span>入力Max</span></td>
+																					<td class="test-w60"><span>測定Min</span></td>
+																					<td class="test-w60"><span>測定Avg</span></td>
+																					<td class="test-w60"><span>測定Max</span></td>
+																					<td class="test-w60"><span>下限</span></td>
+																					<td class="test-w60"><span>目標</span></td>
+																					<td class="test-w60"><span>上限</span></td>
+																				</tr>
+																					<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span>{{staffTestInfo.khin | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.khav | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.khax | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KHIN | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KHAV | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KHAX | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.khari2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.khari1}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.khari3}}</span></td>
+																				</tr>
+																				<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span>{{staffTestInfo.knin | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.knav | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.knax | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KNIN | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KNAV | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KNAX | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.knobi2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.knobi1}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.knobi3}}</span></td>
+																				</tr>
+																				<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span>{{staffTestInfo.ktin | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.ktav | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.ktax | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KTIN | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KTAV | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.j_KTAX | dotNumber:2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.ktai2}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.ktai1}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.ktai3}}</span></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table border="0" cellpadding="0" cellspacing="1">
+															<tbody>
+																<tr>
+																	<td>
+																		<table border="0" cellpadding="0" cellspacing="1">
+																			<tbody>
+																				<tr>
+																					<td class="item-label2"><span> </span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>板厚</span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>板幅</span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>板丈</span></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																	<td>
+																		<table border="0" cellpadding="0" cellspacing="1">
+																			<tbody>
+																				<tr class="item-label1">
+																					<td class="test-w60"><span>入力Min</span></td>
+																					<td class="test-w60"><span>入力Avg</span></td>
+																					<td class="test-w60"><span>入力Max</span></td>
+																				</tr>
+																				<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span>{{staffTestInfo.kxin | dotNumber:3}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kxav | dotNumber:3}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kxax | dotNumber:3}}</span></td>
+																				</tr>
+																				<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span>{{staffTestInfo.kyin | dotNumber:3}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kyav | dotNumber:3}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kyax | dotNumber:3}}</span></td>
+																				</tr>
+																				<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span>{{staffTestInfo.kzin | dotNumber:3}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kzav | dotNumber:3}}</span></td>
+																					<td class="test-w60"><span >{{staffTestInfo.kzax | dotNumber:3}}</span></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table border="0" cellpadding="0" cellspacing="1">
+															<tbody>
+																<tr>
+																	<td>
+																		<table border="0" cellpadding="0" cellspacing="1">
+																			<tbody>
+																				<tr>
+																					<td class="item-label2"><span> </span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>板厚公差</span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>板幅公差</span></td>
+																				</tr>
+																				<tr>
+																					<td class="item-label2"><span>板丈公差</span></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																	<td>
+																		<table border="0" cellpadding="0" cellspacing="1">
+																			<tbody>
+																				<tr class="item-label1">
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_Odr_KosaP">ｵｰﾀﾞｰ(+)</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_Odr_KosaM">ｵｰﾀﾞｰ(-)</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_ProductP">製造(+)</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_Product_M">製造(-)</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_TargetP">目標(+)</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_TargetM">目標(+)</span></td>
+																				</tr>
+																				<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS01">{{staffTestInfo.kosaxs01 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS02">{{staffTestInfo.kosaxs02 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS03">{{staffTestInfo.kosaxs03 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS04">{{staffTestInfo.kosaxs04 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS05">{{staffTestInfo.kosaxs05 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS06">{{staffTestInfo.kosaxs06 | dotNumber:3 | zeroToSpace}}</span></td>
+																				</tr>
+																				<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS01">{{staffTestInfo.kosays01 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS02">{{staffTestInfo.kosays02 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS03">{{staffTestInfo.kosays03 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS04">{{staffTestInfo.kosays04 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS05">{{staffTestInfo.kosays05 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS06">{{staffTestInfo.kosays06 | dotNumber:1 | zeroToSpace}}</span></td>
+																				</tr>
+																				<tr class=" test-value-right-w70">
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS01">{{staffTestInfo.kosazs01 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS02">{{staffTestInfo.kosazs02 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS03">{{staffTestInfo.kosazs03 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS04">{{staffTestInfo.kosazs04 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS05">{{staffTestInfo.kosazs05 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS06">{{staffTestInfo.kosazs06 | dotNumber:1 | zeroToSpace}}</span></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+      </div>
+	  
+    </div>
+
+    <!-- ICAS情報タブ以外の共通部分 開始-->
+    <!--ロット番号～Yマーク日-->
+    <table border="0" cellpadding="5" cellspacing="0" style="height: 80px; left: 5px; top: 70px; position: absolute;" width="1290">
+      <tbody>
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td class=""><span>ﾛｯﾄ番号</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td class=""><span>{{common.ltno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>鋳造番号</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.cyno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td class=""><span>検査番号</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td class=""><span>{{common.knno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>ｵｰﾀﾞｰ番号</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.juno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>需要</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.jbcd}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width:40px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>BU</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.bucode}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>用途ｺｰﾄﾞ</span></td>
+                        </tr>
+                        <tr class="item-value1">
+                          <td><span>{{common.yotoc}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 150px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>用途名</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.yotoname}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>地区</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.chikucd}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 150px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>販売員</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td><span>{{common.jujsno}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 80px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td class=""><span>営業納期</span></td>
+                        </tr>
+                        <tr class=" item-value1">
+                          <td class=""><span>{{common.enoki | date:'yy/MM/dd'}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 75px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>ｶｰﾄﾞ区分</span></td>
+                        </tr>
+                        <tr class="item-value1">
+                          <td><span>{{common.jcd105}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span>本数</span></td>
+                        </tr>
+                        <tr class="item-value1">
+                          <td><span>{{common.jup}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td>
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 80px;">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td><span >Yﾏｰｸ日</span></td>
+                        </tr>
+                        <tr class="item-value1">
+                          <td><span >{{common.ymark}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table bgcolor="white" border="0" cellpadding="0" cellspacing="0" style="vertical-align: top">
+              <tbody>
+                <tr>
+                  <td>
+                    <table bgcolor="white" border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr class="item-label1">
+                          <td>
+                          	<!--材質～重量-->
+                            <table id="form1:ommonInfo_Group11" border="0" cellpadding="0" cellspacing="0">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
+                                      <tbody>
+                                        <tr class="item-label1">
+                                          <td class="item-width2"><span></span></td>
+                                        </tr>
+                                        <tr class=" item-label1">
+                                          <td class="item-width2"><span>ｵｰﾀﾞｰ</span></td>
+                                        </tr>
+                                        <tr class=" item-label1">
+                                          <td class="item-width2"><span>製造</span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                  <td>
+                                    <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
+                                      <tbody>
+                                        <tr class="item-label1">
+                                          <td class="item-width2"><span>材質</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>調質</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>板厚</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>板幅</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>板丈</span></td>
+                                          <td class="item-width2"><span>重量</span></td>
+                                        </tr>
+                                        <tr class="item-value1">
+                                          <td class="item-width2"><span>{{common.jua}}</span></td>
+                                          <td class="item-width3"><span>-</span></td>
+                                          <td class="item-width2"><span>{{common.jub}}</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>{{common.jux | dotNumber:3}}</span></td>
+                                          <td class="item-width3"><span>&times;</span></td>
+                                          <td class="item-width2"><span>{{common.juy | dotNumber:2}}</span></td>
+                                          <td class="item-width3"><span>&times;</span></td>
+                                          <td class="item-width2"><span>{{common.juz | dotNumber:1}}</span></td>
+                                          <td class="item-width2"><span>{{common.juw | dotNumber:1}}</span></td>
+                                        </tr>
+                                        <tr class="item-value1">
+                                          <td class="item-width2"><span>{{common.lta}}</span></td>
+                                          <td class="item-width3"><span>-</span></td>
+                                          <td class="item-width2"><span>{{common.ltb}}</span></td>
+                                          <td class="item-width3"><span> </span></td>
+                                          <td class="item-width2"><span>{{common.ltx | dotNumber:3}}</span></td>
+                                          <td class="item-width3"><span>&times;</span></td>
+                                          <td class="item-width2"><span>{{common.lty | dotNumber:2}}</span></td>
+                                          <td class="item-width3"><span>&times;</span></td>
+                                          <td class="item-width2"><span>{{common.ltz | dotNumber:1}}</span></td>
+                                          <td class="item-width2"><span>{{common.ryow | dotNumber:1}}</span></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td><span id="form1:space1" class="space">*</span></td>
+                  <td>
+                  	<!--得意先～納入先-->
+                    <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
+                      <tbody>
+                        <tr>
+                          <td class="item-label2"><span>得意先</span></td>
+                          <td class=" com-value-left-w180"><span>{{common.tokui}}</span></td>
+                        </tr>
+                        <tr>
+                          <td class="item-label2"><span>送り先</span></td>
+                          <td class=" com-value-left-w180"><span>{{common.oname}}</span></td>
+                        </tr>
+                        <tr>
+                          <td class="item-label2"><span>納入先</span></td>
+                          <td class=" com-value-left-w180"><span>{{common.nonyu}}</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td><span id="form1:space2" class="space">*</span></td>
+                  <td>
+                  	<!--倉入日～納期符号-->
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td><span class="DataKbnGreen">{{common.datakbn}}</span></td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span style="width:80px;">倉入日</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.ksd | date:'yy/MM/dd'}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span>試験者名</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.juno202}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span>試験No</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.shikenno}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span style="width:50px;">仮梱</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.karikon}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td><span style="width:100px;">納期符号</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td><span>{{common.nokifugo}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <span id="form1:header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
+    <span id="form1:message" class="message"></span>
+    <span id="form1:schItem_Label_Ltno" style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
+    <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno" onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
+	<span id="form1:schItem_Label_Knno" style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
+	<input type="text" ng-model="common.searchKnno" id="common_searchKnno" name="searchKnno" onclick="InputTextSelect(this);"style="height: 25px; left: 200px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="2" />
+	<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
+		<span class="glyphicon" aria-hidden="true">
+		</span>検索
+	</button>
+
+    <span id="form1:edtm" class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
+    <span id="form1:label2" class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
+    <span id="form1:hitCount" class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
+    <span ng-show="util.isPreviewRendered(common);">
+    	<a id="form1:previous_page" style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">
+   		<img id="form1:previous_page_image" src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />前</a>
+    </span>
+    <span ng-show="util.isNextRendered(common);">
+   		<a id="form1:next_page" style="left: 496px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">次
+   		<img id="form1:next_page_image" src="asset/lotdspimg/next.gif" alt="" border="0" align="top" /></a></span>
+    </span>
+    <input id="form1_hidden" name="form1_hidden" value="form1_hidden" type="hidden" />
+    <!-- ICAS情報タブ以外の共通部分 終了-->
+    </form>
+</body>
+</html>
