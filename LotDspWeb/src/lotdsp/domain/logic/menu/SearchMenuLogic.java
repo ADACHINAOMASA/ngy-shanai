@@ -118,9 +118,9 @@ public class SearchMenuLogic {
 	            if (in.getMode().equals(ICAS_MODE)) {
 	            	in.setNextGamen("IcasInfo");
 	            }else if (in.getMode().equals(STAFF_MODE)) {
-	            	in.setNextGamen("/lotdsp/progressinfo");
+	            	in.setNextGamen("ProgressInfo");
 	            }else if (in.getMode().equals(BOTH_MODE)) {
-	            	in.setNextGamen("/lotdsp/progressinfo");
+	            	in.setNextGamen("ProgressInfo");
 	            }else if (in.getMode().equals(OUT_MODE)) {
 	            	in.setNextGamen("ErrorPage");
 	            }
