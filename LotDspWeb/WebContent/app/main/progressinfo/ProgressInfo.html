@@ -15,11 +15,11 @@
             <td class="MniTabTblSelTd">
               <div class="MniTabSelTxt" title="Current Selection:"><span class=" disabled TabPad">進度情報</span></div>
             </td>
-            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/ManufacturingInfo.jsp">製造情報</a></td>
-            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/TestInfo.jsp">試験情報</a></td>
-            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/QualityInfo.jsp">品質情報</a></td>
-            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/CladInfo.jsp">クラッド情報</a></td>
-            <td><a class="MniTabLnk  TabPad" href="/lotdsp/faces/CFInfo.jsp">焼鈍情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showManufacturingInfo();">製造情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showTestInfo();">試験情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showQualityInfo();">品質情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showCladInfo();">クラッド情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showCFInfo();">焼鈍情報</a></td>
           </tr>
         </table>
       </div>
@@ -39,25 +39,25 @@
                           <tbody>
                             <tr>
                               <td class=" prog-label-center"><span>比重</span></td>
-                              <td class=" prog-value-right"><span>{{staffProgressInfo.hijyu}}</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.hijyu | dotNumber:4}}</span></td>
                               <td class=" prog-label-center"><span>設計歩留</span></td>
-                              <td class=" prog-value-right"><span>{{staffProgressInfo.sbd}}</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.sbd | dotNumber:3}}</span></td>
                               <td class=" prog-label-center"><span>保留日</span></td>
-                              <td class=" prog-value-center"><span>{{staffProgressInfo.hohdt}}</span></td>
+                              <td class=" prog-value-center"><span>{{staffProgressInfo.hohdt | date:'yyyy/MM/dd'}}</span></td>
                             </tr>
                             <tr>
                               <td class="prog-label-center"><span>単重</span></td>
-                              <td class=" prog-value-right"><span>{{staffProgressInfo.tanw}}</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.tanw | dotNumber:5}}</span></td>
                               <td class=" prog-label-center"><span>実績保留</span></td>
-                              <td class=" prog-value-right"><span>{{staffProgressInfo.kbd}}</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.kbd | dotNumber:3}}</span></td>
                               <td class=" prog-label-center"><span>解除日</span></td>
-                              <td class=" prog-value-center"><span>{{staffProgressInfo.hokdt}}</span></td>
+                              <td class=" prog-value-center"><span>{{staffProgressInfo.hokdt | date:'yyyy/MM/dd'}}</span></td>
                             </tr>
                             <tr>
                               <td class="prog-label-center"><span>投入量</span></td>
-                              <td class=" prog-value-right"><span>{{staffProgressInfo.sw}}</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.sw | dotNumber:1}}</span></td>
                               <td class=" prog-label-center"><span>設計対比</span></td>
-                              <td class=" prog-value-right"><span>{{staffProgressInfo.sraito}}</span></td>
+                              <td class=" prog-value-right"><span>{{staffProgressInfo.sraito | dotNumber:3}}</span></td>
                               <td class=" prog-label-center"><span>試験回数</span></td>
                               <td class=" prog-value-center"><span>{{staffProgressInfo.kkn}}</span></td>
                             </tr>
@@ -75,7 +75,7 @@
                                   <tbody>
                                     <tr>
                                       <td class="item-label2"><span>納管出荷日</span></td>
-                                      <td class="item-value1"><span style="width:80px;">{{staffProgressInfo.nokiymd}}</span></td>
+                                      <td class="item-value1"><span style="width:80px;">{{staffProgressInfo.nokiymd | date:'yy/MM/dd'}}</span></td>
                                       <td class="item-value4"><span>{{staffProgressInfo.jcd112}}</span></td>
                                     </tr>
                                   </tbody>
@@ -188,7 +188,7 @@
                           	<tr ng-repeat="meisaiInfo in staffProgressBoxInfos track by $index" class='{{meisaiInfo.meisaiClass}}'>
                               <td class="prog-boxno"><span class="prog-boxno">{{meisaiInfo.boxno}}</span></td>
                               <td class="prog-sbsm"><span class="prog-sbsm">{{meisaiInfo.sbsm}}</span></td>
-                              <td class="prog-sbmmddc"><span class="prog-sbmmddc">{{meisaiInfo.sbmmdd}}</span></td>
+                              <td class="prog-sbmmddc"><span class="prog-sbmmddc">{{meisaiInfo.sbmmdd | date:'yy/MM/dd'}}</span></td>
                               <td class="prog-sbx"><span class="prog-sbx">{{meisaiInfo.sbx}}</span></td>
                               <td class="prog-sby"><span class="prog-sby">{{meisaiInfo.sby}}</span></td>
                               <td class="prog-sbz"><span class="prog-sbz">{{meisaiInfo.sbz}}</span></td>
@@ -222,7 +222,7 @@
                           <tbody>
                           	<tr ng-repeat="meisaiInfo in staffProgressJBoxInfos track by $index" class='{{meisaiInfo.meisaiClass}}'>
                               <td class="prog-jbsm"><span class="prog-jbsm">{{meisaiInfo.jbsm}}</span></td>
-                              <td class="prog-jbedate"><span class="prog-jbedate">{{meisaiInfo.jbedate}}</span></td>
+                              <td class="prog-jbedate"><span class="prog-jbedate">{{meisaiInfo.jbedate | date:'yy/MM/dd HH:mm:ss'}}</span></td>
                               <td class="prog-jbx"><span class="prog-jbx">{{meisaiInfo.jbx}}</span></td>
                               <td class="prog-jby"><span class="prog-jby">{{meisaiInfo.jby}}</span></td>
                               <td class="prog-jbz"><span class="prog-jbz">{{meisaiInfo.jbz}}</span></td>
@@ -423,7 +423,7 @@
                           <td class=""><span>営業納期</span></td>
                         </tr>
                         <tr class=" item-value1">
-                          <td class=""><span>{{common.enoki}}</span></td>
+                          <td class=""><span>{{common.enoki | date:'yy/MM/dd'}}</span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -518,24 +518,24 @@
                                           <td class="item-width3"><span>-</span></td>
                                           <td class="item-width2"><span>{{common.jub}}</span></td>
                                           <td class="item-width3"><span> </span></td>
-                                          <td class="item-width2"><span>{{common.jux}}</span></td>
+                                          <td class="item-width2"><span>{{common.jux | dotNumber:3}}</span></td>
                                           <td class="item-width3"><span>&times;</span></td>
-                                          <td class="item-width2"><span>{{common.juy}}</span></td>
+                                          <td class="item-width2"><span>{{common.juy | dotNumber:2}}</span></td>
                                           <td class="item-width3"><span>&times;</span></td>
-                                          <td class="item-width2"><span>{{common.juz}}</span></td>
-                                          <td class="item-width2"><span>{{common.juw}}</span></td>
+                                          <td class="item-width2"><span>{{common.juz | dotNumber:1}}</span></td>
+                                          <td class="item-width2"><span>{{common.juw | dotNumber:1}}</span></td>
                                         </tr>
                                         <tr class="item-value1">
                                           <td class="item-width2"><span>{{common.lta}}</span></td>
                                           <td class="item-width3"><span>-</span></td>
                                           <td class="item-width2"><span>{{common.ltb}}</span></td>
                                           <td class="item-width3"><span> </span></td>
-                                          <td class="item-width2"><span>{{common.ltx}}</span></td>
+                                          <td class="item-width2"><span>{{common.ltx | dotNumber:3}}</span></td>
                                           <td class="item-width3"><span>&times;</span></td>
-                                          <td class="item-width2"><span>{{common.lty}}</span></td>
+                                          <td class="item-width2"><span>{{common.lty | dotNumber:2}}</span></td>
                                           <td class="item-width3"><span>&times;</span></td>
-                                          <td class="item-width2"><span>{{common.ltz}}</span></td>
-                                          <td class="item-width2"><span>{{common.ryow}}</span></td>
+                                          <td class="item-width2"><span>{{common.ltz | dotNumber:1}}</span></td>
+                                          <td class="item-width2"><span>{{common.ryow | dotNumber:1}}</span></td>
                                         </tr>
                                       </tbody>
                                     </table>
@@ -584,7 +584,7 @@
                                   <td><span style="width:80px;">倉入日</span></td>
                                 </tr>
                                 <tr class="item-value1">
-                                  <td><span>{{common.ksd}}</span></td>
+                                  <td><span>{{common.ksd | date:'yy/MM/dd'}}</span></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -671,7 +671,7 @@
 		</span>検索
 	</button>
 
-    <span id="form1:edtm" class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm}}</span>
+    <span id="form1:edtm" class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
     <span id="form1:label2" class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
     <span id="form1:hitCount" class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
     <span ng-show="util.isPreviewRendered(common);">

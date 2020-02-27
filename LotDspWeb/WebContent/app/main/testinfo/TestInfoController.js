@@ -141,7 +141,7 @@
     		}
     		//画面遷移
 			,showProgressInfo:function(){
-				$state.go('/lotdsp/progressinfo');
+				$state.go('ProgressInfo');
     		}
     		,showManufacturingInfo:function(){
     			$state.go('ManufacturingInfo');
@@ -150,10 +150,10 @@
 				$state.go('QualityInfo');
     		}
 			,showCladInfo:function(){
-				$state.go('/lotdsp/cladinfo');
+				$state.go('CladInfo');
     		}
 			,showCFInfo:function(){
-				$state.go('/lotdsp/cfinfo');
+				$state.go('CFInfo');
     		}
         };
 		//---------------------------------------------------------------

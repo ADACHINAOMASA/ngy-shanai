@@ -165,6 +165,21 @@
 		    	//メッセージエリアのクリア
 		    	$("#messageArea").text("");
         	}
+    		,showManufacturingInfo:function(){
+    			$state.go('ManufacturingInfo');
+        	}
+			,showTestInfo:function(){
+				$state.go('TestInfo');
+    		}
+			,showQualityInfo:function(){
+				$state.go('QualityInfo');
+    		}
+			,showCladInfo:function(){
+				$state.go('CladInfo');
+    		}
+			,showCFInfo:function(){
+				$state.go('CFInfo');
+    		}
         };
 		//---------------------------------------------------------------
         $scope.util = {

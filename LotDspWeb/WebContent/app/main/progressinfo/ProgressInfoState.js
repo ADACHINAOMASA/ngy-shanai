@@ -10,13 +10,13 @@
     // 引数は依存の内容と一致する
     var newState = function ($stateProvider, stateHelperProvider, $urlRouterProvider) {
 
-        var base = '/lotdsp/progressinfo';
+        var base = 'ProgressInfo';
         var controller = 'ProgressInfoController';
         var templateUrl = 'app/main/progressinfo/ProgressInfo.html';
 
         $stateProvider
             .state(base, {
-                url: base
+                url: '/lotdsp/faces/' + base + '.jsp'
                 , controller: controller
                 , templateUrl: templateUrl
             })

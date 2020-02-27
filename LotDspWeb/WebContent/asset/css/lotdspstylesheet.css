@@ -434,7 +434,7 @@ input.full-width {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
   font-size: 18px;
-  height: 15px;
+  height: 25px;
   width: 80px;
   text-align: center;
 }
@@ -574,7 +574,7 @@ input.full-width {
    font-family: "ＭＳ Ｐゴシック";
    text-align: center;
    vertical-align: top;
-   width: 35px
+   width: 40px;
 }
 
 .menu-text {
@@ -865,7 +865,7 @@ input.full-width {
 }
 
 .test-w60 {
-   height: 15px;
+   height: 25px;
    width: 60px;
 }
 
@@ -911,14 +911,14 @@ input.full-width {
   font-family: "ＭＳ Ｐゴシック";
   font-size: 18px;
   width: 100px;
-  height: 15px;
+  height: 25px;
   text-align: center;
 }
 .qua-kocyoryoku {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 60px;
    text-align: right;
 }
@@ -926,7 +926,7 @@ input.full-width {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 60px;
    text-align: right;
 }
@@ -934,7 +934,7 @@ input.full-width {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 60px;
    text-align: right;
 }
@@ -942,7 +942,7 @@ input.full-width {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 60px;
    text-align: right;
 }
@@ -950,7 +950,7 @@ input.full-width {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 60px;
    text-align: center;
 }
@@ -958,7 +958,7 @@ input.full-width {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 60px;
    text-align: right;
 }
@@ -966,7 +966,7 @@ input.full-width {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 60px;
    text-align: right;
 }
@@ -974,7 +974,7 @@ input.full-width {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 60px;
    text-align: center;
 }
@@ -982,7 +982,7 @@ input.full-width {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
    font-size: 18px;
-   height: 15px;
+   height: 25px;
    width: 600px;
    text-align: left;
 }
@@ -3930,7 +3930,7 @@ font-size: 18px;
 .clad-pit-label {
   background-color: #e4e3e3;
   font-size: 15px;
-  height: 15px;
+  height: 25px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
@@ -3938,8 +3938,8 @@ font-size: 18px;
 
 .clad-pitj-value {
   background-color: #ffffcc;
-  font-size: 12px;
-  height: 15px;
+  font-size: 15px;
+  height: 25px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
@@ -3947,8 +3947,8 @@ font-size: 18px;
 
 .clad-pit-values {
   background-color: #ffffcc;
-  font-size: 12px;
-  height: 15px;
+  font-size: 15px;
+  height: 25px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
@@ -3956,8 +3956,8 @@ font-size: 18px;
 
 .clad-pit-pitj {
   background-color: #ffffcc;
-  font-size: 12px;
-  height: 15px;
+  font-size: 15px;
+  height: 25px;
   padding-left: 30px;
   padding-right: 30px;
   text-align: center;
@@ -3965,8 +3965,8 @@ font-size: 18px;
 
 .clad-pit-pit {
   background-color: #ffffcc;
-  font-size: 12px;
-  height: 15px;
+  font-size: 15px;
+  height: 25px;
   padding-left: 23px;
   padding-right: 23px;
   text-align: center;
@@ -3974,8 +3974,8 @@ font-size: 18px;
 
 .clad-pit-prj {
   background-color: #ffffcc;
-  font-size: 12px;
-  height: 15px;
+  font-size: 15px;
+  height: 25px;
   padding-left: 23px;
   padding-right: 23px;
   text-align: center;
@@ -3983,8 +3983,8 @@ font-size: 18px;
 
 .clad-pit-pitbi {
   background-color: #ffffcc;
-  font-size: 12px;
-  height: 15px;
+  font-size: 15px;
+  height: 25px;
   padding-left: 23px;
   padding-right: 23px;
   text-align: center;
@@ -4310,8 +4310,8 @@ font-size: 18px;
 .cf-item-g1-value1 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
-   height: 15px;
+   font-size: 15px;
+   height: 22px;
    width: 100px;
    text-align: center;
 }
@@ -4321,7 +4321,7 @@ font-size: 18px;
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
   font-weight: normal;
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   /*width: 80px;*/
   padding-left: 3px;
@@ -4333,7 +4333,7 @@ font-size: 18px;
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
   font-weight: normal;
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   /*width: 60px;*/
   padding-left: 1px;
@@ -4345,7 +4345,7 @@ font-size: 18px;
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
   font-weight: normal;
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   /*width: 90px;*/
   padding-left: 3px;
@@ -4356,7 +4356,7 @@ font-size: 18px;
 .cf-item-g2-value1 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    /*width: 80px;*/
   padding-left: 3px;
@@ -4369,7 +4369,7 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
   /*padding-left: 3px;*/
    padding-right: 15px;
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    /*width: 80px;*/
    text-align: right;
@@ -4380,7 +4380,7 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
    padding-left: 7px;
    /*padding-right: 20px;*/
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    /*width: 60px;*/
    text-align: Left;
@@ -4391,7 +4391,7 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
    /*padding-left: 203px;*/
    padding-right: 5px;
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    /*width: 60px;*/
    text-align: right;
@@ -4402,7 +4402,7 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
    /*padding-left: 203px;*/
    padding-right: 15px;
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    /*width: 60px;*/
    text-align: right;
@@ -4413,7 +4413,7 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
    /*padding-left: 203px;*/
    padding-right: 5px;
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    /*width: 60px;*/
    text-align: right;
@@ -4422,7 +4422,7 @@ font-size: 18px;
 .cf-item-g2-value7 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    /*width: 90px;*/
   padding-left: 3px;
@@ -4435,7 +4435,7 @@ font-size: 18px;
 .cf-item-g3-label1 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   /*width: 60px;*/
   text-align: center;
@@ -4446,7 +4446,7 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
    /*padding-left: 203px;*/
    padding-right: 10px;
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    /*width: 64px;*/
    text-align: right;
@@ -4455,8 +4455,8 @@ font-size: 18px;
 .cf-item-g3-value2 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
-   height: 15px;
+   font-size: 15px;
+   height: 22px;
    width: 60px;
    text-align: center;
 }
@@ -4465,7 +4465,7 @@ font-size: 18px;
 .cf-item-g4-label1 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 100px;
   text-align: center;
@@ -4474,8 +4474,8 @@ font-size: 18px;
 .cf-item-g4-value1 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
-   height: 15px;
+   font-size: 15px;
+   height: 22px;
    width: 100px;
    text-align: center;
 }
@@ -4484,7 +4484,7 @@ font-size: 18px;
 .cf-item-g5-label1 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 60px;
   text-align: center;
@@ -4494,7 +4494,7 @@ font-size: 18px;
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
   font-weight: normal;
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 80px;
   text-align: center;
@@ -4505,10 +4505,12 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
    /*padding-left: 20px;*/
    /*padding-right: 20px;*/
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    width: 60px;
    text-align: center;
+   padding-left: 1px;
+   padding-right: 1px;
 }
 
 .cf-item-g5-value2 {
@@ -4516,7 +4518,7 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
    /*padding-left: 20px;*/
    padding-right: 15px;
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    width: 60px;
    text-align: right;
@@ -4525,7 +4527,7 @@ font-size: 18px;
 .cf-item-g5-value3 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    width: 40px;
    text-align: center;
@@ -4535,7 +4537,7 @@ font-size: 18px;
 .cf-item-g51-label1 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 400px;
   text-align: left;
@@ -4544,7 +4546,7 @@ font-size: 18px;
 .cf-item-g51-label2 {
   background-color: rgb(153, 204, 255);
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 250px;
   text-align: left;
@@ -4553,7 +4555,7 @@ font-size: 18px;
 .cf-item-g51-label3 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 60px;
   text-align: center;
@@ -4562,7 +4564,7 @@ font-size: 18px;
 .cf-item-g51-value1 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    width: 60px;
    text-align: center;
@@ -4570,8 +4572,8 @@ font-size: 18px;
 
 .cf-item-g51-value2 {
   background-color: #ffffcc;
-  font-size: 12px;
-  height: 15px;
+  font-size: 15px;
+  height: 22px;
   width: 100px;
   text-align: center;
 }
@@ -4580,7 +4582,7 @@ font-size: 18px;
 .cf-item-g6-label1 {
   background-color: rgb(153, 204, 255);
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 150px;
   text-align: left;
@@ -4589,7 +4591,7 @@ font-size: 18px;
 .cf-item-g6-label2 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 150px;
   text-align: left;
@@ -4598,7 +4600,7 @@ font-size: 18px;
 .cf-item-g6-label3 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 184px;
   text-align: center;
@@ -4607,7 +4609,7 @@ font-size: 18px;
 .cf-item-g6-label4 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 60px;
   text-align: center;
@@ -4618,7 +4620,7 @@ font-size: 18px;
    font-family: "ＭＳ Ｐゴシック";
    /*padding-left: 20px;*/
    padding-right: 7px;
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    width: 60px;
    text-align: right;
@@ -4627,7 +4629,7 @@ font-size: 18px;
 .cf-item-label1 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 60px;
   text-align: center;
@@ -4636,7 +4638,7 @@ font-size: 18px;
 .cf-item-value1 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    width: 60px;
    text-align: center;
@@ -4645,7 +4647,7 @@ font-size: 18px;
 
 .cf-label-left {
   background-color: #e4e3e3;
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   padding-left: 5px;
   /*padding-left: 5px;*/
@@ -4656,7 +4658,7 @@ font-size: 18px;
 
 .cf-value-center {
   background-color: #ffffcc;
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   /*padding-left: 20px;*/
   /*padding-right: 20px;*/
@@ -4665,7 +4667,7 @@ font-size: 18px;
 
 .cf-value-center1 {
   background-color: #ffffcc;
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 100px;
   text-align: center;
@@ -4675,7 +4677,7 @@ font-size: 18px;
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
   font-weight: normal;
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 80px;
   text-align: center;
@@ -4684,7 +4686,7 @@ font-size: 18px;
 .cf-item-label3 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 402px;
   text-align: left;
@@ -4693,7 +4695,7 @@ font-size: 18px;
 .cf-item-label4 {
   background-color: rgb(153, 204, 255);
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 223px;
   text-align: left;
@@ -4702,7 +4704,7 @@ font-size: 18px;
 .cf-item-label5 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 50px;
   text-align: center;
@@ -4711,7 +4713,7 @@ font-size: 18px;
 .cf-item-label6 {
   background-color: rgb(153, 204, 255);
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 150px;
   text-align: left;
@@ -4720,7 +4722,7 @@ font-size: 18px;
 .cf-item-label7 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 150px;
   text-align: left;
@@ -4729,7 +4731,7 @@ font-size: 18px;
 .cf-item-label8 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 184px;
   text-align: center;
@@ -4738,7 +4740,7 @@ font-size: 18px;
 .cf-item-label9 {
   background-color: #e4e3e3;
   font-family: "ＭＳ Ｐゴシック";
-  font-size: 12px;
+  font-size: 15px;
   height: 15px;
   width: 60px;
   text-align: center;
@@ -4747,7 +4749,7 @@ font-size: 18px;
 .cf-item-value2 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    width: 40px;
    text-align: center;
@@ -4756,7 +4758,7 @@ font-size: 18px;
 .cf-item-value3 {
    background-color: #ffffcc;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    height: 15px;
    width: 80px;
    text-align: center;
@@ -4765,7 +4767,7 @@ font-size: 18px;
 .cf-header {
    background-color: #e4e3e3;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    font-weight: normal;
    height: 15px;
    text-align: center;
@@ -4776,7 +4778,7 @@ font-size: 18px;
    background-color: white;
    color: white;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    text-align: left;
    vertical-align: middle;
    height: 15px;
@@ -4787,7 +4789,7 @@ font-size: 18px;
    background-color: white;
    color: white;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    text-align: left;
    vertical-align: middle;
    height: 15px;
@@ -4798,7 +4800,7 @@ font-size: 18px;
    background-color: white;
    color: white;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    text-align: left;
    vertical-align: middle;
    height: 15px;
@@ -4809,7 +4811,7 @@ font-size: 18px;
    background-color: white;
    color: white;
    font-family: "ＭＳ Ｐゴシック";
-   font-size: 12px;
+   font-size: 15px;
    text-align: left;
    vertical-align: middle;
    height: 15px;

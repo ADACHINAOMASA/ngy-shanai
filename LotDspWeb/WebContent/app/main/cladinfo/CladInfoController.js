@@ -30,7 +30,7 @@
 		$scope.staffProgressInfo = {};
 		
 		$scope.cladInfo = {};
-		$scope.cladBoxInfos = {};
+		$scope.cladBoxInfos = [];
 		
 		//---------------------------------------------------------------
 		// アクション定義
@@ -149,7 +149,7 @@
      		}
     		//画面遷移
 			,showProgressInfo:function(){
-				$state.go('/lotdsp/progressinfo');
+				$state.go('ProgressInfo');
     		}
     		,showManufacturingInfo:function(){
     			$state.go('ManufacturingInfo');
