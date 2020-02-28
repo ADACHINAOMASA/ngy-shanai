@@ -328,7 +328,7 @@ input.full-width {
   font-weight: normal;
   color: white;
   height: 15px;
-  /* text-align: center; */
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -1035,7 +1035,7 @@ input.full-width {
 }
 
 .icas-ltno {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 90px;
@@ -1044,7 +1044,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-knno {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 85px;
@@ -1053,7 +1053,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-cyno {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 85px;
@@ -1062,7 +1062,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-juno {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 85px;
@@ -1071,7 +1071,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-kjyo {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 50px;
@@ -1080,7 +1080,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-pity {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 80px;
@@ -1089,7 +1089,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-pity {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 145px;
@@ -1098,7 +1098,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-noki {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 70px;
@@ -1107,7 +1107,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-noki {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 120px;
@@ -1116,7 +1116,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-order {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1125,7 +1125,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-jua {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -1134,7 +1134,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-jub {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -1143,7 +1143,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-jux {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 80px;
@@ -1152,7 +1152,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-x {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1161,7 +1161,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-juy {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -1170,7 +1170,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-juz {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -1179,7 +1179,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-seizo {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1188,7 +1188,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-lta {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -1197,7 +1197,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-ltb {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -1206,7 +1206,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-ltx {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 80px;
@@ -1215,7 +1215,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-lty {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -1224,7 +1224,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-ltz {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -1233,7 +1233,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-weight {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 65px;
@@ -1242,7 +1242,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-juw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -1251,7 +1251,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-jumh {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1260,7 +1260,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-jumh {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 100px;
@@ -1269,7 +1269,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-tanw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 65px;
@@ -1278,7 +1278,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-tanw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 90px;
@@ -1287,7 +1287,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-hijyu {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1296,7 +1296,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-hijyu {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 80px;
@@ -1305,7 +1305,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-skigo {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -1314,7 +1314,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-ju {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 80px;
@@ -1323,7 +1323,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-pit {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -1332,7 +1332,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-hot {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -1341,7 +1341,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-se {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1350,7 +1350,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-seizo {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 45px;
@@ -1359,7 +1359,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-ku {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1368,7 +1368,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-kura {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 45px;
@@ -1377,7 +1377,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-su {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1386,7 +1386,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-slab {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 45px;
@@ -1395,7 +1395,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-me {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1404,7 +1404,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-sca {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 45px;
@@ -1413,7 +1413,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-yu {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1422,7 +1422,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-yukoy {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 45px;
@@ -1431,7 +1431,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-convna {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 140px;
@@ -1440,7 +1440,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-cas {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1449,7 +1449,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-casdt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 30px;
@@ -1458,7 +1458,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-casw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 80px;
@@ -1467,7 +1467,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-ssw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 70px;
@@ -1476,7 +1476,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-sswdt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 50px;
@@ -1485,7 +1485,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-ssww {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 80px;
@@ -1494,7 +1494,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-label-sca {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1503,7 +1503,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-scadt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 40px;
@@ -1512,7 +1512,7 @@ input.full-width {
   vertical-align: middle;
 }
 .icas-scaw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
 font-size: 18px;
   color: red;
   width: 90px;
@@ -1521,7 +1521,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-rolw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 40px;
@@ -1530,7 +1530,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-rolw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -1539,7 +1539,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-sagw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 50px;
@@ -1548,7 +1548,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-sagw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -1557,7 +1557,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-pit {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1566,7 +1566,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-pitdt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 30px;
@@ -1575,7 +1575,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ptr {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 30px;
@@ -1584,7 +1584,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-no1 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 40px;
@@ -1593,7 +1593,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ptj {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 40px;
@@ -1602,7 +1602,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-hot {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 40px;
@@ -1611,7 +1611,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-hotz {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 80px;
@@ -1620,7 +1620,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-mm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 50px;
@@ -1629,7 +1629,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ht1 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 30px;
@@ -1638,7 +1638,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-doagari {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 80px;
@@ -1647,7 +1647,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ht2 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 30px;
@@ -1656,7 +1656,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-dokensa {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 70px;
@@ -1665,7 +1665,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ksw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -1674,7 +1674,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-otw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 40px;
@@ -1683,7 +1683,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-otw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 30px;
@@ -1692,7 +1692,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-nonna {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 15px;
@@ -1701,7 +1701,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-nonna {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 155px;
@@ -1710,7 +1710,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-okuri {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 15px;
@@ -1719,7 +1719,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-okuri {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 155px;
@@ -1728,7 +1728,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-tokui {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 20px;
@@ -1737,7 +1737,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-tokui {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 180px;
@@ -1746,7 +1746,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-yoto {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 40px;
@@ -1756,7 +1756,7 @@ font-size: 18px;
   padding-left: 3px;
 }
 .icas-yotoc {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 80px;
@@ -1765,7 +1765,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-yoton {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 100px;
@@ -1775,27 +1775,27 @@ font-size: 18px;
 }
 
 .icas-label-omote {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
-  width: 60px;
+  width: 63px;
   height: 15px;
   text-align: left;
   vertical-align: middle;
 }
 
 .icas-omote {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
-  width: 70px;
+  width: 67px;
   height: 15px;
   text-align: left;
   vertical-align: middle;
 }
 
 .icas-label-ura {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1805,7 +1805,7 @@ font-size: 18px;
 }
 
 .icas-ura {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -1815,27 +1815,27 @@ font-size: 18px;
 }
 
 .icas-label-hanten {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
-  width: 40px;
+  width: 43px;
   height: 15px;
   text-align: left;
   vertical-align: middle;
 }
 
 .icas-hanten {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
-  width: 40px;
+  width: 37px;
   height: 15px;
   text-align: left;
   vertical-align: middle;
 }
 
 .icas-label-pa {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1845,7 +1845,7 @@ font-size: 18px;
 }
 
 .icas-pa {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -1855,7 +1855,7 @@ font-size: 18px;
 }
 
 .icas-label-clr {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 40px;
@@ -1865,7 +1865,7 @@ font-size: 18px;
 }
 
 .icas-clr {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -1875,7 +1875,7 @@ font-size: 18px;
 }
 
 .icas-label-men {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1885,7 +1885,7 @@ font-size: 18px;
 }
 
 .icas-men {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -1895,7 +1895,7 @@ font-size: 18px;
 }
 
 .icas-label-tuya {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
@@ -1905,7 +1905,7 @@ font-size: 18px;
 }
 
 .icas-tuya {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -1915,17 +1915,17 @@ font-size: 18px;
 }
 
 .icas-label-fuko {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
-  width: 40px;
+  width: 43px;
   height: 15px;
   text-align: left;
   vertical-align: middle;
 }
 
 .icas-fuko {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -1935,17 +1935,17 @@ font-size: 18px;
 }
 
 .icas-juno202 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
-  width: 100px;
+  width: 97px;
   height:15px;
   text-align:left;
   vertical-align: middle;
 }
 
 .icas-label-sikakari {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 100px;
@@ -1955,7 +1955,7 @@ font-size: 18px;
 }
 
 .icas-sksbsm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 220px;
@@ -1965,7 +1965,7 @@ font-size: 18px;
 }
 
 .icas-label-syusei {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1975,7 +1975,7 @@ font-size: 18px;
 }
 
 .icas-syudtm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 120px;
@@ -1985,7 +1985,7 @@ font-size: 18px;
 }
 
 .icas-label-toroku {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -1995,7 +1995,7 @@ font-size: 18px;
 }
 
 .icas-adddt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 60px;
@@ -2005,7 +2005,7 @@ font-size: 18px;
 }
 
 .icas-label-koshin {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -2015,7 +2015,7 @@ font-size: 18px;
 }
 
 .icas-mntdtm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 120px;
@@ -2037,7 +2037,7 @@ font-size: 18px;
 .icas-mnttm {
 }
 .icas-box-header-symbol1 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 30px;
@@ -2046,7 +2046,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-box-header-symbol2 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 30px;
@@ -2055,7 +2055,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-box-header-symbol3 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 30px;
@@ -2064,7 +2064,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-box-header-symbol4 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 30px;
@@ -2073,7 +2073,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-roll {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -2082,7 +2082,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-hpc {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -2091,7 +2091,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-hotpc {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 80px;
@@ -2100,7 +2100,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-g2 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 120px;
@@ -2109,7 +2109,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ryou {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 60px;
@@ -2118,7 +2118,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ryow {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -2127,7 +2127,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ryon {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -2136,7 +2136,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-bu {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 30px;
@@ -2145,7 +2145,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-br {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 55px;
@@ -2154,7 +2154,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-ta {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 30px;
@@ -2163,7 +2163,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-tr {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -2172,7 +2172,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-boxno {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 20px;
@@ -2181,7 +2181,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-boxno {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 20px;
@@ -2191,7 +2191,7 @@ font-size: 18px;
 }
 /* sbsmbx */
 .icas-label-sbsm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -2200,7 +2200,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-sbsm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 40px;
@@ -2209,7 +2209,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-sbpat {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 30px;
@@ -2220,14 +2220,14 @@ font-size: 18px;
 .icas-sbpat {
   text-align:left;
   vertical-align: middle;
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 30px;
   height:20px;
 }
 .icas-label-sbx {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 55px;
@@ -2236,7 +2236,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-sbx {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 50px;
@@ -2245,7 +2245,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-sbw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 50px;
@@ -2255,7 +2255,7 @@ font-size: 18px;
   padding-left: 10px;
 }
 .icas-sbw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 50px;
@@ -2264,7 +2264,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-startdt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 80px;
@@ -2273,7 +2273,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-startdt{
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 80px;
@@ -2283,7 +2283,7 @@ font-size: 18px;
 }
 /* jbsmbx */
 .icas-label-jbsm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -2292,7 +2292,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-jbsm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 45px;
@@ -2302,7 +2302,7 @@ font-size: 18px;
   padding-left: 5px;
 }
 .icas-jbpat {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 20px;
@@ -2311,7 +2311,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-enddt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 95px;
@@ -2320,7 +2320,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-enddt{
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 95px;
@@ -2329,7 +2329,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-jbx {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -2338,7 +2338,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-jbx {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 70px;
@@ -2347,7 +2347,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-jby {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -2356,7 +2356,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-jby {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 70px;
@@ -2365,7 +2365,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-jbz {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -2374,7 +2374,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-jbz {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 70px;
@@ -2383,7 +2383,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-jbrw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 50px;
@@ -2392,7 +2392,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-jbrw {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 50px;
@@ -2401,7 +2401,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-jbrmh {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 70px;
@@ -2410,7 +2410,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-jbrmh {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 70px;
@@ -2419,7 +2419,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-label-jbbn {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 10px;
@@ -2429,7 +2429,7 @@ font-size: 18px;
   padding-left: 5px;
 }
 .icas-jbbn {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 10px;
@@ -2439,7 +2439,7 @@ font-size: 18px;
   padding-left: 3px;
 }
 .icas-yojyo {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 150px;
@@ -2448,7 +2448,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-aldt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: red;
   width: 40px;
@@ -2457,7 +2457,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-sydt {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 80px;
@@ -2466,7 +2466,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-magmsg {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 120px;
@@ -2475,7 +2475,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-hhmm {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -2484,7 +2484,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-jbcd {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 60px;
@@ -2493,7 +2493,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-b {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 20px;
@@ -2503,7 +2503,7 @@ font-size: 18px;
 }
 
 .icas-box-footer-symbol1 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 20px;
@@ -2512,7 +2512,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-box-footer-symbol2 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: lime;
   width: 40px;
@@ -2521,7 +2521,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-box-footer-symbol3 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 90px;
@@ -2530,7 +2530,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-box-footer-symbol4 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -2539,7 +2539,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-box-footer-symbol5 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -2548,7 +2548,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-box-footer-symbol6 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -2557,7 +2557,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-karikon-flg {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 18px;
   color: white;
   width: 40px;
@@ -2566,7 +2566,7 @@ font-size: 18px;
   vertical-align: middle;
 }
 .icas-msg {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 20px;
@@ -2575,7 +2575,7 @@ font-size: 18px;
   /* margin-left: 5px; */
 }
 .icas-msg1 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 75px; /* 100px */
@@ -2584,7 +2584,7 @@ font-size: 18px;
   margin-left: 5px;
 }
 .icas-msg2 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 80px; /* 110px: */
@@ -2593,7 +2593,7 @@ font-size: 18px;
   margin-left: 5px;
 }
 .icas-msg3 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 14px;
   color: red;
   width: 200px; /* 110px; */
@@ -2602,7 +2602,7 @@ font-size: 18px;
   margin-left: 5px;
 }
 .icas-msg4 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 75px; /* 110px; */
@@ -2611,7 +2611,7 @@ font-size: 18px;
   margin-left: 5px;
 }
 .icas-msg5 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 70px; /* 90px; */
@@ -2620,7 +2620,7 @@ font-size: 18px;
   margin-left: 5px;
 }
 .icas-msg6 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 120px; /* 120px; */
@@ -2629,7 +2629,7 @@ font-size: 18px;
   margin-left: 5px;
 }
 .icas-msg7 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 100px; /* 110px */
@@ -2638,7 +2638,7 @@ font-size: 18px;
   margin-left: 5px;
 }
 .icas-msg8 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 30px; /* 30px; */
@@ -2647,7 +2647,7 @@ font-size: 18px;
   margin-left: 5px;
 }
 .icas-msg9 {
-  font-family: "ＭＳ Ｐゴシック";
+  font-family: "ＭＳ ゴシック";
   font-size: 16px;
   color: red;
   width: 30px; /* 30px; */

@@ -19,6 +19,8 @@ import lotdsp.domain.nagoya.bean.StaffProgressBean;
 import lotdsp.domain.nagoya.bean.StaffQualityBean;
 import lotdsp.domain.nagoya.bean.StaffQualityBoxBean;
 import lotdsp.domain.nagoya.bean.StaffTestBean;
+import lotdsp.domain.nagoya.model.IcasMessage;
+import lotdsp.domain.nagoya.model.IcasRecalc;
 import lotdsp.domain.nagoya.model.StaffRecalc;
 import lotdsp.domain.nagoya.sql.LotDspService;
 
@@ -204,11 +206,15 @@ public class SearchDataLogic {
     	//サービス(sql)の取得
         LotDspService svc = new LotDspService();
         IcasBean icasBean = new IcasBean();
+        IcasMessage icasMessage = new IcasMessage();
         //ICAS版ﾛｯﾄ情報取得
         try {
         	//sqlの実行
         	icasBean = svc.FindIcasInfo(paraLinkkey,cyuzoYy);
-        	in.setIcasBean(icasBean);
+        	in.setIcasBean(new IcasRecalc().setSbmh(icasBean));
+        	icasMessage.getConvey(icasBean);
+        	icasMessage.getMagMsg(icasBean);
+        	icasMessage.getMsg(icasBean);
 
         } catch(SQLException e){
 			in.setMessage("実行エラー" + e.getErrorCode());

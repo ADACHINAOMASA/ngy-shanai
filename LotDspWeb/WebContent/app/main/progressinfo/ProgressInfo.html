@@ -11,7 +11,7 @@
       <div class="MniTabDiv">
         <table border="0" cellspacing="0" cellpadding="0" class="MniTabTbl" title="">
           <tr>
-            <td><a class="MniTabLnk TabPad" href="/lotdsp/menu">ICAS情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showIcasInfo();">ICAS情報</a></td>
             <td class="MniTabTblSelTd">
               <div class="MniTabSelTxt" title="Current Selection:"><span class=" disabled TabPad">進度情報</span></div>
             </td>
@@ -189,14 +189,14 @@
                               <td class="prog-boxno"><span class="prog-boxno">{{meisaiInfo.boxno}}</span></td>
                               <td class="prog-sbsm"><span class="prog-sbsm">{{meisaiInfo.sbsm}}</span></td>
                               <td class="prog-sbmmddc"><span class="prog-sbmmddc">{{meisaiInfo.sbmmdd | date:'yy/MM/dd'}}</span></td>
-                              <td class="prog-sbx"><span class="prog-sbx">{{meisaiInfo.sbx}}</span></td>
-                              <td class="prog-sby"><span class="prog-sby">{{meisaiInfo.sby}}</span></td>
-                              <td class="prog-sbz"><span class="prog-sbz">{{meisaiInfo.sbz}}</span></td>
-                              <td class="prog-sbw"><span class="prog-sbw">{{meisaiInfo.sbw}}</span></td>
+                              <td class="prog-sbx"><span class="prog-sbx">{{meisaiInfo.sbx | dotNumber:3}}</span></td>
+                              <td class="prog-sby"><span class="prog-sby">{{meisaiInfo.sby | dotNumber:2}}</span></td>
+                              <td class="prog-sbz"><span class="prog-sbz">{{meisaiInfo.sbz | dotNumber:1}}</span></td>
+                              <td class="prog-sbw"><span class="prog-sbw">{{meisaiInfo.sbw | dotNumber:1}}</span></td>
                               <td class="prog-sbpat"><span class="prog-sbpat">{{meisaiInfo.sbpat}}</span></td>
                               <td class="prog-sbyky"><span class="prog-sbyky">{{meisaiInfo.sbyky}}</span></td>
                               <td class="prog-sbtty"><span class="prog-sbtty">{{meisaiInfo.sbtty}}</span></td>
-                              <td class="prog-sbmh"><span class="prog-sbmh">{{meisaiInfo.sbmh}}</span></td>
+                              <td class="prog-sbmh"><span class="prog-sbmh">{{meisaiInfo.sbmh | dotNumber:1}}</span></td>
                           	</tr>
                           </tbody>
                         </table>

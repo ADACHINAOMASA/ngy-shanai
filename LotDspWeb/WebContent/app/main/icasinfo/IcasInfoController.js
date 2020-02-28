@@ -4,7 +4,7 @@
     // <html lang="jp" ng-app="app">
     var moduleName = 'app';
 
-    var controllerName = 'ManufacturingInfoController';
+    var controllerName = 'IcasInfoController';
     var lotInfoStorage = 'ngStorage-lotDspInfo';
 
     // 必要な依存を列挙
@@ -29,7 +29,8 @@
 		//進度情報基本データ
 		$scope.staffProgressInfo = {};
 		
-		$scope.staffManufactureInfo = {};
+		$scope.icasInfo = {};
+		$scope.icasBoxInfos = [];
 		
 		//---------------------------------------------------------------
 		// アクション定義
@@ -41,7 +42,7 @@
             	//進度情報基本データの設定
         		$scope.action.setStaffProgressInfoData();
         		//画面別データ取得
-        		$scope.action.setStaffManufactureInfosData();
+        		$scope.action.setIcasInfosData();
         	}
 	    	//共通データの設定
 			,setCommonData:function(){
@@ -136,16 +137,27 @@
     			$scope.staffProgressInfo.gai_OKURI3 = JSON.parse(localStorage.getItem(lotInfoStorage)).staffProgressBean.gai_OKURI3;
     		}
         	//データの設定
-    		,setStaffManufactureInfosData:function(){
-    			$scope.staffManufactureInfo = JSON.parse(localStorage.getItem(lotInfoStorage)).staffManufactureBean;
+    		,setIcasInfosData:function(){
+    			$scope.icasInfo = JSON.parse(localStorage.getItem(lotInfoStorage)).icasBean;
+    			if ($scope.icasInfo.icasBoxInfos != null) {
+        			if ($scope.icasInfo.icasBoxInfos.length > 0) {
+        		        for(var i = 0; i < $scope.icasInfo.icasBoxInfos.length; i++) {
+        	    			$scope.icasBoxInfos.push($scope.icasInfo.icasBoxInfos[i]);
+        		        }
+            		}
+    			}
+    			//メッセージ設定
+        		$scope.action.setIcasMsgData();
+    		}
+    		,setIcasMsgData:function(){
     		}
     		//画面遷移
-			,showIcasInfo:function(){
-				$state.go('IcasInfo');
-    		}
 			,showProgressInfo:function(){
 				$state.go('ProgressInfo');
     		}
+    		,showManufacturingInfo:function(){
+    			$state.go('ManufacturingInfo');
+        	}
 			,showTestInfo:function(){
 				$state.go('TestInfo');
     		}

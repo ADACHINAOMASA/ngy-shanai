@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+  <style type="text/css">
+  	body {
+  		background-color: rgb(0, 0, 0);
+  	}
+  </style>
+</head>
+<body id="body1">
+  <form id="form1" class="form">
+    <div style="height: 570px; left: 0px; top: 30px; position: absolute; width: 100%" class="tabSet">
+      <!-- タブ項目 -->
+      <div class="MniTabDiv">
+        <table border="0" cellspacing="0" cellpadding="0" class="MniTabTbl" title="">
+          <tr>
+            <td class="MniTabTblSelTd">
+              <div class="MniTabSelTxt" title="Current Selection:"><span class="disabled TabPad">ICAS情報</span></div>
+            </td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showProgressInfo();">進度情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showManufacturingInfo();">製造情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showTestInfo();">試験情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showQualityInfo();">品質情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showCladInfo();">クラッド情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showCFInfo();">焼鈍情報</a></td>
+          </tr>
+        </table>
+      </div>
+
+	  <!-- 各タブ固有項目 -->
+      <div style="position: relative; -rave-layout: grid; height: 540px; position: relative; width: 980px; -rave-layout: grid; line-height: normal;">
+		<table border="0" cellpadding="0" cellspacing="0" style="height: 140px; left: 10px; top: 10px; position: absolute" width="814">
+			<tbody>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="icas-ltno"><span class="icas-ltno">{{icasInfo.ltno}}</span></td>
+									<td class="icas-cyno"><span class="icas-cyno">{{icasInfo.cyno}}</span></td>
+									<td class="icas-knno"><span class="icas-knno">{{icasInfo.knno}}</span></td>
+									<td class="icas-juno"><span class="icas-juno">{{icasInfo.juno}}</span></td>
+									<td class="icas-kjyo"><span class="icas-kjyo">{{icasInfo.kjyo}}</span></td>
+									<td class="icas-label-pity"><span class="icas-label-pity">PITﾖﾃｲ</span></td>
+									<td class="icas-pity"><span class="icas-pity">{{icasInfo.pity}}</span></td>
+									<td class="icas-label-noki"><span class="icas-label-noki">ﾉｳｷ</span></td>
+									<td class="icas-noki"><span class="icas-noki">{{icasInfo.noki}}</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td>
+										<table border="0" cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr>
+													<td class="icas-label-order"><span class="icas-label-order">ｵｰﾀﾞｰ</span></td>
+													<td class="icas-jua"><span class="icas-jua">{{icasInfo.jua}}</span></td>
+													<td class="icas-jub"><span class="icas-jub">{{icasInfo.jub}}</span></td>
+													<td class="icas-jux"><span class="icas-jux">{{icasInfo.jux | dotNumber:3}}</span></td>
+													<td class="icas-label-x"><span class="icas-label-x">×</span></td>
+													<td class="icas-juy"><span class="icas-juy">{{icasInfo.juy | dotNumber:2}}</span></td>
+													<td class="icas-label-x"><span class="icas-label-x">×</span></td>
+													<td class="icas-juz"><span class="icas-juz">{{icasInfo.juz | dotNumber:1}}</span></td>
+												</tr>
+												<tr>
+													<td class="icas-label-order"><span class="icas-label-seizo">ｾｲｿﾞｳ</span></td>
+													<td class="icas-jua"><span class="icas-lta">{{icasInfo.lta}}</span></td>
+													<td class="icas-jub"><span class="icas-ltb">{{icasInfo.ltb}}</span></td>
+													<td class="icas-jux"><span class="icas-ltx">{{icasInfo.ltx | dotNumber:3}}</span></td>
+													<td class="icas-label-x"><span class="icas-label-x">×</span></td>
+													<td class="icas-juy"><span class="icas-lty">{{icasInfo.lty | dotNumber:2}}</span></td>
+													<td class="icas-label-x"><span class="icas-label-x">×</span></td>
+													<td class="icas-juz"><span class="icas-ltz">{{icasInfo.ltz | dotNumber:1}}</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+									<td><span class="space-black" style="width:40px">*</span></td>
+									<td>
+										<table border="0" cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr>
+													<td>
+														<table id="form1:tabSet1:tab_IcasInfo:gridPanel6" border="0" cellpadding="0" cellspacing="0">
+															<tbody>
+																<tr>
+																	<td class="icas-label-weight"><span class="icas-label-weight">WGHT</span></td>
+																	<td class="icas-juw"><span class="icas-juw">{{icasInfo.juw | dotNumber:1}}</span></td>
+																	<td class="icas-label-jumh"><span class="icas-label-jumh">ﾏｲ.ﾎﾝ</span></td>
+																	<td class="icas-label-jumh"><span class="icas-jumh">{{icasInfo.jumh | dotNumber:1}}</span></td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<table id="form1:tabSet1:tab_IcasInfo:gridPanel7" border="0" cellpadding="0" cellspacing="0">
+															<tbody>
+																<tr>
+																	<td class="icas-label-tanw"><span class="icas-label-tanw">ﾀﾝｼﾞｭｳ</span></td>
+																	<td class="icas-label-tanw"><span class="icas-tanw">{{icasInfo.tanw | dotNumber:5}}</span></td>
+																	<td class="icas-label-hijyu"><span class="icas-label-hijyu">ﾋｼﾞｭｳ</span></td>
+																	<td class="icas-label-hijyu"><span class="icas-hijyu">{{icasInfo.hijyu | dotNumber:4}}</span></td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="icas-skigo"><span class="icas-skigo">{{icasInfo.skigo}}</span></td>
+									<td class="icas-ju"><span class="icas-ju">{{icasInfo.jup | dotNumber:2}}</span></td>
+									<td class="icas-pit"><span class="icas-pit">{{icasInfo.pitj}}</span></td>
+									<td class="icas-hot"><span class="icas-hot">{{icasInfo.hotj}}</span></td>
+									<td class="icas-label-se"><span class="icas-label-se">ｾ</span></td>
+									<td class="icas-label-se"><span class="icas-seizo">{{icasInfo.seizo}}</span></td>
+									<td class="icas-label-ku"><span class="icas-label-ku">ｸ</span></td>
+									<td class="icas-label-ku"><span class="icas-kura">{{icasInfo.kura}}</span></td>
+									<td class="icas-label-su"><span class="icas-label-su">ｽ</span></td>
+									<td class="icas-slab"><span class="icas-slab">{{icasInfo.slab}}</span></td>
+									<td class="icas-label-me"><span class="icas-label-me">ﾒ</span></td>
+									<td class="icas-sca"><span class="icas-sca">{{icasInfo.sca}}</span></td>
+									<td class="icas-label-yu"><span class="icas-label-yu">ﾕ</span></td>
+									<td class="icas-yukoy"><span class="icas-yukoy">{{icasInfo.yukoy}}</span></td>
+									<td class="icas-convna"><span id="form1:tabSet1:tab_IcasInfo:CONVNA" class="icas-convna">{{icasInfo.convna}}</span></td> <!-- TODO:でない… -->
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="icas-label-cas"><span class="icas-label-cas">CAS</span></td>
+									<td class="icas-casdt"><span class="icas-casdt">{{icasInfo.casdt}}</span></td>
+									<td class="icas-casw"><span class="icas-casw">{{icasInfo.casw | dotNumber:1}}</span></td>
+									<td class="icas-label-ssw"><span class="icas-label-ssw">SSW</span></td>
+									<td class="icas-sswdt"><span class="icas-sswdt">{{icasInfo.sswdt}}</span></td>
+									<td class="icas-sswdt"><span class="icas-ssww">{{icasInfo.ssww | dotNumber:1}}</span></td>
+									<td class="icas-label-sca"><span class="icas-label-sca">SCA</span></td>
+									<td class="icas-scadt"><span class="icas-scadt">{{icasInfo.scadt}}</span></td>
+									<td class="icas-scaw"><span class="icas-scaw">{{icasInfo.scaw | dotNumber:1}}</span></td>
+									<td class="icas-label-rolw"><span class="icas-label-rolw">ﾛｰﾙ</span></td>
+									<td class="icas-rolw"><span class="icas-rolw">{{icasInfo.rolw}}</span></td>
+									<td class="icas-label-sagw"><span class="icas-label-sagw">ｼｱｹﾞ</span></td>
+									<td class="icas-sagw"><span class="icas-sagw">{{icasInfo.sagw}}</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="icas-label-pit"><span class="icas-label-pit">PIT</span></td>
+									<td class="icas-pitdt"><span class="icas-pitdt">{{icasInfo.pitdt}}</span></td>
+									<td class="icas-ptr"><span class="icas-ptr">{{icasInfo.ptr}}</span></td>
+									<td class="icas-label-no1"><span class="icas-label-no1">NO</span></td>
+									<td class="icas-ptj"><span class="icas-ptj">{{icasInfo.ptj}}</span></td>
+									<td class="icas-label-hot"><span class="icas-label-hot">HOT</span></td>
+									<td class="icas-label-hot"><span class="icas-hotz">{{icasInfo.hotz | dotNumber:3}}</span></td>
+									<td class="icas-label-mm"><span class="icas-label-mm">(MM)</span></td>
+									<td class="icas-ht1"><span class="icas-ht1">{{icasInfo.ht1}}</span></td>
+									<td class="icas-label-doagari"><span class="icas-label-doagari">ﾄﾞ ｱｶﾞﾘ</span></td>
+									<td class="icas-ht2"><span class="icas-ht2">{{icasInfo.ht2}}</span></td>
+									<td class="icas-label-dokensa"><span class="icas-label-dokensa">ﾄﾞ ｹﾝｻ</span></td>
+									<td class="icas-ksw"><span class="icas-ksw">{{icasInfo.ksw}}</span></td>
+									<td class="icas-label-otw"><span id="form1:tabSet1:tab_IcasInfo:label_otw" class="icas-label-otw">ｿﾉﾀ</span></td>
+									<td class="icas-otw"><span class="icas-otw">{{icasInfo.otw}}</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="icas-label-nonna"><span class="icas-label-nonna">ﾉ</span></td>
+									<td class="icas-nonna"><span class="icas-nonna">{{icasInfo.nonna}}</span></td>
+									<td class="icas-label-okuri"><span class="icas-label-okuri">ｵ</span></td>
+									<td class="icas-okuri"><span class="icas-okuri">{{icasInfo.okuri}}</span></td>
+									<td class="icas-label-tokui"><span class="icas-label-tokui">ﾄ</span></td>
+									<td class="icas-item-tokui"><span class="icas-item-white">{{icasInfo.tokui}}</span></td>
+									<td class="icas-label-yoto"><span class="icas-label-yoto">ﾖｳﾄ</span></td>
+									<td class="icas-yotoc"><span class="icas-yotoc">{{icasInfo.yotoc}}</span></td>
+									<td class="icas-yoton"><span class="icas-yoton">{{icasInfo.yoton}}</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="icas-label-omote"><span class="icas-label-omote">VC ｵﾓﾃ</span></td>
+									<td class="icas-omote"><span class="icas-omote">{{icasInfo.omote}}</span></td>
+									<td class="icas-label-ura"><span class="icas-label-ura">ｳﾗ</span></td>
+									<td class="icas-ura"><span class="icas-ura">{{icasInfo.ura}}</span></td>
+									<td class="icas-label-hanten"><span class="icas-label-hanten">ﾊﾝﾃﾝ</span></td>
+									<td class="icas-hanten"><span class="icas-hanten">{{icasInfo.hanten}}</span></td>
+									<td class="icas-label-pa"><span class="icas-label-pa">PA</span></td>
+									<td class="icas-pa"><span class="icas-pa">{{icasInfo.pa}}</span></td>
+									<td class="icas-label-clr"><span class="icas-label-clr">ｸﾘｱ</span></td>
+									<td class="icas-clr"><span class="icas-clr">{{icasInfo.clr}}</span></td>
+									<td class="icas-label-men"><span class="icas-label-men">ﾒﾝ</span></td>
+									<td class="icas-men"><span class="icas-men">{{icasInfo.men}}</span></td>
+									<td class="icas-label-tuya"><span class="icas-label-tuya">ﾂﾔ</span></td>
+									<td class="icas-tuya"><span class="icas-tuya">{{icasInfo.tuya}}</span></td>
+									<td class="icas-label-fuko"><span class="icas-label-fuko">ﾌｳｺｳ</span></td>
+									<td class="icas-fuko"><span class="icas-fuko">{{icasInfo.fuko}}</span></td>
+									<td class="icas-juno202"><span class="icas-juno202">{{icasInfo.juno202}}</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="icas-label-sikakari"><span class="icas-label-sikakari">ｼｶｶﾘ ｾﾂﾋﾞ</span></td>
+									<td class="icas-sksbsm"><span class="icas-item-red" style="height: 15px; text-align: left; width: 220px">{{icasInfo.sksbsm}}</span></td>
+									<td class="icas-label-syusei"><span class="icas-label-syusei">ｼｭｳｾｲ</span></td>
+									<td class="icas-syudtm"><span class="icas-syudtm">{{icasInfo.syudtm}}</span></td>
+									<td class="icas-label-toroku"><span class="icas-item-green" style="width:60px;height:15px">ﾄｳﾛｸ</span></td>
+									<td class="icas-adddt"><span class="icas-adddt">{{icasInfo.adddt}}</span></td>
+									<td class="icas-label-koshin"><span class="icas-label-koshin">ｺｳｼﾝ</span></td>
+									<td class="icas-mntdtm"><span class="icas-mntdtm">{{icasInfo.mntdtm}}</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td class="icas-box-header-symbol1"><span class="icas-box-header-symbol1">--</span></td>
+									<td class="icas-roll"><span class="icas-roll" style="color : white;">{{icasInfo.roll}}</span></td>
+									<td class="icas-hpc"><span class="icas-hpc">{{icasInfo.hpc}}</span></td>
+									<td class="icas-hotpc"><span class="icas-hotpc" style="color : red;">{{icasInfo.hotpc}}</span></td>
+									<td class="icas-g2"><span class="icas-g2">{{icasInfo.g2}}</span></td>
+									<td class="icas-box-header-symbol2"><span class="icas-box-header-symbol2">--</span></td>
+									<td class="icas-ryou"><span class="icas-ryou" style="color : lime;">{{icasInfo.ryou}}</span></td>
+									<td class="icas-ryow"><span class="icas-ryow">{{icasInfo.ryow}}</span></td>
+									<td class="icas-ryon"><span class="icas-ryon">{{icasInfo.ryon}}</span></td>
+									<td class="icas-box-header-symbol3"><span class="icas-box-header-symbol3">--</span></td>
+									<td class="icas-bu"><span class="icas-bu">{{icasInfo.bu}}</span></td>
+									<td class="icas-br"><span class="icas-br" style="color : red;">{{icasInfo.br}}</span></td>
+									<td class="icas-ta"><span class="icas-ta">{{icasInfo.ta}}</span></td>
+									<td class="icas-tr"><span class="icas-tr" style="color : red;">{{icasInfo.tr}}</span></td>
+									<td class="icas-box-header-symbol4"><span class="icas-box-header-symbol4">--</span></td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<table border="0" cellpadding="0">
+											<thead>
+												<tr>
+													<th class="icas-list-header" scope="col"><span class="icas-label-boxno">NO　</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-sbsm">設備</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-sbpat"></span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-sbx">板厚</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-sbw">重量</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-jbsm">設備</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-startdt">予定日</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-enddt">終了日付</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-jbx">板厚</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-jby">板幅</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-jbz">板丈</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-jbrw">重量</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-jbrmh">枚本数</span></th>
+													<th class="icas-list-header" scope="col"><span class="icas-label-jbbn">B</span></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr ng-repeat="meisaiInfo in icasBoxInfos track by $index">
+													<td class="icas-boxno"><span class="icas-boxno">{{meisaiInfo.boxno}}</span></td>
+													<td class="icas-sbsm"><span class="icas-sbsm">{{meisaiInfo.sbsm}}</span></td>
+													<td class="icas-sbpat"><span class="icas-sbpat">{{meisaiInfo.sbpat}}</span></td>
+													<td class="icas-sbx"><span class="icas-sbx">{{meisaiInfo.sbx | dotNumber:3}}</span></td>
+													<td class="icas-sbw"><span class="icas-sbw">{{meisaiInfo.sbw}}</span></td>
+													<td class="icas-jbsm"><span class="icas-jbsm" style="color : lime;">{{meisaiInfo.jbsm}}</span></td>
+													<td class="icas-startdt"><span class="icas-startdt" style="color : lime;">{{meisaiInfo.startdt}}</span></td>
+													<td class="icas-enddt"><span class="icas-enddt" style="color : lime;">{{meisaiInfo.enddt}}</span></td>
+													<td class="icas-jbx"><span class="icas-jbx" style="color : lime;">{{meisaiInfo.jbx | dotNumber:3}}</span></td>
+													<td class="icas-jby"><span class="icas-jby" style="color : lime;">{{meisaiInfo.jby | dotNumber:1}}</span></td>
+													<td class="icas-jbz"><span class="icas-jbz" style="color : lime;">{{meisaiInfo.jbz | dotNumber:1}}</span></td>
+													<td class="icas-jbrw"><span class="icas-jbrw" style="color : lime;">{{meisaiInfo.jbrw}}</span></td>
+													<td class="icas-jbrmh"><span class="icas-jbrmh" style="color : lime;">{{meisaiInfo.jbrmh}}</span></td>
+													<td class="icas-jbbn"><span class="icas-jbbn" style="color : lime;">{{meisaiInfo.jbbn}}</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="1" style="height: 30px">
+							<tbody>
+								<tr>
+									<td>
+										<table border="0" cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr>
+													<td class="icas-box-footer-symbol1"><span class="icas-box-footer-symbol1">- </span></td>
+													<td class="icas-yojyo"><span class="icas-yojyo">{{icasInfo.yojyo}}</span></td>
+													<td class="icas-box-footer-symbol2"><span class="icas-box-footer-symbol2">--</span></td>
+													<td class="icas-aldt"><span class="icas-aldt">{{icasInfo.aldt}}</span></td>
+													<td class="icas-box-footer-symbol3"><span class="icas-box-footer-symbol3">--ｼｭｯｶﾋﾞ(</span></td>
+													<td class="icas-sydt"><span class="icas-sydt" style="color : white;">{{icasInfo.sydt}}</span></td>
+													<td class="icas-box-footer-symbol4"><span class="icas-box-footer-symbol4">)--</span></td>
+													<td class="icas-magmsg"><span class="icas-magmsg">{{icasInfo.magmsg}}</span></td>
+													<td class="icas-box-footer-symbol5"><span class="icas-box-footer-symbol5">--(</span></td>
+													<td class="icas-hhmm"><span class="icas-hhmm">{{icasInfo.hhmm}}</span></td>
+													<td class="icas-jbcd"><span class="icas-jbcd">{{icasInfo.jbcd}}</span></td>
+													<td class="icas-b"><span class="icas-b">{{icasInfo.b}}</span></td>
+													<td class="icas-box-footer-symbol6"><span class="icas-box-footer-symbol6">)-- </span></td>
+													<td class="icas-karikon-flg"><span class="icas-karikon-flg">{{icasInfo.startdt}}</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table border="0" cellpadding="0" cellspacing="0">
+											<tbody>
+												<tr>
+													<td class="icas-msg"><span class="icas-msg">{{icasInfo.msg}}</span></td>
+													<td class="icas-msg1"><span class="icas-msg1">{{icasInfo.msg1}}</span></td>
+													<td class="icas-msg2"><span class="icas-msg2">{{icasInfo.msg2}}</span></td>
+													<td class="icas-msg3"><span class="icas-msg3">{{icasInfo.msg3}}</span></td>
+													<td class="icas-msg4"><span class="icas-msg4">{{icasInfo.msg4}}</span></td>
+													<td class="icas-msg5"><span class="icas-msg5">{{icasInfo.msg5}}</span></td>
+													<td class="icas-msg6"><span class="icas-msg6">{{icasInfo.msg6}}</span></td>
+													<td class="icas-msg7"><span class="icas-msg7">{{icasInfo.msg7}}</span></td>
+													<td class="icas-msg8"><span class="icas-msg8">{{icasInfo.msg8}}</span></td>
+													<td class="icas-msg9"><span class="icas-msg9">{{icasInfo.msg9}}</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+      </div>
+	  
+    </div>
+
+    <!-- ICAS情報タブ以外の共通部分 開始-->
+     <span id="form1:header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
+    <span id="form1:message" class="message"></span>
+    <span id="form1:schItem_Label_Ltno" style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
+    <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno" onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
+	<span id="form1:schItem_Label_Knno" style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
+	<input type="text" ng-model="common.searchKnno" id="common_searchKnno" name="searchKnno" onclick="InputTextSelect(this);"style="height: 25px; left: 200px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="2" />
+	<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
+		<span class="glyphicon" aria-hidden="true">
+		</span>検索
+	</button>
+
+    <span id="form1:edtm" class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
+    <span id="form1:label2" class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
+    <span id="form1:hitCount" class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
+    <span ng-show="util.isPreviewRendered(common);">
+    	<a id="form1:previous_page" style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">
+   		<img id="form1:previous_page_image" src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />前</a>
+    </span>
+    <span ng-show="util.isNextRendered(common);">
+   		<a id="form1:next_page" style="left: 496px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">次
+   		<img id="form1:next_page_image" src="asset/lotdspimg/next.gif" alt="" border="0" align="top" /></a></span>
+    </span>
+    <input id="form1_hidden" name="form1_hidden" value="form1_hidden" type="hidden" />
+    <!-- ICAS情報タブ以外の共通部分 終了-->
+    </form>
+</body>
+</html>

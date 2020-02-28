@@ -165,6 +165,9 @@
 		    	//メッセージエリアのクリア
 		    	$("#messageArea").text("");
         	}
+			,showIcasInfo:function(){
+				$state.go('IcasInfo');
+    		}
     		,showManufacturingInfo:function(){
     			$state.go('ManufacturingInfo');
         	}

@@ -10,23 +10,20 @@
     // 引数は依存の内容と一致する
     var newState = function ($stateProvider, stateHelperProvider, $urlRouterProvider) {
 
-        var base = 'ErrorPage';
+    	var base = 'IcasInfo';
+        var controller = 'IcasInfoController';
+        var templateUrl = 'app/main/icasinfo/IcasInfo.html';
 
-        var controller = 'ErrorPageController';
-
-        var templateUrl = 'app/main/errorpage/ErrorPage.html';
         $stateProvider
             .state(base, {
                 url: '/lotdsp/faces/' + base + '.jsp'
                 , controller: controller
                 , templateUrl: templateUrl
             })
-
             ;
-
     }; //End newState
 
     newState.$inject = injectParams;
-    angular.module(moduleName).config(newState);
-
+    angular.module(moduleName)
+        .config(newState);
 }());
