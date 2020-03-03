@@ -266,19 +266,19 @@
 							<tbody>
 								<tr>
 									<td class="icas-box-header-symbol1"><span class="icas-box-header-symbol1">--</span></td>
-									<td class="icas-roll"><span class="icas-roll" style="color : white;">{{icasInfo.roll}}</span></td>
+									<td class="icas-roll"><span class="icas-roll" style="{'color': util.styleIcasRoll()}">{{icasInfo.roll}}</span></td>
 									<td class="icas-hpc"><span class="icas-hpc">{{icasInfo.hpc}}</span></td>
-									<td class="icas-hotpc"><span class="icas-hotpc" style="color : red;">{{icasInfo.hotpc}}</span></td>
+									<td class="icas-hotpc"><span class="icas-hotpc" style="{'color': util.styleIcasHotpc()}">{{icasInfo.hotpc}}</span></td>
 									<td class="icas-g2"><span class="icas-g2">{{icasInfo.g2}}</span></td>
 									<td class="icas-box-header-symbol2"><span class="icas-box-header-symbol2">--</span></td>
-									<td class="icas-ryou"><span class="icas-ryou" style="color : lime;">{{icasInfo.ryou}}</span></td>
+									<td class="icas-ryou"><span class="icas-ryou" style="{'color': util.styleIcasRyou()}">{{icasInfo.ryou}}</span></td>
 									<td class="icas-ryow"><span class="icas-ryow">{{icasInfo.ryow}}</span></td>
 									<td class="icas-ryon"><span class="icas-ryon">{{icasInfo.ryon}}</span></td>
 									<td class="icas-box-header-symbol3"><span class="icas-box-header-symbol3">--</span></td>
 									<td class="icas-bu"><span class="icas-bu">{{icasInfo.bu}}</span></td>
-									<td class="icas-br"><span class="icas-br" style="color : red;">{{icasInfo.br}}</span></td>
+									<td class="icas-br"><span class="icas-br" ng-style="{'color': util.styleIcasBr()}">{{icasInfo.br}}</span></td>
 									<td class="icas-ta"><span class="icas-ta">{{icasInfo.ta}}</span></td>
-									<td class="icas-tr"><span class="icas-tr" style="color : red;">{{icasInfo.tr}}</span></td>
+									<td class="icas-tr"><span class="icas-tr" ng-style="{'color': util.styleIcasTr()}">{{icasInfo.tr}}</span></td>
 									<td class="icas-box-header-symbol4"><span class="icas-box-header-symbol4">--</span></td>
 								</tr>
 							</tbody>
@@ -317,15 +317,15 @@
 													<td class="icas-sbpat"><span class="icas-sbpat">{{meisaiInfo.sbpat}}</span></td>
 													<td class="icas-sbx"><span class="icas-sbx">{{meisaiInfo.sbx | dotNumber:3}}</span></td>
 													<td class="icas-sbw"><span class="icas-sbw">{{meisaiInfo.sbw}}</span></td>
-													<td class="icas-jbsm"><span class="icas-jbsm" style="color : lime;">{{meisaiInfo.jbsm}}</span></td>
-													<td class="icas-startdt"><span class="icas-startdt" style="color : lime;">{{meisaiInfo.startdt}}</span></td>
-													<td class="icas-enddt"><span class="icas-enddt" style="color : lime;">{{meisaiInfo.enddt}}</span></td>
-													<td class="icas-jbx"><span class="icas-jbx" style="color : lime;">{{meisaiInfo.jbx | dotNumber:3}}</span></td>
-													<td class="icas-jby"><span class="icas-jby" style="color : lime;">{{meisaiInfo.jby | dotNumber:1}}</span></td>
-													<td class="icas-jbz"><span class="icas-jbz" style="color : lime;">{{meisaiInfo.jbz | dotNumber:1}}</span></td>
-													<td class="icas-jbrw"><span class="icas-jbrw" style="color : lime;">{{meisaiInfo.jbrw}}</span></td>
-													<td class="icas-jbrmh"><span class="icas-jbrmh" style="color : lime;">{{meisaiInfo.jbrmh}}</span></td>
-													<td class="icas-jbbn"><span class="icas-jbbn" style="color : lime;">{{meisaiInfo.jbbn}}</span></td>
+													<td class="icas-jbsm"><span class="icas-jbsm" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbsm}}</span></td>
+													<td class="icas-startdt"><span class="icas-startdt" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.startdt}}</span></td>
+													<td class="icas-enddt"><span class="icas-enddt" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.enddt}}</span></td>
+													<td class="icas-jbx"><span class="icas-jbx" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbx | dotNumber:3}}</span></td>
+													<td class="icas-jby"><span class="icas-jby" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jby | dotNumber:1}}</span></td>
+													<td class="icas-jbz"><span class="icas-jbz" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbz | dotNumber:1}}</span></td>
+													<td class="icas-jbrw"><span class="icas-jbrw" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbrw}}</span></td>
+													<td class="icas-jbrmh"><span class="icas-jbrmh" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbrmh}}</span></td>
+													<td class="icas-jbbn"><span class="icas-jbbn" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbbn}}</span></td>
 												</tr>
 											</tbody>
 										</table>
@@ -349,7 +349,7 @@
 													<td class="icas-box-footer-symbol2"><span class="icas-box-footer-symbol2">--</span></td>
 													<td class="icas-aldt"><span class="icas-aldt">{{icasInfo.aldt}}</span></td>
 													<td class="icas-box-footer-symbol3"><span class="icas-box-footer-symbol3">--ｼｭｯｶﾋﾞ(</span></td>
-													<td class="icas-sydt"><span class="icas-sydt" style="color : white;">{{icasInfo.sydt}}</span></td>
+													<td class="icas-sydt"><span class="icas-sydt" ng-style="{'color': util.styleIcasSydt()}">{{icasInfo.sydt}}</span></td>
 													<td class="icas-box-footer-symbol4"><span class="icas-box-footer-symbol4">)--</span></td>
 													<td class="icas-magmsg"><span class="icas-magmsg">{{icasInfo.magmsg}}</span></td>
 													<td class="icas-box-footer-symbol5"><span class="icas-box-footer-symbol5">--(</span></td>
@@ -357,7 +357,7 @@
 													<td class="icas-jbcd"><span class="icas-jbcd">{{icasInfo.jbcd}}</span></td>
 													<td class="icas-b"><span class="icas-b">{{icasInfo.b}}</span></td>
 													<td class="icas-box-footer-symbol6"><span class="icas-box-footer-symbol6">)-- </span></td>
-													<td class="icas-karikon-flg"><span class="icas-karikon-flg">{{icasInfo.startdt}}</span></td>
+													<td class="icas-karikon-flg"><span class="icas-karikon-flg">{{icasInfo.karikon_FLG}}</span></td>
 												</tr>
 											</tbody>
 										</table>
@@ -394,27 +394,29 @@
     </div>
 
     <!-- ICAS情報タブ以外の共通部分 開始-->
-     <span id="form1:header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
-    <span id="form1:message" class="message"></span>
-    <span id="form1:schItem_Label_Ltno" style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
+    <span id="header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
+    <span id="messageArea" class="message"></span>
+    <span style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
     <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno" onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
-	<span id="form1:schItem_Label_Knno" style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
+	<span style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
 	<input type="text" ng-model="common.searchKnno" id="common_searchKnno" name="searchKnno" onclick="InputTextSelect(this);"style="height: 25px; left: 200px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="2" />
 	<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
 		<span class="glyphicon" aria-hidden="true">
 		</span>検索
 	</button>
 
-    <span id="form1:edtm" class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
-    <span id="form1:label2" class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
-    <span id="form1:hitCount" class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
+    <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
+    <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
+    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
     <span ng-show="util.isPreviewRendered(common);">
-    	<a id="form1:previous_page" style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">
-   		<img id="form1:previous_page_image" src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />前</a>
+    	<a style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.previousPage()">
+   		<img src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />
+   		前</a>
     </span>
     <span ng-show="util.isNextRendered(common);">
-   		<a id="form1:next_page" style="left: 496px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">次
-   		<img id="form1:next_page_image" src="asset/lotdspimg/next.gif" alt="" border="0" align="top" /></a></span>
+   		<a style="left: 498px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.nextPage()">次
+   		<img src="asset/lotdspimg/next.gif" alt="" border="0" align="top" /></a>
+   		</span>
     </span>
     <input id="form1_hidden" name="form1_hidden" value="form1_hidden" type="hidden" />
     <!-- ICAS情報タブ以外の共通部分 終了-->

@@ -91,8 +91,8 @@ public class SearchMenuLogic {
 			param.put("KNNO", in.getSearchKnno());
 
 			//検索用のキー情報を取得
-			String paraLinkkey = SearchDataLogic.getSearchKey(in,param);
-			BigDecimal paraCyuzoYy = SearchDataLogic.getSearchKey2(in,param);
+			String paraLinkkey = SearchDataLogic.getSearchKey(in,param, 0);
+			BigDecimal paraCyuzoYy = SearchDataLogic.getSearchKey2(in,param, 0);
 
 			//各画面の検索を実行
 			// スタッフ情報

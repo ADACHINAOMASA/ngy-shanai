@@ -53,13 +53,13 @@ public class SearchDataLogic {
     }
 
 	//検索キー（LinkKey）取得
-    public static String getSearchKey(CommonInfo in,Map param) {
+    public static String getSearchKey(CommonInfo in,Map param,Integer index) {
         LotDspService svc = new LotDspService();
         SearchKeyBean searchBean = new SearchKeyBean();
         //検索キー（LinkKey）取得
         try {
             List lst = svc.FindSearchKeyInfos(param);
-            searchBean = ((SearchKeyBean)lst.get(0));
+            searchBean = ((SearchKeyBean)lst.get(index));
             in.setSearchKeyInfos(lst);
             in.setLotMaximum(lst.size());
         } catch(SQLException e){
@@ -78,13 +78,13 @@ public class SearchDataLogic {
     }
 
     //検索キー（CYUZO_YY）取得
-    public static BigDecimal getSearchKey2(CommonInfo in,Map param) {
+    public static BigDecimal getSearchKey2(CommonInfo in,Map param,Integer index) {
         LotDspService svc = new LotDspService();
         SearchKeyBean searchBean = new SearchKeyBean();
         //検索キー（CYUZO_YY）取得
         try {
             List lst = svc.FindSearchKeyInfos(param);
-            searchBean = ((SearchKeyBean)lst.get(0));
+            searchBean = ((SearchKeyBean)lst.get(index));
             in.setSearchKeyInfos(lst);
         } catch(SQLException e) {
         	in.setMessage("実行エラー" + e.getErrorCode());

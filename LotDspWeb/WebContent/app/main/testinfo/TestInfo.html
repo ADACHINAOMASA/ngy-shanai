@@ -11,7 +11,7 @@
       <div class="MniTabDiv">
         <table border="0" cellspacing="0" cellpadding="0" class="MniTabTbl" title="">
           <tr>
-            <td><a class="MniTabLnk TabPad" href="/lotdsp/menu">ICAS情報</a></td>
+            <td><a class="MniTabLnk TabPad" href ng-click="action.showIcasInfo();">ICAS情報</a></td>
             <td><a class="MniTabLnk TabPad" href ng-click="action.showProgressInfo();">進度情報</a></td>
             <td><a class="MniTabLnk TabPad" href ng-click="action.showManufacturingInfo();">製造情報</a></td>
             <td class="MniTabTblSelTd">
@@ -337,36 +337,36 @@
 																		<table border="0" cellpadding="0" cellspacing="1">
 																			<tbody>
 																				<tr class="item-label1">
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_Odr_KosaP">ｵｰﾀﾞｰ(+)</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_Odr_KosaM">ｵｰﾀﾞｰ(-)</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_ProductP">製造(+)</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_Product_M">製造(-)</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_TargetP">目標(+)</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:label_TargetM">目標(+)</span></td>
+																					<td class="test-w60"><span>ｵｰﾀﾞｰ(+)</span></td>
+																					<td class="test-w60"><span>ｵｰﾀﾞｰ(-)</span></td>
+																					<td class="test-w60"><span>製造(+)</span></td>
+																					<td class="test-w60"><span>製造(-)</span></td>
+																					<td class="test-w60"><span>目標(+)</span></td>
+																					<td class="test-w60"><span>目標(+)</span></td>
 																				</tr>
 																				<tr class=" test-value-right-w70">
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS01">{{staffTestInfo.kosaxs01 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS02">{{staffTestInfo.kosaxs02 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS03">{{staffTestInfo.kosaxs03 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS04">{{staffTestInfo.kosaxs04 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS05">{{staffTestInfo.kosaxs05 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAXS06">{{staffTestInfo.kosaxs06 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosaxs01 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosaxs02 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosaxs03 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosaxs04 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosaxs05 | dotNumber:3 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosaxs06 | dotNumber:3 | zeroToSpace}}</span></td>
 																				</tr>
 																				<tr class=" test-value-right-w70">
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS01">{{staffTestInfo.kosays01 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS02">{{staffTestInfo.kosays02 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS03">{{staffTestInfo.kosays03 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS04">{{staffTestInfo.kosays04 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS05">{{staffTestInfo.kosays05 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAYS06">{{staffTestInfo.kosays06 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosays01 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosays02 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosays03 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosays04 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosays05 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosays06 | dotNumber:1 | zeroToSpace}}</span></td>
 																				</tr>
 																				<tr class=" test-value-right-w70">
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS01">{{staffTestInfo.kosazs01 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS02">{{staffTestInfo.kosazs02 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS03">{{staffTestInfo.kosazs03 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS04">{{staffTestInfo.kosazs04 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS05">{{staffTestInfo.kosazs05 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span id="form1:tabSet1:tab_TestInfo:KOSAZS06">{{staffTestInfo.kosazs06 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosazs01 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosazs02 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosazs03 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosazs04 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosazs05 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{staffTestInfo.kosazs06 | dotNumber:1 | zeroToSpace}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -763,27 +763,29 @@
         </tr>
       </tbody>
     </table>
-    <span id="form1:header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
-    <span id="form1:message" class="message"></span>
-    <span id="form1:schItem_Label_Ltno" style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
+    <span id="header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
+    <span id="messageArea" class="message"></span>
+    <span style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
     <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno" onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
-	<span id="form1:schItem_Label_Knno" style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
+	<span style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
 	<input type="text" ng-model="common.searchKnno" id="common_searchKnno" name="searchKnno" onclick="InputTextSelect(this);"style="height: 25px; left: 200px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="2" />
 	<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
 		<span class="glyphicon" aria-hidden="true">
 		</span>検索
 	</button>
 
-    <span id="form1:edtm" class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
-    <span id="form1:label2" class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
-    <span id="form1:hitCount" class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
+    <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
+    <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
+    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
     <span ng-show="util.isPreviewRendered(common);">
-    	<a id="form1:previous_page" style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">
-   		<img id="form1:previous_page_image" src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />前</a>
+    	<a style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.previousPage()">
+   		<img src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />
+   		前</a>
     </span>
     <span ng-show="util.isNextRendered(common);">
-   		<a id="form1:next_page" style="left: 496px; top: 8px; position: absolute; text-align: center; vertical-align: middle" onclick="return hyperlink_submit(this, 'form1', null);" href="#">次
-   		<img id="form1:next_page_image" src="asset/lotdspimg/next.gif" alt="" border="0" align="top" /></a></span>
+   		<a style="left: 498px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.nextPage()">次
+   		<img src="asset/lotdspimg/next.gif" alt="" border="0" align="top" /></a>
+   		</span>
     </span>
     <input id="form1_hidden" name="form1_hidden" value="form1_hidden" type="hidden" />
     <!-- ICAS情報タブ以外の共通部分 終了-->
