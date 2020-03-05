@@ -257,6 +257,29 @@ public class StaffCommonBean implements Serializable {
     }
 
     /**
+     * プロパティ TANTOSHA_MEI の値を保持。
+     */
+    private String TANTOSHA_MEI;
+
+    /**
+     * プロパティ TANTOSHA_MEI の取得メソッド。
+     * @return プロパティ TANTOSHA_MEI の値。
+     */
+    public String getTANTOSHA_MEI() {
+
+        return this.TANTOSHA_MEI;
+    }
+
+    /**
+     * プロパティ TANTOSHA_MEI の設定メソッド。
+     * @param TANTOSHA_MEI プロパティ TANTOSHA_MEI の新しい値。
+     */
+    public void setTANTOSHA_MEI(String TANTOSHA_MEI) {
+
+        this.TANTOSHA_MEI = TANTOSHA_MEI;
+    }
+
+    /**
      * プロパティ ENOKI の値を保持。
      */
     private Date ENOKI;

@@ -6,6 +6,7 @@
 
     var controllerName = 'IcasInfoController';
     var lotInfoStorage = 'ngStorage-lotDspInfo';
+    var lotInfoParamStorage = 'ngStorage-lotDspInfoParam';
 
     // 必要な依存を列挙
     var injectParams = [
@@ -40,10 +41,10 @@
         		//共通データの設定
         		$scope.action.setInputData(JSON.parse(localStorage.getItem(lotInfoStorage)));
         		$scope.action.setCommonData(JSON.parse(localStorage.getItem(lotInfoStorage)));
-            	//進度情報基本データの設定
-        		$scope.action.setStaffProgressInfoData(JSON.parse(localStorage.getItem(lotInfoStorage)).staffProgressBean);
         		//画面別データ取得
         		$scope.action.setIcasInfosData(JSON.parse(localStorage.getItem(lotInfoStorage)).icasBean);
+		        //ICAS情報用のパラム
+		        $scope.common.site = JSON.parse(localStorage.getItem(lotInfoParamStorage)).site;
         	}
 	    	//共通データの設定
 			,setInputData:function(data){
@@ -53,95 +54,14 @@
 			}
 	    	//共通データの設定
 			,setCommonData:function(data){
-				//検索項目の設定
-				$scope.common.searchLtno = data.searchLtno;
-				$scope.common.searchKnno = data.searchKnno;
-		        //ロット番号～Yﾏｰｸ日
-		        $scope.common.ltno = data.staffCommonBean.ltno;
-		        $scope.common.cyno = data.staffCommonBean.cyno;
-		        $scope.common.knno = data.staffCommonBean.knno;
-		        $scope.common.juno = data.staffCommonBean.juno;
-		        $scope.common.jbcd = data.staffCommonBean.jbcd;
-		        $scope.common.bucode = data.staffCommonBean.bucode;
-		        $scope.common.yotoc = data.staffCommonBean.yotoc;
-		        $scope.common.yotoname = data.staffCommonBean.yotoname;
-		        $scope.common.chikucd = data.staffCommonBean.chikucd;
-		        $scope.common.jujsno = data.staffCommonBean.jujsno;
-		        $scope.common.enoki = data.staffCommonBean.enoki;
-		        $scope.common.jcd105 = data.staffCommonBean.jcd105;
-		        $scope.common.jup = data.staffCommonBean.jup;
-		        $scope.common.ymark = data.staffCommonBean.ymark;
-		        //材質～重量
-		        $scope.common.jua = data.staffCommonBean.jua;
-		        $scope.common.jub = data.staffCommonBean.jub;
-		        $scope.common.jux = data.staffCommonBean.jux;
-		        $scope.common.juy = data.staffCommonBean.juy;
-		        $scope.common.juz = data.staffCommonBean.juz;
-		        $scope.common.juw = data.staffCommonBean.juw;
-		        $scope.common.lta = data.staffCommonBean.lta;
-		        $scope.common.ltb = data.staffCommonBean.ltb;
-		        $scope.common.ltx = data.staffCommonBean.ltx;
-		        $scope.common.lty = data.staffCommonBean.lty;
-		        $scope.common.ltz = data.staffCommonBean.ltz;
-		        $scope.common.ryow = data.staffCommonBean.ryow;
-		        //得意先～納入先
-		        $scope.common.tokui = data.staffCommonBean.tokui;
-		        $scope.common.oname = data.staffCommonBean.oname;
-		        $scope.common.nonyu = data.staffCommonBean.nonyu;
-		        //倉入日～納期符号
-		        $scope.common.datakbn = data.staffCommonBean.datakbn;
-		        $scope.common.ksd = data.staffCommonBean.ksd;
-		        $scope.common.juno202 = data.staffCommonBean.juno202;
-		        $scope.common.shikenno = data.staffCommonBean.shikenno;
-		        $scope.common.karikon = data.staffCommonBean.karikon;
-		        $scope.common.nokifugo = data.staffCommonBean.nokifugo;
 		        //最終更新日
 		        $scope.common.edtm = data.staffCommonBean.edtm;
 		        //検索結果総件数
 		        $scope.common.lotMaximum = data.lotMaximum;
 		        //現在表示ページ
 		        $scope.common.nowPage = data.nowPage;
-	
-			}
-	    	//進度情報基本データの設定
-			,setStaffProgressInfoData:function(data){
-				//比重～試験回数
-				$scope.staffProgressInfo.hijyu = data.hijyu;
-				$scope.staffProgressInfo.sbd = data.sbd;
-				$scope.staffProgressInfo.hohdt = data.hohdt;
-				$scope.staffProgressInfo.tanw = data.tanw;
-				$scope.staffProgressInfo.kbd = data.kbd;
-				$scope.staffProgressInfo.hokdt = data.hokdt;
-				$scope.staffProgressInfo.sw = data.sw;
-				$scope.staffProgressInfo.sraito = data.sraito;
-				$scope.staffProgressInfo.kkn = data.kkn;
-				//納管出荷日～引当
-				$scope.staffProgressInfo.nokiymd = data.nokiymd;
-				$scope.staffProgressInfo.jcd112 = data.jcd112;
-				$scope.staffProgressInfo.saitehailtno = data.saitehailtno;
-				$scope.staffProgressInfo.sai_count = data.sai_count;
-				$scope.staffProgressInfo.hikikbn = data.hikikbn;
-				$scope.staffProgressInfo.hikicode = data.hikicode;
-				//仕様～製造
-				$scope.staffProgressInfo.msnok = data.msnok;
-				$scope.staffProgressInfo.msnoh = data.msnoh;
-				$scope.staffProgressInfo.msnos = data.msnos;
-				//設備名～送り先名
-				$scope.staffProgressInfo.gai_IDX1 = data.gai_IDX1;
-				$scope.staffProgressInfo.gai_SETUBI1 = data.gai_SETUBI1;
-				$scope.staffProgressInfo.gai_CD1 = data.gai_CD1;
-				$scope.staffProgressInfo.gai_TODAY1 = data.gai_TODAY1;
-				$scope.staffProgressInfo.gai_OKURI1 = data.gai_OKURI1;
-				$scope.staffProgressInfo.gai_IDX2 = data.gai_IDX2;
-				$scope.staffProgressInfo.gai_SETUBI2 = data.gai_SETUBI2;
-				$scope.staffProgressInfo.gai_CD2 = data.gai_CD2;
-				$scope.staffProgressInfo.gai_TODAY2 = data.gai_TODAY2;
-				$scope.staffProgressInfo.gai_OKURI2 = data.gai_OKURI2;
-				$scope.staffProgressInfo.gai_IDX3 = data.gai_IDX3;
-				$scope.staffProgressInfo.gai_SETUBI3 = data.gai_SETUBI3;
-				$scope.staffProgressInfo.gai_CD3 = data.gai_CD3;
-				$scope.staffProgressInfo.gai_TODAY3 = data.gai_TODAY3;
-				$scope.staffProgressInfo.gai_OKURI3 = data.gai_OKURI3;
+		        //表示制御
+		        $scope.common.tabSetRendered = data.tabSetRendered;
 			}
         	//データの設定
     		,setIcasInfosData:function(data){
@@ -178,8 +98,6 @@
     	        		//共通データの設定
     	        		$scope.action.setInputData(data);
     	        		$scope.action.setCommonData(data);
-    	            	//進度情報基本データの設定
-    	        		$scope.action.setStaffProgressInfoData(data.staffProgressBean);
     	        		//画面別データ取得
     	        		$scope.action.setIcasInfosData(data.icasBean);
     				}
@@ -206,8 +124,6 @@
 	    					MenuService.memory.saveBaseWork(data);
 	    	        		//共通データの設定
 	    	        		$scope.action.setCommonData(data);
-	    	            	//進度情報基本データの設定
-	    	        		$scope.action.setStaffProgressInfoData(data.staffProgressBean);
 	    	        		//画面別データ取得
 	    	        		$scope.action.setIcasInfosData(data.icasBean);
 	    				}
@@ -234,8 +150,6 @@
 	    					MenuService.memory.saveBaseWork(data);
 	    	        		//共通データの設定
 	    	        		$scope.action.setCommonData(data);
-	    	            	//進度情報基本データの設定
-	    	        		$scope.action.setStaffProgressInfoData(data.staffProgressBean);
 	    	        		//画面別データ取得
 	    	        		$scope.action.setIcasInfosData(data.icasBean);
 	    				}
@@ -260,6 +174,10 @@
     		}
 			,showCFInfo:function(){
 				$state.go('CFInfo');
+    		}
+			// 閉じる
+			,close:function(){
+				window.close();
     		}
         };
 		//---------------------------------------------------------------
@@ -288,6 +206,36 @@
         		return JSON.parse(localStorage.getItem(lotInfoStorage)).searchKnno;
         	}
     		// スタイル設定
+    		,styleHeader : function() {
+    			var styleHeader = "staff"
+    			if ($scope.common.site == "1") {
+    				// 現場の場合
+    				styleHeader = "works";
+    			}
+    		    //ロット番号
+    			$scope.schItem_Label_Ltno = styleHeader + "-input-ltno";
+    			/*
+    	        schItem_Label_Ltno.setStyleClass(styleHeader + "-label-ltno");
+    	        ltno.setStyleClass(styleHeader + "-input-ltno");
+    	        //検査番号
+    	        schItem_Label_Knno.setStyleClass(styleHeader + "-label-knno");
+    	        knno.setStyleClass(styleHeader + "-input-knno");
+    	        //検索ボタン
+    	        search.setStyleClass(styleHeader + "-button-search");
+    	        //閉じるボタン
+    	        close.setStyleClass(styleHeader + "-button-close");
+    	        //ヒット件数
+    	        hitCount.setStyleClass(styleHeader + "-text-hitcount");
+    	        //メッセージ
+    	        message.setStyleClass(styleHeader + "-text-message");
+    	        //最終更新日
+    	        label_edtm.setStyleClass(styleHeader + "-label-edtm");
+    	        edtm.setStyleClass(styleHeader + "-text-edtm");
+    	        //前頁
+    	        previous_page.setStyleClass(styleHeader + "-image-previous");
+    	        //次頁
+    	        next_page.setStyleClass(styleHeader + "-image-next");*/
+    		}
     		,styleIcasRoll : function() {
     			if ($scope.icasInfo == null) {
     				return "white"; 

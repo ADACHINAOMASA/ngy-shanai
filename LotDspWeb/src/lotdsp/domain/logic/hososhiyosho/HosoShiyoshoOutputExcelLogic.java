@@ -125,7 +125,7 @@ public class HosoShiyoshoOutputExcelLogic {
                     
                     font.setFontHeightInPoints((short)9);  
                     font.setColor(HSSFFont.COLOR_NORMAL);
-                    font.setFontName("ＭＳ Ｐゴシック");
+                    font.setFontName("ＭＳ ゴシック");
                     headerStyle.setFont(font);
                     //色
                     headerStyle.setFillForegroundColor(HSSFColor.SKY_BLUE.index);

@@ -65,6 +65,12 @@ public class CommonInfo extends AuthenticationInfo {
 
 	private int nowPage;
 
+	private String paramCyno;
+
+	private String paramLinkkey;
+
+	private boolean tabSetRendered = true;
+
 	public boolean isError() {
 		return error;
 	}
@@ -255,6 +261,30 @@ public class CommonInfo extends AuthenticationInfo {
 
 	public void setNowPage(int nowPage) {
 		this.nowPage = nowPage;
+	}
+
+	public String getParamCyno() {
+		return paramCyno;
+	}
+
+	public void setParamCyno(String paramCyno) {
+		this.paramCyno = paramCyno;
+	}
+
+	public String getParamLinkkey() {
+		return paramLinkkey;
+	}
+
+	public void setParamLinkkey(String paramLinkkey) {
+		this.paramLinkkey = paramLinkkey;
+	}
+
+	public boolean isTabSetRendered() {
+		return tabSetRendered;
+	}
+
+	public void setTabSetRendered(boolean tabSetRendered) {
+		this.tabSetRendered = tabSetRendered;
 	}
 
 }

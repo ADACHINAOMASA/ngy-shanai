@@ -61,6 +61,12 @@ public class SearchActionLogic {
 			//入力したロット番号と検査番号を改めて設定
 			in.setSearchLtno(inputLtno);
 			in.setSearchKnno(inputKnno);
+			
+	        if (resStaff.equals("success") && resIcas.equals("success") && resClad.equals("success") && resCF.equals("success")) {
+                in.setTabSetRendered(true);
+	        } else {
+                in.setTabSetRendered(false);
+	        }
 
 		} catch (Exception e) {
 			in.setMessage(e.toString());

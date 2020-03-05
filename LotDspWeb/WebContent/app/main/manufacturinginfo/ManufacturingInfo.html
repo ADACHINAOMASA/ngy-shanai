@@ -511,7 +511,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 55px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>需要</span></td>
@@ -535,10 +535,10 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 55px;">
                       <tbody>
                         <tr class="item-label1">
-                          <td><span>用途ｺｰﾄﾞ</span></td>
+                          <td><span>用途</span></td>
                         </tr>
                         <tr class="item-value1">
                           <td><span>{{common.yotoc}}</span></td>
@@ -547,7 +547,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 150px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 130px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>用途名</span></td>
@@ -559,7 +559,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 45px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>地区</span></td>
@@ -571,13 +571,13 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 150px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 220px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>販売員</span></td>
                         </tr>
                         <tr class=" item-value1">
-                          <td><span>{{common.jujsno}}</span></td>
+                          <td><span>{{common.jujsno}}{{common.tantosha_mei}}</span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -607,7 +607,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 40px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 45px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>本数</span></td>
@@ -625,7 +625,7 @@
                           <td><span >Yﾏｰｸ日</span></td>
                         </tr>
                         <tr class="item-value1">
-                          <td><span >{{common.ymark}}</span></td>
+                          <td><span >{{common.ymark | date:'yy/MM/dd'}}</span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -637,23 +637,23 @@
         </tr>
         <tr>
           <td>
-            <table bgcolor="white" border="0" cellpadding="0" cellspacing="0" style="vertical-align: top">
+            <table bgcolor="white" border="0" cellpadding="0" cellspacing="0" style="vertical-align: top; margin-top: 2px;">
               <tbody>
                 <tr>
                   <td>
                     <table bgcolor="white" border="0" cellpadding="0" cellspacing="0">
                       <tbody>
-                        <tr class="item-label1">
+                        <tr class="item-label1" style="width: 120px;">
                           <td>
                           	<!--材質～重量-->
-                            <table id="form1:ommonInfo_Group11" border="0" cellpadding="0" cellspacing="0">
+                            <table border="0" cellpadding="0" cellspacing="0">
                               <tbody>
                                 <tr>
                                   <td>
                                     <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
                                       <tbody>
-                                        <tr class="item-label1">
-                                          <td class="item-width2"><span></span></td>
+                                        <tr class="item-label1" style="width: 38px">
+                                          <td class="item-width2"><span>&nbsp;</span></td>
                                         </tr>
                                         <tr class=" item-label1">
                                           <td class="item-width2"><span>ｵｰﾀﾞｰ</span></td>
@@ -668,16 +668,16 @@
                                     <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
                                       <tbody>
                                         <tr class="item-label1">
-                                          <td class="item-width2"><span>材質</span></td>
-                                          <td class="item-width3"><span> </span></td>
-                                          <td class="item-width2"><span>調質</span></td>
-                                          <td class="item-width3"><span> </span></td>
-                                          <td class="item-width2"><span>板厚</span></td>
-                                          <td class="item-width3"><span> </span></td>
-                                          <td class="item-width2"><span>板幅</span></td>
-                                          <td class="item-width3"><span> </span></td>
-                                          <td class="item-width2"><span>板丈</span></td>
-                                          <td class="item-width2"><span>重量</span></td>
+                                          <td class="item-width2" style="width: 45px"><span>材質</span></td>
+                                          <td class="item-width3"><span>&nbsp;</span></td>
+                                          <td class="item-width2" style="width: 40px"><span>調質</span></td>
+                                          <td class="item-width3"><span>&nbsp;</span></td>
+                                          <td class="item-width2" style="width: 45px"><span>板厚</span></td>
+                                          <td class="item-width3"><span>&nbsp;</span></td>
+                                          <td class="item-width2" style="width: 65px"><span>板幅</span></td>
+                                          <td class="item-width3"><span>&nbsp;</span></td>
+                                          <td class="item-width2" style="width: 65px"><span>板丈</span></td>
+                                          <td class="item-width2" style="width: 65px"><span>重量</span></td>
                                         </tr>
                                         <tr class="item-value1">
                                           <td class="item-width2"><span>{{common.jua}}</span></td>
@@ -716,19 +716,19 @@
                   </td>
                   <td><span id="form1:space1" class="space">*</span></td>
                   <td>
-                  	<!--得意先～納入先-->
+                  	<!--取引先～納入先-->
                     <table bgcolor="white" border="0" cellpadding="0" cellspacing="1">
                       <tbody>
-                        <tr>
-                          <td class="item-label2"><span>得意先</span></td>
+                        <tr class="item-label2">
+                          <td class="item-width2" style="width: 60px"><span>取引先</span></td>
                           <td class=" com-value-left-w180"><span>{{common.tokui}}</span></td>
                         </tr>
-                        <tr>
-                          <td class="item-label2"><span>送り先</span></td>
-                          <td class=" com-value-left-w180"><span>{{common.oname}}</span></td>
+                        <tr class="item-label2">
+                          <td class="item-width2"><span>送り先</span></td>
+                          <td class="com-value-left-w180"><span>{{common.oname}}</span></td>
                         </tr>
-                        <tr>
-                          <td class="item-label2"><span>納入先</span></td>
+                        <tr class="item-label2">
+                          <td class="item-width2"><span>納入先</span></td>
                           <td class=" com-value-left-w180"><span>{{common.nonyu}}</span></td>
                         </tr>
                       </tbody>
@@ -741,16 +741,16 @@
                       <tbody>
                         <tr>
                           <td>
-                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 80px;">
                               <tbody>
                                 <tr class="item-value0">
-                                  <td><span class="DataKbnGreen">{{common.datakbn}}</span></td>
+                                  <td class="item-width2"><span class="{{common.css}}">{{common.datakbn}}</span></td>
                                 </tr>
                                 <tr class="item-label1">
-                                  <td><span style="width:80px;">倉入日</span></td>
+                                  <td class="item-width2"><span>倉入日</span></td>
                                 </tr>
                                 <tr class="item-value1">
-                                  <td><span>{{common.ksd | date:'yy/MM/dd'}}</span></td>
+                                  <td class="item-width2"><span>{{common.ksd | date:'yy/MM/dd'}}</span></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -762,10 +762,40 @@
                                   <td>&nbsp;</td>
                                 </tr>
                                 <tr class="item-label1">
-                                  <td><span>試験者名</span></td>
+                                  <td class="item-width2"><span>試験者名</span></td>
                                 </tr>
                                 <tr class="item-value1">
-                                  <td><span>{{common.juno202}}</span></td>
+                                  <td class="item-width2"><span>{{common.juno202}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 50px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td class="item-width2"><span>試No</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td class="item-width2"><span>{{common.shikenno}}</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 55px;">
+                              <tbody>
+                                <tr class="item-value0">
+                                  <td>&nbsp;</td>
+                                </tr>
+                                <tr class="item-label1">
+                                  <td class="item-width2"><span>仮梱</span></td>
+                                </tr>
+                                <tr class="item-value1">
+                                  <td class="item-width2"><span>{{common.karikon}}</span></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -777,40 +807,10 @@
                                   <td>&nbsp;</td>
                                 </tr>
                                 <tr class="item-label1">
-                                  <td><span>試験No</span></td>
+                                  <td class="item-width2"><span style="width:100px;">納期符号</span></td>
                                 </tr>
                                 <tr class="item-value1">
-                                  <td><span>{{common.shikenno}}</span></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                          <td>
-                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
-                              <tbody>
-                                <tr class="item-value0">
-                                  <td>&nbsp;</td>
-                                </tr>
-                                <tr class="item-label1">
-                                  <td><span style="width:50px;">仮梱</span></td>
-                                </tr>
-                                <tr class="item-value1">
-                                  <td><span>{{common.karikon}}</span></td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                          <td>
-                            <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 100px;">
-                              <tbody>
-                                <tr class="item-value0">
-                                  <td>&nbsp;</td>
-                                </tr>
-                                <tr class="item-label1">
-                                  <td><span style="width:100px;">納期符号</span></td>
-                                </tr>
-                                <tr class="item-value1">
-                                  <td><span>{{common.nokifugo}}</span></td>
+                                  <td class="item-width2"><span>{{common.nokifugo}}</span></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -826,10 +826,11 @@
         </tr>
       </tbody>
     </table>
+    
     <span id="header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
     <span id="messageArea" class="message"></span>
     <span style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
-    <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno" onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
+    <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno"  onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
 	<span style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
 	<input type="text" ng-model="common.searchKnno" id="common_searchKnno" name="searchKnno" onclick="InputTextSelect(this);"style="height: 25px; left: 200px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="2" />
 	<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
@@ -837,8 +838,8 @@
 		</span>検索
 	</button>
 
-    <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 120px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
-    <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日</span>
+    <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 150px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
+    <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日: </span>
     <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
     <span ng-show="util.isPreviewRendered(common);">
     	<a style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.previousPage()">

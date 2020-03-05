@@ -149,6 +149,10 @@ public class LotProgInfoBean implements Serializable {
     */
     private BigDecimal	jujsno;
     /**
+    * <p>販売員名</p>
+    */
+    private String	tantosha_mei;
+    /**
     * <p>営業納期</p>
     */
     private Date	enoki;
@@ -815,6 +819,26 @@ public class LotProgInfoBean implements Serializable {
     */
     public void setjujsno( BigDecimal pjujsno ){
             jujsno = pjujsno;
+    }
+
+    /**
+    * <p>販売員コ－ド取得メソッド</p>
+    *
+    * @return    販売員コ－ド
+    * @exception なし
+    */
+    public String gettantosha_mei(){
+            return tantosha_mei;
+    }
+
+    /**
+    * <p>販売員コ－ド設定メソッド</p>
+    *
+    * @param ptantosha_mei 販売員コ－ド
+    * @exception なし
+    */
+    public void settantosha_mei( String ptantosha_mei ){
+            tantosha_mei = ptantosha_mei;
     }
 
     /**

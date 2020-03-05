@@ -66,6 +66,7 @@
 		        $scope.common.yotoname = data.staffCommonBean.yotoname;
 		        $scope.common.chikucd = data.staffCommonBean.chikucd;
 		        $scope.common.jujsno = data.staffCommonBean.jujsno;
+		        $scope.common.jujsname = data.staffCommonBean.jujsname;
 		        $scope.common.enoki = data.staffCommonBean.enoki;
 		        $scope.common.jcd105 = data.staffCommonBean.jcd105;
 		        $scope.common.jup = data.staffCommonBean.jup;
@@ -89,6 +90,7 @@
 		        $scope.common.nonyu = data.staffCommonBean.nonyu;
 		        //倉入日～納期符号
 		        $scope.common.datakbn = data.staffCommonBean.datakbn;
+		        $scope.common.css = data.staffCommonBean.css;
 		        $scope.common.ksd = data.staffCommonBean.ksd;
 		        $scope.common.juno202 = data.staffCommonBean.juno202;
 		        $scope.common.shikenno = data.staffCommonBean.shikenno;
@@ -100,6 +102,8 @@
 		        $scope.common.lotMaximum = data.lotMaximum;
 		        //現在表示ページ
 		        $scope.common.nowPage = data.nowPage;
+		        //表示制御
+		        $scope.common.tabSetRendered = data.tabSetRendered;
 			}
 	    	//進度情報基本データの設定
 			,setStaffProgressInfoData:function(data){

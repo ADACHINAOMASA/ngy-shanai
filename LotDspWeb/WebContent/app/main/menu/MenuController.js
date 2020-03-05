@@ -13,7 +13,7 @@
 			'$httpParamSerializer', '$window', '$q', '$timeout', 'i18nService',
 			'uiGridConstants', 'AlertService', 'ModalService',
 			'ModelService', 'AlertLogService','CommonService','MenuService'
-			, 'input', 'authenticationInfo','UserInfoStorage'
+			, 'input', 'authenticationInfo','UserInfoStorage', 'params'
 
 			];
 
@@ -22,7 +22,7 @@
 			$httpParamSerializer, $window, $q, $timeout, i18nService,
 			uiGridConstants, AlertService, ModalService,
 			ModelService, AlertLogService ,CommonService, MenuService
-			, input, authenticationInfo,UserInfoStorage
+			, input, authenticationInfo,UserInfoStorage, params
 		) {
 		$scope.langs = i18nService.getAllLangs();
 		i18nService.setCurrentLang('ja');
@@ -30,6 +30,7 @@
 		// 初期情報
 		$scope.input = input || {};
 		$scope.authenticationInfo = authenticationInfo || {};
+		$scope.params = params || {};
 
 		$scope.input.mode = $scope.authenticationInfo.mode;
 		$scope.input.ltno = $scope.authenticationInfo.ltno;
@@ -42,7 +43,7 @@
 
 		//認証時にエラーが発生していた場合はエラーページに遷移する。
 		if ($scope.input.error == true) {
-			$state.go('/schapp/errorpage');
+			$state.go('ErrorPage');
 			return;
 		}
 
@@ -52,6 +53,34 @@
 
 		// アクション定義
 		$scope.action = {
+			init : function() {
+				// 必要なパラメーターだけ先にローカルストレージへ保存する
+				MenuService.memoryParam.saveBaseWorkParam({site: $scope.params.site});
+				if (Object.keys($scope.params).length > 0) {
+					// パラメータをinput設定
+					$scope.input.searchLtno = $scope.params.ltno;
+					$scope.input.searchKnno = $scope.params.knno;
+					$scope.input.paramCyno = $scope.params.cyno;
+					$scope.input.paramLinkkey = $scope.params.linkkey;
+					$scope.input.tab = $scope.params.tab;
+					$scope.input.site = $scope.params.site;
+					// ローカルストレージへ保存
+					ModalService.showProcessing(MenuService.searchMenuParams($scope.input),{message:'処理中・・・'}).then(function(data) {
+		    			if(data.errorFlg){
+		    				$("#messageArea").css("color", "red");
+		    				$("#messageArea").text(data.message);
+		    			}else{
+		    				if (data.nextGamen != null) {
+			    				//返却されたデータをローカルストレージに保存する
+			    				MenuService.memory.saveBaseWork(data);
+			    				$("#messageArea").css("color", "white");
+			    				$("#messageArea").text("");
+			    				$state.go(data.nextGamen);
+		    				}
+		    			}
+					});
+				}
+			},
 			search : function() {
 				ModalService.showProcessing(MenuService.searchMenu($scope.input),{message:'処理中・・・'}).then(function(data) {
     				if(data.errorFlg){
@@ -73,6 +102,9 @@
 				$window.scrollTo(0, 0);
 			}
 		};
+		
+		// 初期処理
+		$scope.action.init();
 	}; // End newController
 
 	newController.$inject = injectParams;

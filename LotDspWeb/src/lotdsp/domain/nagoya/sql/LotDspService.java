@@ -168,7 +168,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
     private static final String STAFF_COMMON_QUERY =
         "SELECT * FROM ( " +
         "SELECT " +
-	"	D1.LINKKEY,LTNO,DECODE(CYNO,'0000000000',NULL,CYNO) CYNO,DECODE(KNNO,'0000000000',NULL,KNNO) KNNO,JUNO,JBCD,BUCODE,D1.YOTOC YOTOC,YOTONAME,CHIKUCD,JUJSNO, " +
+	"	D1.LINKKEY,LTNO,DECODE(CYNO,'0000000000',NULL,CYNO) CYNO,DECODE(KNNO,'0000000000',NULL,KNNO) KNNO,JUNO,JBCD,BUCODE,D1.YOTOC YOTOC,YOTONAME,CHIKUCD,JUJSNO,TANTOSHA_MEI, " +
 	"	ENOKI,JUA,JUB,JUX,JUY,JUZ,JUW,LTA,LTB,LTX,LTY,LTZ,RYOW,M2.ONAME,TO_DATE(null) KSD,JUNO202,FRTDTM, " +
         "       NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D1.TOKUI = M1.TNCD AND M1.KBN IN ('1', '2')), NULL) TOKUI, " +
 	"	NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D1.NONYU = M1.TNCD AND M1.KBN IN ('1', '3')), NULL) NONYU, " +
@@ -202,15 +202,17 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"	DAT_LOT_COM D2, " +
 	"	DAT_LOT_FIX D3, " +
 	"	MAS_YOTO M1, " +
-	"	MAS_OKURI M2 " +
+	"	MAS_OKURI M2, " +
+	"	MAS_TANTOSHA M3 " +
 	"WHERE " +
 	"	D1.LINKKEY = D2.LINKKEY(+) " +
 	"AND	D1.LINKKEY = D3.LINKKEY(+) " +
 	"AND	D1.MASYOTOC = M1.YOTOC(+) " +
 	"AND	D1.ON3N = M2.OKUCD(+) " +
+	"AND	TO_CHAR(JUJSNO) = M3.TANTOSHA_CD(+) " +
         "UNION ALL " +
         "SELECT " +
-        "       D1.LINKKEY,D2.LTNO,DECODE(D2.CYNO,'0000000000',NULL,D2.CYNO) CYNO,DECODE(D1.KNNO,'0000000000',NULL,D1.KNNO) KNNO,D2.JUNO,D2.JBCD,D2.BUCODE,D2.YOTOC,M1.YOTONAME,D2.CHIKUCD,TO_NUMBER(D1.JUJSNO), " +
+        "       D1.LINKKEY,D2.LTNO,DECODE(D2.CYNO,'0000000000',NULL,D2.CYNO) CYNO,DECODE(D1.KNNO,'0000000000',NULL,D1.KNNO) KNNO,D2.JUNO,D2.JBCD,D2.BUCODE,D2.YOTOC,M1.YOTONAME,D2.CHIKUCD,TO_NUMBER(D1.JUJSNO),TANTOSHA_MEI, " +
         "       D2.ENOKI,D2.JUA,D2.JUB,D2.JUX,D2.JUY,D2.JUZ,D2.JUW,D2.LTA,D2.LTB,D2.LTX,D2.LTY,D2.LTZ,D2.RYOW,M2.ONAME,TO_DATE(NULL) KSD,JUNO202,D1.FRTDTM, " +
         "       NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D2.TOKUI = M1.TNCD AND M1.KBN IN ('1', '2')), NULL) TOKUI, " +
         "       NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D2.NONYU = M1.TNCD AND M1.KBN IN ('1', '3')), NULL) NONYU, " +
@@ -243,14 +245,16 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "       DAT_JDF_FIX D1, " +
         "       DAT_JDF_COM2 D2, " +
         "       MAS_YOTO M1, " +
-        "       MAS_OKURI M2 " +
+        "       MAS_OKURI M2, " +
+    	"	     MAS_TANTOSHA M3 " +
         "WHERE  " +
         "       D1.LINKKEY = D2.LINKKEY " +
         "AND    D2.MASYOTOC = M1.YOTOC(+) " +
         "AND    D2.ON3N = M2.OKUCD(+) " +
+    	"AND	TO_CHAR(D1.JUJSNO) = M3.TANTOSHA_CD(+) " +
         "UNION ALL " +
 	"SELECT " +
-	"	D1.LINKKEY,LTNO,DECODE(CYNO,'0000000000',NULL,CYNO) CYNO,DECODE(KNNO,'0000000000',NULL,KNNO) KNNO,JUNO,JBCD,BUCODE,D1.YOTOC YOTOC,YOTONAME,CHIKUCD,JUJSNO, " +
+	"	D1.LINKKEY,LTNO,DECODE(CYNO,'0000000000',NULL,CYNO) CYNO,DECODE(KNNO,'0000000000',NULL,KNNO) KNNO,JUNO,JBCD,BUCODE,D1.YOTOC YOTOC,YOTONAME,CHIKUCD,JUJSNO,TANTOSHA_MEI, " +
 	"	ENOKI,JUA,JUB,JUX,JUY,JUZ,JUW,LTA,LTB,LTX,LTY,LTZ,RYOW,M2.ONAME,KSD,JUNO202,FRTDTM, " +
         "       NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D1.TOKUI = M1.TNCD AND M1.KBN IN ('1', '2')), NULL) TOKUI, " +
 	"	NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D1.NONYU = M1.TNCD AND M1.KBN IN ('1', '3')), NULL) NONYU, " +
@@ -283,16 +287,18 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"	DAT_R_LOT_COM D2, " +
 	"	DAT_R_LOT_FIX D3, " +
 	"	MAS_YOTO M1, " +
-	"	MAS_OKURI M2 " +
+	"	MAS_OKURI M2, " +
+	"	MAS_TANTOSHA M3 " +
 	"WHERE " +
 	"	D1.LINKKEY = D2.LINKKEY(+) " +
 	"AND	D1.LINKKEY = D3.LINKKEY(+) " +
 	"AND	D1.MASYOTOC = M1.YOTOC(+) " +
 	"AND	D1.ON3N = M2.OKUCD(+) " +
+	"AND	TO_CHAR(JUJSNO) = M3.TANTOSHA_CD(+) " +
 	// 2014/09/25 追加 ▼
         "UNION ALL " +
 	"SELECT " +
-	"	D1.LINKKEY,LTNO,DECODE(CYNO,'0000000000',NULL,CYNO) CYNO,DECODE(KNNO,'0000000000',NULL,KNNO) KNNO,JUNO,JBCD,BUCODE,D1.YOTOC YOTOC,YOTONAME,CHIKUCD,JUJSNO, " +
+	"	D1.LINKKEY,LTNO,DECODE(CYNO,'0000000000',NULL,CYNO) CYNO,DECODE(KNNO,'0000000000',NULL,KNNO) KNNO,JUNO,JBCD,BUCODE,D1.YOTOC YOTOC,YOTONAME,CHIKUCD,JUJSNO,TANTOSHA_MEI, " +
 	"	ENOKI,JUA,JUB,JUX,JUY,JUZ,JUW,LTA,LTB,LTX,LTY,LTZ,RYOW,M2.ONAME,KSD,JUNO202,FRTDTM, " +
         "       NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D1.TOKUI = M1.TNCD AND M1.KBN IN ('1', '2')), NULL) TOKUI, " +
 	"	NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D1.NONYU = M1.TNCD AND M1.KBN IN ('1', '3')), NULL) NONYU, " +
@@ -325,7 +331,8 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"	DAT_S_LOT_COM D2, " +
 	"	DAT_S_LOT_FIX D3, " +
 	"	MAS_YOTO M1, " +
-	"	MAS_OKURI M2 " +
+	"	MAS_OKURI M2, " +
+	"	MAS_TANTOSHA M3 " +
 	"WHERE " +
 	"	D1.LINKKEY = D2.LINKKEY(+) " +
 	"AND	D1.TOROKUDATE = D2.TOROKUDATE(+) " +
@@ -333,11 +340,12 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"AND	D1.TOROKUDATE = D3.TOROKUDATE(+) " +
 	"AND	D1.MASYOTOC = M1.YOTOC(+) " +
 	"AND	D1.ON3N = M2.OKUCD(+) " +
+	"AND	TO_CHAR(JUJSNO) = M3.TANTOSHA_CD(+) " +
 	// 2014/09/25 追加 ▲
 	// 2016/04/24 追加 ▼
         "UNION ALL " +
 	"SELECT " +
-	"	D1.LINKKEY,LTNO,DECODE(CYNO,'0000000000',NULL,CYNO) CYNO,DECODE(KNNO,'0000000000',NULL,KNNO) KNNO,JUNO,JBCD,BUCODE,D1.YOTOC YOTOC,YOTONAME,CHIKUCD,JUJSNO, " +
+	"	D1.LINKKEY,LTNO,DECODE(CYNO,'0000000000',NULL,CYNO) CYNO,DECODE(KNNO,'0000000000',NULL,KNNO) KNNO,JUNO,JBCD,BUCODE,D1.YOTOC YOTOC,YOTONAME,CHIKUCD,JUJSNO,TANTOSHA_MEI, " +
 	"	ENOKI,JUA,JUB,JUX,JUY,JUZ,JUW,LTA,LTB,LTX,LTY,LTZ,RYOW,M2.ONAME,KSD,JUNO202,FRTDTM, " +
         "       NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D1.TOKUI = M1.TNCD AND M1.KBN IN ('1', '2')), NULL) TOKUI, " +
 	"	NVL((SELECT M1.TNNAME FROM MAS_TORINO M1 WHERE D1.NONYU = M1.TNCD AND M1.KBN IN ('1', '3')), NULL) NONYU, " +
@@ -370,7 +378,8 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"	DAT_L_LOT_COM D2, " +
 	"	DAT_L_LOT_FIX D3, " +
 	"	MAS_YOTO M1, " +
-	"	MAS_OKURI M2 " +
+	"	MAS_OKURI M2, " +
+	"	MAS_TANTOSHA M3 " +
 	"WHERE " +
 	"	D1.LINKKEY = D2.LINKKEY(+) " +
 	"AND	TRUNC(D1.TOROKUDATE) = TRUNC(D2.TOROKUDATE(+)) " +
@@ -378,6 +387,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"AND	TRUNC(D1.TOROKUDATE) = TRUNC(D3.TOROKUDATE(+)) " +
 	"AND	D1.MASYOTOC = M1.YOTOC(+) " +
 	"AND	D1.ON3N = M2.OKUCD(+) " +
+	"AND	TO_CHAR(JUJSNO) = M3.TANTOSHA_CD(+) " +
 	// 2016/04/24 追加 ▲
         ") " +
         "WHERE " +
@@ -3580,228 +3590,265 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
      * 2011/07/05 add
      */
     public static String getCladKawazaiQuery() {
+    	
         StringBuilder bld = new StringBuilder();
-
         bld.append(" SELECT * ");
         bld.append(" FROM ( ");
-        bld.append(    " SELECT ");
-        bld.append(        " Z1.LINKKEY ");
-        bld.append(      " , J1.KR_CYNO1 KR_CYNO ");
-        bld.append(      " , Z1.LTA ");
-        bld.append(      " , RPAD(L1.JPJ, 2, ' ') JPJ ");
-        bld.append(      " , L1.JPRB ");
-        bld.append(      " , L1.JPRJ ");
-        bld.append(      " , L1.JPDT ");
-        bld.append(      " , L1.JPDT2 ");
-        bld.append(      " , L1.JPO2 ");
-        bld.append(      " , L1.JPDT3 ");
-        bld.append(      " , L1.JPO3 ");
-        bld.append(      " , L1.JPDT4 ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM J1 ");
-        bld.append(      " , DAT_LOT_FIX L1 ");
-        bld.append(      " , DAT_JDF_COM Z1 ");
-        bld.append(    " WHERE ");
-        bld.append(        " Z1.CYNO = J1.KR_CYNO1 ");
-        bld.append(    " AND Z1.CYUZO_YY = J1.CYUZO_YY "); // 2014/09/25 追加
-        bld.append(    " AND Z1.LINKKEY = L1.LINKKEY ");
-		bld.append(    " AND J1.JYOTAI = 1 ");
-        bld.append(    " AND J1.LINKKEY = ? ");
-        bld.append(  " UNION ALL ");
-		// ▼ 2017/10/29
-        bld.append(    " SELECT ");
-        bld.append(        " J1.LINKKEY ");
-        bld.append(      " , J1.KR_CYNO1 KR_CYNO ");
-        bld.append(      " , J1.LTA ");
-        bld.append(      " , NULL ");
-        bld.append(      " , NULL ");
-        bld.append(      " , NULL ");
-        bld.append(      " , NULL ");
-        bld.append(      " , NULL ");
-        bld.append(      " , NULL ");
-        bld.append(      " , NULL ");
-        bld.append(      " , NULL ");
-        bld.append(      " , NULL ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM2 J1 ");
-        bld.append(    " WHERE ");
-		bld.append(		  "	 J1.JYOTAI = 0 ");
-        bld.append(  " UNION ALL ");
-		// ▲ 2017/10/29
-        bld.append(    " SELECT ");
-        bld.append(        " Z2.LINKKEY ");
-        bld.append(      " , J2.KR_CYNO2 KR_CYNO ");
-        bld.append(      " , Z2.LTA ");
-        bld.append(      " , RPAD(L2.JPJ, 2, ' ') JPJ ");
-        bld.append(      " , L2.JPRB ");
-        bld.append(      " , L2.JPRJ ");
-        bld.append(      " , L2.JPDT ");
-        bld.append(      " , L2.JPDT2 ");
-        bld.append(      " , L2.JPO2 ");
-        bld.append(      " , L2.JPDT3 ");
-        bld.append(      " , L2.JPO3 ");
-        bld.append(      " , L2.JPDT4 ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM J2 ");
-        bld.append(      " , DAT_LOT_FIX L2 ");
-        bld.append(      " , DAT_JDF_COM Z2 ");
-        bld.append(    " WHERE ");
-        bld.append(        " Z2.CYNO = J2.KR_CYNO2 ");
-        bld.append(    " AND Z2.CYUZO_YY = J2.CYUZO_YY "); // 2014/09/25 追加
-        bld.append(    " AND Z2.LINKKEY = L2.LINKKEY ");
-	bld.append(    " AND J2.JYOTAI = 1 ");
-        bld.append(    " AND J2.LINKKEY = ? ");
-        bld.append(  " UNION ALL ");
-        bld.append(    " SELECT ");
-        bld.append(        " Z3.LINKKEY ");
-        bld.append(      " , J3.KR_CYNO3 KR_CYNO ");
-        bld.append(      " , Z3.LTA ");
-        bld.append(      " , RPAD(L3.JPJ, 2, ' ') JPJ ");
-        bld.append(      " , L3.JPRB ");
-        bld.append(      " , L3.JPRJ ");
-        bld.append(      " , L3.JPDT ");
-        bld.append(      " , L3.JPDT2 ");
-        bld.append(      " , L3.JPO2 ");
-        bld.append(      " , L3.JPDT3 ");
-        bld.append(      " , L3.JPO3 ");
-        bld.append(      " , L3.JPDT4 ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM J3 ");
-        bld.append(      " , DAT_LOT_FIX L3 ");
-        bld.append(      " , DAT_JDF_COM Z3 ");
-        bld.append(    " WHERE ");
-        bld.append(        " Z3.CYNO = J3.KR_CYNO3 ");
-        bld.append(    " AND Z3.CYUZO_YY = J3.CYUZO_YY "); // 2014/09/25 追加
-		bld.append(    " AND Z3.LINKKEY = L3.LINKKEY ");
-		bld.append(    " AND J3.JYOTAI = 1 ");
-		bld.append(    " AND J3.LINKKEY = ? ");
-        bld.append(  " UNION ALL ");
-        bld.append(    " SELECT ");
-        bld.append(        " Z4.LINKKEY ");
-        bld.append(      " , J4.KR_CYNO4 KR_CYNO ");
-        bld.append(      " , Z4.LTA ");
-        bld.append(      " , RPAD(L4.JPJ, 2, ' ') JPJ ");
-        bld.append(      " , L4.JPRB ");
-        bld.append(      " , L4.JPRJ ");
-        bld.append(      " , L4.JPDT ");
-        bld.append(      " , L4.JPDT2 ");
-        bld.append(      " , L4.JPO2 ");
-        bld.append(      " , L4.JPDT3 ");
-        bld.append(      " , L4.JPO3 ");
-        bld.append(      " , L4.JPDT4 ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM J4 ");
-        bld.append(      " , DAT_LOT_FIX L4 ");
-        bld.append(      " , DAT_JDF_COM Z4 ");
-        bld.append(    " WHERE ");
-        bld.append(        " Z4.CYNO = J4.KR_CYNO4 ");
-        bld.append(    " AND Z4.CYUZO_YY = J4.CYUZO_YY "); // 2014/09/25 追加
-        bld.append(    " AND Z4.LINKKEY = L4.LINKKEY ");
-		bld.append(    " AND J4.JYOTAI = 1 ");
-        bld.append(    " AND J4.LINKKEY = ? ");
-        bld.append(  " UNION ALL ");
-        bld.append(    " SELECT ");
-        bld.append(        " Z5.LINKKEY ");
-        bld.append(      " , J5.KR_CYNO5 KR_CYNO ");
-        bld.append(      " , Z5.LTA ");
-        bld.append(      " , RPAD(L5.JPJ, 2, ' ') JPJ ");
-        bld.append(      " , L5.JPRB ");
-        bld.append(      " , L5.JPRJ ");
-        bld.append(      " , L5.JPDT ");
-        bld.append(      " , L5.JPDT2 ");
-        bld.append(      " , L5.JPO2 ");
-        bld.append(      " , L5.JPDT3 ");
-        bld.append(      " , L5.JPO3 ");
-        bld.append(      " , L5.JPDT4 ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM J5 ");
-        bld.append(      " , DAT_LOT_FIX L5 ");
-        bld.append(      " , DAT_JDF_COM Z5 ");
-        bld.append(    " WHERE ");
-        bld.append(        " Z5.CYNO = J5.KR_CYNO5 ");
-        bld.append(    " AND Z5.CYUZO_YY = J5.CYUZO_YY "); // 2014/09/25 追加
-        bld.append(    " AND Z5.LINKKEY = L5.LINKKEY ");
-		bld.append(    " AND J5.JYOTAI = 1 ");
-		bld.append(    " AND J5.LINKKEY = ? ");
-        bld.append(  " UNION ALL ");
-        bld.append(    " SELECT ");
-        bld.append(        " Z6.LINKKEY ");
-        bld.append(      " , J6.KR_CYNO6 KR_CYNO ");
-        bld.append(      " , Z6.LTA ");
-        bld.append(      " , RPAD(L6.JPJ, 2, ' ') JPJ ");
-        bld.append(      " , L6.JPRB ");
-        bld.append(      " , L6.JPRJ ");
-        bld.append(      " , L6.JPDT ");
-        bld.append(      " , L6.JPDT2 ");
-        bld.append(      " , L6.JPO2 ");
-        bld.append(      " , L6.JPDT3 ");
-        bld.append(      " , L6.JPO3 ");
-        bld.append(      " , L6.JPDT4 ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM J6 ");
-        bld.append(      " , DAT_LOT_FIX L6 ");
-        bld.append(      " , DAT_JDF_COM Z6 ");
-        bld.append(    " WHERE ");
-        bld.append(        " Z6.CYNO = J6.KR_CYNO6 ");
-        bld.append(    " AND Z6.CYUZO_YY = J6.CYUZO_YY "); // 2014/09/25 追加
-        bld.append(    " AND Z6.LINKKEY = L6.LINKKEY ");
-       	bld.append(    " AND J6.JYOTAI = 1 ");
-		bld.append(    " AND J6.LINKKEY = ? ");
-        bld.append(  " UNION ALL ");
-        bld.append(    " SELECT ");
-        bld.append(        " Z7.LINKKEY ");
-        bld.append(      " , J7.KR_CYNO7 KR_CYNO ");
-        bld.append(      " , Z7.LTA ");
-        bld.append(      " , RPAD(L7.JPJ, 2, ' ') JPJ ");
-        bld.append(      " , L7.JPRB ");
-        bld.append(      " , L7.JPRJ ");
-        bld.append(      " , L7.JPDT ");
-        bld.append(      " , L7.JPDT2 ");
-        bld.append(      " , L7.JPO2 ");
-        bld.append(      " , L7.JPDT3 ");
-        bld.append(      " , L7.JPO3 ");
-        bld.append(      " , L7.JPDT4 ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM J7 ");
-        bld.append(      " , DAT_LOT_FIX L7 ");
-        bld.append(      " , DAT_JDF_COM Z7 ");
-        bld.append(    " WHERE ");
-        bld.append(        " Z7.CYNO = J7.KR_CYNO7 ");
-        bld.append(    " AND Z7.CYUZO_YY = J7.CYUZO_YY "); // 2014/09/25 追加
-        bld.append(    " AND Z7.LINKKEY = L7.LINKKEY ");
-       	bld.append(    " AND J7.JYOTAI = 1 ");
-	bld.append(    " AND J7.LINKKEY = ? ");
-        bld.append(  " UNION ALL ");
-        bld.append(    " SELECT ");
-        bld.append(        " Z8.LINKKEY ");
-        bld.append(      " , J8.KR_CYNO8 KR_CYNO ");
-        bld.append(      " , Z8.LTA ");
-        bld.append(      " , RPAD(L8.JPJ, 2, ' ') JPJ ");
-        bld.append(      " , L8.JPRB ");
-        bld.append(      " , L8.JPRJ ");
-        bld.append(      " , L8.JPDT ");
-        bld.append(      " , L8.JPDT2 ");
-        bld.append(      " , L8.JPO2 ");
-        bld.append(      " , L8.JPDT3 ");
-        bld.append(      " , L8.JPO3 ");
-        bld.append(      " , L8.JPDT4 ");
-        bld.append(    " FROM ");
-        bld.append(        " DAT_JDF_COM J8 ");
-        bld.append(      " , DAT_LOT_FIX L8 ");
-        bld.append(      " , DAT_JDF_COM Z8 ");
-        bld.append(    " WHERE ");
-        bld.append(        " Z8.CYNO = J8.KR_CYNO8 ");
-        bld.append(    " AND Z8.CYUZO_YY = J8.CYUZO_YY "); // 2014/09/25 追加
-       	bld.append(    " AND J8.JYOTAI = 1 ");
-	bld.append(    " AND Z8.LINKKEY = L8.LINKKEY ");
-        bld.append(    " AND J8.LINKKEY = ? ");
-
-	bld.append(    " ) ");
-	bld.append(" WHERE ");
-	bld.append(    " KR_CYNO <> '0000000000' ");
-	bld.append(" ORDER BY ");
-	bld.append(    " KR_CYNO ");
-
+        bld.append(" SELECT ");
+        bld.append(" Z1.LINKKEY ");
+        bld.append(" , J1.KR_CYNO1 KR_CYNO ");
+        bld.append(" , S1.A LTA");
+        bld.append(" , RPAD(L1.JPJ, 2, ' ') JPJ ");
+        bld.append(" , L1.JPRB ");
+        bld.append(" , L1.JPRJ ");
+        bld.append(" , L1.JPDT ");
+        bld.append(" , L1.JPDT2 ");
+        bld.append(" , L1.JPO2 ");
+        bld.append(" , L1.JPDT3 ");
+        bld.append(" , L1.JPO3 ");
+        bld.append(" , L1.JPDT4 ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM J1 ");
+        bld.append(" , DAT_LOT_FIX L1 ");
+        bld.append(" , DAT_JDF_COM Z1 ");
+        bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S1");
+        bld.append(" WHERE ");
+        bld.append(" J1.KR_CYNO1 = Z1.CYNO(+)");
+        bld.append(" AND J1.CYUZO_YY BETWEEN NVL(Z1.CYUZO_YY,1) -1 AND NVL(Z1.CYUZO_YY,9998) + 1");
+        bld.append(" AND J1.KR_CYNO1 = S1.CN");
+        bld.append(" AND J1.CYUZO_YY BETWEEN S1.CYUZO_YY -1 AND S1.CYUZO_YY + 1");
+        bld.append(" AND Z1.LINKKEY = L1.LINKKEY ");
+        bld.append(" AND J1.JYOTAI = 1 ");
+        bld.append(" AND J1.LINKKEY = ?");
+        bld.append("        ");
+        bld.append(" UNION ALL ");
+        bld.append("        ");
+        bld.append(" SELECT ");
+        bld.append(" J1.LINKKEY ");
+        bld.append(" , J1.KR_CYNO1 KR_CYNO ");
+        bld.append(" , J1.LTA ");
+        bld.append(" , NULL ");
+        bld.append(" , NULL ");
+        bld.append(" , NULL ");
+        bld.append(" , NULL ");
+        bld.append(" , NULL ");
+        bld.append(" , NULL ");
+        bld.append(" , NULL ");
+        bld.append(" , NULL ");
+        bld.append(" , NULL ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM2 J1 ");
+        bld.append(" WHERE ");
+        bld.append("  J1.JYOTAI = 0 ");
+        bld.append("        ");
+        bld.append(" UNION ALL ");
+        bld.append("        ");
+        bld.append(" SELECT ");
+        bld.append(" Z2.LINKKEY ");
+        bld.append(" , J2.KR_CYNO2 KR_CYNO ");
+        bld.append(" , S2.A LTA");
+        bld.append(" , RPAD(L2.JPJ, 2, ' ') JPJ ");
+        bld.append(" , L2.JPRB ");
+        bld.append(" , L2.JPRJ ");
+        bld.append(" , L2.JPDT ");
+        bld.append(" , L2.JPDT2 ");
+        bld.append(" , L2.JPO2 ");
+        bld.append(" , L2.JPDT3 ");
+        bld.append(" , L2.JPO3 ");
+        bld.append(" , L2.JPDT4 ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM J2 ");
+        bld.append(" , DAT_LOT_FIX L2 ");
+        bld.append(" , DAT_JDF_COM Z2 ");
+        bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S2");
+        bld.append(" WHERE ");
+        bld.append(" J2.KR_CYNO1 = Z2.CYNO(+)");
+        bld.append(" AND J2.CYUZO_YY BETWEEN NVL(Z2.CYUZO_YY,1) -1 AND NVL(Z2.CYUZO_YY,9998) + 1");
+        bld.append(" AND J2.KR_CYNO2 = S2.CN");
+        bld.append(" AND J2.CYUZO_YY BETWEEN S2.CYUZO_YY -1 AND S2.CYUZO_YY + 1");
+        bld.append(" AND Z2.LINKKEY = L2.LINKKEY ");
+        bld.append(" AND J2.JYOTAI = 1 ");
+        bld.append(" AND J2.LINKKEY = ?");
+        bld.append("        ");
+        bld.append(" UNION ALL ");
+        bld.append("        ");
+        bld.append(" SELECT ");
+        bld.append(" Z3.LINKKEY ");
+        bld.append(" , J3.KR_CYNO3 KR_CYNO ");
+        bld.append(" , S3.A LTA");
+        bld.append(" , RPAD(L3.JPJ, 2, ' ') JPJ ");
+        bld.append(" , L3.JPRB ");
+        bld.append(" , L3.JPRJ ");
+        bld.append(" , L3.JPDT ");
+        bld.append(" , L3.JPDT2 ");
+        bld.append(" , L3.JPO2 ");
+        bld.append(" , L3.JPDT3 ");
+        bld.append(" , L3.JPO3 ");
+        bld.append(" , L3.JPDT4 ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM J3 ");
+        bld.append(" , DAT_LOT_FIX L3 ");
+        bld.append(" , DAT_JDF_COM Z3  ");
+        bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S3");
+        bld.append(" WHERE ");
+        bld.append("  J3.KR_CYNO3 = Z3.CYNO(+)");
+        bld.append(" AND J3.CYUZO_YY BETWEEN NVL(Z3.CYUZO_YY,1) -1 AND NVL(Z3.CYUZO_YY,9998) + 1");
+        bld.append(" AND J3.KR_CYNO3 = S3.CN");
+        bld.append(" AND J3.CYUZO_YY BETWEEN S3.CYUZO_YY -1 AND S3.CYUZO_YY + 1");
+        bld.append(" AND Z3.LINKKEY = L3.LINKKEY ");
+        bld.append(" AND J3.JYOTAI = 1 ");
+        bld.append(" AND J3.LINKKEY = ?");
+        bld.append("        ");
+        bld.append(" UNION ALL ");
+        bld.append("        ");
+        bld.append(" SELECT ");
+        bld.append(" Z4.LINKKEY ");
+        bld.append(" , J4.KR_CYNO4 KR_CYNO ");
+        bld.append(" , S4.A LTA");
+        bld.append(" , RPAD(L4.JPJ, 2, ' ') JPJ ");
+        bld.append(" , L4.JPRB ");
+        bld.append(" , L4.JPRJ ");
+        bld.append(" , L4.JPDT ");
+        bld.append(" , L4.JPDT2 ");
+        bld.append(" , L4.JPO2 ");
+        bld.append(" , L4.JPDT3 ");
+        bld.append(" , L4.JPO3 ");
+        bld.append(" , L4.JPDT4 ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM J4 ");
+        bld.append(" , DAT_LOT_FIX L4 ");
+        bld.append(" , DAT_JDF_COM Z4 ");
+        bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S4");
+        bld.append(" WHERE ");
+        bld.append("  J4.KR_CYNO4 = Z4.CYNO(+)");
+        bld.append(" AND J4.CYUZO_YY BETWEEN NVL(Z4.CYUZO_YY,1) -1 AND NVL(Z4.CYUZO_YY,9998) + 1");
+        bld.append(" AND J4.KR_CYNO4 = S4.CN");
+        bld.append(" AND J4.CYUZO_YY BETWEEN S4.CYUZO_YY -1 AND S4.CYUZO_YY + 1");
+        bld.append(" AND Z4.LINKKEY = L4.LINKKEY ");
+        bld.append(" AND J4.JYOTAI = 1 ");
+        bld.append(" AND J4.LINKKEY = ?");
+        bld.append("        ");
+        bld.append(" UNION ALL ");
+        bld.append("        ");
+        bld.append(" SELECT ");
+        bld.append(" Z5.LINKKEY ");
+        bld.append(" , J5.KR_CYNO5 KR_CYNO ");
+        bld.append(" , S5.A LTA");
+        bld.append(" , RPAD(L5.JPJ, 2, ' ') JPJ ");
+        bld.append(" , L5.JPRB ");
+        bld.append(" , L5.JPRJ ");
+        bld.append(" , L5.JPDT ");
+        bld.append(" , L5.JPDT2 ");
+        bld.append(" , L5.JPO2 ");
+        bld.append(" , L5.JPDT3 ");
+        bld.append(" , L5.JPO3 ");
+        bld.append(" , L5.JPDT4 ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM J5 ");
+        bld.append(" , DAT_LOT_FIX L5 ");
+        bld.append(" , DAT_JDF_COM Z5 ");
+        bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S5");
+        bld.append(" WHERE ");
+        bld.append("     J5.KR_CYNO5 = Z5.CYNO(+)");
+        bld.append(" AND J5.CYUZO_YY BETWEEN NVL(Z5.CYUZO_YY,1) -1 AND NVL(Z5.CYUZO_YY,9998) + 1");
+        bld.append(" AND J5.KR_CYNO5 = S5.CN");
+        bld.append(" AND J5.CYUZO_YY BETWEEN S5.CYUZO_YY -1 AND S5.CYUZO_YY + 1");
+        bld.append(" AND Z5.LINKKEY = L5.LINKKEY ");
+        bld.append(" AND J5.JYOTAI = 1 ");
+        bld.append(" AND J5.LINKKEY = ?");
+        bld.append("        ");
+        bld.append(" UNION ALL ");
+        bld.append("        ");
+        bld.append(" SELECT ");
+        bld.append(" Z6.LINKKEY ");
+        bld.append(" , J6.KR_CYNO6 KR_CYNO ");
+        bld.append(" , S6.A LTA");
+        bld.append(" , RPAD(L6.JPJ, 2, ' ') JPJ ");
+        bld.append(" , L6.JPRB ");
+        bld.append(" , L6.JPRJ ");
+        bld.append(" , L6.JPDT ");
+        bld.append(" , L6.JPDT2 ");
+        bld.append(" , L6.JPO2 ");
+        bld.append(" , L6.JPDT3 ");
+        bld.append(" , L6.JPO3 ");
+        bld.append(" , L6.JPDT4 ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM J6 ");
+        bld.append(" , DAT_LOT_FIX L6 ");
+        bld.append(" , DAT_JDF_COM Z6 ");
+        bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S6");
+        bld.append(" WHERE ");
+        bld.append("     J6.KR_CYNO6 = Z6.CYNO(+)");
+        bld.append(" AND J6.CYUZO_YY BETWEEN NVL(Z6.CYUZO_YY,1) -1 AND NVL(Z6.CYUZO_YY,9998) + 1");
+        bld.append(" AND J6.KR_CYNO6 = S6.CN");
+        bld.append(" AND J6.CYUZO_YY BETWEEN S6.CYUZO_YY -1 AND S6.CYUZO_YY + 1");
+        bld.append(" AND Z6.LINKKEY = L6.LINKKEY ");
+        bld.append(" AND J6.JYOTAI = 1 ");
+        bld.append(" AND J6.LINKKEY = ?");
+        bld.append("        ");
+        bld.append(" UNION ALL ");
+        bld.append("        ");
+        bld.append(" SELECT ");
+        bld.append(" Z7.LINKKEY ");
+        bld.append(" , J7.KR_CYNO7 KR_CYNO ");
+        bld.append(" , S7.A LTA");
+        bld.append(" , RPAD(L7.JPJ, 2, ' ') JPJ ");
+        bld.append(" , L7.JPRB ");
+        bld.append(" , L7.JPRJ ");
+        bld.append(" , L7.JPDT ");
+        bld.append(" , L7.JPDT2 ");
+        bld.append(" , L7.JPO2 ");
+        bld.append(" , L7.JPDT3 ");
+        bld.append(" , L7.JPO3 ");
+        bld.append(" , L7.JPDT4 ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM J7 ");
+        bld.append(" , DAT_LOT_FIX L7 ");
+        bld.append(" , DAT_JDF_COM Z7 ");
+        bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S7");
+        bld.append(" WHERE ");
+        bld.append("      J7.KR_CYNO7 = Z7.CYNO(+)");
+        bld.append(" AND J7.CYUZO_YY BETWEEN NVL(Z7.CYUZO_YY,1) -1 AND NVL(Z7.CYUZO_YY,9998) + 1");
+        bld.append(" AND J7.KR_CYNO7 = S7.CN");
+        bld.append(" AND J7.CYUZO_YY BETWEEN S7.CYUZO_YY -1 AND S7.CYUZO_YY + 1");
+        bld.append(" AND Z7.LINKKEY = L7.LINKKEY ");
+        bld.append(" AND J7.JYOTAI = 1 ");
+        bld.append(" AND J7.LINKKEY = ?");
+        bld.append("        ");
+        bld.append(" UNION ALL ");
+        bld.append("        ");
+        bld.append(" SELECT ");
+        bld.append(" Z8.LINKKEY ");
+        bld.append(" , J8.KR_CYNO8 KR_CYNO ");
+        bld.append(" , S8.A LTA");
+        bld.append(" , RPAD(L8.JPJ, 2, ' ') JPJ ");
+        bld.append(" , L8.JPRB ");
+        bld.append(" , L8.JPRJ ");
+        bld.append(" , L8.JPDT ");
+        bld.append(" , L8.JPDT2 ");
+        bld.append(" , L8.JPO2 ");
+        bld.append(" , L8.JPDT3 ");
+        bld.append(" , L8.JPO3 ");
+        bld.append(" , L8.JPDT4 ");
+        bld.append(" FROM ");
+        bld.append(" DAT_JDF_COM J8 ");
+        bld.append(" , DAT_LOT_FIX L8 ");
+        bld.append(" , DAT_JDF_COM Z8 ");
+        bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S8");
+        bld.append(" WHERE ");
+        bld.append(" J8.KR_CYNO8 = Z8.CYNO(+)");
+        bld.append(" AND J8.CYUZO_YY BETWEEN NVL(Z8.CYUZO_YY,1) -1 AND NVL(Z8.CYUZO_YY,9998) + 1");
+        bld.append(" AND J8.KR_CYNO8 = S8.CN");
+        bld.append(" AND J8.CYUZO_YY BETWEEN S8.CYUZO_YY -1 AND S8.CYUZO_YY + 1");
+        bld.append(" AND Z8.LINKKEY = L8.LINKKEY ");
+        bld.append(" AND J8.JYOTAI = 1 ");
+        bld.append(" AND J8.LINKKEY = ?");
+        bld.append(" ) ");
+        bld.append(" WHERE ");
+        bld.append(" KR_CYNO <> '0000000000' ");
+        bld.append(" ORDER BY ");
+        bld.append(" KR_CYNO ");
+        
         return bld.toString();
     }
 

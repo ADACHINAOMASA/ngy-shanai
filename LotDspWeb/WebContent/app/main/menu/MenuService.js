@@ -13,6 +13,7 @@
 	var newService = function( $http, $q, NIS, $localStorage) {
 		var baseURI = 'service/lotdsp/menu/';
 		var storageName='lotDspInfo';
+		var storageName2='lotDspInfoParam';
 
 		var memory = {
 				//ローカルストレージへ設定用の変数宣言
@@ -34,6 +35,7 @@
 				cFInfoBean:null,
 				lotMaximum:null,
 				nowPage:null,
+				tabSetRendered:null,
 
 				//設定用の変数へ値を代入
         		saveBaseWork: function(info) {
@@ -55,6 +57,7 @@
         			this.cFInfoBean = info.cFInfoBean
         			this.lotMaximum = info.lotMaximum
         			this.nowPage = info.nowPage
+        			this.tabSetRendered = info.tabSetRendered
         			this.writeLocalStrage();
         		},
         		//ローカルストレージへの書き込み処理
@@ -81,13 +84,33 @@
            				,lotMaximum:this.lotMaximum
            				,nowPage:this.nowPage
            				,cFInfoBean:this.cFInfoBean
+           				,tabSetRendered:this.tabSetRendered
+        			};
+        		}
+		};
+		var memoryParam = {
+				//ローカルストレージへ設定用の変数宣言（パラメーターのみ）
+				site:null,
+				//設定用の変数へ値を代入
+        		saveBaseWorkParam: function(info) {
+        			this.site = info.site
+        			this.writeLocalStrageParam();
+        		},
+        		//ローカルストレージへの書き込み処理
+        		writeLocalStrageParam: function() {
+        			$localStorage[storageName2] = {
+           				site:this.site
         			};
         		}
 		};
 		return {
 			memory : memory
+			,memoryParam : memoryParam
 			,searchMenu : function(data) {
 				return NIS.u.req($http.post(NIS.u.path(baseURI, 'searchMenu'), data));
+			}
+			,searchMenuParams : function(data) {
+				return NIS.u.req($http.post(NIS.u.path(baseURI, 'searchMenuParams'), data));
 			}
 		};
 	};//End newService

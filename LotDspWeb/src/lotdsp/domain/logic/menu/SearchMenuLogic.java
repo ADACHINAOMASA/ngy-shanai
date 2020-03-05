@@ -124,6 +124,9 @@ public class SearchMenuLogic {
 	            }else if (in.getMode().equals(OUT_MODE)) {
 	            	in.setNextGamen("ErrorPage");
 	            }
+                in.setTabSetRendered(true);
+	        } else {
+                in.setTabSetRendered(false);
 	        }
 
 		} catch (Exception e) {
