@@ -12,8 +12,8 @@
 	// 引数は依存の内容と一致する
 	var newService = function( $http, $q, NIS, $localStorage) {
 		var baseURI = 'service/lotdsp/menu/';
-		var storageName='lotDspInfo';
-		var storageName2='lotDspInfoParam';
+		var storageName='LotDspInfo';
+		var storageName2='LotDspInfoParam';
 
 		var memory = {
 				//ローカルストレージへ設定用の変数宣言

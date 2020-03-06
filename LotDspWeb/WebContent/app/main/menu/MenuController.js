@@ -5,8 +5,8 @@
 
 	var controllerName = 'MenuController';
 
-	var userInfoStorage = 'ngStorage-userInfoStorage';
-	var lotInfoStorage = 'ngStorage-lotDspInfo';
+	var userInfoStorage = 'UserInfoStorage';
+	var lotInfoStorage = 'LotDspInfo';
 
 	// 必要な依存を列挙
 	var injectParams = [ '$scope', '$state', '$interval', '$document','$base64',
@@ -49,7 +49,6 @@
 
 		//認証情報を変数にセット
 		$scope.auth = authenticationInfo || {};
-		UserInfoStorage.memory.saveBaseWork($scope.input);
 
 		// アクション定義
 		$scope.action = {
@@ -64,7 +63,7 @@
 					$scope.input.paramLinkkey = $scope.params.linkkey;
 					$scope.input.tab = $scope.params.tab;
 					$scope.input.site = $scope.params.site;
-					// ローカルストレージへ保存
+					// 検索
 					ModalService.showProcessing(MenuService.searchMenuParams($scope.input),{message:'処理中・・・'}).then(function(data) {
 		    			if(data.errorFlg){
 		    				$("#messageArea").css("color", "red");
@@ -72,6 +71,7 @@
 		    			}else{
 		    				if (data.nextGamen != null) {
 			    				//返却されたデータをローカルストレージに保存する
+		    					UserInfoStorage.memory.saveBaseWork(data);
 			    				MenuService.memory.saveBaseWork(data);
 			    				$("#messageArea").css("color", "white");
 			    				$("#messageArea").text("");
@@ -88,6 +88,7 @@
     					$("#messageArea").text(data.message);
     				}else{
     					//返却されたデータをローカルストレージに保存する
+    					UserInfoStorage.memory.saveBaseWork(data);
     					MenuService.memory.saveBaseWork(data);
     					$("#messageArea").css("color", "white");
     					$("#messageArea").text("");
@@ -102,6 +103,16 @@
 				$window.scrollTo(0, 0);
 			}
 		};
+		//---------------------------------------------------------------
+        $scope.util = {
+    		showLogin : function() {
+    			if ($scope.input.mode == "0") {
+        			return true;
+    			}
+    			return false;
+    		}
+		};
+		//---------------------------------------------------------------
 		
 		// 初期処理
 		$scope.action.init();

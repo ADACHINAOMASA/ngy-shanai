@@ -5,7 +5,7 @@
     var moduleName = 'app';
 
     var controllerName = 'ManufacturingInfoController';
-    var lotInfoStorage = 'ngStorage-lotDspInfo';
+    var lotInfoStorage = 'LotDspInfo';
 
     // 必要な依存を列挙
     var injectParams = [
@@ -37,12 +37,12 @@
         	//初期表示時に実行
         	init:function(){
         		//共通データの設定
-        		$scope.action.setInputData(JSON.parse(localStorage.getItem(lotInfoStorage)));
-        		$scope.action.setCommonData(JSON.parse(localStorage.getItem(lotInfoStorage)));
+        		$scope.action.setInputData($localStorage[lotInfoStorage]);
+        		$scope.action.setCommonData($localStorage[lotInfoStorage]);
             	//進度情報基本データの設定
-        		$scope.action.setStaffProgressInfoData(JSON.parse(localStorage.getItem(lotInfoStorage)).staffProgressBean);
+        		$scope.action.setStaffProgressInfoData($localStorage[lotInfoStorage].staffProgressBean);
         		//画面別データ取得
-        		$scope.action.setStaffManufactureInfosData(JSON.parse(localStorage.getItem(lotInfoStorage)).staffManufactureBean);
+        		$scope.action.setStaffManufactureInfosData($localStorage[lotInfoStorage].staffManufactureBean);
         	}
 	    	//共通データの設定
 			,setInputData:function(data){
@@ -66,6 +66,7 @@
 		        $scope.common.yotoname = data.staffCommonBean.yotoname;
 		        $scope.common.chikucd = data.staffCommonBean.chikucd;
 		        $scope.common.jujsno = data.staffCommonBean.jujsno;
+		        $scope.common.tantosha_MEI = data.staffCommonBean.tantosha_MEI;
 		        $scope.common.jujsname = data.staffCommonBean.jujsname;
 		        $scope.common.enoki = data.staffCommonBean.enoki;
 		        $scope.common.jcd105 = data.staffCommonBean.jcd105;
@@ -277,10 +278,10 @@
 			}
 	    	//ストレージの検索条件
 	    	,getLtno : function() {
-	    		return JSON.parse(localStorage.getItem(lotInfoStorage)).searchLtno;
+	    		return $localStorage[lotInfoStorage].searchLtno;
 	    	}
 	    	,getKnno : function() {
-	    		return JSON.parse(localStorage.getItem(lotInfoStorage)).searchKnno;
+	    		return $localStorage[lotInfoStorage].searchKnno;
 	    	}
         }
 		//---------------------------------------------------------------

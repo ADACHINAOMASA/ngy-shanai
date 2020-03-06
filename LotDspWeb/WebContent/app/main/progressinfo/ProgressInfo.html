@@ -25,7 +25,7 @@
       </div>
 
 	  <!-- 各タブ固有項目 -->
-      <div style="position: relative; -rave-layout: grid; height: 675px; position: relative; width: 1225px; -rave-layout: grid" class="layoutPanel">
+      <div style="position: relative; -rave-layout: grid; height: 675px; position: relative; width: 1225px; -rave-layout: grid" class="layoutPanel" ng-show="common.tabSetRendered">
         <table border="0" cellpadding="5" cellspacing="0" style="left: 5px; top: 150px; position: absolute;" width="960">
           <tbody>
             <tr>
@@ -290,7 +290,7 @@
     <!-- ICAS情報タブ以外の共通部分 開始-->
     <!--ロット番号～Yマーク日-->
 
-    <table border="0" cellpadding="5" cellspacing="0" style="height: 80px; left: 5px; top: 70px; position: absolute;" width="1290">
+    <table border="0" cellpadding="5" cellspacing="0" style="height: 80px; left: 5px; top: 70px; position: absolute;" width="1290" ng-show="common.tabSetRendered">
       <tbody>
         <tr>
           <td>
@@ -406,13 +406,13 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 220px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 210px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>販売員</span></td>
                         </tr>
                         <tr class=" item-value1">
-                          <td><span>{{common.jujsno}}{{common.tantosha_mei}}</span></td>
+                          <td><span>{{common.tantosha_MEI}}</span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -442,7 +442,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 45px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 55px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>本数</span></td>
@@ -673,9 +673,9 @@
 		</span>検索
 	</button>
 
-    <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 150px">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
-    <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px">最終更新日: </span>
-    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
+    <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 150px" ng-show="common.tabSetRendered">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
+    <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px" ng-show="common.tabSetRendered">最終更新日: </span>
+    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px" ng-show="common.tabSetRendered">検索結果: {{common.lotMaximum}}件</span>
     <span ng-show="util.isPreviewRendered(common);">
     	<a style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.previousPage()">
    		<img src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />

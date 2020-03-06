@@ -19,12 +19,12 @@
             <td class="MniTabTblSelTd">
               <div class="MniTabSelTxt" title="Current Selection:"><span class="disabled TabPad">ICAS情報</span></div>
             </td>
-            <td><a class="MniTabLnk TabPad" href ng-click="action.showProgressInfo();">進度情報</a></td>
-            <td><a class="MniTabLnk TabPad" href ng-click="action.showManufacturingInfo();">製造情報</a></td>
-            <td><a class="MniTabLnk TabPad" href ng-click="action.showTestInfo();">試験情報</a></td>
-            <td><a class="MniTabLnk TabPad" href ng-click="action.showQualityInfo();">品質情報</a></td>
-            <td><a class="MniTabLnk TabPad" href ng-click="action.showCladInfo();">クラッド情報</a></td>
-            <td><a class="MniTabLnk TabPad" href ng-click="action.showCFInfo();">焼鈍情報</a></td>
+            <td ng-show="util.showMenue()"><a class="MniTabLnk TabPad" href ng-click="action.showProgressInfo();">進度情報</a></td>
+            <td ng-show="util.showMenue()"><a class="MniTabLnk TabPad" href ng-click="action.showManufacturingInfo();">製造情報</a></td>
+            <td ng-show="util.showMenue()"><a class="MniTabLnk TabPad" href ng-click="action.showTestInfo();">試験情報</a></td>
+            <td ng-show="util.showMenue()"><a class="MniTabLnk TabPad" href ng-click="action.showQualityInfo();">品質情報</a></td>
+            <td ng-show="util.showMenue()"><a class="MniTabLnk TabPad" href ng-click="action.showCladInfo();">クラッド情報</a></td>
+            <td ng-show="util.showMenue()"><a class="MniTabLnk TabPad" href ng-click="action.showCFInfo();">焼鈍情報</a></td>
           </tr>
         </table>
       </div>
@@ -142,7 +142,7 @@
 									<td class="icas-sca"><span class="icas-sca">{{icasInfo.sca}}</span></td>
 									<td class="icas-label-yu"><span class="icas-label-yu">ﾕ</span></td>
 									<td class="icas-yukoy"><span class="icas-yukoy">{{icasInfo.yukoy}}</span></td>
-									<td class="icas-convna"><span id="form1:tabSet1:tab_IcasInfo:CONVNA" class="icas-convna">{{icasInfo.convna}}</span></td> <!-- TODO:でない… -->
+									<td class="icas-convna"><span class="icas-convna">{{icasInfo.convna}}</span></td>
 								</tr>
 							</tbody>
 						</table>
@@ -412,7 +412,7 @@
 		</span>
 	    <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 150px" ng-style="{'font-size': common.site === '1' ? '16px' : '', 'left': common.site === '1' ? '732px' : '852px'}" ng-show="common.tabSetRendered">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
 	    <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px" ng-style="{'font-size': common.site === '1' ? '16px' : '', 'left': common.site === '1' ? '648px' : '768px'}" ng-show="common.tabSetRendered">最終更新日: </span>
-	    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px" ng-style="{'font-size': common.site === '1' ? '16px' : '', 'width': common.site === '1' ? '140px' : '106px'}">検索結果: {{common.lotMaximum}}件</span>
+	    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px" ng-style="{'font-size': common.site === '1' ? '16px' : '', 'width': common.site === '1' ? '140px' : '106px'}" ng-show="common.tabSetRendered">検索結果: {{common.lotMaximum}}件</span>
 	    <span ng-show="util.isPreviewRendered(common);">
 	    	<a style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" ng-style="{'left': common.site === '1' ? '480px' : '460px'}" href ng-click="action.previousPage()">
 	   		<img src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />

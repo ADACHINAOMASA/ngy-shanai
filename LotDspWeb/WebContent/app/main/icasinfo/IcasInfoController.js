@@ -5,8 +5,9 @@
     var moduleName = 'app';
 
     var controllerName = 'IcasInfoController';
-    var lotInfoStorage = 'ngStorage-lotDspInfo';
-    var lotInfoParamStorage = 'ngStorage-lotDspInfoParam';
+	var userInfoStorage = 'UserInfoStorage';
+    var lotInfoStorage = 'LotDspInfo';
+    var lotInfoParamStorage = 'LotDspInfoParam';
 
     // 必要な依存を列挙
     var injectParams = [
@@ -24,6 +25,10 @@
 		$scope.langs = i18nService.getAllLangs();
 		i18nService.setCurrentLang('ja');
 
+		// 初期情報
+		$scope.authenticationInfo = $localStorage[userInfoStorage] ||{};
+		$scope.mode = $scope.authenticationInfo.mode
+
 		//変数初期化
 		//共通項目
 		$scope.common = {};
@@ -39,12 +44,12 @@
         	//初期表示時に実行
         	init:function(){
         		//共通データの設定
-        		$scope.action.setInputData(JSON.parse(localStorage.getItem(lotInfoStorage)));
-        		$scope.action.setCommonData(JSON.parse(localStorage.getItem(lotInfoStorage)));
+        		$scope.action.setInputData($localStorage[lotInfoStorage]);
+        		$scope.action.setCommonData($localStorage[lotInfoStorage]);
         		//画面別データ取得
-        		$scope.action.setIcasInfosData(JSON.parse(localStorage.getItem(lotInfoStorage)).icasBean);
+        		$scope.action.setIcasInfosData($localStorage[lotInfoStorage].icasBean);
 		        //ICAS情報用のパラム
-		        $scope.common.site = JSON.parse(localStorage.getItem(lotInfoParamStorage)).site;
+		        $scope.common.site = $localStorage[lotInfoParamStorage].site;
         	}
 	    	//共通データの設定
 			,setInputData:function(data){
@@ -81,6 +86,7 @@
 		    	$("#messageArea").text("");
     			if (!$scope.common.searchLtno && !$scope.common.searchKnno) {
     		    	$("#messageArea").text("実行エラー");
+    		    	return;
     			}
     			// データ再設定
 	        	var param = {
@@ -405,14 +411,14 @@
 				    if (icasBoxInfo.sbpat != null) {
 				    	sSBPAT = icasBoxInfo.sbpat;
 	                }
-				    if ($scope.icasInfo.jrflg != null) {
-				    	sJRFLG = $scope.icasInfo.jrflg;
+				    if (icasBoxInfo.jrflg != null) {
+				    	sJRFLG = icasBoxInfo.jrflg;
 	                }
-				    if ($scope.icasInfo.jrstdt != null) {
-				    	sJRSTDT = $scope.icasInfo.jrstdt;
+				    if (icasBoxInfo.jrstdt != null) {
+				    	sJRSTDT = icasBoxInfo.jrstdt;
 	                }
-				    if ($scope.icasInfo.jreddt != null) {
-				    	sJREDDT = $scope.icasInfo.jreddt;
+				    if (icasBoxInfo.jreddt != null) {
+				    	sJREDDT = icasBoxInfo.jreddt;
 				    }
 				    if (sSBSM == "ANF" && sSBPAT == "J" && sJRFLG == "1" && sJRSTDT.length() != 0 && sJREDDT.length() == 0) {
 				    	return "black";
@@ -436,14 +442,14 @@
 			    if (icasBoxInfo.sbpat != null) {
 			    	sSBPAT = icasBoxInfo.sbpat;
                 }
-			    if ($scope.icasInfo.jrflg != null) {
-			    	sJRFLG = $scope.icasInfo.jrflg;
+			    if (icasBoxInfo.jrflg != null) {
+			    	sJRFLG = icasBoxInfo.jrflg;
                 }
-			    if ($scope.icasInfo.jrstdt != null) {
-			    	sJRSTDT = $scope.icasInfo.jrstdt;
+			    if (icasBoxInfo.jrstdt != null) {
+			    	sJRSTDT = icasBoxInfo.jrstdt;
                 }
-			    if ($scope.icasInfo.jreddt != null) {
-			    	sJREDDT = $scope.icasInfo.jreddt;
+			    if (icasBoxInfo.jreddt != null) {
+			    	sJREDDT = icasBoxInfo.jreddt;
 			    }
 			    if (sSBSM == "ANF" && sSBPAT == "J" && sJRFLG == "1" && sJRSTDT.length() != 0 && sJREDDT.length() == 0) {
 			    	return "white";
@@ -459,6 +465,12 @@
     	        } else {
     	            return "lime;";
     	        }
+    		}
+    		,showMenue : function() {
+    	        if (($scope.mode == "1") || ($scope.mode == "2")) {
+    	            return true;
+    	        }
+    	        return false;
     		}
         }
 		//---------------------------------------------------------------

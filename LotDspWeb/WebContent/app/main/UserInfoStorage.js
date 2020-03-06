@@ -13,7 +13,7 @@
 	// 引数は依存の内容と一致する
 	var newService = function($http, $q, $localStorage) {
 
-		var storageName='userInfoStorage';
+		var storageName='UserInfoStorage';
 
 		var memory = {
 				//ローカルストレージへ設定用の変数宣言
@@ -24,6 +24,7 @@
 				useKbn : null,
 				termKbn : null,
 				authInfo : null,
+				mode : null,
 
 				//設定用の変数へ値を代入
 	    		saveBaseWork: function(info) {
@@ -34,6 +35,7 @@
 	    			this.useKbn = info.useKbn;
 	    			this.termKbn = info.termKbn;
 	    			this.authInfo = info.authInfo;
+	    			this.mode = info.mode;
 	    			this.writeLocalStrage();
 	    		},
 	    		//ローカルストレージへの書き込み処理
@@ -46,6 +48,7 @@
 	    	    			,useKbn : this.useKbn
 	    	    			,termKbn : this.termKbn
 	    	    			,authInfo : this.authInfo
+	    	    			,mode : this.mode
 	    			};
 	    		},
 				//-----ローカルストレージからの取得処理
@@ -66,6 +69,9 @@
 	    		},
 	    		getAuthInfo: function() {
 	    			return this.authInfo;
+	    		},
+	    		getMode: function() {
+	    			return this.mode;
 	    		}
 	    		//-----ローカルストレージからの取得処理
 		};

@@ -1,5 +1,5 @@
 var Cm3SchUtil = (function() {
-	var userInfoStorage = 'ngStorage-userInfoStorage';
+	var userInfoStorage = 'UserInfoStorage';
 
 	function _now($scope, $interval) {
 		$scope.now = new Date();
