@@ -87,10 +87,10 @@
                                 <table border="0" cellspacing="0" style="margin-left:1px; padding: 0px 0px;" width="220">
                                   <tbody>
                                     <tr>
-                                      <td class="item-label3"><span>再手配</span></td>
-                                      <td class="item-value1"><input name="com_sun_rave_web_ui_appbase_renderer_CommandLinkRendererer" type="hidden" value="" />
-                                      <a href ng-click="action.testLink(staffProgressInfo.saitehailtno);">
-                                      <span>{{staffProgressInfo.saitehailtno}}</span></a></td>
+                                      <td class="item-label3" style="border-right-style: solid; border-right-width: 1px; border-right-color: white;"><span>再手配</span></td>
+                                      <td class="item-value1" style="border-right-style: solid; border-right-width: 1px; border-right-color: white;">
+	                                      <a href ng-click="action.testLink(staffProgressInfo.saitehailtno);"><span>{{staffProgressInfo.saitehailtno}}</span></a>
+                                      </td>
                                       <td class="item-value5"><span class="space">*</span></td>
                                     </tr>
                                   </tbody>
@@ -248,7 +248,7 @@
             <tr>
               <td>
               	<!--設備名～送り先名-->
-                <table id="form1:tabSet1:tab_ProgressInfo:progressInfo_Group3" border="0" cellpadding="0" cellspacing="1">
+                <table border="0" cellpadding="0" cellspacing="1">
                   <tbody>
                     <tr class="gai-header">
                       <td class="gai-idx-width"><span>№</span></td>
@@ -259,23 +259,23 @@
                     </tr>
                     <tr class=" gai-rows">
                       <td class="gai-idx-width"><span>{{staffProgressInfo.gai_IDX1}}</span></td>
-                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_setubi1}}</span></td>
+                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_SETUBI1}}</span></td>
                       <td class=" gai-cd-width"><span>{{staffProgressInfo.gai_CD1}}</span></td>
-                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY1}}</span></td>
+                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY1 | date:'yy/MM/dd'}}</span></td>
                       <td class=" gai-okuri-width"><span>{{staffProgressInfo.gai_OKURI1}}</span></td>
                     </tr>
                     <tr class=" gai-rows">
                       <td class="gai-idx-width"><span>{{staffProgressInfo.gai_IDX2}}</span></td>
-                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_setubi2}}</span></td>
+                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_SETUBI2}}</span></td>
                       <td class=" gai-cd-width"><span>{{staffProgressInfo.gai_CD2}}</span></td>
-                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY2}}</span></td>
+                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY2 | date:'yy/MM/dd'}}</span></td>
                       <td class=" gai-okuri-width"><span>{{staffProgressInfo.gai_OKURI2}}</span></td>
                     </tr>
                     <tr class=" gai-rows">
                       <td class="gai-idx-width"><span>{{staffProgressInfo.gai_IDX3}}</span></td>
-                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_setubi3}}</span></td>
+                      <td class=" gai-setsubi-width"><span>{{staffProgressInfo.gai_SETUBI3}}</span></td>
                       <td class=" gai-cd-width"><span>{{staffProgressInfo.gai_CD3}}</span></td>
-                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY3}}</span></td>
+                      <td class=" gai-today-width"><span>{{staffProgressInfo.gai_TODAY3 | date:'yy/MM/dd'}}</span></td>
                       <td class=" gai-okuri-width"><span>{{staffProgressInfo.gai_OKURI3}}</span></td>
                     </tr>
                   </tbody>
@@ -400,7 +400,7 @@
                           <td><span>地区</span></td>
                         </tr>
                         <tr class=" item-value1">
-                          <td><span>{{common.chikucd}}</span></td>
+                          <td><span>{{common.chikucd | chikuCdFl}}</span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -478,7 +478,7 @@
                   <td>
                     <table bgcolor="white" border="0" cellpadding="0" cellspacing="0">
                       <tbody>
-                        <tr class="item-label1" style="width: 120px;">
+                        <tr class="item-label1" style="width: 120px; background-color: white;">
                           <td>
                           	<!--材質～重量-->
                             <table border="0" cellpadding="0" cellspacing="0">
@@ -491,10 +491,10 @@
                                           <td class="item-width2"><span>&nbsp;</span></td>
                                         </tr>
                                         <tr class=" item-label1">
-                                          <td class="item-width2"><span>ｵｰﾀﾞｰ</span></td>
+                                          <td class="item-width2" style="height: 25px;"><span>ｵｰﾀﾞｰ</span></td>
                                         </tr>
                                         <tr class=" item-label1">
-                                          <td class="item-width2"><span>製造</span></td>
+                                          <td class="item-width2" style="height: 25px;"><span>製造</span></td>
                                         </tr>
                                       </tbody>
                                     </table>

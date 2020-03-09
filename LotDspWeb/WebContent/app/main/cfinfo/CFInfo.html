@@ -41,12 +41,12 @@
 												</tr>
 												<tr>
 													<td>
-														<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="350">
+														<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="450">
 															<tbody>
 																<tr class="cf-item-g1-label1">
-																	<td><span>徐冷フラグ</span></td>
-																	<td><span>開始日時</span></td>
-																	<td><span>終了日時</span></td>
+																	<td style="width: 95px"><span>徐冷フラグ</span></td>
+																	<td style="width: 130px"><span>開始日時</span></td>
+																	<td style="width: 130px"><span>終了日時</span></td>
 																	<td><span>冷却</span></td>
 																	<td><span>温度</span></td>
 																</tr>
@@ -129,19 +129,19 @@
 								</tr>
 								<tr>
 									<td>
-										<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="700">
+										<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="780">
 											<thead>
 												<tr>
-													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label1">実績BOX</span></th>
-													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label2">設備名</span></th>
-													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label2">厚</span></th>
-													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label2">巾</span></th>
-													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label2">丈</span></th>
-													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label2">重量</span></th>
-													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label2">枚本数</span></th>
+													<th class="cf-item-g2-label1" scope="col" style="width: 70px;"><span class="cf-item-g2-label1">実績BOX</span></th>
+													<th class="cf-item-g2-label1" scope="col" style="width: 60px;"><span class="cf-item-g2-label2">設備名</span></th>
+													<th class="cf-item-g2-label1" scope="col" style="width: 60px;"><span class="cf-item-g2-label2">厚</span></th>
+													<th class="cf-item-g2-label1" scope="col" style="width: 60px;"><span class="cf-item-g2-label2">巾</span></th>
+													<th class="cf-item-g2-label1" scope="col" style="width: 60px;"><span class="cf-item-g2-label2">丈</span></th>
+													<th class="cf-item-g2-label1" scope="col" style="width: 60px;"><span class="cf-item-g2-label2">重量</span></th>
+													<th class="cf-item-g2-label1" scope="col" style="width: 55px;"><span class="cf-item-g2-label2">枚本数</span></th>
 													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label3">開始日時</span></th>
 													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label3">終了日時</span></th>
-													<th class="cf-item-g2-label1" scope="col"><span class="cf-item-g2-label2">作業</span></th>
+													<th class="cf-item-g2-label1" scope="col" style="width: 55px;"><span class="cf-item-g2-label2">作業</span></th>
 												</tr>
 											</thead>
 											<tbody>
@@ -150,7 +150,7 @@
 													<td class="cf-item-g2-value3"><span class="cf-item-g2-value3">{{meisaiInfo.jbsm}}</span></td>
 													<td class="cf-item-g2-value4"><span class="cf-item-g2-value4">{{meisaiInfo.jbx | dotNumber:3}}</span></td>
 													<td class="cf-item-g2-value4"><span class="cf-item-g2-value4">{{meisaiInfo.jby | dotNumber:2}}</span></td>
-													<td class="cf-item-g2-value4"><span class="cf-item-g2-value4">{{meisaiInfo.jbz}}</span></td>
+													<td class="cf-item-g2-value4"><span class="cf-item-g2-value4">{{meisaiInfo.jbz | dotNumber:1 | zeroToSpace}}</span></td>
 													<td class="cf-item-g2-value4"><span class="cf-item-g2-value4">{{meisaiInfo.jbrw | dotNumber:1}}</span></td>
 													<td class="cf-item-g2-value4"><span class="cf-item-g2-value4">{{meisaiInfo.jbrmh | dotNumber:1}}</span></td>
 													<td class="cf-item-g2-value7"><span class="cf-item-g2-value7">{{meisaiInfo.jbsdtm | date:'yy/MM/dd HH:mm:ss'}}</span></td>
@@ -398,7 +398,7 @@
 												</tr>
 												<tr>
 													<td>
-														<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="700">
+														<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="740">
 															<tbody>
 																<tr class="cf-item-g4-label1">
 																	<td><span>ANI</span></td>
@@ -423,7 +423,7 @@
 																		</table>
 																	</td>
 																	<td>
-																		<table bgcolor="white" border="0" cellpadding="0" cellspacing="0" width="190">
+																		<table bgcolor="white" border="0" cellpadding="0" cellspacing="0" width="200">
 																			<tbody>
 																				<tr class="cf-item-g4-label1">
 																					<td><span>温度</span></td>
@@ -434,14 +434,14 @@
 																				<tr class="cf-item-g4-value1">
 																					<td><span>{{cFInfo.m_IATMP1}}</span></td>
 																					<td><span>{{cFInfo.m_IATIM1}}</span></td>
-																					<td><span>{{cFInfo.m_IAX1}}</span></td>
+																					<td><span>{{cFInfo.m_IAX1 | dotNumber:3 | zeroToSpace}}</span></td>
 																					<td><span>{{cFInfo.m_IART1}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
 																	</td>
 																	<td>
-																		<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="190">
+																		<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="200">
 																			<tbody>
 																				<tr class="cf-item-g4-label1">
 																					<td><span>温度</span></td>
@@ -452,14 +452,14 @@
 																				<tr class="cf-item-g4-value1">
 																					<td><span>{{cFInfo.m_IATMP2}}</span></td>
 																					<td><span>{{cFInfo.m_IATIM2}}</span></td>
-																					<td><span>{{cFInfo.m_IAX2}}</span></td>
+																					<td><span>{{cFInfo.m_IAX2 | dotNumber:3 | zeroToSpace}}</span></td>
 																					<td><span>{{cFInfo.m_IART2}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
 																	</td>
 																	<td>
-																		<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="190">
+																		<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="200">
 																			<tbody>
 																				<tr class="cf-item-g4-label1">
 																					<td><span>温度</span></td>
@@ -470,14 +470,14 @@
 																				<tr class="cf-item-g4-value1">
 																					<td><span>{{cFInfo.m_IATMP3}}</span></td>
 																					<td><span>{{cFInfo.m_IATIM3}}</span></td>
-																					<td><span>{{cFInfo.m_IAX3}}</span></td>
+																					<td><span>{{cFInfo.m_IAX3 | dotNumber:3 | zeroToSpace}}</span></td>
 																					<td><span>{{cFInfo.m_IART3}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
 																	</td>
 																	<td>
-																		<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="190">
+																		<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="200">
 																			<tbody>
 																				<tr class="cf-item-g4-label1">
 																					<td><span>温度</span></td>
@@ -488,7 +488,7 @@
 																				<tr class="cf-item-g4-value1">
 																					<td><span>{{cFInfo.m_IATMP4}}</span></td>
 																					<td><span>{{cFInfo.m_IATIM4}}</span></td>
-																					<td><span>{{cFInfo.m_IAX4}}</span></td>
+																					<td><span>{{cFInfo.m_IAX4 | dotNumber:3 | zeroToSpace}}</span></td>
 																					<td><span>{{cFInfo.m_IART4}}</span></td>
 																				</tr>
 																			</tbody>
@@ -788,9 +788,9 @@
 																	<td><span class="cf-item-g6-value1">{{cFInfo.j_KNAX | dotNumber:2 | zeroToSpace}}</span></td>
 																</tr>
 																<tr class="cf-item-g6-value1">
-																	<td><span class="cf-item-g6-value1">{{cFInfo.knobi2 | zeroToSpace}}</span></td>
-																	<td><span class="cf-item-g6-value1">{{cFInfo.knobi1 | zeroToSpace}}</span></td>
-																	<td><span class="cf-item-g6-value1">{{cFInfo.knobi3 | zeroToSpace}}</span></td>
+																	<td><span class="cf-item-g6-value1">{{cFInfo.knobi2 | dotNumber:1 | zeroToSpace}}</span></td>
+																	<td><span class="cf-item-g6-value1">{{cFInfo.knobi1 | dotNumber:1 | zeroToSpace}}</span></td>
+																	<td><span class="cf-item-g6-value1">{{cFInfo.knobi3 | dotNumber:1 | zeroToSpace}}</span></td>
 																</tr>
 															</tbody>
 														</table>
@@ -948,7 +948,7 @@
                           <td><span>地区</span></td>
                         </tr>
                         <tr class=" item-value1">
-                          <td><span>{{common.chikucd}}</span></td>
+                          <td><span>{{common.chikucd | chikuCdFl}}</span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -1026,7 +1026,7 @@
                   <td>
                     <table bgcolor="white" border="0" cellpadding="0" cellspacing="0">
                       <tbody>
-                        <tr class="item-label1" style="width: 120px;">
+                        <tr class="item-label1" style="width: 120px; background-color: white;">
                           <td>
                           	<!--材質～重量-->
                             <table border="0" cellpadding="0" cellspacing="0">
@@ -1039,10 +1039,10 @@
                                           <td class="item-width2"><span>&nbsp;</span></td>
                                         </tr>
                                         <tr class=" item-label1">
-                                          <td class="item-width2"><span>ｵｰﾀﾞｰ</span></td>
+                                          <td class="item-width2" style="height: 25px;"><span>ｵｰﾀﾞｰ</span></td>
                                         </tr>
                                         <tr class=" item-label1">
-                                          <td class="item-width2"><span>製造</span></td>
+                                          <td class="item-width2" style="height: 25px;"><span>製造</span></td>
                                         </tr>
                                       </tbody>
                                     </table>

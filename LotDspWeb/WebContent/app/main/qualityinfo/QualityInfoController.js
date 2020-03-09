@@ -146,6 +146,7 @@
 			}
         	//データの設定
     		,getStaffQualityInfosData:function(data){
+    			$scope.selectIndex = 0;
     			$scope.staffQualityBoxInfos = [];
     			if (data.staffQualityBoxInfos.length > 0) {
     		        for(var i = 0; i < data.staffQualityBoxInfos.length; i++) {

@@ -266,12 +266,12 @@
 							<tbody>
 								<tr>
 									<td class="icas-box-header-symbol1"><span class="icas-box-header-symbol1">--</span></td>
-									<td class="icas-roll"><span class="icas-roll" style="{'color': util.styleIcasRoll()}">{{icasInfo.roll}}</span></td>
+									<td class="icas-roll"><span class="icas-roll" ng-style="{'color': util.styleIcasRoll()}">{{icasInfo.roll}}</span></td>
 									<td class="icas-hpc"><span class="icas-hpc">{{icasInfo.hpc}}</span></td>
-									<td class="icas-hotpc"><span class="icas-hotpc" style="{'color': util.styleIcasHotpc()}">{{icasInfo.hotpc}}</span></td>
+									<td class="icas-hotpc"><span class="icas-hotpc" ng-style="{'color': util.styleIcasHotpc()}">{{icasInfo.hotpc}}</span></td>
 									<td class="icas-g2"><span class="icas-g2">{{icasInfo.g2}}</span></td>
 									<td class="icas-box-header-symbol2"><span class="icas-box-header-symbol2">--</span></td>
-									<td class="icas-ryou"><span class="icas-ryou" style="{'color': util.styleIcasRyou()}">{{icasInfo.ryou}}</span></td>
+									<td class="icas-ryou"><span class="icas-ryou" ng-style="{'color': util.styleIcasRyou()}">{{icasInfo.ryou}}</span></td>
 									<td class="icas-ryow"><span class="icas-ryow">{{icasInfo.ryow}}</span></td>
 									<td class="icas-ryon"><span class="icas-ryon">{{icasInfo.ryon}}</span></td>
 									<td class="icas-box-header-symbol3"><span class="icas-box-header-symbol3">--</span></td>
@@ -317,15 +317,15 @@
 													<td class="icas-sbpat"><span class="icas-sbpat">{{meisaiInfo.sbpat}}</span></td>
 													<td class="icas-sbx"><span class="icas-sbx">{{meisaiInfo.sbx | dotNumber:3}}</span></td>
 													<td class="icas-sbw"><span class="icas-sbw">{{meisaiInfo.sbw}}</span></td>
-													<td class="icas-jbsm"><span class="icas-jbsm" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbsm}}</span></td>
-													<td class="icas-startdt"><span class="icas-startdt" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.startdt}}</span></td>
-													<td class="icas-enddt"><span class="icas-enddt" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.enddt}}</span></td>
-													<td class="icas-jbx"><span class="icas-jbx" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbx | dotNumber:3}}</span></td>
-													<td class="icas-jby"><span class="icas-jby" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jby | dotNumber:1}}</span></td>
-													<td class="icas-jbz"><span class="icas-jbz" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbz | dotNumber:1}}</span></td>
-													<td class="icas-jbrw"><span class="icas-jbrw" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbrw}}</span></td>
-													<td class="icas-jbrmh"><span class="icas-jbrmh" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbrmh}}</span></td>
-													<td class="icas-jbbn"><span class="icas-jbbn" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbbn}}</span></td>
+													<td class="icas-jbsm"><span class="icas-jbsm" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbsm}}</span></td>
+													<td class="icas-startdt"><span class="icas-startdt" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.startdt}}</span></td>
+													<td class="icas-enddt"><span class="icas-enddt" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.enddt}}</span></td>
+													<td class="icas-jbx"><span class="icas-jbx" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbx | dotNumber:3}}</span></td>
+													<td class="icas-jby"><span class="icas-jby" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jby | dotNumber:1}}</span></td>
+													<td class="icas-jbz"><span class="icas-jbz" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbz | dotNumber:1}}</span></td>
+													<td class="icas-jbrw"><span class="icas-jbrw" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbrw | dotNumber:0}}</span></td>
+													<td class="icas-jbrmh"><span class="icas-jbrmh" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbrmh | dotNumber:0}}</span></td>
+													<td class="icas-jbbn"><span class="icas-jbbn" ng-style="{'color': util.styleIcasBoxJisseki(meisaiInfo, $index), 'background-color': util.styleIcasBoxJissekiBack(meisaiInfo)}">{{meisaiInfo.jbbn}}</span></td>
 												</tr>
 											</tbody>
 										</table>

@@ -278,6 +278,13 @@
         	,getKnno : function() {
         		return $localStorage[lotInfoStorage].searchKnno;
         	}
+        	//表示フォーマット
+        	,formatNum1 : function(num) {
+        		if (num == null || (num.toString().trim()).length <= 0 || isNaN(Number(num))) {
+        			return num;
+        		}
+    			return Number(num).toFixed(1);
+        	}
         }
 		//---------------------------------------------------------------
         

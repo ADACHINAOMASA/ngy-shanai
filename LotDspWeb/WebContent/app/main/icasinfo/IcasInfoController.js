@@ -206,10 +206,10 @@
 			}
         	//ストレージの検索条件
         	,getLtno : function() {
-        		return JSON.parse(localStorage.getItem(lotInfoStorage)).searchLtno;
+        		return $localStorage[lotInfoStorage].searchLtno;
         	}
         	,getKnno : function() {
-        		return JSON.parse(localStorage.getItem(lotInfoStorage)).searchKnno;
+        		return $localStorage[lotInfoStorage].searchKnno;
         	}
     		// スタイル設定
     		,styleHeader : function() {
@@ -266,7 +266,7 @@
     			if ($scope.icasInfo == null) {
     				return "white"; 
     			}
-    	        if ($scope.icasInfo.getRYOU() == "-----") {
+    	        if ($scope.icasInfo.ryou == "-----") {
     	            return "white";
     	        } else {
     	            return "lime";
@@ -342,7 +342,7 @@
 		        }
 		        return "red";
     		}
-    		,styleIcasBoxJisseki : function(icasBoxInfo) {
+    		,styleIcasBoxJisseki : function(icasBoxInfo, index) {
                 //仮倉入
                 if ((icasBoxInfo.a11 != null) && (icasBoxInfo.proc_KBN != null) && (icasBoxInfo.jbsm != null)) {
                     if (icasBoxInfo.a11 != "K" && icasBoxInfo.proc_KBN == "J" && icasBoxInfo.jbsm.trim() == "KEN") {
@@ -353,16 +353,14 @@
                     //板厚チェック ＣＦ処理設定
                     var wk_ani_f = null;
                     //テーブルに於ける行インデックスの取得
-                    var curIdx = progressTable.getRowIndex(); 
+                    var curIdx = index; 
                     if ($scope.icasInfo.akno != null) {
                         if (parseFloat($scope.icasInfo.akno) > 1) {
                             //テーブル値に於ける実績最終設備の位置設定
                         	var row = $scope.icasBoxInfos[parseFloat($scope.icasInfo.akno) - 2];
-                        	//progressTable.setRowIndex(parseFloat($scope.icasInfo.akno) - 2);
-                            //var jbsm = row.jbsm;
+                            var jbsm = row.jbsm;
                             var jbx = parseFloat(row.jbx);
                             //テーブルに於ける行インデックスを戻す
-                            //progressTable.setRowIndex(curIdx);
                             //最終実績設備の処理板厚と製造板厚の比較
                             if (jbx != parseFloat($scope.icasInfo.ltx)) {
                                 wk_ani_f = "ANI";

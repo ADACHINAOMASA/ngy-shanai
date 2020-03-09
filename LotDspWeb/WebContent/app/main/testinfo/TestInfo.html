@@ -353,20 +353,20 @@
 																					<td class="test-w60"><span>{{staffTestInfo.kosaxs06 | dotNumber:3 | zeroToSpace}}</span></td>
 																				</tr>
 																				<tr class=" test-value-right-w70">
-																					<td class="test-w60"><span>{{staffTestInfo.kosays01 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosays02 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosays03 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosays04 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosays05 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosays06 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosays01)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosays02)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosays03)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosays04)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosays05)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosays06)}}</span></td>
 																				</tr>
 																				<tr class=" test-value-right-w70">
-																					<td class="test-w60"><span>{{staffTestInfo.kosazs01 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosazs02 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosazs03 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosazs04 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosazs05 | dotNumber:1 | zeroToSpace}}</span></td>
-																					<td class="test-w60"><span>{{staffTestInfo.kosazs06 | dotNumber:1 | zeroToSpace}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosazs01)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosazs02)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosazs03)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosazs04)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosazs05)}}</span></td>
+																					<td class="test-w60"><span>{{util.formatNum1(staffTestInfo.kosazs06)}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -502,7 +502,7 @@
                           <td><span>地区</span></td>
                         </tr>
                         <tr class=" item-value1">
-                          <td><span>{{common.chikucd}}</span></td>
+                          <td><span>{{common.chikucd | chikuCdFl}}</span></td>
                         </tr>
                       </tbody>
                     </table>
@@ -580,7 +580,7 @@
                   <td>
                     <table bgcolor="white" border="0" cellpadding="0" cellspacing="0">
                       <tbody>
-                        <tr class="item-label1" style="width: 120px;">
+                        <tr class="item-label1" style="width: 120px; background-color: white;">
                           <td>
                           	<!--材質～重量-->
                             <table border="0" cellpadding="0" cellspacing="0">
@@ -593,10 +593,10 @@
                                           <td class="item-width2"><span>&nbsp;</span></td>
                                         </tr>
                                         <tr class=" item-label1">
-                                          <td class="item-width2"><span>ｵｰﾀﾞｰ</span></td>
+                                          <td class="item-width2" style="height: 25px;"><span>ｵｰﾀﾞｰ</span></td>
                                         </tr>
                                         <tr class=" item-label1">
-                                          <td class="item-width2"><span>製造</span></td>
+                                          <td class="item-width2" style="height: 25px;"><span>製造</span></td>
                                         </tr>
                                       </tbody>
                                     </table>
