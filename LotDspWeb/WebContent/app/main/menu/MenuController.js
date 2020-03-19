@@ -82,6 +82,9 @@
 				}
 			},
 			search : function() {
+				//入力されたロット番号と検査番号を大文字にする
+				$scope.input.searchLtno = $scope.input.searchLtno.toUpperCase();
+				$scope.input.searchKnno = $scope.input.searchKnno.toUpperCase();
 				ModalService.showProcessing(MenuService.searchMenu($scope.input),{message:'処理中・・・'}).then(function(data) {
     				if(data.errorFlg){
     					$("#messageArea").css("color", "red");
@@ -113,7 +116,7 @@
     		}
 		};
 		//---------------------------------------------------------------
-		
+
 		// 初期処理
 		$scope.action.init();
 	}; // End newController

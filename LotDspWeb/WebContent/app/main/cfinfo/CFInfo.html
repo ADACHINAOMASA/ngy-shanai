@@ -8,10 +8,12 @@
   <form id="form1" class="form">
     <div style="background-color: white; height: 570px; left: 0px; top: 30px; position: absolute; width: 100%" class="tabSet">
       <!-- タブ項目 -->
-      <div class="MniTabDiv">
+      <div class="MniTabDiv" ng-show="common.tabSetRendered">
         <table border="0" cellspacing="0" cellpadding="0" class="MniTabTbl" title="">
           <tr>
-            <td><a class="MniTabLnk TabPad" href ng-click="action.showIcasInfo();">ICAS情報</a></td>
+            <td ng-show="common.mode==='0' || common.mode==='2'">
+            	<a class="MniTabLnk TabPad" href ng-click="action.showIcasInfo();">ICAS情報</a>
+            </td>
             <td><a class="MniTabLnk TabPad" href ng-click="action.showProgressInfo();">進度情報</a></td>
             <td><a class="MniTabLnk TabPad" href ng-click="action.showManufacturingInfo();">製造情報</a></td>
             <td><a class="MniTabLnk TabPad" href ng-click="action.showTestInfo();">試験情報</a></td>
@@ -129,7 +131,7 @@
 								</tr>
 								<tr>
 									<td>
-										<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="780">
+										<table bgcolor="white" border="0" cellpadding="0" cellspacing="1" width="850">
 											<thead>
 												<tr>
 													<th class="cf-item-g2-label1" scope="col" style="width: 70px;"><span class="cf-item-g2-label1">実績BOX</span></th>
@@ -331,7 +333,7 @@
 																					<td><span class="cf-item-g3-value1">{{cFInfo.ztmp2}}</span></td>
 																				</tr>
 																				<tr class="cf-item-g3-value1">
-																					<td><span class="cf-item-g3-value1">{{cFInfo.ztime2}}</span></td>
+																					<td><span class="cf-item-g3-value1">{{cFInfo.ztime2 | dotNumber:1}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -343,7 +345,7 @@
 																					<td><span class="cf-item-g3-value1">{{cFInfo.ztmp4}}</span></td>
 																				</tr>
 																				<tr class="cf-item-g3-value1">
-																					<td><span class="cf-item-g3-value1">{{cFInfo.ztime4}}</span></td>
+																					<td><span class="cf-item-g3-value1">{{cFInfo.ztime4 | dotNumber:1}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -435,7 +437,7 @@
 																					<td><span>{{cFInfo.m_IATMP1}}</span></td>
 																					<td><span>{{cFInfo.m_IATIM1}}</span></td>
 																					<td><span>{{cFInfo.m_IAX1 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td><span>{{cFInfo.m_IART1}}</span></td>
+																					<td><span>{{cFInfo.m_IART1 | dotNumber:1}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -453,7 +455,7 @@
 																					<td><span>{{cFInfo.m_IATMP2}}</span></td>
 																					<td><span>{{cFInfo.m_IATIM2}}</span></td>
 																					<td><span>{{cFInfo.m_IAX2 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td><span>{{cFInfo.m_IART2}}</span></td>
+																					<td><span>{{cFInfo.m_IART2 | dotNumber:1}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -471,7 +473,7 @@
 																					<td><span>{{cFInfo.m_IATMP3}}</span></td>
 																					<td><span>{{cFInfo.m_IATIM3}}</span></td>
 																					<td><span>{{cFInfo.m_IAX3 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td><span>{{cFInfo.m_IART3}}</span></td>
+																					<td><span>{{cFInfo.m_IART3 | dotNumber:1}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -489,7 +491,7 @@
 																					<td><span>{{cFInfo.m_IATMP4}}</span></td>
 																					<td><span>{{cFInfo.m_IATIM4}}</span></td>
 																					<td><span>{{cFInfo.m_IAX4 | dotNumber:3 | zeroToSpace}}</span></td>
-																					<td><span>{{cFInfo.m_IART4}}</span></td>
+																					<td><span>{{cFInfo.m_IART4 | dotNumber:1}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -833,7 +835,7 @@
 			</tbody>
 		</table>
       </div>
-	  
+
     </div>
 
     <!-- ICAS情報タブ以外の共通部分 開始-->
@@ -954,7 +956,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 210px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 205px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>販売員</span></td>
@@ -978,7 +980,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 75px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 80px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>ｶｰﾄﾞ区分</span></td>
@@ -1216,14 +1218,14 @@
     <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno" onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
 	<span style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
 	<input type="text" ng-model="common.searchKnno" id="common_searchKnno" name="searchKnno" onclick="InputTextSelect(this);"style="height: 25px; left: 200px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="2" />
-	<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
+	<button type="submit" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
 		<span class="glyphicon" aria-hidden="true">
 		</span>検索
 	</button>
 
     <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 150px" ng-show="common.tabSetRendered">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
     <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px" ng-show="common.tabSetRendered">最終更新日: </span>
-    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px" ng-show="common.tabSetRendered">検索結果: {{common.lotMaximum}}件</span>
+    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
     <span ng-show="util.isPreviewRendered(common);">
     	<a style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.previousPage()">
    		<img src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />

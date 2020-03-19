@@ -21,7 +21,7 @@ public class SearchActionLogic {
 		// 値設定
 		in.setSearchLtno(searchInfo.getLotNo());
 		in.setSearchKnno(searchInfo.getKensaNo());
-		
+
 		//ロット番号と検査番号は大文字に変換する
         String inputLtno = in.getSearchLtno().toUpperCase();
         String inputKnno = in.getSearchKnno().toUpperCase();
@@ -57,14 +57,15 @@ public class SearchActionLogic {
 
 			//現在表示ページを設定
 			in.setNowPage(searchInfo.getNowPage());
-			
+
 			//入力したロット番号と検査番号を改めて設定
 			in.setSearchLtno(inputLtno);
 			in.setSearchKnno(inputKnno);
-			
+
 	        if (resStaff.equals("success") && resIcas.equals("success") && resClad.equals("success") && resCF.equals("success")) {
                 in.setTabSetRendered(true);
 	        } else {
+	        	in.setMessage("該当データがありません");
                 in.setTabSetRendered(false);
 	        }
 

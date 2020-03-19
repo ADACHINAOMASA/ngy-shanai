@@ -16,10 +16,12 @@
   <form id="form1" class="form">
     <div style="background-color: white; height: 570px; left: 0px; top: 30px; position: absolute; width: 100%" class="tabSet">
       <!-- タブ項目 -->
-      <div class="MniTabDiv">
+      <div class="MniTabDiv" ng-show="common.tabSetRendered">
         <table border="0" cellspacing="0" cellpadding="0" class="MniTabTbl" title="">
           <tr>
-            <td><a class="MniTabLnk TabPad" href ng-click="action.showIcasInfo();">ICAS情報</a></td>
+            <td ng-show="common.mode==='0' || common.mode==='2'">
+            	<a class="MniTabLnk TabPad" href ng-click="action.showIcasInfo();">ICAS情報</a>
+            </td>
             <td><a class="MniTabLnk TabPad" href ng-click="action.showProgressInfo();">進度情報</a></td>
             <td><a class="MniTabLnk TabPad" href ng-click="action.showManufacturingInfo();">製造情報</a></td>
             <td><a class="MniTabLnk TabPad" href ng-click="action.showTestInfo();">試験情報</a></td>
@@ -83,7 +85,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>登録日時</span></td>
-																					<td class="item-datetime"><span>{{staffQualitySelectInfo.entdate | date:'yy/MM/dd HH:mm:ss'}}</span></td>
+																					<td class="item-datetime" style="width:160px;"><span>{{staffQualitySelectInfo.entdate | date:'yy/MM/dd HH:mm:ss'}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -95,7 +97,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>登録設備</span></td>
-																					<td class=" item-value1"><span>{{staffQualitySelectInfo.setsubimei}}</span></td>
+																					<td class=" item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.setsubimei}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -107,7 +109,7 @@
 																			<tbody>
 																				<tr>
 																				<td class="item-label1"><span>異常内容</span></td>
-																				<td class=" item-value1"><span>{{staffQualitySelectInfo.ijyonaiyojp}}</span></td>
+																				<td class=" item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.ijyonaiyojp}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -123,7 +125,7 @@
 																						<table border="0" cellpadding="0" cellspacing="1">
 																							<tbody>
 																								<tr>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.jyuryo1 | dotNumber:1}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.jyuryo1 | dotNumber:1}}</span></td>
 																									<td class=" item-unit"><span>㎏</span></td>
 																								</tr>
 																							</tbody>
@@ -140,7 +142,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>発生設備</span></td>
-																					<td class=" item-value1"><span>{{staffQualitySelectInfo.hsetsubimei}}</span></td>
+																					<td class=" item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.hsetsubimei}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -152,7 +154,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>分類</span></td>
-																					<td class="item-value1"><span>{{staffQualitySelectInfo.hbunrui}}</span></td>
+																					<td class="item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.hbunrui}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -170,21 +172,21 @@
 																						<table border="0" cellpadding="0" cellspacing="1">
 																							<tbody>
 																								<tr>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.habakbn1}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.habakbn1}}</span></td>
 																									<td class="item-unit"><span>~</span></td>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.haba1 | dotNumber:0 | zeroToSpace}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.haba1 | dotNumber:0 | zeroToSpace}}</span></td>
 																									<td class="item-unit"><span>㎜</span></td>
 																								</tr>
 																								<tr>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.habakbn2}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.habakbn2}}</span></td>
 																									<td class="item-unit"><span>~</span></td>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.haba2 | dotNumber:0 | zeroToSpace}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.haba2 | dotNumber:0 | zeroToSpace}}</span></td>
 																									<td class="item-unit"><span>㎜</span></td>
 																								</tr>
 																								<tr>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.habakbn3}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.habakbn3}}</span></td>
 																									<td class="item-unit"><span>~</span></td>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.haba3 | dotNumber:0 | zeroToSpace}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.haba3 | dotNumber:0 | zeroToSpace}}</span></td>
 																									<td class="item-unit"><span>㎜</span></td>
 																								</tr>
 																							</tbody>
@@ -201,7 +203,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>丈方向</span></td>
-																					<td class="item-value1"><span>{{staffQualitySelectInfo.takekbn}}</span></td>
+																					<td class="item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.takekbn}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -213,7 +215,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>面</span></td>
-																					<td class="item-value1"><span>{{staffQualitySelectInfo.menkbn}}</span></td>
+																					<td class="item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.menkbn}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -231,7 +233,7 @@
 																						<table border="0" cellpadding="0" cellspacing="1">
 																							<tbody>
 																								<tr>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.pitch}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.pitch}}</span></td>
 																									<td class="item-unit"><span>㎜</span></td>
 																								</tr>
 																							</tbody>
@@ -248,7 +250,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>異常位置</span></td>
-																					<td class=" item-value1"><span>{{staffQualitySelectInfo.take}}</span></td>
+																					<td class=" item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.take}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -266,7 +268,7 @@
 																						<table border="0" cellpadding="0" cellspacing="0">
 																							<tbody>
 																								<tr>
-																									<td class="qua-value-right-w100"><span>{{staffQualitySelectInfo.jyuryo1 | dotNumber:1 | zeroToSpace}}</span></td>
+																									<td class="qua-value-right-w100" style="width:130px;"><span>{{staffQualitySelectInfo.jyuryo1 | dotNumber:1 | zeroToSpace}}</span></td>
 																									<td class=" item-unit"><span>/</span></td>
 																									<td class=" qua-value-right-w100"><span>{{staffQualitySelectInfo.jyuryo2 | dotNumber:1 | zeroToSpace}}</span></td>
 																									<td class=" item-unit"><span>㎏</span></td>
@@ -285,7 +287,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>処置内容</span></td>
-																					<td class=" item-value1"><span>{{staffQualitySelectInfo.syochinaiyo}}</span></td>
+																					<td class=" item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.syochinaiyo}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -297,7 +299,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>補足内容</span></td>
-																					<td class=" item-value1"><span>{{staffQualitySelectInfo.hosoku}}</span></td>
+																					<td class=" item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.hosoku}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -309,7 +311,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>最終処理</span></td>
-																					<td class=" item-value1"><span>{{staffQualitySelectInfo.ssyochi}}</span></td>
+																					<td class=" item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.ssyochi}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -321,7 +323,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>処置代行</span></td>
-																					<td class=" item-value1"><span>{{staffQualitySelectInfo.daiko}}</span></td>
+																					<td class=" item-value1" style="width:130px;"><span>{{staffQualitySelectInfo.tantosyajp}}</span></td>
 																				</tr>
 																			</tbody>
 																		</table>
@@ -333,7 +335,7 @@
 																			<tbody>
 																				<tr>
 																					<td class="item-label1"><span>再手配ﾛｯﾄNO</span></td>
-																					<td class=" item-value1">
+																					<td class=" item-value1" style="width:130px;">
 																						<a href ng-click="action.saitehaiLink(staffQualitySelectInfo.sailinkkey)"><span>{{staffQualitySelectInfo.saitehailtno}}</span></a>
  																					</td>
 																				</tr>
@@ -363,7 +365,7 @@
 																										<table border="0" cellpadding="0" cellspacing="0">
 																											<tbody>
 																												<tr>
-																													<td class="qua-kocyoryoku"><span>{{staffQualitySelectInfo.kocyoryoku}}</span></td>
+																													<td class="qua-kocyoryoku" style="width:70px;"><span>{{staffQualitySelectInfo.kocyoryoku}}</span></td>
 																													<td class=" item-unit"><span class="item-unit">N/㎜2</span></td>
 																												</tr>
 																											</tbody>
@@ -386,7 +388,7 @@
 																										<table border="0" cellpadding="0" cellspacing="0">
 																											<tbody>
 																												<tr>
-																													<td class="qua-nobi"><span>{{staffQualitySelectInfo.nobi}}</span></td>
+																													<td class="qua-nobi" style="width:70px;"><span>{{staffQualitySelectInfo.nobi}}</span></td>
 																													<td class=" item-unit"><span>%</span></td>
 																												</tr>
 																											</tbody>
@@ -409,7 +411,7 @@
 																										<table border="0" cellpadding="0" cellspacing="0">
 																											<tbody>
 																												<tr>
-																													<td class="qua-tairyoku"><span>{{staffQualitySelectInfo.tairyoku}}</span></td>
+																													<td class="qua-tairyoku" style="width:70px;"><span>{{staffQualitySelectInfo.tairyoku}}</span></td>
 																													<td class="item-unit"><span class="item-unit">N/㎜2</span></td>
 																												</tr>
 																											</tbody>
@@ -432,7 +434,7 @@
 																										<table border="0" cellpadding="0" cellspacing="0">
 																											<tbody>
 																												<tr>
-																													<td class="qua-hokosei"><span>{{staffQualitySelectInfo.hokosei | dotNumber:1 | zeroToSpace}}</span></td>
+																													<td class="qua-hokosei" style="width:70px;"><span>{{staffQualitySelectInfo.hokosei | dotNumber:1 | zeroToSpace}}</span></td>
 																													<td class=" item-unit"><span>%</span></td>
 																												</tr>
 																											</tbody>
@@ -455,7 +457,7 @@
 																										<table border="0" cellpadding="0" cellspacing="0">
 																											<tbody>
 																												<tr>
-																													<td class="qua-magekbn"><span>{{staffQualitySelectInfo.magekbn}}</span></td>
+																													<td class="qua-magekbn" style="width:70px;"><span>{{staffQualitySelectInfo.magekbn}}</span></td>
 																												</tr>
 																											</tbody>
 																										</table>
@@ -477,7 +479,7 @@
 																										<table border="0" cellpadding="0" cellspacing="0">
 																											<tbody>
 																												<tr>
-																													<td class="qua-erichsen"><span>{{staffQualitySelectInfo.erichsen | dotNumber:1 | zeroToSpace}}</span></td>
+																													<td class="qua-erichsen" style="width:70px;"><span>{{staffQualitySelectInfo.erichsen | dotNumber:1 | zeroToSpace}}</span></td>
 																													<td class=" item-unit"><span>%</span></td>
 																												</tr>
 																											</tbody>
@@ -500,7 +502,7 @@
 																										<table border="0" cellpadding="0" cellspacing="0">
 																											<tbody>
 																												<tr>
-																													<td class="qua-cladritsu"><span>{{staffQualitySelectInfo.cladritsu | dotNumber:1 | zeroToSpace}}</span></td>
+																													<td class="qua-cladritsu" style="width:70px;"><span>{{staffQualitySelectInfo.cladritsu | dotNumber:1 | zeroToSpace}}</span></td>
 																													<td class=" item-unit"><span>㎜</span></td>
 																												</tr>
 																											</tbody>
@@ -523,7 +525,7 @@
 																										<table border="0" cellpadding="0" cellspacing="0">
 																											<tbody>
 																												<tr>
-																													<td class="qua-lchi"><span>{{staffQualitySelectInfo.lchi | dotNumber:1 | zeroToSpace}}</span></td>
+																													<td class="qua-lchi" style="width:70px;"><span>{{staffQualitySelectInfo.lchi | dotNumber:1 | zeroToSpace}}</span></td>
 																												</tr>
 																											</tbody>
 																										</table>
@@ -588,8 +590,8 @@
 
     <!-- ICAS情報タブ以外の共通部分 開始-->
     <!--ロット番号～Yマーク日-->
- 
-    <table border="0" cellpadding="5" cellspacing="0" style="height: 80px; left: 5px; top: 70px; position: absolute;" width="1290">
+
+    <table border="0" cellpadding="5" cellspacing="0" style="height: 80px; left: 5px; top: 70px; position: absolute;" width="1290" ng-show="common.tabSetRendered">
       <tbody>
         <tr>
           <td>
@@ -705,7 +707,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 210px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 205px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>販売員</span></td>
@@ -729,7 +731,7 @@
                     </table>
                   </td>
                   <td>
-                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 75px;">
+                    <table class="item-width1" border="0" cellpadding="0" cellspacing="1" style="width: 80px;">
                       <tbody>
                         <tr class="item-label1">
                           <td><span>ｶｰﾄﾞ区分</span></td>
@@ -960,21 +962,21 @@
         </tr>
       </tbody>
     </table>
-     
+
     <span id="header" style="background-color: rgb(244, 233, 233); display: block; font-family: monospace; height: 35px; left: 0px; top: 0px; position: absolute; width: 100%">
     <span id="messageArea" class="message"></span>
     <span style="font-family: monospace; left: 4px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 55px">ﾛｯﾄ番号</span>
     <input type="text" ng-model="common.searchLtno" id="common_searchLtno" name="searchLtno" onclick="InputTextSelect(this);" style="height: 25px; left: 60px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="1">
 	<span style="font-family: monospace; height: 20px; left: 140px; top: 10px; position: absolute; text-align: left; vertical-align: top; width: 65px">検査番号</span>
 	<input type="text" ng-model="common.searchKnno" id="common_searchKnno" name="searchKnno" onclick="InputTextSelect(this);"style="height: 25px; left: 200px; top: 8px; position: absolute; text-align: left; vertical-align: middle; width: 70px;text-transform:uppercase;" tabindex="2" />
-	<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
+	<button type="submit" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" style="height: 25px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px" tabindex="3">
 		<span class="glyphicon" aria-hidden="true">
 		</span>検索
 	</button>
 
     <span class="header-label" style="left: 852px; top: 10px; position: absolute; width: 150px" ng-show="common.tabSetRendered">{{common.edtm | date:'yy/MM/dd HH:mm:ss'}}</span>
     <span class="header-label" style="left: 768px; top: 10px; position: absolute; width: 98px" ng-show="common.tabSetRendered">最終更新日: </span>
-    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px" ng-show="common.tabSetRendered">検索結果: {{common.lotMaximum}}件</span>
+    <span class="header-label" style="left: 344px; top: 10px; position: absolute; text-align: center; vertical-align: middle; width: 106px">検索結果: {{common.lotMaximum}}件</span>
     <span ng-show="util.isPreviewRendered(common);">
     	<a style="left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.previousPage()">
    		<img src="asset/lotdspimg/previous.gif" alt="" border="0" align="top" />

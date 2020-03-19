@@ -34,10 +34,10 @@
 		$scope.common = {};
 		//進度情報基本データ
 		$scope.staffProgressInfo = {};
-		
+
 		$scope.icasInfo = {};
 		$scope.icasBoxInfos = [];
-		
+
 		//---------------------------------------------------------------
 		// アクション定義
         $scope.action = {
@@ -83,14 +83,19 @@
     		}
     		//検索
     		,search:function(){
+				//入力されたロット番号と検査番号を大文字にする
+    			$scope.common.searchLtno = $scope.common.searchLtno.toUpperCase();
+    			$scope.common.searchKnno = $scope.common.searchKnno.toUpperCase();
 		    	$("#messageArea").text("");
     			if (!$scope.common.searchLtno && !$scope.common.searchKnno) {
     		    	$("#messageArea").text("実行エラー");
+					$scope.common.lotMaximum = 0;
+					$scope.common.tabSetRendered = false;
     		    	return;
     			}
     			// データ再設定
 	        	var param = {
-	        			lotNo: $scope.common.searchLtno, 
+	        			lotNo: $scope.common.searchLtno,
 	        			kensaNo: $scope.common.searchKnno,
 	        			nowPage: 0
 	        	};
@@ -98,6 +103,8 @@
     				if(data.errorFlg){
     					$("#messageArea").css("color", "red");
     					$("#messageArea").text(data.message);
+    					$scope.common.lotMaximum = 0;
+    					$scope.common.tabSetRendered = data.tabSetRendered;
     				}else{
     					// ローカルストレージに再設定
     					MenuService.memory.saveBaseWork(data);
@@ -244,7 +251,7 @@
     		}
     		,styleIcasRoll : function() {
     			if ($scope.icasInfo == null) {
-    				return "white"; 
+    				return "white";
     			}
     	        if ($scope.icasInfo.jcd202 == "44") {
     	            return "red";
@@ -254,7 +261,7 @@
     		}
     		,styleIcasHotpc : function() {
     			if ($scope.icasInfo == null) {
-    				return "white"; 
+    				return "white";
     			}
                 if ($scope.icasInfo.hotpc == "------") {
                     return "white";
@@ -264,7 +271,7 @@
     		}
     		,styleIcasRyou : function() {
     			if ($scope.icasInfo == null) {
-    				return "white"; 
+    				return "white";
     			}
     	        if ($scope.icasInfo.ryou == "-----") {
     	            return "white";
@@ -274,7 +281,7 @@
     		}
     		,styleIcasBr : function() {
     			if ($scope.icasInfo == null) {
-    				return "white"; 
+    				return "white";
     			}
     	        if ($scope.icasInfo.a11 != null) {
     	            if ($scope.icasInfo.a11 != "K") {
@@ -309,7 +316,7 @@
     	    }
     		,styleIcasTr : function() {
     			if ($scope.icasInfo == null) {
-    				return "white"; 
+    				return "white";
     			}
 		        if ($scope.icasInfo.a11 != null) {
 		            if ($scope.icasInfo.a11 != "K") {
@@ -353,7 +360,7 @@
                     //板厚チェック ＣＦ処理設定
                     var wk_ani_f = null;
                     //テーブルに於ける行インデックスの取得
-                    var curIdx = index; 
+                    var curIdx = index;
                     if ($scope.icasInfo.akno != null) {
                         if (parseFloat($scope.icasInfo.akno) > 1) {
                             //テーブル値に於ける実績最終設備の位置設定
@@ -366,7 +373,7 @@
                                 wk_ani_f = "ANI";
                             } else {
                                 wk_ani_f = "ANF";
-                            }                    
+                            }
                         } else {
                             wk_ani_f = "XXX";
                         }
@@ -377,8 +384,8 @@
                                     return "white";
                                 } else if (parseFloat($scope.icasInfo.cfst) == 3) {
                                     return "lime";
-                                }                    
-                            }                    
+                                }
+                            }
                         }
                     }
                     return "red";
@@ -456,7 +463,7 @@
     		}
     		,styleIcasSydt : function() {
     			if ($scope.icasInfo == null) {
-    				return "white"; 
+    				return "white";
     			}
     	        if ($scope.icasInfo.nokiymd == null) {
     	            return "white;";
@@ -472,8 +479,8 @@
     		}
         }
 		//---------------------------------------------------------------
-        
-        
+
+
    		//初期表示
         $scope.action.init();
     }; //End newController

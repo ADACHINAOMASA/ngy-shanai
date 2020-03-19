@@ -6,6 +6,7 @@
 
     var controllerName = 'CFInfoController';
     var lotInfoStorage = 'LotDspInfo';
+    var userStorage='UserInfoStorage';
 
     // 必要な依存を列挙
     var injectParams = [
@@ -28,10 +29,12 @@
 		$scope.common = {};
 		//進度情報基本データ
 		$scope.staffProgressInfo = {};
-		
+
 		$scope.cFInfo = {};
 		$scope.cFBoxInfos = [];
-		
+		//modeの設定
+		$scope.common.mode = $localStorage[userStorage].mode;
+
 		//---------------------------------------------------------------
 		// アクション定義
         $scope.action = {
@@ -160,15 +163,20 @@
     		}
     		//検索
     		,search:function(){
+				//入力されたロット番号と検査番号を大文字にする
+    			$scope.common.searchLtno = $scope.common.searchLtno.toUpperCase();
+    			$scope.common.searchKnno = $scope.common.searchKnno.toUpperCase();
 		    	//メッセージエリアのクリア
 		    	$("#messageArea").text("");
     			if (!$scope.common.searchLtno && !$scope.common.searchKnno) {
     		    	$("#messageArea").text("実行エラー");
+					$scope.common.lotMaximum = 0;
+					$scope.common.tabSetRendered = false;
     		    	return;
     			}
     			// データ再設定
 	        	var param = {
-	        			lotNo: $scope.common.searchLtno, 
+	        			lotNo: $scope.common.searchLtno,
 	        			kensaNo: $scope.common.searchKnno,
 	        			nowPage: 0
 	        	};
@@ -176,6 +184,8 @@
     				if(data.errorFlg){
     					$("#messageArea").css("color", "red");
     					$("#messageArea").text(data.message);
+    					$scope.common.lotMaximum = 0;
+    					$scope.common.tabSetRendered = data.tabSetRendered;
     				}else{
     					// ローカルストレージに再設定
     					MenuService.memory.saveBaseWork(data);
@@ -293,8 +303,8 @@
 	    	}
         }
 		//---------------------------------------------------------------
-        
-        
+
+
    		//初期表示
         $scope.action.init();
     }; //End newController

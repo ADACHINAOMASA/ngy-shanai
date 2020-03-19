@@ -16,6 +16,7 @@
 
         var controller = 'MenuController';
         var templateUrl = 'app/main/menu/Menu.html';
+        var templateUrlDummy = 'app/main/menu/MenuDummy.html';
 
         $stateProvider
         	.state(base, {
@@ -89,7 +90,7 @@
         		}
         	})
         	.state(base3, {
-                url: '/lotdsp/faces/' + base3 + '.jsp'
+                url: '/lotdsp/faces/' + base3 + '.jsp' + '?ltno&knno'
         		, controller: controller
         		, templateUrl: templateUrl
         		, resolve: {
@@ -115,7 +116,10 @@
         	    		return delay.promise;
         	    	}
             		,params: function ($stateParams) {
-            			return null;
+            			var param = {}
+            			param.ltno = $stateParams.ltno || "";
+            			param.knno = $stateParams.knno || "";
+            			return param;
             		}
         		}
         	})

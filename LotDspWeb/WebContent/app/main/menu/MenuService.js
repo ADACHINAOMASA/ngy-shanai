@@ -112,6 +112,12 @@
 			,searchMenuParams : function(data) {
 				return NIS.u.req($http.post(NIS.u.path(baseURI, 'searchMenuParams'), data));
 			}
+			,getMenuInfo : function() {
+				return NIS.u.req($http.get(NIS.u.path(baseURI, 'getMenuInfo')));
+			}
+			,getSaiTehaiLink : function() {
+				return NIS.u.req($http.get(NIS.u.path(baseURI, 'getSaiTehaiLink')));
+			}
 		};
 	};//End newService
 

@@ -6,6 +6,7 @@
 
     var controllerName = 'ProgressInfoController';
     var lotInfoStorage = 'LotDspInfo';
+    var userStorage='UserInfoStorage';
 
     // 必要な依存を列挙
     var injectParams = [
@@ -32,6 +33,8 @@
 		$scope.staffProgressBoxInfos = {};
 		//実績データ
 		$scope.staffProgressJBoxInfos = {};
+		//modeの設定
+		$scope.common.mode = $localStorage[userStorage].mode;
 
 		//---------------------------------------------------------------
 		// アクション定義
@@ -122,6 +125,7 @@
     			$scope.staffProgressInfo.sai_count = data.sai_count;
     			$scope.staffProgressInfo.hikikbn = data.hikikbn;
     			$scope.staffProgressInfo.hikicode = data.hikicode;
+    			$scope.staffProgressInfo.sailinkkey = data.sailinkkey;
     			//仕様～製造
     			$scope.staffProgressInfo.msnok = data.msnok;
     			$scope.staffProgressInfo.msnoh = data.msnoh;
@@ -169,15 +173,20 @@
     		}
     		//検索
     		,search:function(){
+				//入力されたロット番号と検査番号を大文字にする
+    			$scope.common.searchLtno = $scope.common.searchLtno.toUpperCase();
+    			$scope.common.searchKnno = $scope.common.searchKnno.toUpperCase();
 		    	//メッセージエリアのクリア
 		    	$("#messageArea").text("");
     			if (!$scope.common.searchLtno && !$scope.common.searchKnno) {
     		    	$("#messageArea").text("実行エラー");
+					$scope.common.lotMaximum = 0;
+					$scope.common.tabSetRendered = false;
     		    	return;
     			}
     			// データ再設定
 	        	var param = {
-	        			lotNo: $scope.common.searchLtno, 
+	        			lotNo: $scope.common.searchLtno,
 	        			kensaNo: $scope.common.searchKnno,
 	        			nowPage: 0
 	        	};
@@ -185,6 +194,9 @@
     				if(data.errorFlg){
     					$("#messageArea").css("color", "red");
     					$("#messageArea").text(data.message);
+    					$scope.common.lotMaximum = 0;
+    					$scope.common.tabSetRendered = data.tabSetRendered;
+    					return;
     				}else{
     					// ローカルストレージに再設定
     					MenuService.memory.saveBaseWork(data);
@@ -276,9 +288,13 @@
     		}
 			//再手配リンク
 			,testLink:function(no){
-				$scope.common.searchLtno = no;
-				// 指定されたNoで検索
-				$scope.action.search();
+				MenuService.getMenuInfo().then(function(data){
+					if(!data.saihikiateUrl){
+						alert('再引当URLを取得できませんでした。');
+					}else{
+						window.open(data.saihikiateUrl + no);
+					}
+				});
     		}
         };
 		//---------------------------------------------------------------
