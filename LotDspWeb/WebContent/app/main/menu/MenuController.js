@@ -35,6 +35,7 @@
 		$scope.input.mode = $scope.authenticationInfo.mode;
 		$scope.input.ltno = $scope.authenticationInfo.ltno;
 		$scope.input.knno = $scope.authenticationInfo.knno;
+		$scope.input.menuShow = true;
 
 		// 認証情報
 		$scope.input.error = $scope.authenticationInfo.error || false;
@@ -63,13 +64,19 @@
 					$scope.input.paramLinkkey = $scope.params.linkkey;
 					$scope.input.tab = $scope.params.tab;
 					$scope.input.site = $scope.params.site;
+					$scope.input.menuShow = false;
 					// 検索
 					ModalService.showProcessing(MenuService.searchMenuParams($scope.input),{message:'処理中・・・'}).then(function(data) {
 		    			if(data.errorFlg){
 		    				$("#messageArea").css("color", "red");
 		    				$("#messageArea").text(data.message);
+		    				$scope.input.menuShow = true;
 		    			}else{
 		    				if (data.nextGamen != null) {
+		    					if(data.nextGamen == ""){
+		    						$scope.input.menuShow = true;
+		    						console.log("意味わからん :" + data.nextGamen);
+		    					}
 			    				//返却されたデータをローカルストレージに保存する
 		    					UserInfoStorage.memory.saveBaseWork(data);
 			    				MenuService.memory.saveBaseWork(data);

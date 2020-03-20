@@ -18,7 +18,7 @@
 </head>
 
 <body id="body1" style="background-color: rgb(255, 255, 255); -rave-layout: grid"> <span id="dummy"></span>
-  <div id="blockCentering" style="">
+  <div id="blockCentering" style="" ng-show="input.menuShow">
     <form id="form1" class="form" style="width: 300px;">
       <table id="form1:gridPanel4" border="0" cellpadding="0" cellspacing="0" style="height: 120px; text-align: center; vertical-align: middle" width="300">
         <tbody>
@@ -39,7 +39,7 @@
                       <table id="form1:gridPanel_Menu1" border="0" cellpadding="5" cellspacing="0" style="background-color: rgb(153, 204, 255); height: 20px; width: 100%">
                         <tbody>
                           <tr>
-                            <td><span id="form1:outputText2" style="font-size: 12px; text-align: center; vertical-align: center;">　★ 検索条件を入力して下さい</span></td>
+                            <td><span id="form1:outputText2" style="font-size: 16px; text-align: center; vertical-align: center;">　★ 検索条件を入力して下さい</span></td>
                           </tr>
                         </tbody>
                       </table>
@@ -50,14 +50,14 @@
                       <table id="form1:gridPanel_Menu2" border="0" cellpadding="5" cellspacing="0" style="border-color: white; height: 60px;" width="260">
                         <tbody>
                           <tr>
-                            <td class="menu-body-label"><span id="form1:outputText3" style="font-size: 12px">ロット番号　：</span></td>
+                            <td class="menu-body-label"><span id="form1:outputText3" style="font-size: 16px">ロット番号　：</span></td>
                             <td class="menu-body-input">
 								<input type="text" ng-model="input.searchLtno" id="input_searchLtno" name="searchLtno"
 								 onclick="InputTextSelect(this);" nis-input="CommonInfo" placeholder="" style="height: 20px;text-transform:uppercase" tabindex="1">
                             </td>
                           </tr>
                           <tr>
-                            <td class="menu-body-label"><span id="form1:outputText1" style="font-size: 12px">検査番号　：</span></td>
+                            <td class="menu-body-label"><span id="form1:outputText1" style="font-size: 16px">検査番号　：</span></td>
                             <td class=" menu-body-input">
 								<input type="text" ng-model="input.searchKnno" id="input_searchKnno" name="searchKnno"
 								onclick="InputTextSelect(this);" nis-input="CommonInfo" placeholder="" style="height: 20px;text-transform:uppercase" tabindex="2">
@@ -72,7 +72,7 @@
                       <table id="form1:gridPanel2" style="background-color: rgb(153, 204, 255); height: 20px; width: 100%" width="260">
                         <tbody>
                           <tr>
-                            <td><span id="form1:outputText4" style="font-size: 12px; text-align: center; vertical-align: center;">★ ログインすることで全てのタブが表示されます</span></td>
+                            <td><span id="form1:outputText4" style="font-size: 16px; text-align: center; vertical-align: center;">★ ログインすることで全てのタブが表示されます</span></td>
                           </tr>
                         </tbody>
                       </table>
@@ -83,14 +83,14 @@
                       <table id="form1:gridPanel_Menu4" border="0" cellpadding="5" cellspacing="0" style="border-color: white; height: 60px" width="290">
                         <tbody>
                           <tr>
-                            <td class="menu-body-label"><span id="form1:outputText5" style="font-size: 12px">ユーザーID　：</span></td>
+                            <td class="menu-body-label"><span id="form1:outputText5" style="font-size: 16px">ユーザーID　：</span></td>
                             <td class=" menu-body-input">
 								<input type="text" ng-model="input.userId" id="input_userId" name="userId"
 								 onclick="InputTextSelect(this);" nis-input="CommonInfo" placeholder="" style="height: 20px;width: 110px" tabindex="3" size="30">
                             </td>
                           </tr>
                           <tr>
-                            <td class="menu-body-label"><span id="form1:outputText6" style="font-size: 12px">パスワード　：</span></td>
+                            <td class="menu-body-label"><span id="form1:outputText6" style="font-size: 16px">パスワード　：</span></td>
                             <td class=" menu-body-input">
 								<input type="password" ng-model="input.password" id="input_password" name="password"
 								 onclick="InputTextSelect(this);" nis-input="CommonInfo" placeholder="" style="height: 20px;width: 110px" tabindex="4" size="20">
@@ -107,7 +107,7 @@
                           <tr>
                             <td>
                             	<div>
-									<button type="button" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" >
+									<button type="submit" class="btn btn-default btnCustom lotdspBtnCustom" ng-click="action.search()" >
 										<span class="glyphicon" aria-hidden="true">
 										</span>検索
 									</button>

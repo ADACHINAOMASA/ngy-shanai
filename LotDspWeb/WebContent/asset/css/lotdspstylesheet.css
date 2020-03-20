@@ -887,6 +887,11 @@ input.full-width {
    width: 60px;
 }
 
+.test-w80 {
+   height: 25px;
+   width: 80px;
+}
+
 /* Quality */
 .qua-value-right-w100 {
    background-color: #ffffcc;

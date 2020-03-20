@@ -71,6 +71,8 @@ public class CommonInfo extends AuthenticationInfo {
 
 	private boolean tabSetRendered = true;
 
+	private boolean menuShow = true;
+
 	public boolean isError() {
 		return error;
 	}
@@ -285,6 +287,14 @@ public class CommonInfo extends AuthenticationInfo {
 
 	public void setTabSetRendered(boolean tabSetRendered) {
 		this.tabSetRendered = tabSetRendered;
+	}
+
+	public boolean isMenuShow() {
+		return menuShow;
+	}
+
+	public void setMenuShow(boolean menuShow) {
+		this.menuShow = menuShow;
 	}
 
 }

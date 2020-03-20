@@ -3590,7 +3590,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
      * 2011/07/05 add
      */
     public static String getCladKawazaiQuery() {
-    	
+
         StringBuilder bld = new StringBuilder();
         bld.append(" SELECT * ");
         bld.append(" FROM ( ");
@@ -3662,7 +3662,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         bld.append(" , DAT_JDF_COM Z2 ");
         bld.append(" , (SELECT * FROM DAT_SLB_COM2 UNION ALL SELECT * FROM DAT_R_SLB_COM2) S2");
         bld.append(" WHERE ");
-        bld.append(" J2.KR_CYNO1 = Z2.CYNO(+)");
+        bld.append(" J2.KR_CYNO2 = Z2.CYNO(+)");
         bld.append(" AND J2.CYUZO_YY BETWEEN NVL(Z2.CYUZO_YY,1) -1 AND NVL(Z2.CYUZO_YY,9998) + 1");
         bld.append(" AND J2.KR_CYNO2 = S2.CN");
         bld.append(" AND J2.CYUZO_YY BETWEEN S2.CYUZO_YY -1 AND S2.CYUZO_YY + 1");
@@ -3848,7 +3848,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         bld.append(" KR_CYNO <> '0000000000' ");
         bld.append(" ORDER BY ");
         bld.append(" KR_CYNO ");
-        
+
         return bld.toString();
     }
 

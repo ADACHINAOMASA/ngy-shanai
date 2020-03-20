@@ -36,6 +36,7 @@
 				lotMaximum:null,
 				nowPage:null,
 				tabSetRendered:null,
+				menuShow:null,
 
 				//設定用の変数へ値を代入
         		saveBaseWork: function(info) {
@@ -58,6 +59,7 @@
         			this.lotMaximum = info.lotMaximum
         			this.nowPage = info.nowPage
         			this.tabSetRendered = info.tabSetRendered
+        			this.menuShow = info.menuShow
         			this.writeLocalStrage();
         		},
         		//ローカルストレージへの書き込み処理
@@ -85,6 +87,7 @@
            				,nowPage:this.nowPage
            				,cFInfoBean:this.cFInfoBean
            				,tabSetRendered:this.tabSetRendered
+           				,menuShow:this.menuShow
         			};
         		}
 		};
