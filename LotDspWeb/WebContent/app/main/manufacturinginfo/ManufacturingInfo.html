@@ -579,7 +579,14 @@
                           <td><span>販売員</span></td>
                         </tr>
                         <tr class=" item-value1">
-                          <td><span>{{common.tantosha_MEI}}</span></td>
+                          <td>
+                          	<span ng-if="common.tantosha_MEI">
+                          		{{common.tantosha_MEI}}
+                          	</span>
+                          	<span ng-if="!common.tantosha_MEI">
+                          		{{common.jujsno}}
+                          	</span>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -849,7 +856,7 @@
    		前</a>
     </span>
     <span ng-show="util.isNextRendered(common);">
-   		<a style="left: 498px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.nextPage()">次
+   		<a style="left: 510px; top: 8px; position: absolute; text-align: center; vertical-align: middle" href ng-click="action.nextPage()">次
    		<img src="asset/lotdspimg/next.gif" alt="" border="0" align="top" /></a>
    		</span>
     </span>
