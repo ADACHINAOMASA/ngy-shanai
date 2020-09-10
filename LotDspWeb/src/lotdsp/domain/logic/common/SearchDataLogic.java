@@ -96,13 +96,31 @@ public class SearchDataLogic {
         return searchBean.getCYUZO_YY();
     }
 
+    //検索キー（TBLORDER）取得
+    public static String getSearchKey3(CommonInfo in,Map param,Integer index) {
+        LotDspService svc = new LotDspService();
+        SearchKeyBean searchBean = new SearchKeyBean();
+        //検索キー（TBLORDER）取得
+        try {
+            List lst = svc.FindSearchKeyInfos(param);
+            searchBean = ((SearchKeyBean)lst.get(index));
+            in.setSearchKeyInfos(lst);
+        } catch(SQLException e) {
+        	in.setMessage("実行エラー" + e.getErrorCode());
+        	return "error";
+        } catch(NotFoundException e) {
+        	in.setMessage("該当データがありません");
+        	return "error";
+        }
+        return searchBean.getTBLORDER();
+    }
 
     //-------------------------各画面の検索処理-------------------------
 
     /**
      * ｽﾀｯﾌ版ﾛｯﾄ情報取得
      */
-    public static String getStaffInfoData(CommonInfo in,String paraLinkkey,BigDecimal cyuzoYy) {
+    public static String getStaffInfoData(CommonInfo in,String paraLinkkey,BigDecimal cyuzoYy,String tborderkey) {
         LotDspService svc = new LotDspService();
         StaffCommonBean staffCommonBean = new StaffCommonBean();
         StaffProgressBean staffProgressBean = new StaffProgressBean();
@@ -128,7 +146,7 @@ public class SearchDataLogic {
 
         //ｽﾀｯﾌ版ﾛｯﾄ情報取得　進度情報
         try {
-        	staffProgressBean = svc.FindStaffProgressInfo(paraLinkkey,cyuzoYy);
+        	staffProgressBean = svc.FindStaffProgressInfo(paraLinkkey,cyuzoYy,tborderkey);
         	in.setStaffProgressBean(new StaffRecalc().setSbmh(staffProgressBean));
 
         } catch(SQLException e){
@@ -202,7 +220,7 @@ public class SearchDataLogic {
     /**
      * ICAS版ﾛｯﾄ情報取得
      */
-    public static String getIcasInfoData(CommonInfo in,String paraLinkkey,BigDecimal cyuzoYy) {
+    public static String getIcasInfoData(CommonInfo in,String paraLinkkey,BigDecimal cyuzoYy,String tborderkey) {
     	//サービス(sql)の取得
         LotDspService svc = new LotDspService();
         IcasBean icasBean = new IcasBean();
@@ -210,7 +228,7 @@ public class SearchDataLogic {
         //ICAS版ﾛｯﾄ情報取得
         try {
         	//sqlの実行
-        	icasBean = svc.FindIcasInfo(paraLinkkey,cyuzoYy);
+        	icasBean = svc.FindIcasInfo(paraLinkkey,cyuzoYy,tborderkey);
         	in.setIcasBean(new IcasRecalc().setSbmh(icasBean));
         	icasMessage.getConvey(icasBean);
         	icasMessage.getMagMsg(icasBean);

@@ -93,13 +93,14 @@ public class SearchMenuLogic {
 			//検索用のキー情報を取得
 			String paraLinkkey = SearchDataLogic.getSearchKey(in,param, 0);
 			BigDecimal paraCyuzoYy = SearchDataLogic.getSearchKey2(in,param, 0);
+			String tborderkey = SearchDataLogic.getSearchKey3(in,param, 0);
 
 			//各画面の検索を実行
 			// スタッフ情報
-	        resStaff = SearchDataLogic.getStaffInfoData(in,paraLinkkey, paraCyuzoYy);
+			resStaff = SearchDataLogic.getStaffInfoData(in,paraLinkkey, paraCyuzoYy,tborderkey);
 
 	        // ICAS情報
-			resIcas = SearchDataLogic.getIcasInfoData(in,paraLinkkey,paraCyuzoYy);
+			resIcas = SearchDataLogic.getIcasInfoData(in,paraLinkkey,paraCyuzoYy,tborderkey);
 
 			// 2011/07/06 クラッド情報取得処理・処理結果判定の追加
 			resClad = SearchDataLogic.getCladInfoData(in,paraLinkkey);

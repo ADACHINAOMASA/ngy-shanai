@@ -599,7 +599,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "SELECT * FROM ( " +
 	"SELECT " +
 	//"	D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,D1.SH_SBW SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
-	"	D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,TRUNC(DECODE(SBSM,'KEN',SH_RYOW,SH_SBW)) SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
+	"	 '1' TBLORDER,D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,TRUNC(DECODE(SBSM,'KEN',SH_RYOW,SH_SBW)) SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
         "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE, " +
         "	(CASE " +
         "	 WHEN JBSM IN('ANI','ANF') THEN JBSM || TRIM(TO_CHAR(SUBSTR(TO_CHAR(JBSCD,'000'),3,2),'99')) " +
@@ -630,7 +630,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"AND	D4.JYOTAI = 1 " + //状態
         "UNION ALL " +
         "SELECT " +
-        "	LINKKEY,BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,SH_SBW SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
+        "	 '2' TBLORDER,LINKKEY,BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,SH_SBW SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
         "	TO_NUMBER(NULL) JBSCD,TO_DATE(NULL) JBSDTM,TO_DATE(NULL) JBEDTM,TO_NUMBER(NULL) JBEDTC,TO_DATE(NULL) JBSDATE, " +
         "	NULL JBSM, TO_DATE(NULL) JBEDATE, NULL JBX, NULL JBY, NULL JBZ, NULL JBRW, NULL JBPAT, NULL JBRMH, NULL JBBN, NULL TAIRYUT " +
         "       ,SBK,SH_SBW " + // 2012-10-08 追加
@@ -640,7 +640,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "UNION ALL " +
 	"SELECT " +
 		//"	D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,D1.SH_SBW SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
-	"	D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,TRUNC(DECODE(SBSM,'KEN',SH_RYOW,SH_SBW)) SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
+	"	 '3' TBLORDER,D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,TRUNC(DECODE(SBSM,'KEN',SH_RYOW,SH_SBW)) SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
         "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE, " +
         "	(CASE " +
         "	 WHEN JBSM IN('ANI','ANF') THEN JBSM || TRIM(TO_CHAR(SUBSTR(TO_CHAR(JBSCD,'000'),3,2),'99')) " +
@@ -676,7 +676,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	// 2014/09/25 追加 ▼
 	"UNION ALL " +
 	"SELECT " +
-	"	D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,TRUNC(DECODE(SBSM,'KEN',SH_RYOW,SH_SBW)) SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
+	"	 '4' TBLORDER,D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,TRUNC(DECODE(SBSM,'KEN',SH_RYOW,SH_SBW)) SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
         "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE, " +
         "	(CASE " +
         "	 WHEN JBSM IN('ANI','ANF') THEN JBSM || TRIM(TO_CHAR(SUBSTR(TO_CHAR(JBSCD,'000'),3,2),'99')) " +
@@ -714,7 +714,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	// 2016/04/24 追加 ▼
 	"UNION ALL " +
 	"SELECT " +
-	"	D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,TRUNC(DECODE(SBSM,'KEN',SH_RYOW,SH_SBW)) SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
+	"	 '5' TBLORDER,D1.LINKKEY,D1.BOXNO,SBSM,NVL(SBMMDD,SBYMD) SBMMDD,SBMMDDC,SBX,SBY,SBZ,TRUNC(DECODE(SBSM,'KEN',SH_RYOW,SH_SBW)) SBW,REPLACE(SBPAT,'0','') SBPAT,SBYKY,SBTTY,SBMH, " +
         "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE, " +
         "	(CASE " +
         "	 WHEN JBSM IN('ANI','ANF') THEN JBSM || TRIM(TO_CHAR(SUBSTR(TO_CHAR(JBSCD,'000'),3,2),'99')) " +
@@ -753,6 +753,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "WHERE " +
 	"       LINKKEY = ? " +
 	"       AND CYUZO_YY = ? " +
+	"       AND TBLORDER = ? " +
         "ORDER BY " +
 	"       BOXNO";
 	// 2016/04/24 追加 ▲
@@ -813,10 +814,10 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
     //ｽﾀｯﾌ版ﾛｯﾄ情報SQL　進度情報　実績設備BOX
     private static final String STAFF_PROGRESS_JBOX_QUERY =
         "SELECT " +
-        "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE,JBSM,JBEDATE,JBX,JBY,JBZ,JBRW,JBPAT,JBRMH,JBBN,TAIRYUT,JBFO,JBBO,JBGOOD,CYUZO_YY " +
+        "        TBLORDER,JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE,JBSM,JBEDATE,JBX,JBY,JBZ,JBRW,JBPAT,JBRMH,JBBN,TAIRYUT,JBFO,JBBO,JBGOOD,CYUZO_YY " +
         "FROM ( " +
 	"SELECT " +
-	"	D1.LINKKEY,D1.BOXNO, " +
+	"	'1' TBLORDER,D1.LINKKEY,D1.BOXNO, " +
         "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE, " +
         "	(CASE " +
         "	 WHEN JBSM IN('ANI','ANF') THEN JBSM || TRIM(TO_CHAR(SUBSTR(TO_CHAR(JBSCD,'000'),3,2),'99')) " +
@@ -856,7 +857,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 
         "UNION ALL " +
         "SELECT " +
-        "	LINKKEY,TO_NUMBER(NULL) BOXNO,TO_NUMBER(NULL) JBSCD,TO_DATE(NULL) JBSDTM,TO_DATE(NULL) JBEDTM,TO_NUMBER(NULL) JBEDTC, " +
+        "	'2' TBLORDER,LINKKEY,TO_NUMBER(NULL) BOXNO,TO_NUMBER(NULL) JBSCD,TO_DATE(NULL) JBSDTM,TO_DATE(NULL) JBEDTM,TO_NUMBER(NULL) JBEDTC, " +
         "	TO_DATE(NULL) JBSDATE,NULL JBSM,TO_DATE(NULL) JBEDATE,NULL JBX,NULL JBY,NULL JBZ, NULL JBRW,NULL JBPAT,NULL JBRMH,NULL JBBN,NULL TAIRYUT " +
 	"	,NULL JBFO, NULL JBBO ,NULL JBGOOD" +
 	"	,CYUZO_YY " +
@@ -867,7 +868,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "       AND LINKKEY = ?  " +
         "UNION ALL " +
 	"SELECT " +
-	"	D1.LINKKEY,D1.BOXNO, " +
+	"	'3' TBLORDER,D1.LINKKEY,D1.BOXNO, " +
         "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE, " +
         "	(CASE " +
         "	 WHEN JBSM IN('ANI','ANF') THEN JBSM || TRIM(TO_CHAR(SUBSTR(TO_CHAR(JBSCD,'000'),3,2),'99')) " +
@@ -907,7 +908,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	// 2014/09/25 追加 ▼
         "UNION ALL " +
 	"SELECT " +
-	"	D1.LINKKEY,D1.BOXNO, " +
+	"	'4' TBLORDER,D1.LINKKEY,D1.BOXNO, " +
         "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE, " +
         "	(CASE " +
         "	 WHEN JBSM IN('ANI','ANF') THEN JBSM || TRIM(TO_CHAR(SUBSTR(TO_CHAR(JBSCD,'000'),3,2),'99')) " +
@@ -948,7 +949,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	// 2016/04/24 追加 ▼
         "UNION ALL " +
 	"SELECT " +
-	"	D1.LINKKEY,D1.BOXNO, " +
+	"	'5' TBLORDER,D1.LINKKEY,D1.BOXNO, " +
         "       JBSCD,JBSDTM,JBEDTM,JBEDTC,JBSDATE, " +
         "	(CASE " +
         "	 WHEN JBSM IN('ANI','ANF') THEN JBSM || TRIM(TO_CHAR(SUBSTR(TO_CHAR(JBSCD,'000'),3,2),'99')) " +
@@ -988,6 +989,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "WHERE " +
 	"       LINKKEY = ? " +
 	"    AND CYUZO_YY = ? " +
+	"    AND TBLORDER = ? " +
         "ORDER BY " +
 	"       BOXNO";
 
@@ -2600,6 +2602,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
     private static final String ICAS_BOX_QUERY =
         "SELECT * FROM ( " +
 	"SELECT " +
+		"	'1' TBLORDER, " +
         "	D1.LINKKEY, " +
         "	D1.BOXNO, " +
         "	SBK, " +
@@ -2660,6 +2663,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"AND	D1.LINKKEY = D5.LINKKEY " +
         "UNION ALL " +
 	"SELECT " +
+	"	'2' TBLORDER, " +
 	"	D1.LINKKEY, " +
 	"	D1.BOXNO, " +
 	"	SBK, " +
@@ -2697,6 +2701,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	"	D1.LINKKEY = D2.LINKKEY " +
 	"UNION ALL " +
 	"SELECT " +
+		"	'3' TBLORDER, " +
         "	D1.LINKKEY, " +
         "	D1.BOXNO, " +
         "	SBK, " +
@@ -2761,6 +2766,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	// 2014/09/25 追加 ▼
 	"UNION ALL " +
 	"SELECT " +
+		"	'4' TBLORDER, " +
         "	D1.LINKKEY, " +
         "	D1.BOXNO, " +
         "	SBK, " +
@@ -2823,6 +2829,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 	// 2016/04/24 追加 ▼
 		"UNION ALL " +
 	"SELECT " +
+		"	'5' TBLORDER, " +
         "	D1.LINKKEY, " +
         "	D1.BOXNO, " +
         "	SBK, " +
@@ -2885,6 +2892,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "WHERE " +
 	"       LINKKEY = ? " +
 	"       AND CYUZO_YY = ? " +
+	"       AND TBLORDER = ? " +
         "ORDER BY " +
 	"       BOXNO";
 
@@ -4714,6 +4722,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
             super(ds, STAFF_PROGRESS_BOX_QUERY);
             super.declareParameter(new SqlParameter("LINKKEY", Types.VARCHAR));
             super.declareParameter(new SqlParameter("CYUZO_YY", Types.DECIMAL));
+            super.declareParameter(new SqlParameter("TBLORDER", Types.VARCHAR));
             compile();
         }
         public Object mapRow(ResultSet rs, int rowNumber) throws SQLException {
@@ -4744,6 +4753,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
             super.declareParameter(new SqlParameter("LINKKEY2", Types.VARCHAR));
             super.declareParameter(new SqlParameter("LINKKEY3", Types.VARCHAR));
             super.declareParameter(new SqlParameter("CYUZO_YY", Types.DECIMAL));
+            super.declareParameter(new SqlParameter("TBLORDER", Types.VARCHAR));
 	    //System.out.println("@SQL(進度情報 実績):" + STAFF_PROGRESS_JBOX_QUERY);
             compile();
         }
@@ -4813,6 +4823,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
             super(ds, ICAS_BOX_QUERY);
             super.declareParameter(new SqlParameter("LINKKEY", Types.VARCHAR));
             super.declareParameter(new SqlParameter("CYUZO_YY", Types.DECIMAL));
+            super.declareParameter(new SqlParameter("TBLORDER", Types.VARCHAR));
 	    //System.out.println("ICAS設備:"+ICAS_BOX_QUERY);
             compile();
         }
@@ -5225,6 +5236,11 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
                 list.add(params.get("CYUZO_YY"));
             }
         }
+        if(params.containsKey("TBLORDER")) {
+            if(!((params.get("TBLORDER") == null))) {
+                list.add(params.get("TBLORDER"));
+            }
+        }
 
         Object[] paramValues = list.toArray();
 
@@ -5272,7 +5288,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
     }
 
     //ｽﾀｯﾌ版ﾛｯﾄ情報取得ﾒｿｯﾄﾞ 進度情報
-    public StaffProgressBean FindStaffProgressInfo(String linkkey,BigDecimal cyuzoYy) throws SQLException,NotFoundException {
+    public StaffProgressBean FindStaffProgressInfo(String linkkey,BigDecimal cyuzoYy,String tborderkey) throws SQLException,NotFoundException {
 	//System.out.println("," + linkkey + "," + cyuzoYy);
 
         DriverManagerDataSource dataSource = ConnectDataSource();
@@ -5292,7 +5308,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         // 設備BOX情報SQLの実行
 	//Object[] params2 = new Object[]{linkkey,cyuzoYy}; //TODO:
 	//BigDecimal a = new BigDecimal(2013);
-	Object[] paramsSbox = new Object[]{linkkey,cyuzoYy}; //ADD
+	Object[] paramsSbox = new Object[]{linkkey,cyuzoYy,tborderkey}; //ADD
         List lst2 = query2.execute(paramsSbox);
         // 0件判定
         if (lst2.size() == 0){
@@ -5316,7 +5332,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         //ｽﾀｯﾌ版ﾛｯﾄ情報SQLの検証 進度情報 実績設備BOX
         FindStaffProgressJBoxQuery query4 = new FindStaffProgressJBoxQuery(dataSource);
         // 設備BOX情報SQLの実行
-        Object[] params = new Object[]{linkkey, linkkey, linkkey,cyuzoYy}; //ADD
+        Object[] params = new Object[]{linkkey, linkkey, linkkey,cyuzoYy,tborderkey}; //ADD
         List lst4 = query4.execute(params);
         // 0件判定
         if (lst4.size() == 0){
@@ -5417,7 +5433,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
 
 
     //ICAS版ﾛｯﾄ情報取得ﾒｿｯﾄﾞ
-    public IcasBean FindIcasInfo(String linkkey,BigDecimal cyuzoYy) throws SQLException,NotFoundException {
+    public IcasBean FindIcasInfo(String linkkey,BigDecimal cyuzoYy,String tborderkey) throws SQLException,NotFoundException {
 
 	int IcasBoxSize = 0;
 	String sJRFLG = "";
@@ -5445,9 +5461,9 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         //ICAS版ﾛｯﾄ情報SQLの検証 進度情報 設備BOX
         FindIcasBoxQuery query2 = new FindIcasBoxQuery(dataSource);
         // 設備BOX情報SQLの実行
-        Object[] params = new Object[]{linkkey, cyuzoYy};
+        Object[] params = new Object[]{linkkey, cyuzoYy,tborderkey};
         List lst2 = query2.execute(params);
-	System.out.println("FindIcasBoxQuery"+ lst2.size() + "," +linkkey+","+cyuzoYy);
+	System.out.println("FindIcasBoxQuery"+ lst2.size() + "," +linkkey+","+cyuzoYy+","+tborderkey);
 	// 0件判定
         if (lst2.size() == 0){
            // System.out.print("@エラー10");

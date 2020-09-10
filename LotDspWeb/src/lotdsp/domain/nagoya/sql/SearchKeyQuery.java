@@ -43,7 +43,8 @@ public class SearchKeyQuery extends ParameterQuery  {
         sql.append("       D1.KNNO, ");
         sql.append("       D1.FRTDTM, ");
         sql.append("       TO_DATE(NULL) KSD, ");
-        sql.append("       D2.CYUZO_YY ");
+        sql.append("       D2.CYUZO_YY, ");
+        sql.append("       '2' TBLORDER ");
         sql.append("FROM ");
         sql.append("       DAT_JDF_FIX D1, ");
         sql.append("       DAT_JDF_COM2 D2 ");
@@ -58,7 +59,8 @@ public class SearchKeyQuery extends ParameterQuery  {
         sql.append("       D2.KNNO, ");
         sql.append("       D3.FRTDTM, ");
         sql.append("       D3.KSD, ");
-        sql.append("       D1.CYUZO_YY ");
+        sql.append("       D1.CYUZO_YY, ");
+        sql.append("       '1' TBLORDER ");
         sql.append("FROM ");
         sql.append("       DAT_JDF_COM D1, ");
         sql.append("       DAT_LOT_COM D2, ");
@@ -76,7 +78,8 @@ public class SearchKeyQuery extends ParameterQuery  {
         sql.append("       D2.KNNO, ");
         sql.append("       D3.FRTDTM, ");
         sql.append("       D3.KSD, ");
-        sql.append("       D1.CYUZO_YY ");
+        sql.append("       D1.CYUZO_YY, ");
+        sql.append("       '3' TBLORDER ");
         sql.append("FROM ");
         sql.append("       DAT_R_JDF_COM D1, ");
         sql.append("       DAT_R_LOT_COM D2, ");
@@ -95,7 +98,8 @@ public class SearchKeyQuery extends ParameterQuery  {
         sql.append("       D2.KNNO, ");
         sql.append("       D3.FRTDTM, ");
         sql.append("       D3.KSD, ");
-        sql.append("       D1.CYUZO_YY ");
+        sql.append("       D1.CYUZO_YY, ");
+        sql.append("       '4' TBLORDER ");
         sql.append("FROM ");
         sql.append("       DAT_S_JDF_COM D1, ");
         sql.append("       DAT_S_LOT_COM D2, ");
@@ -117,7 +121,8 @@ public class SearchKeyQuery extends ParameterQuery  {
         sql.append("       D2.KNNO, ");
         sql.append("       D3.FRTDTM, ");
         sql.append("       D3.KSD, ");
-        sql.append("       D1.CYUZO_YY ");
+        sql.append("       D1.CYUZO_YY, ");
+        sql.append("       '5' TBLORDER ");
         sql.append("FROM ");
         sql.append("       DAT_L_JDF_COM D1, ");
         sql.append("       DAT_L_LOT_COM D2, ");
@@ -175,6 +180,12 @@ public class SearchKeyQuery extends ParameterQuery  {
             }
         }
 
+   	// 2020/09/10 追加
+        if(map.containsKey("TBLORDER")) {
+            if(!((map.get("TBLORDER") == null))) {
+                addParameter("TBLORDER = ?", map.get("TBLORDER").toString());
+            }
+        }
     }
 
     /**

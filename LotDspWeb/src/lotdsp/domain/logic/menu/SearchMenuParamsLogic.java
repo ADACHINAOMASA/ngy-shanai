@@ -18,7 +18,7 @@ public class SearchMenuParamsLogic {
     public static final String STAFF_MODE = "1";
     public static final String BOTH_MODE  = "2";
     public static final String OUT_MODE   = "3";
-    
+
     // タブ
     public static final String TAB_ICAS = "0";
     public static final String TAB_PROGRESS = "1";
@@ -26,7 +26,7 @@ public class SearchMenuParamsLogic {
     public static final String TAB_TEST = "3";
     public static final String TAB_QUALITY = "4";
 	public static final String TAB_CF = "5";
-    
+
     public static final String SITE_WORKS  = "1";  // 現場用
 
 	@Inject
@@ -40,14 +40,14 @@ public class SearchMenuParamsLogic {
         String resIcas  = null;
         String resClad  = null;
         String resCF    = null;
-        
+
 		String inputLinkkey = in.getParamLinkkey();
 		String inputCyno = "";
         String inputLtno = "";
         String inputKnno = "";
 
 		Map param = new HashMap();
-		
+
         // パラメーター設定
 		if (StringUtil.hasValue(inputLinkkey)) {
 			inputLtno = (inputLinkkey.substring(0, 9).trim()).toUpperCase();
@@ -59,25 +59,26 @@ public class SearchMenuParamsLogic {
 		}
 
 		try {
-			
+
 			//検索パラメータの設定
 			param.put("KNNO", inputKnno);
 			param.put("LTNO", inputLtno);
 			param.put("CYNO", inputCyno);
 			param.put("LINKKEY", inputLinkkey);
-			
+
 			if ((StringUtil.hasValue(inputLinkkey)) || (StringUtil.hasValue(inputLtno) || StringUtil.hasValue(inputKnno) || StringUtil.hasValue(inputCyno))) {
-				
+
 				//検索用のキー情報を取得
 				String paraLinkkey = SearchDataLogic.getSearchKey(in,param, 0);
 				BigDecimal paraCyuzoYy = SearchDataLogic.getSearchKey2(in,param, 0);
+				String tborderkey = SearchDataLogic.getSearchKey3(in,param, 0);
 
 				//各画面の検索を実行
 				// スタッフ情報
-		        resStaff = SearchDataLogic.getStaffInfoData(in,paraLinkkey, paraCyuzoYy);
+		        resStaff = SearchDataLogic.getStaffInfoData(in,paraLinkkey, paraCyuzoYy,tborderkey);
 
 		        // ICAS情報
-				resIcas = SearchDataLogic.getIcasInfoData(in,paraLinkkey,paraCyuzoYy);
+				resIcas = SearchDataLogic.getIcasInfoData(in,paraLinkkey,paraCyuzoYy,tborderkey);
 
 				// 2011/07/06 クラッド情報取得処理・処理結果判定の追加
 				resClad = SearchDataLogic.getCladInfoData(in,paraLinkkey);
@@ -107,7 +108,7 @@ public class SearchMenuParamsLogic {
 			        }
 	                in.setTabSetRendered(true);
 		        }
-				
+
 			} else {
 				if (ICAS_MODE.equals(in.getMode()) && SITE_WORKS.equals(in.getSite())) {
 	            	in.setNextGamen("IcasInfo");
@@ -117,11 +118,11 @@ public class SearchMenuParamsLogic {
 
 			//現在表示ページを0に設定する
 			in.setNowPage(0);
-			
+
 			//入力したロット番号と検査番号を改めて設定
 			in.setSearchLtno(inputLtno);
 			in.setSearchKnno(inputKnno);
-			
+
 		} catch (Exception e) {
 			in.setMessage(e.toString());
 			in.setErrorFlg(true);

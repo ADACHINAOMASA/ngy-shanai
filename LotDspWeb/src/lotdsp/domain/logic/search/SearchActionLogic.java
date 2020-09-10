@@ -41,13 +41,14 @@ public class SearchActionLogic {
 			//検索用のキー情報を取得
 			String paraLinkkey = SearchDataLogic.getSearchKey(in, param, searchInfo.getNowPage());
 			BigDecimal paraCyuzoYy = SearchDataLogic.getSearchKey2(in, param, searchInfo.getNowPage());
+			String tborderkey = SearchDataLogic.getSearchKey3(in,param, searchInfo.getNowPage());
 
 			//各画面の検索を実行
 			// スタッフ情報
-	        resStaff = SearchDataLogic.getStaffInfoData(in, paraLinkkey, paraCyuzoYy);
+	        resStaff = SearchDataLogic.getStaffInfoData(in, paraLinkkey, paraCyuzoYy,tborderkey);
 
 	        // ICAS情報
-			resIcas = SearchDataLogic.getIcasInfoData(in, paraLinkkey, paraCyuzoYy);
+			resIcas = SearchDataLogic.getIcasInfoData(in, paraLinkkey, paraCyuzoYy,tborderkey);
 
 			// 2011/07/06 クラッド情報取得処理・処理結果判定の追加
 			resClad = SearchDataLogic.getCladInfoData(in, paraLinkkey);

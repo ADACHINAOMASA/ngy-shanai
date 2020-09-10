@@ -151,4 +151,17 @@ public class SearchKeyBean implements Serializable {
 	this.CYUZO_YY = CYUZO_YY;
     }
 
+    /**
+     * 判別番号
+     */
+    private String TBLORDER;
+
+    public String getTBLORDER(){
+	return this.TBLORDER;
+    }
+
+    public void setTBLORDER(String TBLORDER){
+	this.TBLORDER = TBLORDER;
+    }
+
 }

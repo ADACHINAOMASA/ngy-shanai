@@ -75,7 +75,6 @@
 		    				if (data.nextGamen != null) {
 		    					if(data.nextGamen == ""){
 		    						$scope.input.menuShow = true;
-		    						console.log("意味わからん :" + data.nextGamen);
 		    					}
 			    				//返却されたデータをローカルストレージに保存する
 		    					UserInfoStorage.memory.saveBaseWork(data);
