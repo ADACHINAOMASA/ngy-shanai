@@ -129,7 +129,7 @@ public class SearchDataLogic {
         StaffQualityBean staffQualityBean = new StaffQualityBean();
         //ｽﾀｯﾌ版ﾛｯﾄ情報取得　共通情報
         try {
-        	staffCommonBean = svc.FindStaffCommonInfo(paraLinkkey,cyuzoYy);
+        	staffCommonBean = svc.FindStaffCommonInfo(paraLinkkey,cyuzoYy,tborderkey);
         	in.setStaffCommonBean(staffCommonBean);
 
         } catch(SQLException e){
@@ -161,7 +161,7 @@ public class SearchDataLogic {
 
         //ｽﾀｯﾌ版ﾛｯﾄ情報取得　製造情報
         try {
-        	staffManufactureBean = svc.FindStaffManufactureInfo(paraLinkkey);
+        	staffManufactureBean = svc.FindStaffManufactureInfo(paraLinkkey,tborderkey);
         	in.setStaffManufactureBean(staffManufactureBean);
 
         } catch(SQLException e){
@@ -176,7 +176,7 @@ public class SearchDataLogic {
 
         //ｽﾀｯﾌ版ﾛｯﾄ情報取得　試験情報
         try {
-        	staffTestBean = svc.FindStaffTestInfo(paraLinkkey);
+        	staffTestBean = svc.FindStaffTestInfo(paraLinkkey,tborderkey);
         	in.setStaffTestBean(staffTestBean);
 
         } catch(SQLException e){
@@ -252,12 +252,12 @@ public class SearchDataLogic {
      * @return 取得結果(success or error)
      * 2011/07/07 add
      */
-    public static String getCladInfoData(CommonInfo in,String paraLinkkey) {
+    public static String getCladInfoData(CommonInfo in,String paraLinkkey,String tborderkey) {
         LotDspService svc = new LotDspService();
         CladInfoBean cladInfoBean = new CladInfoBean();
         // クラッド情報取得
         try {
-        	cladInfoBean = svc.FindCladInfo(paraLinkkey);
+        	cladInfoBean = svc.FindCladInfo(paraLinkkey,tborderkey);
         	in.setCladInfoBean(cladInfoBean);
 
         } catch (SQLException e) {
@@ -277,12 +277,12 @@ public class SearchDataLogic {
      * @return 取得結果(success or error)
      * 2011/07/07 add
      */
-    public static String getCFInfoData(CommonInfo in,String paraLinkkey,BigDecimal cyuzoYy) {
+    public static String getCFInfoData(CommonInfo in,String paraLinkkey,BigDecimal cyuzoYy,String tborderkey) {
         LotDspService svc = new LotDspService();
         CFInfoBean cFInfoBean = new CFInfoBean();
         // 徐冷情報取得
         try {
-        	cFInfoBean = svc.FindCFInfo(paraLinkkey,cyuzoYy);
+        	cFInfoBean = svc.FindCFInfo(paraLinkkey,cyuzoYy,tborderkey);
             in.setcFInfoBean(cFInfoBean);
         } catch (SQLException e) {
 			in.setMessage("実行エラー" + e.getErrorCode());

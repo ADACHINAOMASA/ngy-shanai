@@ -103,10 +103,10 @@ public class SearchMenuLogic {
 			resIcas = SearchDataLogic.getIcasInfoData(in,paraLinkkey,paraCyuzoYy,tborderkey);
 
 			// 2011/07/06 クラッド情報取得処理・処理結果判定の追加
-			resClad = SearchDataLogic.getCladInfoData(in,paraLinkkey);
+			resClad = SearchDataLogic.getCladInfoData(in,paraLinkkey,tborderkey);
 
 			// 2012/12/14 徐冷情報取得処理・処理結果判定の追加
-			resCF = SearchDataLogic.getCFInfoData(in,paraLinkkey,paraCyuzoYy);
+			resCF = SearchDataLogic.getCFInfoData(in,paraLinkkey,paraCyuzoYy,tborderkey);
 
 			//現在表示ページを0に設定する
 			in.setNowPage(0);
