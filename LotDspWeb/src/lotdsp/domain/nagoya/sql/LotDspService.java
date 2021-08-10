@@ -1770,7 +1770,7 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "WHERE " +
 	"       LINKKEY = ? " +
         "ORDER BY " +
-	"       INPUTSEQ DESC";
+	"       ENTDATE DESC";
 
 
     //ICAS版ﾛｯﾄ情報SQL
