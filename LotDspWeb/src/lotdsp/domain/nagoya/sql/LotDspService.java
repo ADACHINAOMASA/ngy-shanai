@@ -196,7 +196,8 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "	'Y','Y:原価見積', " +
         "	'Z','Z:マスターロット', " +
         "	'') NOKIFUGO, " +
-	"	D1.CYUZO_YY " +
+	"	D1.CYUZO_YY, " +
+	"	D1.NONYUNO " +
 	"FROM " +
 	"	DAT_JDF_COM D1, " +
 	"	DAT_LOT_COM D2, " +
@@ -240,7 +241,8 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "	'Y','Y:原価見積', " +
         "	'Z','Z:マスターロット', " +
         "	'') NOKIFUGO, " +
-	"	D2.CYUZO_YY " +
+	"	D2.CYUZO_YY, " +
+	"	D2.NONYUNO " +
 	"FROM  " +
         "       DAT_JDF_FIX D1, " +
         "       DAT_JDF_COM2 D2, " +
@@ -281,7 +283,8 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "	'Y','Y:原価見積', " +
         "	'Z','Z:マスターロット', " +
         "	'') NOKIFUGO, " +
-	"	D1.CYUZO_YY " +
+	"	D1.CYUZO_YY, " +
+	"	D1.NONYUNO " +
 	"FROM " +
 	"	DAT_R_JDF_COM D1, " +
 	"	DAT_R_LOT_COM D2, " +
@@ -325,7 +328,8 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "	'Y','Y:原価見積', " +
         "	'Z','Z:マスターロット', " +
         "	'') NOKIFUGO, " +
-	"	D1.CYUZO_YY " +
+	"	D1.CYUZO_YY, " +
+	"	D1.NONYUNO " +
         "FROM " +
 	"	DAT_S_JDF_COM D1, " +
 	"	DAT_S_LOT_COM D2, " +
@@ -372,7 +376,8 @@ public class LotDspService extends JdbcDaoSupport implements Serializable {
         "	'Y','Y:原価見積', " +
         "	'Z','Z:マスターロット', " +
         "	'') NOKIFUGO, " +
-	"	D1.CYUZO_YY " +
+	"	D1.CYUZO_YY, " +
+	"	D1.NONYUNO " +
         "FROM " +
 	"	DAT_L_JDF_COM D1, " +
 	"	DAT_L_LOT_COM D2, " +

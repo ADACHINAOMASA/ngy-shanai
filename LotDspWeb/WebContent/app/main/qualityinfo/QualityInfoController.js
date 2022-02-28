@@ -97,6 +97,7 @@
 		        $scope.common.shikenno = data.staffCommonBean.shikenno;
 		        $scope.common.karikon = data.staffCommonBean.karikon;
 		        $scope.common.nokifugo = data.staffCommonBean.nokifugo;
+		        $scope.common.nonyuno = data.staffCommonBean.nonyuno;
 		        //最終更新日
 		        $scope.common.edtm = data.staffCommonBean.edtm;
 		        //検索結果総件数

@@ -850,7 +850,20 @@ public class StaffCommonBean implements Serializable {
     */
    private BigDecimal CYUZO_YY;
 
-    public Date getYMARK() {
+   /**
+    *  納入仕様書No
+    */
+   private String NONYUNO;
+   
+   public String getNONYUNO() {
+	   return NONYUNO;
+   }
+   
+   public void setNONYUNO(String NONYUNO) {
+	   this.NONYUNO = NONYUNO;
+   }
+
+   public Date getYMARK() {
 	return YMARK;
     }
 
