@@ -15,11 +15,20 @@ public class LoginLogic {
 		AuthoritiesBuilder builder = AuthoritiesBuilder.newModel();
 		builder.add(Kengen.KANRISHA.name());
 
-		UserProfile userProfile = new UserProfile();
+		UserProfile userProfile = createUserProfile(in);
 		
 		userProfile.setAuthority(builder.build());
 		return userProfile;
 	}
 
+	private UserProfile createUserProfile(LoginInfo in) {
+        UserProfile userProfile = new UserProfile();
 
+        userProfile.setUserId(in.getId());
+        userProfile.setUserName(in.getUserName());
+        // 権限設定は後回し
+
+        return userProfile;
+    }
+	
 }

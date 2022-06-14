@@ -1,12 +1,12 @@
 (function () {
 
 	// 必要な依存を列挙
-    var injectParams = ['$http', '$q'];
+    var injectParams = ['$http', '$q', '$rootScope'];
 
     // TODO:LoginServiceと機能重複があるのでどこかで整理を
 
     // 引数は依存の内容と一致する
-    var newService = function ($http, $q) {
+    var newService = function ($http, $q, $rootScope) {
     	var userProfile = undefined;
     	return {
     		getLoggedIn : function () {
@@ -39,10 +39,12 @@
 	    		$http.get('service/user')
 					.success(function(data){
 						userProfile = data;
+						$rootScope.userProfile = userProfile;
 						delay.resolve(data);
 					})
 					.error(function(data){
 						userProfile = undefined;
+						$rootScope.userProfile = undefined;
 						delay.reject(data);
 					});
 				return delay.promise;

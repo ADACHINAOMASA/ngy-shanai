@@ -5,7 +5,7 @@
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="LotDspWeb.war" deploy-path="/" handle="module:/resource/LotDspWeb/LotDspWeb">
-            <dependent-object>Module_1580971005903</dependent-object>
+            <dependent-object>Module_1654760526976</dependent-object>
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

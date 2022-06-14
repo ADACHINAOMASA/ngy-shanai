@@ -12,7 +12,7 @@ public class LoginInfo {
 
 	private String id;
 
-	@MaxLength(10)
+	@MaxLength(200)
 	@Zenhankaku(ZenhankakuElm.HANKAKU)
 	@OmojiKomoji(OmojiKomojiElm.KONZAI)
 	private String password;
@@ -21,7 +21,9 @@ public class LoginInfo {
 	@Zenhankaku(ZenhankakuElm.HANKAKU)
 	@OmojiKomoji(OmojiKomojiElm.KONZAI)
 	private String userId;
-
+	
+	@MaxLength(40)
+	private String userName;
 
 	/**
 	 * idを取得します。
@@ -55,12 +57,13 @@ public class LoginInfo {
 	    this.password = password;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
+	
 }

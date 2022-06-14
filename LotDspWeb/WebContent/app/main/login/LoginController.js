@@ -10,17 +10,18 @@
     	$scope.companyName=SysConst.company.name;
     	$scope.abbrCompanyName=SysConst.company.abbrName;
     	$scope.systemName=SysConst.system.name;
+    	$scope.input = [];
     	    	
     	// 内部状態等を一括でリセットする仕組みを用意するべきか
     	$scope.userIdMemory = $cookies.get('userIdMemory') || '0';
-    	$scope.userId = $cookies.get('savedUserId') || '';
+    	$scope.input.userId = $cookies.get('savedUserId') || '';
 
     	$scope.action = {
 			login : function() {
-				LoginService.login($scope.userId, $scope.password)
+				LoginService.login($scope.id, $scope.password)
 					.then(function(){
 						if ($scope.userIdMemory === '1') {
-							$cookies.put('savedUserId', $scope.userId);
+							$cookies.put('savedUserId', $scope.id);
 						}
 						$state.go($scope.moveTo || 'home');
 					});
@@ -43,15 +44,15 @@
                             return RulesService.load('PasswordHenkoInfo');
                         }
                         , input: {
-                            userId: $scope.userId
+                            userId: $scope.id
                             , password: $scope.password
                         }
                     }
                 });
                 modalInstance.result.then(function (data) {
                 	if(data){
-                        $scope.userId = data.userId;
-                        $scope.password = data.newPassword;
+                		$scope.id = data.userId;
+                		$scope.password = data.newPassword;
                         AlertService.addSuccess('パスワード変更をしました。新たしいパスワードを入力し、再度ログインしてください。', 2000);
                 	}
                 }, function () {});

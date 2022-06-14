@@ -8,7 +8,7 @@
     	var _openConfirm = function(param){
     		param = param || {};
 			var processName = param.processName || '';
-			var message = param.message || 'を実行します。';
+			var message = param;
 			var modalInstance = $uibModal.open({
 				animation: true,
 				templateUrl: 'app/common/modal/confirm.html',

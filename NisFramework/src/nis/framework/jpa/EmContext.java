@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import nis.framework.cdi.CdiBeansAccessor;
 import nis.framework.properties.AppProperties;
 
 public class EmContext {
@@ -18,12 +19,11 @@ public class EmContext {
 
 	private static final EmContext thisInc = new EmContext();
 
-	public static EmContext get() {
+	public static EntityManager get() {
+        return CdiBeansAccessor.get().find(EntityManager.class);
+    }
 
-		return thisInc;
-	}
-
-	private EmContext() {
+	private EntityManager getEm() {
 		String name = getDefaultJpaPersistenceContextName();
 		try {
 			Context context = new InitialContext();
@@ -32,11 +32,12 @@ public class EmContext {
 			e.printStackTrace();
 			logger.info("JPA Name: " + name);
 		}
+		return em;
 	}
 
 	@Produces
 	public EntityManager getEntityManager() {
-		return em;
+		return getEm();
 	}
 
 	private String getDefaultJpaPersistenceContextName() {

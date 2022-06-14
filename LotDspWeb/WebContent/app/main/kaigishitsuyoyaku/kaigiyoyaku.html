@@ -1,0 +1,98 @@
+<nis-header></nis-header>
+<div class="container-fluid">
+    <div class="col-xs-12 main">
+    	<div class="row">
+            <div class="text-left col-xs-6">
+                <button type="button" class="btn btn-info"
+                    ng-click="action.back()">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                    homeへ
+                </button>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-xs-12">
+                <div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<i class="fa fa-internet-explorer"></i>
+							会議室予約システム(登録機能作成　縮めたときスクロール出したい)
+						</h3>
+					</div>
+					<div class="panel-body" style="padding:30px;">
+                    	<div class="row">
+                    		<div class="col-md-4">
+		                    	<label class="col-md-3 control-label" for="input_hizuke">日付</label>
+		                    	<div class="input-group col-md-8" style="padding-bottom:30px;">
+								    <input type="text" class="form-control" uib-datepicker-popup datepicker-options="datePickerOptions" ng-change="action.searchyoyaku(hizuke)" ng-model="hizuke" name="hizuke" id="input_hizuke" is-open="calOpen['hizuke']" placeholder="YYYY/MM/DD">
+								    <span class="input-group-btn">
+								        <button type="button" class="btn btn-default" ng-click="toggleDatePicker($event, 'hizuke')">
+								            <i class="glyphicon glyphicon-calendar"></i>
+								        </button>
+								        <button type="button" class="btn btn-default btn-success" ng-click="action.searchyoyaku(hizuke)">更新</button>
+								    </span>
+								</div>
+							</div>
+						</div>
+						<div class="table-responsive">
+						<table class="table table-bordered table-striped table-hover" nis-float-thead >
+							<tr class="text-center">
+								<td> </td>
+								<td style="width:7%;" colspan="2">8</td>
+								<td style="width:7%;" colspan="2">9</td>
+								<td style="width:7%;" colspan="2">10</td>
+								<td style="width:7%;" colspan="2">11</td>
+								<td style="width:7%;" colspan="2">12</td>
+								<td style="width:7%;" colspan="2">13</td>
+								<td style="width:7%;" colspan="2">14</td>
+								<td style="width:7%;" colspan="2">15</td>
+								<td style="width:7%;" colspan="2">16</td>
+								<td style="width:7%;" colspan="2">17</td>
+								<td style="width:7%;" colspan="2">18</td>
+								<td style="width:7%;" colspan="2">19</td>
+							</tr>
+							<tr ng-repeat="kaigishitsu in kaigishitsus">
+								<td ng-if="$index=1" style="width:10%; background-color: #6495ed; color:white;">{{kaigishitsu.kaigishitsuMei}}</td>
+								<td style="padding-top: 30px;" ng-repeat="yoyakuInfo in kaigishitsu.yoyakuInfo" class="text-center" ng-class="{'success': yoyakuInfo.isreserved != 1, 'warning': yoyakuInfo.isreserved == 1}">
+									<a class="btn btn-mini text-center" uib-tooltip-template="'TooltipTemplate.html'" ng-click="action.openYoyakuModal(yoyakuInfo, kaigishitsu, hizuke)">{{yoyakuInfo.isreserved != null ? "×" : "○"}}</a>
+								</td>
+							</tr>
+							<tr class="text-center">
+								<td> </td>
+								<td style="width:7%;" colspan="2">8</td>
+								<td style="width:7%;" colspan="2">9</td>
+								<td style="width:7%;" colspan="2">10</td>
+								<td style="width:7%;" colspan="2">11</td>
+								<td style="width:7%;" colspan="2">12</td>
+								<td style="width:7%;" colspan="2">13</td>
+								<td style="width:7%;" colspan="2">14</td>
+								<td style="width:7%;" colspan="2">15</td>
+								<td style="width:7%;" colspan="2">16</td>
+								<td style="width:7%;" colspan="2">17</td>
+								<td style="width:7%;" colspan="2">18</td>
+								<td style="width:7%;" colspan="2">19</td>
+							</tr>
+						</table>
+						</div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-left col-xs-6">
+                <button type="button" class="btn btn-info"
+                    ng-click="action.back()">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                    homeへ
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="TooltipTemplate.html">
+	<div><strong>予約者: </strong>{{yoyakuInfo.yoyakushaName}}</div>
+<div><strong>備考: </strong>{{yoyakuInfo.biko}}</div>
+</script>
