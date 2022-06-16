@@ -63,23 +63,23 @@ public abstract class AbstractEntity implements EntityControlInfo {
 	// EntityControlInfoに入っているメソッドをラップする
 	// --------------------------------------------------------------------------------------------------------------↓
 	private String createdBy() {
-		return getTorokuUserid();//
+		return getTorokushaCd();//
 	}
 
 	private void createdBy(String createdBy) {
-		setTorokuUserid(createdBy);
+		setTorokushaCd(createdBy);
 	}
 
 	private void createdTs(Timestamp createdTs) {
-		setTorokuYmdhms(createdTs);
+		setTorokuTs(createdTs);
 	}
 
 	private void updatedBy(String updatedBy) {
-		setKoshinUserid(updatedBy);
+		setKoshinshaCd(updatedBy);
 	}
 
 	private void updatedTs(Timestamp updatedTs) {
-		setKoshinYmdhms(updatedTs);
+		setKoshinTs(updatedTs);
 	}
 
 //	private String defleteFlag() {

@@ -5,43 +5,24 @@ import java.sql.Timestamp;
 
 public interface EntityControlInfo {
 
-	// String getTorokushaCd();
-	// void setTorokushaCd(String torokushaCd);
-	// Timestamp getTorokuYmdhms();
-	// void setTorokuYmdhms(Timestamp torokuYmdhms);
-	// String getKoshinshaCd();
-	// void setKoshinshaCd(String koshinshaCd);
-	// Timestamp getKoshinYmdhms();
-	// void setKoshinYmdhms(Timestamp koshinYmdhms);
-	// BigDecimal getVersion();
-	// void setVersion(BigDecimal version);
-
 	BigDecimal getVersion();
 
 	void setVersion(BigDecimal version);
 
-	String getTorokuUserid();
+	String getTorokushaCd();
 
-	void setTorokuUserid(String torokuUserid);
+	void setTorokushaCd(String torokushaCd);
 
-	Timestamp getTorokuYmdhms();
+	Timestamp getTorokuTs();
 
-	void setTorokuYmdhms(Timestamp torokuYmdhms);
+	void setTorokuTs(Timestamp torokuTs);
 
-	String getTorokuFrontid();
+	String getKoshinshaCd();
 
-	void setTorokuFrontid(String torokuFrontid);
+	void setKoshinshaCd(String koshinshaCd);
 
-	String getKoshinUserid();
+	Timestamp getKoshinTs();
 
-	void setKoshinUserid(String koshinUserid);
-
-	Timestamp getKoshinYmdhms();
-
-	void setKoshinYmdhms(Timestamp koshinYmdhms);
-
-	String getKoshinFrontid();
-
-	void setKoshinFrontid(String koshinFrontid);
+	void setKoshinTs(Timestamp koshinTs);
 
 }

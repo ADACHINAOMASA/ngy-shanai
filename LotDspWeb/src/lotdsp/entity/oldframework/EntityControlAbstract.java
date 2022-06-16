@@ -1,7 +1,7 @@
 package lotdsp.entity.oldframework;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -17,26 +17,19 @@ public abstract class EntityControlAbstract extends EntityAbstract {
 	@Column(name="TOROKUSHA_CD")
 	private String torokushaCd;
 
-	@Column(name="TOROKU_YMDHMS")
+	@Column(name="TOROKU_TS")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date torokuYmdhms;
+	private Timestamp torokuTs;
 
 	@Column(name="KOSHINSHA_CD")
 	private String koshinshaCd;
 
-	@Column(name="KOSHIN_YMDHMS")
+	@Column(name="KOSHIN_TS")
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date koshinYmdhms;
+	private Timestamp koshinTs;
 
 	@Column(name="VERSION")
 	private BigDecimal version;
-
-	@Column(name="SAKUJO_FLG")
-	private String sakujoFlg;
-
-	public void setSakujoFlg(String sakujoFlg) {
-		this.sakujoFlg = sakujoFlg;
-	}
 
 	public String getTorokushaCd() {
 		return torokushaCd;
@@ -46,12 +39,12 @@ public abstract class EntityControlAbstract extends EntityAbstract {
 		this.torokushaCd = torokushaCd;
 	}
 
-	public Date getTorokuYmdhms() {
-		return torokuYmdhms;
+	public Timestamp getTorokuTs() {
+		return torokuTs;
 	}
 
-	public void setTorokuYmdhms(Date torokuYmdhms) {
-		this.torokuYmdhms = torokuYmdhms;
+	public void setTorokuTs(Timestamp torokuTs) {
+		this.torokuTs = torokuTs;
 	}
 
 	public String getKoshinshaCd() {
@@ -62,20 +55,16 @@ public abstract class EntityControlAbstract extends EntityAbstract {
 		this.koshinshaCd = koshinshaCd;
 	}
 
-	public Date getKoshinYmdhms() {
-		return koshinYmdhms;
+	public Timestamp getKoshinTs() {
+		return koshinTs;
 	}
 
-	public void setKoshinYmdhms(Date koshinYmdhms) {
-		this.koshinYmdhms = koshinYmdhms;
+	public void setKoshinTs(Timestamp koshinTs) {
+		this.koshinTs = koshinTs;
 	}
 
 	public BigDecimal getVersion() {
 		return version;
-	}
-
-	public String getSakujoFlg() {
-		return sakujoFlg;
 	}
 
 //	public boolean checkVersion(BigDecimal version) {
@@ -87,9 +76,9 @@ public abstract class EntityControlAbstract extends EntityAbstract {
 		control(info.getUser(), info.getTime());
 	}
 
-	protected void control(String user, Date ts) {
+	protected void control(String user, Timestamp ts) {
 //		if (getVersion() == null) {
-		if (getTorokushaCd() == null && getTorokuYmdhms() == null) {
+		if (getTorokushaCd() == null && getTorokuTs() == null) {
 			validate(user, ts);
 		}
 		else {
@@ -104,13 +93,12 @@ public abstract class EntityControlAbstract extends EntityAbstract {
 		validate(info.getUser(), info.getTime());
 	}
 
-	protected void validate(String user, Date ts) {
+	protected void validate(String user, Timestamp ts) {
 		torokushaCd = user;
-		torokuYmdhms = ts;
+		torokuTs = ts;
 		koshinshaCd = user;
-		koshinYmdhms = ts;
+		koshinTs = ts;
 		version = BigDecimal.ONE;
-		sakujoFlg = "0";
 	}
 
 	/**
@@ -125,12 +113,11 @@ public abstract class EntityControlAbstract extends EntityAbstract {
 	 * @param user
 	 * @param ts
 	 */
-	protected void invalidate(String user, Date ts) {
+	protected void invalidate(String user, Timestamp ts) {
 		koshinshaCd = user;
-		koshinYmdhms = ts;
+		koshinTs = ts;
 		version = (version.compareTo(BigDecimal.valueOf(99999)) >= 0)?
 				BigDecimal.ONE : version.add(BigDecimal.ONE);
-		sakujoFlg = "1";
 	}
 
 
@@ -142,9 +129,9 @@ public abstract class EntityControlAbstract extends EntityAbstract {
 		increment(info.getUser(), info.getTime());
 	}
 
-	protected void increment(String user, Date ts) {
+	protected void increment(String user, Timestamp ts) {
 		koshinshaCd = user;
-		koshinYmdhms = ts;
+		koshinTs = ts;
 		version = (version.compareTo(BigDecimal.valueOf(99999)) >= 0)?
 				BigDecimal.ONE : version.add(BigDecimal.ONE);
 	}

@@ -3,7 +3,7 @@ package lotdsp.entity.oldframework;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-import nis.framework.oldframework.IRequestMessage;
+import nis.framework.web.user.UserProfile;
 
 public class UpdateInfo implements Serializable {
 
@@ -11,7 +11,6 @@ public class UpdateInfo implements Serializable {
 
 	private String user;
 	private Timestamp time;
-	private String form;
 
 	public UpdateInfo() {
 		time = new Timestamp(System.currentTimeMillis());
@@ -22,10 +21,9 @@ public class UpdateInfo implements Serializable {
 		this.user = user;
 	}
 
-	public UpdateInfo(IRequestMessage msg) {
+	public UpdateInfo(UserProfile msg) {
 		this();
 		user = msg.getUserId();
-		form = msg.getFrontId();
 	}
 
 	public String getUser() {
@@ -38,13 +36,5 @@ public class UpdateInfo implements Serializable {
 
 	public Timestamp getTime() {
 		return time;
-	}
-
-	public String getForm() {
-		return form;
-	}
-
-	public void setForm(String form) {
-		this.form = form;
 	}
 }

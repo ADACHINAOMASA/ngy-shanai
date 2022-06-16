@@ -45,20 +45,3 @@
 .mitsumoriIchiran .checkboxies .checkbox{
 	width: 100px;
 }
-
-/*
- * 会議室予約システム
- */
-
-.reservable {
-	background-color: lime;
-	font-size: 180%;
-	font-weight: bold;
-	padding: 5px 20px;
-}
-.nonreservable {
-	background-color: red;
-	font-size: 180%;
-	font-weight: bold;
-	padding: 5px 8px;
-}

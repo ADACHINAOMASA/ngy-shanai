@@ -1,0 +1,48 @@
+package lotdsp.domain.logic.kaigiyoyaku;
+
+import java.util.Date;
+import java.util.Map;
+
+import lotdsp.common.msg.kaigiyoyaku.YoyakuInfo;
+import nis.framework.sql.NisQuery;
+
+public class SearchMaishuYoyakuQuery extends NisQuery<YoyakuInfo>{
+
+	private String maishuYoyakuId;
+	
+	public SearchMaishuYoyakuQuery(String maishuYoyakuId) {
+		this.maishuYoyakuId = maishuYoyakuId;
+		
+		this.setParameters();
+	}
+
+	private void setParameters() {
+		addParameter("　y.MAISHU_YOYAKU_ID = ? ", maishuYoyakuId);
+	}
+
+	@Override
+	public String getSQL() {
+		StringBuilder sql = new StringBuilder();
+
+		sql.append(" SELECT ");
+		sql.append("   y.YOYAKU_DATE ");
+		sql.append(" FROM ");
+		sql.append("   YOYAKU_TABLE y  ");
+		sql.append(" WHERE ");
+		sql.append("   y.KAIGISHITSU_CD IS NOT NULL ");
+		sql.append(createParameterString(true));
+
+		logger.info(getClass().getSimpleName() + "=" + sql.toString());
+		return sql.toString();
+	}
+
+	// MaishuYoyakuDeleteLogicで日付は使いたいので日付だけ入れておく
+	@Override
+	public YoyakuInfo record(Map<String, Object> record) {
+		YoyakuInfo info = new YoyakuInfo();
+		
+		info.setYoyakuDate((Date)record.get("YOYAKU_DATE"));
+		
+		return info;
+	}
+}

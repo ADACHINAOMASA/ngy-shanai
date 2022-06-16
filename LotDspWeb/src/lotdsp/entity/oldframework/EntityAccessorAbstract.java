@@ -45,9 +45,9 @@ public abstract class EntityAccessorAbstract<E extends EntityAbstract, K extends
 	public E getReference(K key){
 		try{
 			E entity = getEntityManager().getReference(getEntityClass(), key);
-			if (entity != null && "0".equals(getDeleteFlg(entity))) {
-				return entity;
-			}
+//			if (entity != null && "0".equals(getDeleteFlg(entity))) {
+//				return entity;
+//			}
 			return null;
 		}catch(EntityNotFoundException e){
 			return null;
@@ -68,15 +68,9 @@ public abstract class EntityAccessorAbstract<E extends EntityAbstract, K extends
 	public E find(K key, boolean deleteCheck) {
 		try{
 			E entity = getEntityManager().find(getEntityClass(), key);
-			if(deleteCheck){
-				if (entity != null && "0".equals(getDeleteFlg(entity))) {
-					return entity;
-				}
-			}else{
 				if (entity != null) {
 					return entity;
 				}
-			}
 			return null;
 		}catch(EntityNotFoundException e){
 			return null;
@@ -118,13 +112,7 @@ public abstract class EntityAccessorAbstract<E extends EntityAbstract, K extends
 		List<E> l = new ArrayList<E>();
 		for (Object result : query.getResultList()) {
 			E entity = getEntityClass().cast(result);
-			if(deleteCheck){
-				if ("0".equals(getDeleteFlg(entity))) {
-					l.add(entity);
-				}
-			}else{
 				l.add(entity);
-			}
 		}
 		return l;
 	}
@@ -140,14 +128,8 @@ public abstract class EntityAccessorAbstract<E extends EntityAbstract, K extends
 		}
 		try{
 			E entity = getEntityClass().cast(query.getSingleResult());
-			if(deleteCheck){
-				if ("0".equals(getDeleteFlg(entity))) {
-					return entity;
-				}
-			}else{
 				if (entity != null) {
 					return entity;
-				}
 			}
 		}catch(NoResultException e){
 
@@ -157,11 +139,6 @@ public abstract class EntityAccessorAbstract<E extends EntityAbstract, K extends
 
 	public E create(K key) {
 		E entity = getEntityManager().find(getEntityClass(), key);
-		if (entity != null) {
-			if ("1".equals(getDeleteFlg(entity))) {
-				getEntityManager().remove(entity);
-			}
-		}
 		entity = newInstance(key);
 		getEntityManager().persist(entity);
 		return entity;
@@ -267,17 +244,6 @@ public abstract class EntityAccessorAbstract<E extends EntityAbstract, K extends
 			}
 		}
 		tmpList.remove(entity);
-	}
-
-
-	private String getDeleteFlg(E entity) {
-		if (entity != null) {
-			if (entity instanceof EntityControlAbstract) {
-				return ((EntityControlAbstract) entity).getSakujoFlg();
-			}
-			return "0";
-		}
-		return null;
 	}
 
 	private boolean isJoinAnnotation(Annotation[] annotations) {

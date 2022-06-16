@@ -21,9 +21,6 @@
     		search(hizuke) {
     			return NIS.u.req($http.get(NIS.u.path(baseURI, 'searchkaigishitsu', hizuke)));
     		},
-    		searchyoyaku(hizuke) {
-    			return NIS.u.req($http.get(NIS.u.path(baseURI, 'search', hizuke)));
-    		},
     		save(yoyakuInfo) {
     			return NIS.u.req($http.post(NIS.u.path(baseURI, 'save'), yoyakuInfo));
     		},
@@ -39,9 +36,6 @@
     			return NIS.u.req($http.delete(NIS.u.path(baseURI, kaigishitsuCd, yoyakuDate, yoyakuBlockStart, maishuYoyakuId), {headers: {
                     'Content-Type': 'application/json'
                 }}));
-    		},
-    		savekaigishitsu(kaigishitsuInfo) {
-    			return NIS.u.req($http.post(NIS.u.path(baseURI, 'savekaigishitsu'), kaigishitsuInfo));
     		},
     	}
     };

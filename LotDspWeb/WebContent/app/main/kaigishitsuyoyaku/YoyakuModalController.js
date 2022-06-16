@@ -132,7 +132,7 @@
 		        				if(result == true) {
 		        					AlertService.addSuccess('登録完了しました。');
 		        					yoyakuInfo.yoyakushaCd = $rootScope.userProfile.userId;
-		        					$uibModalInstance.dismiss('cancel');
+		        					$uibModalInstance.close('cancel');
 		        				} else {
 		        					AlertService.addDanger('登録に失敗しました。');
 		        				}
@@ -142,7 +142,7 @@
 	        					if(result == true) {
 		        					AlertService.addSuccess('登録完了しました。');
 		        					yoyakuInfo.yoyakushaCd = $rootScope.userProfile.userId;
-		        					$uibModalInstance.dismiss('cancel');
+		        					$uibModalInstance.close('cancel');
 		        				} else {
 		        					AlertService.addDanger('登録に失敗しました。');
 		        				}
@@ -150,13 +150,20 @@
 	        			}
         			})
         		},
+        		update(yoyakuInfo) {
+        			console.log(yoyakuInfo);
+        		},
         		yoyakudelete(yoyakuInfo) {
         			// 毎週予約でない場合
-        			if (yoyakuInfo.maishuYoyakuId == null) {
+        			if (yoyakuInfo.maishuYoyakuId == null || yoyakuInfo.maishuYoyakuId == "") {
 	        			ModalService.openConfirm('予約情報を削除します。よろしいですか？').then(() => {
 		        			ModalService.loading(KaigiYoyakuService.yoyakudelete(yoyakuInfo.kaigishitsuCd, yoyakuInfo.yoyakuDate, yoyakuInfo.yoyakuBlockStart)).then((result) => {
-		        				AlertService.addSuccess('削除完了しました。');
-		        				$uibModalInstance.dismiss('cancel');
+		        				if (result == true) {
+		        					AlertService.addSuccess('削除完了しました。');
+		        				} else {
+		        					AlertService.addDanger('削除失敗しました。');
+		        				}
+		        				$uibModalInstance.close('cancel');
 		        			})
 	        			})
 	        		// 毎週予約の場合
@@ -164,14 +171,18 @@
         				ModalService.openConfirm('この予約は毎週予約です。定期的な予約を全て削除しますか？').then(() => {
     	        			ModalService.loading(KaigiYoyakuService.maishuyoyakudelete(yoyakuInfo.kaigishitsuCd, yoyakuInfo.yoyakuDate, yoyakuInfo.yoyakuBlockStart, yoyakuInfo.maishuYoyakuId)).then((result) => {
     	        				AlertService.addSuccess('削除完了しました。');
-    	        				$uibModalInstance.dismiss('cancel');
+    	        				$uibModalInstance.close('cancel');
     	        			})
     	        		// 定期的な予定の削除をrejectした場合
             			}, () => {
             				ModalService.openConfirm('指定した予約情報のみ削除します。よろしいですか？').then(() => {
     		        			ModalService.loading(KaigiYoyakuService.yoyakudelete(yoyakuInfo.kaigishitsuCd, yoyakuInfo.yoyakuDate, yoyakuInfo.yoyakuBlockStart)).then((result) => {
-    		        				AlertService.addSuccess('削除完了しました。');
-    		        				$uibModalInstance.dismiss('cancel');
+    		        				if (result == true) {
+    		        					AlertService.addSuccess('削除完了しました。');
+    		        				} else {
+    		        					AlertService.addDanger('削除失敗しました。');
+    		        				}
+    		        				$uibModalInstance.close('cancel');
     		        			})
     	        			})
             			})

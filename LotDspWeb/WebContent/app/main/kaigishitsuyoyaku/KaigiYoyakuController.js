@@ -55,7 +55,9 @@
                         	return hizuke;
                         }
                     }
-                });
+                }).result.then(result => {
+                	$scope.action.searchyoyaku($scope.hizuke);
+                })
 			},
     	}
     };
