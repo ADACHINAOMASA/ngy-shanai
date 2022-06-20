@@ -35,7 +35,9 @@ public class MaishuYoyakuLogic {
 	@Logic
 	public boolean execute(Date maishuEnd, YoyakuInfo info) {
 		
-boolean result = true;
+		// 全体的にDBの予約件数が多くなったらかなり重くなりそうなので良い方法を考えたい
+		
+		boolean result = true;
 		
 		String maishuYoyakuId = "";
 		String kaigishitsuCd = info.getKaigishitsuCd();
@@ -55,7 +57,7 @@ boolean result = true;
 			
 			Date date = cal.getTime();
 			
-			//予約重複チェック（DBの予約件数が多くなるとかなり重くなりそうなので良い方法を考えたい）
+			// 予約重複チェック
 			if (queryExecutor.executeQuery(new CheckYoyakuDuplicateQuery(kaigishitsuCd, date, yoyakuBlockStart, yoyakuBlockEnd)).size() != 0) {
 				svContext.getAlerts().addDanger("他の予約と時間が重複しています。");
 				result = false;
@@ -67,16 +69,17 @@ boolean result = true;
 			return result;
 		}
 		
-		for (int i = 0;;i++) {
+		// 毎週予約IDの作成
+		for (int i = 0; i <= 10; i++) {
 			maishuYoyakuId = RandomStringUtils.randomAlphanumeric(10);
 			List<YoyakuInfo> infos = queryExecutor.executeQuery(new SearchMaishuYoyakuQuery(maishuYoyakuId));
 			if (infos.size() == 0) {
 				info.setMaishuYoyakuId(maishuYoyakuId);
 				break;
 			}
-			//無限ループ対策（無理やり）
+			//毎週予約IDが見つからなかったとき
 			if(i >= 10) {
-				svContext.getAlerts().addDanger("毎週予約機能が無限ループに陥っている可能性があります。プログラムを確認してください。");
+				svContext.getAlerts().addDanger("重複しない毎週予約IDが見つかりませんでした。予約データを整理してください。");
 				result = false;
 				break;
 			}
@@ -98,11 +101,28 @@ boolean result = true;
 			info.setYoyakuDate(date);
 			
 			YoyakuTableAccessor ac = new YoyakuTableAccessor();
-			YoyakuTable entity = ac.find(kaigishitsuCd, date, yoyakuBlockStart);
 			
-			if (entity == null || entity.notExist()) {
-				entity = ac.create(kaigishitsuCd, date, yoyakuBlockStart);
+			// 予約ID作成
+			for (int i = 0; i <= 10; i++) {
+				String yoyakuId = RandomStringUtils.randomAlphanumeric(10);
+				YoyakuTable chofuku = ac.find(yoyakuId);
+				if (chofuku == null || chofuku.notExist()) {
+					info.setYoyakuId(yoyakuId);
+					break;
+				}
+				//予約IDが見つからなかったとき
+				if(i >= 10) {
+					svContext.getAlerts().addDanger("重複しない予約IDが見つかりませんでした。予約データを整理してください。");
+					result = false;
+					break;
+				}
 			}
+			
+			 if (result == false) {
+				 break;
+			 }
+			
+			YoyakuTable entity = ac.create(info.getYoyakuId());
 			
 			entity.update(new YoyakuTableUpdaterImpl(info, updateInfo), updateInfo);
 		}

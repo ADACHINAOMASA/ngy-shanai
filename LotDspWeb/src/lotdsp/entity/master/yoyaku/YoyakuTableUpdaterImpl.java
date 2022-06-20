@@ -2,6 +2,7 @@ package lotdsp.entity.master.yoyaku;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Date;
 
 import lotdsp.common.msg.kaigiyoyaku.YoyakuInfo;
 import lotdsp.entity.oldframework.UpdateInfo;
@@ -16,6 +17,21 @@ public class YoyakuTableUpdaterImpl implements YoyakuTableUpdater {
 	public YoyakuTableUpdaterImpl(YoyakuInfo inMsg, UpdateInfo updaterInfo) {
 		this.inMsg = inMsg;
 		this.updaterInfo = updaterInfo;
+	}
+	
+	@Override
+	public String getKaigishitsuCd() {
+		return inMsg.getKaigishitsuCd();
+	}
+	
+	@Override
+	public Date getYoyakuDate() {
+		return inMsg.getYoyakuDate();
+	}
+	
+	@Override
+	public String getYoyakuBlockStart() {
+		return inMsg.getYoyakuBlockStart();
 	}
 	
 	@Override

@@ -24,11 +24,14 @@
     		save(yoyakuInfo) {
     			return NIS.u.req($http.post(NIS.u.path(baseURI, 'save'), yoyakuInfo));
     		},
+    		update(yoyakuInfo) {
+    			return NIS.u.req($http.post(NIS.u.path(baseURI, 'update'), yoyakuInfo));
+    		},
     		maishusave(yoyakuInfo, maishuEnd) {
     			return NIS.u.req($http.post(NIS.u.path(baseURI, maishuEnd), yoyakuInfo));
     		},
-    		yoyakudelete(kaigishitsuCd, yoyakuDate, yoyakuBlockStart) {
-    			return NIS.u.req($http.delete(NIS.u.path(baseURI, kaigishitsuCd, yoyakuDate, yoyakuBlockStart), {headers: {
+    		yoyakudelete(yoyakuId) {
+    			return NIS.u.req($http.delete(NIS.u.path(baseURI, yoyakuId), {headers: {
                     'Content-Type': 'application/json'
                 }}));
     		},

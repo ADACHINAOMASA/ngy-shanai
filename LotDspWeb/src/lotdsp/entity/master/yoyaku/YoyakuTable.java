@@ -25,6 +25,9 @@ public class YoyakuTable extends YoyakuTableAbstract
 	}
 	@Override
 	public void update(YoyakuTableUpdater updater, UpdateInfo info) {
+		kaigishitsuCd = updater.getKaigishitsuCd();
+		yoyakuDate = updater.getYoyakuDate();
+		yoyakuBlockStart = updater.getYoyakuBlockStart();
 		yoyakuBlockEnd = updater.getYoyakuBlockEnd();
 		yoyakushaCd = updater.getYoyakushaCd();
 		biko = updater.getBiko();

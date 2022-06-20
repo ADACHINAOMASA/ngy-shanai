@@ -1,7 +1,5 @@
 package lotdsp.domain.logic.kaigiyoyaku;
 
-import java.util.Date;
-
 import javax.inject.Inject;
 
 import lotdsp.entity.master.yoyaku.YoyakuTable;
@@ -16,10 +14,10 @@ public class YoyakuDeleteLogic {
 	private ServiceContext svContext;
 	
 	@Logic
-	public boolean execute(String kaigishitsuCd, Date yoyakuDate, String yoyakuBlockStart) {
+	public boolean execute(String yoyakuId) {
 	
 		YoyakuTableAccessor ac = new YoyakuTableAccessor();
-		YoyakuTable entity = ac.find(kaigishitsuCd, yoyakuDate, yoyakuBlockStart);
+		YoyakuTable entity = ac.find(yoyakuId);
 		
 		if (entity == null) {
 			svContext.getAlerts().addDanger("削除しようとした予約情報は存在しません。既に削除されている可能性があります。");

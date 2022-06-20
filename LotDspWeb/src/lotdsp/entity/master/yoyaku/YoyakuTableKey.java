@@ -1,7 +1,5 @@
 package lotdsp.entity.master.yoyaku;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -12,47 +10,23 @@ public class YoyakuTableKey extends EntityKeyAbstract {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="KAIGISHITSU_CD")
-	private String kaigishitsuCd;
+	@Column(name="YOYAKU_ID")
+	private String yoyakuId;
 	
-	@Column(name="YOYAKU_DATE")
-	private Date yoyakuDate;
-	
-	@Column(name="YOYAKU_BLOCK_START")
-	private String yoyakuBlockStart;
-
 	public YoyakuTableKey(){
 		super();
 	}
 
-	public YoyakuTableKey(String kaigishitsuCd, Date yoyakuDate, String yoyakuBlockStart){
-		this.kaigishitsuCd = kaigishitsuCd;
-		this.yoyakuDate = yoyakuDate;
-		this.yoyakuBlockStart = yoyakuBlockStart;
+	public YoyakuTableKey(String yoyakuId){
+		this.yoyakuId = yoyakuId;
 	}
 
-	public String getkaigishitsuCd(){
-		return kaigishitsuCd;
+	public String getYoyakuId() {
+		return yoyakuId;
 	}
 
-	public void setkaigishitsuCd(String kaigishitsuCd){
-		this.kaigishitsuCd = kaigishitsuCd;
-	}
-
-	public Date getyoyakuDate() {
-		return yoyakuDate;
-	}
-
-	public void setyoyakuDate(Date yoyakuDate) {
-		this.yoyakuDate = yoyakuDate;
-	}
-
-	public String getYoyakuBlockStart() {
-		return yoyakuBlockStart;
-	}
-
-	public void setYoyakuBlockStart(String yoyakuBlockStart) {
-		this.yoyakuBlockStart = yoyakuBlockStart;
+	public void setYoyakuId(String yoyakuId) {
+		this.yoyakuId = yoyakuId;
 	}
 
 	@Override

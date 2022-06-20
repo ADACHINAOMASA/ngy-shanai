@@ -5,6 +5,9 @@ import java.util.Date;
 
 public interface YoyakuTableUpdater {
 
+	public String getKaigishitsuCd();
+	public Date getYoyakuDate();
+	public String getYoyakuBlockStart();
 	public String getYoyakuBlockEnd();
 	public String getYoyakushaCd();
 	public String getBiko();

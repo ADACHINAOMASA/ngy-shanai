@@ -1,25 +1,29 @@
 package lotdsp.domain.logic.login.checker;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import lotdsp.common.msg.login.LoginInfo;
-import lotdsp.entity.master.user.MUser;
-import lotdsp.entity.master.user.MUserAccessor;
+import lotdsp.common.msg.user.UserInfo;
 import nis.framework.ejb.logic.CheckLogic;
 import nis.framework.ejb.logic.ServiceContext;
+import nis.framework.sql.NisQueryExecutor;
 
 public class LoginChecker extends CommonLoginChecker {
 
+	@Inject
+	private NisQueryExecutor queryExecutor;
+	
 	@Inject
 	private ServiceContext svContext;
 	
 	@CheckLogic
 	public boolean check(LoginInfo in) {
 		
-		MUserAccessor ac = new MUserAccessor();
-		MUser entity = ac.find(in.getId(), in.getPassword());
+		List<UserInfo> infos = queryExecutor.executeQuery(new LoginCheckQuery(in.getId(), in.getPassword()));
 		
-        if (entity == null) {
+        if (infos.size() == 0) {
             svContext.getAlerts().addDanger("IDが存在しないか、パスワードが誤っています。");
             return false;
         }

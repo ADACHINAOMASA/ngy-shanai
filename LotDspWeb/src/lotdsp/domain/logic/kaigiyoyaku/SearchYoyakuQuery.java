@@ -26,7 +26,8 @@ public class SearchYoyakuQuery extends NisQuery<YoyakuInfo> {
 		StringBuilder sql = new StringBuilder();
 
 		sql.append(" SELECT ");
-		sql.append("   y.KAIGISHITSU_CD ");
+		sql.append("   y.YOYAKU_ID ");
+		sql.append("   ,y.KAIGISHITSU_CD ");
 		sql.append("   , y.YOYAKU_DATE ");
 		sql.append("   , y.YOYAKU_BLOCK_START  ");
 		sql.append("   , y.YOYAKU_BLOCK_END  ");
@@ -56,6 +57,7 @@ public class SearchYoyakuQuery extends NisQuery<YoyakuInfo> {
 	public YoyakuInfo record(Map<String, Object> record) {
 		YoyakuInfo info = new YoyakuInfo();
 		
+		info.setYoyakuId(record.get("YOYAKU_ID").toString());
 		info.setKaigishitsuCd(record.get("KAIGISHITSU_CD").toString());
 		info.setYoyakuDate((Date)record.get("YOYAKU_DATE"));
 		info.setYoyakuBlockStart(record.get("YOYAKU_BLOCK_START").toString());

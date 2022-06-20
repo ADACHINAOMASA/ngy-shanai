@@ -26,6 +26,7 @@ public class SearchMaishuYoyakuQuery extends NisQuery<YoyakuInfo>{
 
 		sql.append(" SELECT ");
 		sql.append("   y.YOYAKU_DATE ");
+		sql.append("   , y.YOYAKU_ID ");
 		sql.append(" FROM ");
 		sql.append("   YOYAKU_TABLE y  ");
 		sql.append(" WHERE ");
@@ -36,12 +37,13 @@ public class SearchMaishuYoyakuQuery extends NisQuery<YoyakuInfo>{
 		return sql.toString();
 	}
 
-	// MaishuYoyakuDeleteLogicで日付は使いたいので日付だけ入れておく
+	// MaishuYoyakuDeleteLogicで日付と予約IDは使いたいのでそれらだけ入れておく
 	@Override
 	public YoyakuInfo record(Map<String, Object> record) {
 		YoyakuInfo info = new YoyakuInfo();
 		
 		info.setYoyakuDate((Date)record.get("YOYAKU_DATE"));
+		info.setYoyakuId(record.get("YOYAKU_ID").toString());
 		
 		return info;
 	}

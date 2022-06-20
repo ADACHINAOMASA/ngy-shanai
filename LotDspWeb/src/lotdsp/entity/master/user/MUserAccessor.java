@@ -13,16 +13,16 @@ public class  MUserAccessor extends EntityAccessorAbstract< MUser,  MUserKey> {
       return  MUser.class;
   }
 
-  public MUser create(String userCd, String password) {
-      return create(new MUserKey(userCd, password));
+  public MUser create(String userCd) {
+      return create(new MUserKey(userCd));
   }
 
-  public MUser find(String userCd, String password) {
-      return find(new MUserKey(userCd, password));
+  public MUser find(String userCd) {
+      return find(new MUserKey(userCd));
   }
 
-  public boolean exist(String userCd, String password) {
-      return exist(new MUserKey(userCd, password));
+  public boolean exist(String userCd) {
+      return exist(new MUserKey(userCd));
   }
 
 }

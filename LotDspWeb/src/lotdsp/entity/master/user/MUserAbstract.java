@@ -24,9 +24,6 @@ public abstract class MUserAbstract extends EntityNoControlBase<MUserUpdater> {
 	@EmbeddedId
 	protected MUserKey key;
 
-	@Column(name="KAISHA_CD")
-	protected String kaishaCd;
-
 	@Column(name="USER_CD")
 	protected String userCd;
 
@@ -36,8 +33,14 @@ public abstract class MUserAbstract extends EntityNoControlBase<MUserUpdater> {
 	@Column(name="TEL")
 	protected String tel;
 	
-	@Column(name="KANRISHA_KBN")
-	protected String kanrishaKbn;
+	@Column(name="MAIL_ADDRESS")
+	protected String mailAddress;
+	
+	@Column(name="KENGEN_ID")
+	protected String kengenId;
+	
+	@Column(name="PASSWORD")
+	protected String password;
 
 	@Column(name="VERSION")
 	protected BigDecimal version;
@@ -72,14 +75,6 @@ public abstract class MUserAbstract extends EntityNoControlBase<MUserUpdater> {
 		this.key = key;
 	}
 
-	public String getKaishaCd(){
-		return kaishaCd;
-	}
-
-	public void setKaishaCd(String kaishaCd){
-		this.kaishaCd = kaishaCd;
-	}
-
 	public String getUserCd(){
 		return userCd;
 	}
@@ -104,12 +99,28 @@ public abstract class MUserAbstract extends EntityNoControlBase<MUserUpdater> {
 		this.tel = tel;
 	}
 	
-	public String getKanrishaKbn() {
-		return kanrishaKbn;
+	public String getMailAddress() {
+		return mailAddress;
 	}
 
-	public void setKanrishaKbn(String kanrishaKbn) {
-		this.kanrishaKbn = kanrishaKbn;
+	public void setMailAddress(String mailAddress) {
+		this.mailAddress = mailAddress;
+	}
+
+	public String getKengenId() {
+		return kengenId;
+	}
+
+	public void setKengenId(String kengenId) {
+		this.kengenId = kengenId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public BigDecimal getVersion(){

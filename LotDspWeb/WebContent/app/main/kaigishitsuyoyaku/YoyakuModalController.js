@@ -27,6 +27,10 @@
         
         $scope.yoyakuInfo.yoyakuDate = input3;
         
+        $scope.today = new Date();
+        $scope.today.setDate($scope.today.getDate() - 1)
+        $scope.yoyakuDate0ji = new Date(input3.getFullYear(), input3.getMonth(), input3.getDate());
+        
         $scope.yoyakuStart = input.yoyakuBlockStart;
         $scope.yoyakuEnd = input.yoyakuBlockEnd;
         
@@ -127,7 +131,7 @@
 	        			yoyakuInfo.yoyakushaCd = $rootScope.userProfile.userId;
 	        			
 	        			// maishuCheckがチェックされていなければその日だけ予約 チェックされていれば定期的に予約
-	        			if ($scope.maishuCheck != true) {
+	        			if (!$scope.maishuCheck) {
 		        			ModalService.loading(KaigiYoyakuService.save(yoyakuInfo)).then((result) => {
 		        				if(result == true) {
 		        					AlertService.addSuccess('登録完了しました。');
@@ -139,9 +143,8 @@
 		        			})
 	        			} else {
 	        				ModalService.loading(KaigiYoyakuService.maishusave(yoyakuInfo, $scope.maishuEnd)).then((result) => {
-	        					if(result == true) {
+	        					if(result) {
 		        					AlertService.addSuccess('登録完了しました。');
-		        					yoyakuInfo.yoyakushaCd = $rootScope.userProfile.userId;
 		        					$uibModalInstance.close('cancel');
 		        				} else {
 		        					AlertService.addDanger('登録に失敗しました。');
@@ -151,14 +154,23 @@
         			})
         		},
         		update(yoyakuInfo) {
-        			console.log(yoyakuInfo);
+        			ModalService.openConfirm('予約情報を更新します。よろしいですか？').then(() => {
+	        			ModalService.loading(KaigiYoyakuService.update(yoyakuInfo)).then((result) => {
+	        				if(result) {
+	        					AlertService.addSuccess('更新完了しました。');
+	        					$uibModalInstance.close('cancel');
+	        				} else {
+	        					AlertService.addDanger('更新に失敗しました。');
+	        				}
+	        			}) 
+        			})
         		},
         		yoyakudelete(yoyakuInfo) {
         			// 毎週予約でない場合
         			if (yoyakuInfo.maishuYoyakuId == null || yoyakuInfo.maishuYoyakuId == "") {
 	        			ModalService.openConfirm('予約情報を削除します。よろしいですか？').then(() => {
-		        			ModalService.loading(KaigiYoyakuService.yoyakudelete(yoyakuInfo.kaigishitsuCd, yoyakuInfo.yoyakuDate, yoyakuInfo.yoyakuBlockStart)).then((result) => {
-		        				if (result == true) {
+		        			ModalService.loading(KaigiYoyakuService.yoyakudelete(yoyakuInfo.yoyakuId)).then((result) => {
+		        				if (result) {
 		        					AlertService.addSuccess('削除完了しました。');
 		        				} else {
 		        					AlertService.addDanger('削除失敗しました。');
@@ -176,8 +188,8 @@
     	        		// 定期的な予定の削除をrejectした場合
             			}, () => {
             				ModalService.openConfirm('指定した予約情報のみ削除します。よろしいですか？').then(() => {
-    		        			ModalService.loading(KaigiYoyakuService.yoyakudelete(yoyakuInfo.kaigishitsuCd, yoyakuInfo.yoyakuDate, yoyakuInfo.yoyakuBlockStart)).then((result) => {
-    		        				if (result == true) {
+    		        			ModalService.loading(KaigiYoyakuService.yoyakudelete(yoyakuInfo.yoyakuId)).then((result) => {
+    		        				if (result) {
     		        					AlertService.addSuccess('削除完了しました。');
     		        				} else {
     		        					AlertService.addDanger('削除失敗しました。');

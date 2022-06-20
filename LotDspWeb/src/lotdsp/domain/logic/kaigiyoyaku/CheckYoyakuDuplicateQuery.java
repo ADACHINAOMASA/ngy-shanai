@@ -46,10 +46,12 @@ public class CheckYoyakuDuplicateQuery extends NisQuery<YoyakuInfo>{
 		return sql.toString();
 	}
 
-	// 重複判定に使うだけなので予約情報更新の必要がない
+	// KaigiYoyakuUpdateLogicで予約IDのみ必要となる
 	@Override
 	public YoyakuInfo record(Map<String, Object> record) {
 		YoyakuInfo info = new YoyakuInfo();
+		
+		info.setYoyakuId(record.get("YOYAKU_ID").toString());
 		
 		return info;
 	}

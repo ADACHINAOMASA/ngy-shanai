@@ -14,6 +14,7 @@ import lotdsp.application.LogicExecutor;
 import lotdsp.common.msg.kaigiyoyaku.KaigishitsuInfo;
 import lotdsp.common.msg.kaigiyoyaku.YoyakuInfo;
 import lotdsp.domain.logic.kaigiyoyaku.KaigiYoyakuLogic;
+import lotdsp.domain.logic.kaigiyoyaku.KaigiYoyakuUpdateLogic;
 import lotdsp.domain.logic.kaigiyoyaku.MaishuYoyakuDeleteLogic;
 import lotdsp.domain.logic.kaigiyoyaku.MaishuYoyakuLogic;
 import lotdsp.domain.logic.kaigiyoyaku.SearchKaigishitsuLogic;
@@ -38,15 +39,21 @@ public class KaigiYoyakuService {
 	}
 	
 	@POST
+	@Path("/update")
+	public boolean update(YoyakuInfo info) {
+		return logicExecutor.execute(KaigiYoyakuUpdateLogic.class, info);
+	}
+	
+	@POST
 	@Path("/{maishuEnd}")
 	public boolean maishusave(@PathParam("maishuEnd")Date maishuEnd, YoyakuInfo info) {
 		return logicExecutor.execute(MaishuYoyakuLogic.class, maishuEnd, info);
 	}
 	
 	@DELETE
-	@Path("/{kaigishitsuCd}/{yoyakuDate}/{yoyakuBlockStart}")  
-	public boolean delete(@PathParam("kaigishitsuCd") String kaigishitsuCd, @PathParam("yoyakuDate") Date yoyakuDate, @PathParam("yoyakuBlockStart") String yoyakuBlockStart) {
-		return logicExecutor.execute(YoyakuDeleteLogic.class, kaigishitsuCd, yoyakuDate, yoyakuBlockStart);
+	@Path("/{yoyakuId}")  
+	public boolean delete(@PathParam("yoyakuId") String yoyakuId) {
+		return logicExecutor.execute(YoyakuDeleteLogic.class, yoyakuId);
 	}
 	
 	@DELETE

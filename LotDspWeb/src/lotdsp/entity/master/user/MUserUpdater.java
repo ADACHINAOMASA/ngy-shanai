@@ -5,11 +5,10 @@ import java.util.Date;
 
 public interface MUserUpdater {
 
-	public String getKaishaCd();
-	public String getUserCd();
 	public String getUserMei();
 	public String getTel();
-	public String getKanrishaKbn();
+	public String getMailAddress();
+	public String getKengenId();
 	public String getPassword();
 	public BigDecimal getVersion();
 	public String getTorokushaCd();

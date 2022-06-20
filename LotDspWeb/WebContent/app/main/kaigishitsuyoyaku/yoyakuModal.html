@@ -1,14 +1,14 @@
 <form name="modalForm" class="form-horizontal" role="form" novalidate>
 	<div class="modal-header">
 		<div class="row">
-			<div class="col-md-10">
+			<div class="col-md-9">
 				<h3> {{yoyakuInfo.yoyakuDate | date: 'yyyy年MM月dd日(EEE)'}} {{kaigishitsuInfo.kaigishitsuMei}}予約</h3>
 			</div>
-			<div class="col-md-2">
-				<h3 ng-if="yoyakuInfo.isreserved == 1" class="nonreservable">予約不可</h3>
+			<div class="col-md-3">
+				<h3 ng-if="(yoyakuInfo.isreserved == 1  && userProfile.userId != yoyakuInfo.yoyakushaCd) || today > yoyakuDate0ji" class="nonreservable">予約・更新不可</h3>
 			</div>
-			<div class="col-md-2">
-				<h3 ng-if="yoyakuInfo.isreserved != 1" class="reservable">予約可</h3>
+			<div class="col-md-3">
+				<h3 ng-if="(yoyakuInfo.isreserved != 1 || userProfile.userId == yoyakuInfo.yoyakushaCd) && today <= yoyakuDate0ji" class="reservable">予約・更新可</h3>
 			</div>
 		</div>
 	</div>
@@ -94,13 +94,13 @@
 		</form>
 	</div>
 	<div class="modal-footer">
-		<button class="btn btn-success large" type="button" ng-mousedown="action.save(yoyakuInfo)" ng-disabled="yoyakuInfo.isreserved == 1" ng-if="yoyakuInfo.isreserved != '1'">
+		<button class="btn btn-success large" type="button" ng-mousedown="action.save(yoyakuInfo)" ng-disabled="yoyakuInfo.isreserved == 1" ng-if="yoyakuInfo.isreserved != '1' && today <= yoyakuDate0ji">
 	       <span class="fa fa-check" aria-hidden="true"></span> 登録
 	    </button>
-	    <button class="btn btn-success large" type="button" ng-mousedown="action.update(yoyakuInfo)" ng-if="yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd == userProfile.userId">
+	    <button class="btn btn-success large" type="button" ng-mousedown="action.update(yoyakuInfo)" ng-if="yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd == userProfile.userId && today <= yoyakuDate0ji">
 	       <span class="fa fa-check" aria-hidden="true"></span> 更新
 	    </button>
-	    <button class="btn btn-danger large" type="button" ng-mousedown="action.yoyakudelete(yoyakuInfo)" ng-if="yoyakuInfo.yoyakushaCd == userProfile.userId && yoyakuInfo.isreserved == '1'">
+	    <button class="btn btn-danger large" type="button" ng-mousedown="action.yoyakudelete(yoyakuInfo)" ng-if="yoyakuInfo.yoyakushaCd == userProfile.userId && yoyakuInfo.isreserved == '1' && today <= yoyakuDate0ji">
 	       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 削除
 	    </button>
 		<button class="btn btn-warning large" type="button" ng-mousedown="action.cancel()">

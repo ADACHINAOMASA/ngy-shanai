@@ -2,6 +2,7 @@ package lotdsp.entity.master.yoyaku;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -24,6 +25,15 @@ public abstract class YoyakuTableAbstract extends EntityNoControlBase<YoyakuTabl
 	@EmbeddedId
 	protected YoyakuTableKey key;
 
+	@Column(name="KAIGISHITSU_CD")
+	protected String kaigishitsuCd;
+	
+	@Column(name="YOYAKU_DATE")
+	protected Date yoyakuDate;
+	
+	@Column(name="YOYAKU_BLOCK_START")
+	protected String yoyakuBlockStart;
+	
 	@Column(name="YOYAKU_BLOCK_END")
 	protected String yoyakuBlockEnd;
 	
@@ -79,6 +89,30 @@ public abstract class YoyakuTableAbstract extends EntityNoControlBase<YoyakuTabl
 
 	public void setKey(YoyakuTableKey key){
 		this.key = key;
+	}
+
+	public String getKaigishitsuCd() {
+		return kaigishitsuCd;
+	}
+
+	public void setKaigishitsuCd(String kaigishitsuCd) {
+		this.kaigishitsuCd = kaigishitsuCd;
+	}
+
+	public Date getYoyakuDate() {
+		return yoyakuDate;
+	}
+
+	public void setYoyakuDate(Date yoyakuDate) {
+		this.yoyakuDate = yoyakuDate;
+	}
+
+	public String getYoyakuBlockStart() {
+		return yoyakuBlockStart;
+	}
+
+	public void setYoyakuBlockStart(String yoyakuBlockStart) {
+		this.yoyakuBlockStart = yoyakuBlockStart;
 	}
 
 	public String getYoyakuBlockEnd() {

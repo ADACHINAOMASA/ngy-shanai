@@ -2,6 +2,8 @@ package lotdsp.domain.logic.kaigiyoyaku;
 
 import javax.inject.Inject;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import lotdsp.common.msg.kaigiyoyaku.YoyakuInfo;
 import lotdsp.entity.master.yoyaku.YoyakuTable;
 import lotdsp.entity.master.yoyaku.YoyakuTableAccessor;
@@ -26,22 +28,42 @@ public class KaigiYoyakuLogic {
 	@Logic
 	public boolean execute(YoyakuInfo info) {
 		
+		boolean result = true;
+		
+		YoyakuTableAccessor ac = new YoyakuTableAccessor();
+		
+		// 予約時間帯の重複チェック
 		if (queryExecutor.executeQuery(new CheckYoyakuDuplicateQuery(info.getKaigishitsuCd(), info.getYoyakuDate(), info.getYoyakuBlockStart(), info.getYoyakuBlockEnd())).size() != 0) {
 			svContext.getAlerts().addDanger("他の予約と時間が重複しています。");
 			return false;
 		}
 		
+		// 予約ID作成
+		for (int i = 0; i <= 10; i++) {
+			String yoyakuId = RandomStringUtils.randomAlphanumeric(10);
+			YoyakuTable chofuku = ac.find(yoyakuId);
+			if (chofuku == null || chofuku.notExist()) {
+				info.setYoyakuId(yoyakuId);
+				break;
+			}
+			//予約IDが見つからなかったとき
+			if(i >= 10) {
+				svContext.getAlerts().addDanger("重複しない予約IDが見つかりませんでした。予約データを整理してください。");
+				result = false;
+				break;
+			}
+		}
+		
+		if (result == false) {
+			return result;
+		}
+		
 		UpdateInfo updateInfo = new UpdateInfo(snContext.getUserProfile());
 		
-		YoyakuTableAccessor ac = new YoyakuTableAccessor();
-		YoyakuTable entity = ac.find(info.getKaigishitsuCd(), info.getYoyakuDate(), info.getYoyakuBlockStart());
-		
-		if (entity == null || entity.notExist()) {
-			entity = ac.create(info.getKaigishitsuCd(), info.getYoyakuDate(), info.getYoyakuBlockStart());
-		}
+		YoyakuTable entity = ac.create(info.getYoyakuId());
 		
 		entity.update(new YoyakuTableUpdaterImpl(info, updateInfo), updateInfo);
 		
-		return true;
+		return result;
 	}
 }

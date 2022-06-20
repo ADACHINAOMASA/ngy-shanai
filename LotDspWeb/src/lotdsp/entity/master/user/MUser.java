@@ -10,7 +10,7 @@ import lotdsp.entity.oldframework.UpdateInfo;
 import nis.framework.oldframework.NumberUtil;
 
 @Entity
-@Table(name="M_USER")
+@Table(name="M_USER2")
 public class MUser extends MUserAbstract 
        implements Updatable<MUserUpdater> {
 
@@ -25,11 +25,11 @@ public class MUser extends MUserAbstract
 	}
 	@Override
 	public void update(MUserUpdater updater, UpdateInfo info) {
-		kaishaCd = updater.getKaishaCd();
-		userCd = updater.getUserCd();
 		userMei = updater.getUserMei();
 		tel = updater.getTel();
-		kanrishaKbn = updater.getKanrishaKbn();
+		mailAddress = updater.getMailAddress();
+		password = updater.getPassword();
+		kengenId = updater.getKengenId();
 		if (NumberUtil.isBigger(NumberUtil.nvl(version), BigDecimal.ZERO)) {
 			version = NumberUtil.addNvl(version, BigDecimal.ONE);
 			koshinshaCd = info.getUser();

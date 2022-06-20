@@ -26,7 +26,21 @@
 						$state.go($scope.moveTo || 'home');
 					});
 			},
-			userIdMemoryChange : function() {
+			addUser : function() {
+				var modalInstance = $uibModal.open({
+                    animation: true
+                    , templateUrl: 'app/main/usertoroku/userToroku.html'
+                    , controller: 'UserTorokuController'
+                    , backdrop: 'static'
+                    , size: 'md'
+                    , resolve: {
+                        rule: function (RulesService) {
+                            return RulesService.load('UserTorokuInfo');
+                        }
+                    }
+                });
+			},
+ 			userIdMemoryChange : function() {
 				$cookies.put('userIdMemory', $scope.userIdMemory);
 				if ($scope.userIdMemory === '0') {
 					$cookies.remove('savedUserId');

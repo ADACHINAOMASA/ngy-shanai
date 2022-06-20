@@ -13,16 +13,12 @@ public class MUserKey extends EntityKeyAbstract {
 	@Column(name="USER_CD")
 	private String userCd;
 	
-	@Column(name="PASSWORD")
-	private String password;
-
 	public MUserKey(){
 		super();
 	}
 
-	public MUserKey(String userCd, String password){
+	public MUserKey(String userCd){
 		this.userCd = userCd;
-		this.password = password;
 	}
 
 	public String getUserCd(){
@@ -31,14 +27,6 @@ public class MUserKey extends EntityKeyAbstract {
 
 	public void setUserCd(String userCd){
 		this.userCd = userCd;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	@Override

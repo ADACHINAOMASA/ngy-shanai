@@ -10,6 +10,9 @@ import nis.framework.dictionary.Required;
 @InputModel
 public class YoyakuInfo {
 
+//	@DB("YOYAKU_TABLE.YOYAKU_ID")
+	private String yoyakuId;
+	
 //	@DB("YOYAKU_TABLE.KAIGISHITSU_CD")
 	private String kaigishitsuCd;
 	
@@ -51,6 +54,14 @@ public class YoyakuInfo {
 	private String maishuYoyakuId;
 	
 	private BigDecimal version;
+
+	public String getYoyakuId() {
+		return yoyakuId;
+	}
+
+	public void setYoyakuId(String yoyakuId) {
+		this.yoyakuId = yoyakuId;
+	}
 
 	public String getKaigishitsuCd() {
 		return kaigishitsuCd;
