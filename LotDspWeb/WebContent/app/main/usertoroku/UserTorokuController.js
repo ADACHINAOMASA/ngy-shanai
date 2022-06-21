@@ -1,11 +1,11 @@
 ﻿(function () {
 
     var injectParams = ['$scope', '$q', '$http','$uibModalInstance'
-        , 'AlertService', 'i18nService', 'UserTorokuService'
+        , 'ModalService', 'AlertService', 'i18nService', 'UserTorokuService'
     ];
 
     var newController = function ($scope, $q, $http,$uibModalInstance
-        , AlertService, i18nService, UserTorokuService) {
+        , ModalService, AlertService, i18nService, UserTorokuService) {
 
         $scope.langs = i18nService.getAllLangs();
         i18nService.setCurrentLang('ja');
@@ -19,14 +19,16 @@
                 	AlertService.addDanger('入力されたパスワードと確認用パスワードが一致していません。');
                 	return;
                 }
-                UserTorokuService.userToroku($scope.input).then(result => {
-                	if (result) {
-                		AlertService.addSuccess('登録完了しました。');
-                		$uibModalInstance.dismiss();
-                	} else {
-                		AlertService.addDanger('登録失敗しました。');
-                	}
-                });
+                ModalService.openConfirm('ユーザー登録を行います。よろしいですか？').then(() => {
+                	UserTorokuService.userToroku($scope.input).then(result => {
+                    	if (result) {
+                    		AlertService.addSuccess('登録完了しました。');
+                    		$uibModalInstance.dismiss();
+                    	} else {
+                    		AlertService.addDanger('登録失敗しました。');
+                    	}
+                    });
+                })
             }
             , back: function () {
             	$uibModalInstance.dismiss();

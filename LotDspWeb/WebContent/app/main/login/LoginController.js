@@ -40,13 +40,7 @@
                     }
                 });
 			},
- 			userIdMemoryChange : function() {
-				$cookies.put('userIdMemory', $scope.userIdMemory);
-				if ($scope.userIdMemory === '0') {
-					$cookies.remove('savedUserId');
-				}
-			}
-            , passwordHenko: function () {
+ 			passwordHenko: function () {
                 var modalInstance = $uibModal.open({
                     animation: $scope.animationsEnabled
                     , templateUrl: 'app/main/passwordhenko/PasswordHenko.html'
