@@ -1,5 +1,6 @@
 package ngyshanai.domain.logic.usertoroku;
 
+import java.security.MessageDigest;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -37,6 +38,7 @@ public class UserTorokuLogic {
 		MUser entity = ac.create(new MUserKey(in.getUserId()));
 		
 		UpdateInfo updateInfo = new UpdateInfo();
+		
 		
 		UserInfo info = new UserInfo();
 		info.setUserCd(in.getUserId());

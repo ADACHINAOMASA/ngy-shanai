@@ -21,7 +21,7 @@
 						<div class="col-xs-8 form-inline">
 							<input type="text" class="form-control" id="input_kaigishitsuMei"
 								name="kaigishitsuMei" ng-model="kaigishitsuInfo.kaigishitsuMei"
-								style="width: auto;" disabled>
+								style="width: 80%;" disabled>
 						</div>
 					</div>
 				</div>
@@ -79,7 +79,7 @@
 					<label class="col-xs-2 control-label" for="input_importance"><nis-required-mark></nis-required-mark>重要度</label>
 					<div class="col-xs-10 form-inline">
 				        <input type="text" class="form-control" ng-model="yoyakuInfo.importance" name="importance" ng-hide="true" nis-input="YoyakuInfo.importance">
-				        <select ng-model="yoyakuInfo.importance" ng-options="i.value as i.name for i in importants" blank="false" id="input_importance" ctrl="mainForm.importance" class="form-control" blank="true" ng-disabled="yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd != userProfile.userId"></select>
+				        <select ng-model="yoyakuInfo.importance" ng-options="i.value as i.name for i in importants" blank="false" id="input_importance" ctrl="mainForm.importance" class="form-control" blank="true" ng-disabled="yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd != userProfile.userId" style="width: 20%;"></select>
 					</div>
 				</div>
 				<div class="form-group">

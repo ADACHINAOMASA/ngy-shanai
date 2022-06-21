@@ -24,11 +24,33 @@
     	
     	$scope.hizuke = new Date();
     	
+    	$scope.oneDayAfter = new Date($scope.hizuke.getFullYear(), $scope.hizuke.getMonth(), $scope.hizuke.getDate() + 1);
+    	$scope.twoDaysAfter = new Date($scope.hizuke.getFullYear(), $scope.hizuke.getMonth(), $scope.hizuke.getDate() + 2);
+    	$scope.threeDaysAfter = new Date($scope.hizuke.getFullYear(), $scope.hizuke.getMonth(), $scope.hizuke.getDate() + 3);
+    	$scope.fourDaysAfter = new Date($scope.hizuke.getFullYear(), $scope.hizuke.getMonth(), $scope.hizuke.getDate() + 4);
+    	$scope.fiveDaysAfter = new Date($scope.hizuke.getFullYear(), $scope.hizuke.getMonth(), $scope.hizuke.getDate() + 5);
+    	$scope.sixDaysAfter = new Date($scope.hizuke.getFullYear(), $scope.hizuke.getMonth(), $scope.hizuke.getDate() + 6);
+    	
     	$scope.action = {
     		back() {
     			$state.go('home');
     		},
 			searchyoyaku(hizuke) {
+    			
+    			$scope.oneDayAfter.setMonth($scope.hizuke.getMonth());
+    			$scope.twoDaysAfter.setMonth($scope.hizuke.getMonth());
+    			$scope.threeDaysAfter.setMonth($scope.hizuke.getMonth());
+    			$scope.fourDaysAfter.setMonth($scope.hizuke.getMonth());
+    			$scope.fiveDaysAfter.setMonth($scope.hizuke.getMonth());
+    			$scope.sixDaysAfter.setMonth($scope.hizuke.getMonth());
+    			
+    			$scope.oneDayAfter.setDate($scope.hizuke.getDate() + 1);
+    			$scope.twoDaysAfter.setDate($scope.hizuke.getDate() + 2);
+    			$scope.threeDaysAfter.setDate($scope.hizuke.getDate() + 3);
+    			$scope.fourDaysAfter.setDate($scope.hizuke.getDate() + 4);
+    			$scope.fiveDaysAfter.setDate($scope.hizuke.getDate() + 5);
+    			$scope.sixDaysAfter.setDate($scope.hizuke.getDate() + 6);
+    			
 				hizuke.setHours(0);
             	hizuke.setMinutes(0);
             	hizuke.setSeconds(0);
@@ -36,6 +58,18 @@
 				ModalService.loading(KaigiYoyakuService.search(hizuke)).then((result) => {
 					$scope.kaigishitsus = result;
 				})
+			},
+			dateChange(amount) {
+				$scope.hizuke.setDate($scope.hizuke.getDate() + amount);
+				$scope.action.searchyoyaku($scope.hizuke);
+			},
+			toToday(amount) {
+				$scope.hizuke = new Date();
+				$scope.action.searchyoyaku($scope.hizuke);
+			},
+			getHizuke(motoHizuke, amount) {
+				motoHizuke = motoHizuke.setDate(motoHizuke.getdate() + amount)
+				return motoHizuke;
 			},
 			openYoyakuModal(yoyakuInfo, kaigishitsuInfo, hizuke) {
 				let modalInstance = $uibModal.open({
