@@ -10,23 +10,23 @@ public class YoyakuTableKey extends EntityKeyAbstract {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="YOYAKU_ID")
-	private String yoyakuId;
+	@Column(name="YOYAKU_CD")
+	private String yoyakuCd;
 	
 	public YoyakuTableKey(){
 		super();
 	}
 
-	public YoyakuTableKey(String yoyakuId){
-		this.yoyakuId = yoyakuId;
+	public YoyakuTableKey(String yoyakuCd){
+		this.yoyakuCd = yoyakuCd;
 	}
 
-	public String getYoyakuId() {
-		return yoyakuId;
+	public String getYoyakuCd() {
+		return yoyakuCd;
 	}
 
-	public void setYoyakuId(String yoyakuId) {
-		this.yoyakuId = yoyakuId;
+	public void setYoyakuCd(String yoyakuCd) {
+		this.yoyakuCd = yoyakuCd;
 	}
 
 	@Override

@@ -21,12 +21,14 @@ public class SearchKaigishitsuQuery extends NisQuery<KaigishitsuInfo> {
 
 		sql.append(" SELECT ");
 		sql.append("   k.KAIGISHITSU_CD ");
-		sql.append("   , k.KAIGISHITSU_MEI ");
-		sql.append("   , k.CATEGORY_CD  ");
+		sql.append("   , k.ROOM_NAME ");
+		sql.append("   , k.LOCATION  ");
+		sql.append("   , k.ETC  ");
+		sql.append("   , k.ORDER_ID  ");
 		sql.append(" FROM ");
 		sql.append("   M_KAIGISHITSU k  ");
 		sql.append(" ORDER BY ");
-		sql.append("   k.KAIGISHITSU_CD ");
+		sql.append("   k.ORDER_ID ");
 
 		logger.info(getClass().getSimpleName() + "=" + sql.toString());
 		return sql.toString();
@@ -36,9 +38,10 @@ public class SearchKaigishitsuQuery extends NisQuery<KaigishitsuInfo> {
 	public KaigishitsuInfo record(Map<String, Object> record) {
 		KaigishitsuInfo info = new KaigishitsuInfo();
 		
-		info.setKaigishitsuCd(nullCheck(record.get("KAIGISHITSU_CD")));
-		info.setKaigishitsuMei(nullCheck(record.get("KAIGISHITSU_MEI")));
-		info.setCategoryCd(nullCheck(record.get("CATEGORY_CD")));
+		info.setKaigishitsuCd(record.get("KAIGISHITSU_CD").toString());
+		info.setRoomName(nullCheck(record.get("ROOM_NAME")));
+		info.setLocation(nullCheck(record.get("LOCATION")));
+		info.setEtc(nullCheck(record.get("ETC")));
 		
 		return info;
 	}

@@ -39,7 +39,7 @@ public class MaishuYoyakuLogic {
 		
 		boolean result = true;
 		
-		String maishuYoyakuId = "";
+		String maishuYoyakuCd = "";
 		String kaigishitsuCd = info.getKaigishitsuCd();
 		String yoyakuBlockStart = info.getYoyakuBlockStart();
 		String yoyakuBlockEnd = info.getYoyakuBlockEnd();
@@ -71,10 +71,10 @@ public class MaishuYoyakuLogic {
 		
 		// 毎週予約IDの作成
 		for (int i = 0; i <= 10; i++) {
-			maishuYoyakuId = RandomStringUtils.randomAlphanumeric(10);
-			List<YoyakuInfo> infos = queryExecutor.executeQuery(new SearchMaishuYoyakuQuery(maishuYoyakuId));
+			maishuYoyakuCd = RandomStringUtils.randomAlphanumeric(10);
+			List<YoyakuInfo> infos = queryExecutor.executeQuery(new SearchMaishuYoyakuQuery(maishuYoyakuCd));
 			if (infos.size() == 0) {
-				info.setMaishuYoyakuId(maishuYoyakuId);
+				info.setMaishuYoyakuCd(maishuYoyakuCd);
 				break;
 			}
 			//毎週予約IDが見つからなかったとき
@@ -104,10 +104,10 @@ public class MaishuYoyakuLogic {
 			
 			// 予約ID作成
 			for (int i = 0; i <= 10; i++) {
-				String yoyakuId = RandomStringUtils.randomAlphanumeric(10);
-				YoyakuTable chofuku = ac.find(yoyakuId);
+				String yoyakuCd = RandomStringUtils.randomAlphanumeric(10);
+				YoyakuTable chofuku = ac.find(yoyakuCd);
 				if (chofuku == null || chofuku.notExist()) {
-					info.setYoyakuId(yoyakuId);
+					info.setYoyakuCd(yoyakuCd);
 					break;
 				}
 				//予約IDが見つからなかったとき
@@ -122,7 +122,7 @@ public class MaishuYoyakuLogic {
 				 break;
 			 }
 			
-			YoyakuTable entity = ac.create(info.getYoyakuId());
+			YoyakuTable entity = ac.create(info.getYoyakuCd());
 			
 			entity.update(new YoyakuTableUpdaterImpl(info, updateInfo), updateInfo);
 		}

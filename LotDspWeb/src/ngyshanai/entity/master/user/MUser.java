@@ -10,7 +10,7 @@ import ngyshanai.entity.oldframework.UpdateInfo;
 import nis.framework.oldframework.NumberUtil;
 
 @Entity
-@Table(name="M_USER2")
+@Table(name="M_USER")
 public class MUser extends MUserAbstract 
        implements Updatable<MUserUpdater> {
 

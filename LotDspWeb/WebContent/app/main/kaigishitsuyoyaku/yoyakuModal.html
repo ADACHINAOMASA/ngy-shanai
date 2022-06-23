@@ -2,7 +2,7 @@
 	<div class="modal-header">
 		<div class="row">
 			<div class="col-md-9">
-				<h3> {{yoyakuInfo.yoyakuDate | date: 'yyyy年MM月dd日(EEE)'}} {{kaigishitsuInfo.kaigishitsuMei}}予約</h3>
+				<h3> {{yoyakuInfo.yoyakuDate | date: 'yyyy年MM月dd日(EEE)'}} {{kaigishitsuInfo.roomName}}予約</h3>
 			</div>
 			<div class="col-md-3">
 				<h3 ng-if="(yoyakuInfo.isreserved == 1  && userProfile.userId != yoyakuInfo.yoyakushaCd) || today > yoyakuDate0ji" class="nonreservable">予約・更新不可</h3>
@@ -17,10 +17,10 @@
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<div class="form-group">
-						<label class="col-xs-4 control-label" for="input_kaigishitsuMei"><nis-required-mark></nis-required-mark>会議室名</label>
+						<label class="col-xs-4 control-label" for="input_roomName"><nis-required-mark></nis-required-mark>会議室名</label>
 						<div class="col-xs-8 form-inline">
-							<input type="text" class="form-control" id="input_kaigishitsuMei"
-								name="kaigishitsuMei" ng-model="kaigishitsuInfo.kaigishitsuMei"
+							<input type="text" class="form-control" id="input_roomName"
+								name="roomName" ng-model="kaigishitsuInfo.roomName"
 								style="width: 80%;" disabled>
 						</div>
 					</div>

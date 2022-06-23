@@ -19,9 +19,9 @@ public class MaishuYoyakuDeleteLogic {
 	private NisQueryExecutor queryExecutor;
 	
 	@Logic
-	public boolean execute(String kaigishitsuCd, Date yoyakuDate, String yoyakuBlockStart, String maishuYoyakuId) {
+	public boolean execute(String kaigishitsuCd, Date yoyakuDate, String yoyakuBlockStart, String maishuYoyakuCd) {
 	
-		List<YoyakuInfo> maishuYoyakuInfos = queryExecutor.executeQuery(new SearchMaishuYoyakuQuery(maishuYoyakuId));
+		List<YoyakuInfo> maishuYoyakuInfos = queryExecutor.executeQuery(new SearchMaishuYoyakuQuery(maishuYoyakuCd));
 		
 		YoyakuTableAccessor ac = new YoyakuTableAccessor();
 		
@@ -41,7 +41,7 @@ public class MaishuYoyakuDeleteLogic {
 				continue;
 			}
 			
-			YoyakuTable entity = ac.find(info.getYoyakuId());
+			YoyakuTable entity = ac.find(info.getYoyakuCd());
 			
 			entity.delete(new UpdateInfo());
 		}

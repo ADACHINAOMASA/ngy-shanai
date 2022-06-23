@@ -14,10 +14,10 @@ public class YoyakuDeleteLogic {
 	private ServiceContext svContext;
 	
 	@Logic
-	public boolean execute(String yoyakuId) {
+	public boolean execute(String yoyakuCd) {
 	
 		YoyakuTableAccessor ac = new YoyakuTableAccessor();
-		YoyakuTable entity = ac.find(yoyakuId);
+		YoyakuTable entity = ac.find(yoyakuCd);
 		
 		if (entity == null) {
 			svContext.getAlerts().addDanger("削除しようとした予約情報は存在しません。既に削除されている可能性があります。");

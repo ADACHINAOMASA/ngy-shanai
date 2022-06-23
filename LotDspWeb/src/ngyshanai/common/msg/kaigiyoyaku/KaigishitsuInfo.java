@@ -8,14 +8,15 @@ import nis.framework.dictionary.InputModel;
 @InputModel
 public class KaigishitsuInfo {
 
-//	@DB("M_KAIGISHITSU.KAIGISHITSU_CD")
 	private String kaigishitsuCd;
 	
-//	@DB("M_KAIGISHITSU.KAIGISHITSU_MEI")
-	private String kaigishitsuMei;
+	private String roomName;
 	
-//	@DB("M_KAIGISHITSU.CATEGORY_CD")
-	private String categoryCd;
+	private String location;
+	
+	private String etc;
+	
+	private BigDecimal orderId;
 	
 	private List<YoyakuInfo> yoyakuInfo;
 	
@@ -29,20 +30,36 @@ public class KaigishitsuInfo {
 		this.kaigishitsuCd = kaigishitsuCd;
 	}
 
-	public String getKaigishitsuMei() {
-		return kaigishitsuMei;
+	public String getRoomName() {
+		return roomName;
 	}
 
-	public void setKaigishitsuMei(String kaigishitsuMei) {
-		this.kaigishitsuMei = kaigishitsuMei;
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
 	}
 
-	public String getCategoryCd() {
-		return categoryCd;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setCategoryCd(String categoryCd) {
-		this.categoryCd = categoryCd;
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getEtc() {
+		return etc;
+	}
+
+	public void setEtc(String etc) {
+		this.etc = etc;
+	}
+
+	public BigDecimal getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(BigDecimal orderId) {
+		this.orderId = orderId;
 	}
 
 	public List<YoyakuInfo> getYoyakuInfo() {

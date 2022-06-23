@@ -51,7 +51,7 @@ public class CheckYoyakuDuplicateQuery extends NisQuery<YoyakuInfo>{
 	public YoyakuInfo record(Map<String, Object> record) {
 		YoyakuInfo info = new YoyakuInfo();
 		
-		info.setYoyakuId(record.get("YOYAKU_ID").toString());
+		info.setYoyakuCd(record.get("YOYAKU_CD").toString());
 		
 		return info;
 	}

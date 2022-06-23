@@ -11,7 +11,7 @@ import nis.framework.dictionary.Required;
 public class YoyakuInfo {
 
 //	@DB("YOYAKU_TABLE.YOYAKU_ID")
-	private String yoyakuId;
+	private String yoyakuCd;
 	
 //	@DB("YOYAKU_TABLE.KAIGISHITSU_CD")
 	private String kaigishitsuCd;
@@ -51,16 +51,16 @@ public class YoyakuInfo {
 //	@DB("YOYAKU_TABLE.ISRESERVED")
 	private String isreserved;
 	
-	private String maishuYoyakuId;
+	private String maishuYoyakuCd;
 	
 	private BigDecimal version;
 
-	public String getYoyakuId() {
-		return yoyakuId;
+	public String getYoyakuCd() {
+		return yoyakuCd;
 	}
 
-	public void setYoyakuId(String yoyakuId) {
-		this.yoyakuId = yoyakuId;
+	public void setYoyakuCd(String yoyakuCd) {
+		this.yoyakuCd = yoyakuCd;
 	}
 
 	public String getKaigishitsuCd() {
@@ -143,12 +143,12 @@ public class YoyakuInfo {
 		this.isreserved = isreserved;
 	}
 
-	public String getMaishuYoyakuId() {
-		return maishuYoyakuId;
+	public String getMaishuYoyakuCd() {
+		return maishuYoyakuCd;
 	}
 
-	public void setMaishuYoyakuId(String maishuYoyakuId) {
-		this.maishuYoyakuId = maishuYoyakuId;
+	public void setMaishuYoyakuCd(String maishuYoyakuCd) {
+		this.maishuYoyakuCd = maishuYoyakuCd;
 	}
 
 	public BigDecimal getVersion() {

@@ -51,15 +51,15 @@ public class KaigiYoyakuService {
 	}
 	
 	@DELETE
-	@Path("/{yoyakuId}")  
-	public boolean delete(@PathParam("yoyakuId") String yoyakuId) {
-		return logicExecutor.execute(YoyakuDeleteLogic.class, yoyakuId);
+	@Path("/{yoyakuCd}")  
+	public boolean delete(@PathParam("yoyakuCd") String yoyakuCd) {
+		return logicExecutor.execute(YoyakuDeleteLogic.class, yoyakuCd);
 	}
 	
 	@DELETE
-	@Path("/{kaigishitsuCd}/{yoyakuDate}/{yoyakuBlockStart}/{maishuYoyakuId}")  
-	public boolean maishudelete(@PathParam("kaigishitsuCd") String kaigishitsuCd, @PathParam("yoyakuDate") Date yoyakuDate, @PathParam("yoyakuBlockStart") String yoyakuBlockStart, @PathParam("maishuYoyakuId")String maishuYoyakuId) {
-		return logicExecutor.execute(MaishuYoyakuDeleteLogic.class, kaigishitsuCd, yoyakuDate, yoyakuBlockStart, maishuYoyakuId);
+	@Path("/{kaigishitsuCd}/{yoyakuDate}/{yoyakuBlockStart}/{maishuYoyakuCd}")  
+	public boolean maishudelete(@PathParam("kaigishitsuCd") String kaigishitsuCd, @PathParam("yoyakuDate") Date yoyakuDate, @PathParam("yoyakuBlockStart") String yoyakuBlockStart, @PathParam("maishuYoyakuCd")String maishuYoyakuCd) {
+		return logicExecutor.execute(MaishuYoyakuDeleteLogic.class, kaigishitsuCd, yoyakuDate, yoyakuBlockStart, maishuYoyakuCd);
 	}
 	
 }

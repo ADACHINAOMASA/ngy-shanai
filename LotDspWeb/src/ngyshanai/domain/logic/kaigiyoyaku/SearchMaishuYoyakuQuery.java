@@ -8,16 +8,16 @@ import nis.framework.sql.NisQuery;
 
 public class SearchMaishuYoyakuQuery extends NisQuery<YoyakuInfo>{
 
-	private String maishuYoyakuId;
+	private String maishuYoyakuCd;
 	
-	public SearchMaishuYoyakuQuery(String maishuYoyakuId) {
-		this.maishuYoyakuId = maishuYoyakuId;
+	public SearchMaishuYoyakuQuery(String maishuYoyakuCd) {
+		this.maishuYoyakuCd = maishuYoyakuCd;
 		
 		this.setParameters();
 	}
 
 	private void setParameters() {
-		addParameter("　y.MAISHU_YOYAKU_ID = ? ", maishuYoyakuId);
+		addParameter("　y.MAISHU_YOYAKU_CD = ? ", maishuYoyakuCd);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class SearchMaishuYoyakuQuery extends NisQuery<YoyakuInfo>{
 
 		sql.append(" SELECT ");
 		sql.append("   y.YOYAKU_DATE ");
-		sql.append("   , y.YOYAKU_ID ");
+		sql.append("   , y.YOYAKU_CD ");
 		sql.append(" FROM ");
 		sql.append("   YOYAKU_TABLE y  ");
 		sql.append(" WHERE ");
@@ -43,7 +43,7 @@ public class SearchMaishuYoyakuQuery extends NisQuery<YoyakuInfo>{
 		YoyakuInfo info = new YoyakuInfo();
 		
 		info.setYoyakuDate((Date)record.get("YOYAKU_DATE"));
-		info.setYoyakuId(record.get("YOYAKU_ID").toString());
+		info.setYoyakuCd(record.get("YOYAKU_CD").toString());
 		
 		return info;
 	}

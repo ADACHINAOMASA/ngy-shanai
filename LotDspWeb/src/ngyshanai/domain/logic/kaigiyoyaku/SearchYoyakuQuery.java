@@ -18,7 +18,7 @@ public class SearchYoyakuQuery extends NisQuery<YoyakuInfo> {
 	}
 
 	private void setParameters() {
-		addParameter("　y.YOYAKU_DATE = ? ", yoyakuDate);
+		addParameter("y.YOYAKU_DATE = ? ", yoyakuDate);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class SearchYoyakuQuery extends NisQuery<YoyakuInfo> {
 		StringBuilder sql = new StringBuilder();
 
 		sql.append(" SELECT ");
-		sql.append("   y.YOYAKU_ID ");
+		sql.append("   y.YOYAKU_CD ");
 		sql.append("   ,y.KAIGISHITSU_CD ");
 		sql.append("   , y.YOYAKU_DATE ");
 		sql.append("   , y.YOYAKU_BLOCK_START  ");
@@ -37,7 +37,7 @@ public class SearchYoyakuQuery extends NisQuery<YoyakuInfo> {
 		sql.append("   , y.TEL  ");
 		sql.append("   , y.IMPORTANCE  ");
 		sql.append("   , y.ISRESERVED  ");
-		sql.append("   , y.MAISHU_YOYAKU_ID  ");
+		sql.append("   , y.MAISHU_YOYAKU_CD  ");
 		sql.append(" FROM ");
 		sql.append("   YOYAKU_TABLE y  ");
 		sql.append("   JOIN M_KAIGISHITSU k  ");
@@ -57,7 +57,7 @@ public class SearchYoyakuQuery extends NisQuery<YoyakuInfo> {
 	public YoyakuInfo record(Map<String, Object> record) {
 		YoyakuInfo info = new YoyakuInfo();
 		
-		info.setYoyakuId(record.get("YOYAKU_ID").toString());
+		info.setYoyakuCd(record.get("YOYAKU_CD").toString());
 		info.setKaigishitsuCd(record.get("KAIGISHITSU_CD").toString());
 		info.setYoyakuDate((Date)record.get("YOYAKU_DATE"));
 		info.setYoyakuBlockStart(record.get("YOYAKU_BLOCK_START").toString());
@@ -69,7 +69,7 @@ public class SearchYoyakuQuery extends NisQuery<YoyakuInfo> {
 		info.setTel(nullCheck(record.get("TEL")));
 		info.setImportance(nullCheck(record.get("IMPORTANCE")));
 		info.setIsreserved(nullCheck(record.get("ISRESERVED")));
-		info.setMaishuYoyakuId(nullCheck(record.get("MAISHU_YOYAKU_ID")));
+		info.setMaishuYoyakuCd(nullCheck(record.get("MAISHU_YOYAKU_CD")));
 		
 		return info;
 	}

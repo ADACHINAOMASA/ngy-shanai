@@ -55,8 +55,8 @@ public abstract class YoyakuTableAbstract extends EntityNoControlBase<YoyakuTabl
 	@Column(name="ISRESERVED")
 	protected String isreserved;
 	
-	@Column(name="MAISHU_YOYAKU_ID")
-	protected String maishuYoyakuId;
+	@Column(name="MAISHU_YOYAKU_CD")
+	protected String maishuYoyakuCd;
 	
 	@Column(name="VERSION")
 	protected BigDecimal version;
@@ -171,12 +171,12 @@ public abstract class YoyakuTableAbstract extends EntityNoControlBase<YoyakuTabl
 		this.isreserved = isreserved;
 	}
 
-	public String getMaishuYoyakuId() {
-		return maishuYoyakuId;
+	public String getMaishuYoyakuCd() {
+		return maishuYoyakuCd;
 	}
 
-	public void setMaishuYoyakuId(String maishuYoyakuId) {
-		this.maishuYoyakuId = maishuYoyakuId;
+	public void setMaishuYoyakuCd(String maishuYoyakuCd) {
+		this.maishuYoyakuCd = maishuYoyakuCd;
 	}
 
 	public BigDecimal getVersion() {

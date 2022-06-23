@@ -31,12 +31,12 @@ public class KaigiYoyakuUpdateLogic {
 		UpdateInfo updateInfo = new UpdateInfo(snContext.getUserProfile());
 		
 		YoyakuTableAccessor ac = new YoyakuTableAccessor();
-		YoyakuTable entity = ac.find(info.getYoyakuId());
+		YoyakuTable entity = ac.find(info.getYoyakuCd());
 		
 		List<YoyakuInfo> infos = queryExecutor.executeQuery(new CheckYoyakuDuplicateQuery(info.getKaigishitsuCd(), info.getYoyakuDate(), info.getYoyakuBlockStart(), info.getYoyakuBlockEnd()));
 		
 		for (YoyakuInfo yInfo : infos) {
-			if (yInfo.getYoyakuId().equals(info.getYoyakuId())) {
+			if (yInfo.getYoyakuCd().equals(info.getYoyakuCd())) {
 				infos.remove(infos.indexOf(yInfo));
 				break;
 			}
@@ -47,7 +47,7 @@ public class KaigiYoyakuUpdateLogic {
 			return false;
 		}
 		
-		info.setMaishuYoyakuId(null);
+		info.setMaishuYoyakuCd(null);
 		
 		entity.update(new YoyakuTableUpdaterImpl(info, updateInfo), updateInfo);
 		

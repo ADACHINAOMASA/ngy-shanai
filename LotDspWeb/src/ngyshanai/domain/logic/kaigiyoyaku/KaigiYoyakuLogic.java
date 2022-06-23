@@ -40,10 +40,10 @@ public class KaigiYoyakuLogic {
 		
 		// 予約ID作成
 		for (int i = 0; i <= 10; i++) {
-			String yoyakuId = RandomStringUtils.randomAlphanumeric(10);
-			YoyakuTable chofuku = ac.find(yoyakuId);
+			String yoyakuCd = RandomStringUtils.randomAlphanumeric(10);
+			YoyakuTable chofuku = ac.find(yoyakuCd);
 			if (chofuku == null || chofuku.notExist()) {
-				info.setYoyakuId(yoyakuId);
+				info.setYoyakuCd(yoyakuCd);
 				break;
 			}
 			//予約IDが見つからなかったとき
@@ -60,7 +60,7 @@ public class KaigiYoyakuLogic {
 		
 		UpdateInfo updateInfo = new UpdateInfo(snContext.getUserProfile());
 		
-		YoyakuTable entity = ac.create(info.getYoyakuId());
+		YoyakuTable entity = ac.create(info.getYoyakuCd());
 		
 		entity.update(new YoyakuTableUpdaterImpl(info, updateInfo), updateInfo);
 		

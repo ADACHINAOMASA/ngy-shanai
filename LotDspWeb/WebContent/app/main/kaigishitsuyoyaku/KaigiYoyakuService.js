@@ -30,13 +30,13 @@
     		maishusave(yoyakuInfo, maishuEnd) {
     			return NIS.u.req($http.post(NIS.u.path(baseURI, maishuEnd), yoyakuInfo));
     		},
-    		yoyakudelete(yoyakuId) {
-    			return NIS.u.req($http.delete(NIS.u.path(baseURI, yoyakuId), {headers: {
+    		yoyakudelete(yoyakuCd) {
+    			return NIS.u.req($http.delete(NIS.u.path(baseURI, yoyakuCd), {headers: {
                     'Content-Type': 'application/json'
                 }}));
     		},
-    		maishuyoyakudelete(kaigishitsuCd, yoyakuDate, yoyakuBlockStart, maishuYoyakuId) {
-    			return NIS.u.req($http.delete(NIS.u.path(baseURI, kaigishitsuCd, yoyakuDate, yoyakuBlockStart, maishuYoyakuId), {headers: {
+    		maishuyoyakudelete(kaigishitsuCd, yoyakuDate, yoyakuBlockStart, maishuYoyakuCd) {
+    			return NIS.u.req($http.delete(NIS.u.path(baseURI, kaigishitsuCd, yoyakuDate, yoyakuBlockStart, maishuYoyakuCd), {headers: {
                     'Content-Type': 'application/json'
                 }}));
     		},

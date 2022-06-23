@@ -18,8 +18,8 @@ public class LoginCheckQuery extends NisQuery<UserInfo>{
 	}
 	
 	private void setParameters() {
-		addParameter("　u.USER_CD = ? ", userCd);
-		addParameter("　u.PASSWORD = ? ", password);
+		addParameter("u.USER_CD = ? ", userCd);
+		addParameter("u.PASSWORD = ? ", password);
 	}
 	
 	@Override
@@ -29,7 +29,7 @@ public class LoginCheckQuery extends NisQuery<UserInfo>{
 		sql.append(" SELECT ");
 		sql.append("   * ");
 		sql.append(" FROM ");
-		sql.append("   M_USER2 u  ");
+		sql.append("   M_USER u  ");
 		sql.append(" WHERE ");
 		sql.append(" u.USER_CD IS NOT NULL ");
 		sql.append(createParameterString(true));
