@@ -15,7 +15,7 @@ public interface YoyakuTableUpdater {
 	public String getTel();
 	public String getImportance();
 	public String getIsreserved();
-	public String getMaishuYoyakuId();
+	public String getMaishuYoyakuCd();
 	public BigDecimal getVersion();
 	public String getTorokushaCd();
 	public Date getTorokuTs();

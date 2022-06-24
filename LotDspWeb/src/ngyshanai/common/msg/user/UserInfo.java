@@ -13,8 +13,6 @@ public class UserInfo {
 	
 	private String mailAddress;
 	
-	private String kengenId;
-	
 	private String password;
 
 	public String getUserCd() {
@@ -47,14 +45,6 @@ public class UserInfo {
 
 	public void setMailAddress(String mailAddress) {
 		this.mailAddress = mailAddress;
-	}
-
-	public String getKengenId() {
-		return kengenId;
-	}
-
-	public void setKengenId(String kengenId) {
-		this.kengenId = kengenId;
 	}
 
 	public String getPassword() {

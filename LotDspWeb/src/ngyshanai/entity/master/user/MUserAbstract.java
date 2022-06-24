@@ -36,9 +36,6 @@ public abstract class MUserAbstract extends EntityNoControlBase<MUserUpdater> {
 	@Column(name="MAIL_ADDRESS")
 	protected String mailAddress;
 	
-	@Column(name="KENGEN_ID")
-	protected String kengenId;
-	
 	@Column(name="PASSWORD")
 	protected String password;
 
@@ -105,14 +102,6 @@ public abstract class MUserAbstract extends EntityNoControlBase<MUserUpdater> {
 
 	public void setMailAddress(String mailAddress) {
 		this.mailAddress = mailAddress;
-	}
-
-	public String getKengenId() {
-		return kengenId;
-	}
-
-	public void setKengenId(String kengenId) {
-		this.kengenId = kengenId;
 	}
 
 	public String getPassword() {

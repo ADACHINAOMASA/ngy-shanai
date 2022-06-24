@@ -29,7 +29,6 @@ public class MUser extends MUserAbstract
 		tel = updater.getTel();
 		mailAddress = updater.getMailAddress();
 		password = updater.getPassword();
-		kengenId = updater.getKengenId();
 		if (NumberUtil.isBigger(NumberUtil.nvl(version), BigDecimal.ZERO)) {
 			version = NumberUtil.addNvl(version, BigDecimal.ONE);
 			koshinshaCd = info.getUser();

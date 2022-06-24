@@ -34,11 +34,6 @@ public class MUserUpdaterImpl implements MUserUpdater{
 	}
 	
 	@Override
-	public String getKengenId() {
-		return inMsg.getKengenId();
-	}
-	
-	@Override
 	public String getPassword() {
 		return inMsg.getPassword();
 	}

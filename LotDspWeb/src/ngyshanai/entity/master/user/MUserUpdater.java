@@ -8,7 +8,6 @@ public interface MUserUpdater {
 	public String getUserMei();
 	public String getTel();
 	public String getMailAddress();
-	public String getKengenId();
 	public String getPassword();
 	public BigDecimal getVersion();
 	public String getTorokushaCd();

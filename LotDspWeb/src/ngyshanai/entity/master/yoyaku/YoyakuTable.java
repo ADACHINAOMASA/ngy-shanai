@@ -35,7 +35,7 @@ public class YoyakuTable extends YoyakuTableAbstract
 		tel = updater.getTel();
 		importance = updater.getImportance();
 		isreserved = "1";
-		maishuYoyakuId = updater.getMaishuYoyakuId();
+		maishuYoyakuCd = updater.getMaishuYoyakuCd();
 		if (NumberUtil.isBigger(NumberUtil.nvl(version), BigDecimal.ZERO)) {
 			version = NumberUtil.addNvl(version, BigDecimal.ONE);
 			koshinshaCd = info.getUser();

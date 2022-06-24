@@ -24,10 +24,10 @@ public class CheckYoyakuDuplicateQuery extends NisQuery<YoyakuInfo>{
 	}
 
 	private void setParameters() {
-		addParameter("　y.KAIGISHITSU_CD = ? ", kaigishitsuCd);
-		addParameter("　y.YOYAKU_DATE = ? ", yoyakuDate);
-		addParameter("　y.YOYAKU_BLOCK_START <= ? ", BigDecimal.valueOf(Integer.parseInt(yoyakuBlockEnd)));
-		addParameter("　y.YOYAKU_BLOCK_END >= ? ", BigDecimal.valueOf(Integer.parseInt(yoyakuBlockStart)));
+		addParameter("y.KAIGISHITSU_CD = ? ", kaigishitsuCd);
+		addParameter("y.YOYAKU_DATE = ? ", yoyakuDate);
+		addParameter("y.YOYAKU_BLOCK_START <= ? ", BigDecimal.valueOf(Integer.parseInt(yoyakuBlockEnd)));
+		addParameter("y.YOYAKU_BLOCK_END >= ? ", BigDecimal.valueOf(Integer.parseInt(yoyakuBlockStart)));
 	}
 
 	@Override

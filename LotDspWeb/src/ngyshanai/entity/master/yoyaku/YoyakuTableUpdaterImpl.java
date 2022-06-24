@@ -70,8 +70,8 @@ public class YoyakuTableUpdaterImpl implements YoyakuTableUpdater {
 	}
 	
 	@Override
-	public String getMaishuYoyakuId() {
-		return inMsg.getMaishuYoyakuId();
+	public String getMaishuYoyakuCd() {
+		return inMsg.getMaishuYoyakuCd();
 	}
 	
 	@Override

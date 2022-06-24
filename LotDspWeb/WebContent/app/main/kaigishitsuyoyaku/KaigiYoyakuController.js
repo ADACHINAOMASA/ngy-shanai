@@ -63,7 +63,7 @@
 				$scope.hizuke.setDate($scope.hizuke.getDate() + amount);
 				$scope.action.searchyoyaku($scope.hizuke);
 			},
-			toToday(amount) {
+			toToday() {
 				$scope.hizuke = new Date();
 				$scope.action.searchyoyaku($scope.hizuke);
 			},
