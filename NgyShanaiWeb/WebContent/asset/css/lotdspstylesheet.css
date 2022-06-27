@@ -1,0 +1,4922 @@
+/* Style rules to make data tables look better */
+/*
+  変更履歴： 2009/09/24 松下 IE7&IE8対応
+            2010/04/28 山本 IE7&IE8対応
+*/
+
+.list-header {
+  background-color: #eeeeee;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.list-paging-header {
+  background-color: white;
+}
+
+.list-paging-footer {
+  background-color: white;
+}
+
+.list-row-even {
+  font-family: "ＭＳ ゴシック";
+  height:18px;
+}
+
+.list-row-odd {
+  font-family: "ＭＳ ゴシック";
+  height:18px;
+  background-color: #eeeeee;
+}
+
+/* Style rules for message severity levels */
+
+.infoMessage {
+  color: black;
+}
+
+.warnMessage {
+  color: orange;
+  font-weight: bold;
+}
+
+.errorMessage {
+  color: red;
+  font-weight: bold;
+}
+
+.fatalMessage {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Original Stylesheet */
+
+.separator-aqua {
+  background-color: aqua;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  font-weight: bolder;
+  height: 26px;
+  width: 960px;
+  border-bottom: solid black 1px;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  border-top: solid black 1px;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.separator-mediumspringgreen {
+  background-color: #00FA9A;
+  font-family: "ＭＳ ゴシック";
+  font-weight: bolder;
+  font-size: 18px;
+  height: 26px;
+  width: 960px;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.separator-peachpuff {
+  background-color: #FFDAB9;
+  font-family: "ＭＳ ゴシック";
+  font-weight: bolder;
+  font-size: 18px;
+  height: 26px;
+  width: 960px;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.separator-pink {
+  background-color: #FFC0CB;
+  font-family: "ＭＳ ゴシック";
+  font-weight: bolder;
+  font-size: 18px;
+  height: 26px;
+  width: 960px;
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+.separator-blue {
+   background-color: #9999ff;
+   border-bottom: solid black 1px;
+   border-left: solid black 1px;
+   border-right: solid black 1px;
+   border-top: solid black 1px;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   font-weight: bolder;
+   height: 26px;
+   padding-left: 10px;
+   padding-top: 2px;
+   width: 960px
+}
+
+.column-lightgrey {
+   background-color: #D3D3D3;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   text-align: center;
+   vertical-align: middle;
+   height: 18px;
+   width: 100px;
+}
+
+.column-white {
+   background-color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   text-align: left;
+   vertical-align: middle;
+   height: 18px;
+   width: 100px;
+}
+
+.column-white-wide {
+   background-color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   text-align: left;
+   vertical-align: middle;
+   height: 18px;
+   width: 780px;
+}
+
+.input-text {
+   background-color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 20px;
+   text-align: left;
+   vertical-align: middle;
+}
+
+.output-text {
+   background-color: lightgoldenrodyellow;
+   font-family: "ＭＳ ゴシック";
+   font-size: 14px;
+   text-align: center;
+   vertical-align: middle;
+   height: 18px;
+   width: 120px;
+}
+
+.layoutPanel {
+   height: 590px;
+   width: 960px;
+   position: relative;
+   -rave-layout: grid;
+}
+
+.lotSchList-gridPanel {
+
+}
+
+.tabSet {
+   top: 0px;
+   left: 0px;
+   position: absolute;
+   height: 600px;
+   width: 970px;
+}
+
+.tabTitle {
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+}
+
+.box {
+   height: 50px;
+   width: 50px;
+}
+
+.excel-item {
+   text-align: center;
+   vertical-align: middle
+}
+
+.excel-item-aqua {
+  background-color: aqua;
+  text-align: center;
+  vertical-align: middle
+}
+
+.excel-item-lightsalmon {
+  background-color: #FFCC99;
+  text-align: center;
+  vertical-align: middle
+}
+
+.excel-item-yellow {
+  background-color: yellow;
+  text-align: center;
+  vertical-align: middle
+}
+
+.excel-item-lightyellow {
+  background-color: #ffff99;
+  text-align: center;
+  vertical-align: middle
+}
+
+.excel-item-orange {
+  background-color: ORANGE;
+  text-align: center;
+  vertical-align: middle
+}
+
+.excel-item-pink {
+  background-color: PINK;
+  text-align: center;
+  vertical-align: middle
+}
+.excel-item-lightgreen {
+  background-color: lightgreen;
+  text-align: center;
+  vertical-align: middle
+}
+.excel-item-barkturquoise {
+  background-color: DARKTURQUOISE;
+  text-align: center;
+  vertical-align: middle
+}
+.excel-item-silver {
+  background-color: silver;
+  text-align: center;
+  vertical-align: middle
+}
+
+.layoutPanel {
+   top: 0px;
+   left: 0px;
+   position: relative;
+   height: 580px;
+   width: 1000px;
+   -rave-layout: grid;
+}
+
+.column-gray-w50 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  text-align: center;
+}
+
+.column-yello-w100 {
+  background-color: #ffffcc;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+.column-pink-w30 {
+  background-color: #ffb6ff;
+  font-family: "ＭＳ ゴシック";
+  font-weight: bolder;
+  font-size: 18px;
+  height: 20px;
+  width: 100px;
+  text-align: center;
+}
+
+input.half-width {
+  background-color: lightgoldenrodyellow;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 20px;
+  text-align: left;
+  vertical-align: middle;
+  width: 120px;
+  /* ime-mode:disabled; */
+}
+
+input.full-width {
+  background-color: lightgoldenrodyellow;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 20px;
+  text-align: left;
+  vertical-align: middle;
+  width: 120px
+  /* ime-mode:active; */
+}
+
+.icas-list-header {
+  background-color: black;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  font-weight: normal;
+  color: white;
+  height: 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.icas-list-row {
+  background-color:black;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lightgreen;
+  height: 20px;
+  /* text-align: right; */ /* IE7&IE8対応 */
+  vertical-align: middle;
+}
+
+.icas-item-white {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 100%;
+  /* text-align: center; */
+  /* vertical-align: middle; */
+}
+
+.icas-item-green {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 100%;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-item-red {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.icas-list-green {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.icas-list-red {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.column-align-left {
+   text-align: left;
+   vertical-align: top;
+}
+
+.column-align-center {
+   text-align: center;
+   vertical-align: top;
+}
+
+.column-align-right {
+   text-align: right;
+   vertical-align: top;
+}
+
+.column-align-left {
+   text-align: left;
+   vertical-align: top;
+}
+
+.column-align-center {
+   text-align: center;
+   vertical-align: top;
+}
+
+.item-space-white {
+  background-color: white;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  text-align: center;
+}
+
+.item-label1 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+.item-label2 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 25px;
+  width: 80px;
+  text-align: center;
+}
+
+.item-label3 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 79px;
+  text-align: center;
+}
+
+.item-label4 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 70px;
+  text-align: center;
+}
+
+.item-value0 {
+   background-color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 100px;
+   text-align: center;
+}
+
+.item-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 100px;
+   text-align: center;
+}
+
+.item-date {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 80px;
+   text-align: center;
+}
+
+.item-datetime {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 140px;
+   text-align: center;
+}
+
+.item-time {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  vertical-align: top;
+  text-align: center;
+}
+
+.item-value2 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 80px;
+   vertical-align: top;
+   text-align: center;
+}
+
+.item-value3 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 180px;
+   vertical-align: top;
+   text-align: center;
+}
+
+.item-value4 {
+   background-color: #ffcccc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+/* height: 15px; */
+   width: 40px;
+   vertical-align: top;
+   text-align: center;
+}
+
+.item-value5 {
+   background-color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   width: 40px;
+   vertical-align: top;
+   text-align: center;
+}
+
+.item-align-right {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   vertical-align: top;
+   text-align: right;
+}
+
+.item-align-center {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   vertical-align: top;
+   text-align: center;
+}
+
+.item-width1 {
+   vertical-align: top;
+   height: 15px;
+   width: 80px;
+}
+
+.man-item-headeritem-width2 {
+   vertical-align: top;
+   height: 15px;
+   width: 60px;
+}
+
+.item-width3 {
+   vertical-align: top;
+   height: 15px;
+   width: 18px;
+}
+
+.item-unit {
+   background-color: white;
+   font-family: "ＭＳ ゴシック";
+   text-align: center;
+   vertical-align: top;
+   width: 40px;
+}
+
+.menu-text {
+  background-color: white;
+   width: 10px;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+}
+
+.menu-header-row {
+  background-color: #99ccff;
+   vertical-align: middle;
+   text-align: center;
+}
+
+.menu-body-row {
+  background-color: white;
+   vertical-align: middle;
+   text-align: right;
+}
+.menu-body-label {
+   vertical-align: middle;
+   text-align: right;
+}
+.menu-body-input {
+   vertical-align: middle;
+   text-align: left;
+}
+
+.menu-footer-row {
+   background-color: #99ccff;
+   vertical-align: middle;
+   text-align: right;
+}
+
+.menu-footer-column {
+   background-color: #99ccff;
+   vertical-align: middle;
+   text-align: right;
+}
+
+.column-qualitybox {
+   background-color: #ccffcc;
+   text-align: center;
+   height: 15px;
+   font-weight: normal;
+}
+
+.header-gaicyusaki {
+   background-color: #e4e3e3;
+   text-align: center;
+   height: 15px;
+   font-weight: normal;
+}
+
+.dataTable-row-even {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 100px;
+   vertical-align: top;
+   text-align: center;
+}
+
+.dataTable-row-odd {
+   background-color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 100px;
+   vertical-align: top;
+   text-align: center;
+}
+
+.gai-header {
+   background-color: #e4e3e3;
+   vertical-align: middle;
+   text-align: center;
+   height: 15px;
+}
+
+.gai-rows {
+   background-color: #ffffcc;
+   vertical-align: middle;
+   text-align: center;
+   height: 15px;
+}
+
+.gai-idx-width {
+   width: 20px;
+}
+
+.gai-setsubi-width {
+   width: 60px;
+}
+
+.gai-cd-width {
+   width: 200px;
+}
+
+.gai-today-width {
+   width: 80px;
+}
+
+.gai-okuri-width {
+   width: 200px;
+}
+
+.gai-idx-width {
+   width: 20px;
+}
+
+.align-center {
+   text-align: center;
+   vertical-align: middle;
+}
+
+.align-right {
+   margin-right: 5px;
+   text-align: right;
+   vertical-align: middle;
+}
+
+.align-left {
+   margin-left: 5px;
+   text-align: left;
+   vertical-align: middle;
+}
+
+
+.space {
+  background-color: white;
+  color: white;
+  width: 10px;
+}
+
+.space-black {
+  background-color: black;
+  color: black;
+  width: 10px;
+}
+
+.space-item {
+   margin-left: 5px;
+   margin-right: 5px
+}
+
+.item-value-w80-left {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 80px;
+   text-align: left;
+}
+
+.item-value-w80-center {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   width: 80px;
+   text-align: center;
+}
+
+.item-value-w80-right {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   width: 80px;
+   text-align: center;
+}
+
+.item-value-w120-right {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 120px;
+   text-align: center;
+}
+
+.header-label {
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 18px;
+   text-align: left;
+   vertical-align: middle;
+}
+.input-ltno {
+   left: 56px;
+   top: 8px;
+   position: absolute;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   width: 80px;
+   height: 20px;
+   text-align: left;
+   vertical-align: middle;
+}
+.input-knno {
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   width: 20px;
+   height: 18px;
+   text-align: left;
+   vertical-align: middle;
+}
+
+/* Common */
+.message {
+   color:red;
+   font-family: "ＭＳ ゴシック";
+   left: 536px;
+   top: 8px;
+   position: absolute;
+   height: 18px;
+   width: 234px;
+}
+.com-value-left-w180 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   width: 235px;
+   vertical-align: top;
+   text-align: left;
+}
+
+/* progress */
+.prog-label-center {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 120px;
+  text-align: center;
+}
+
+.prog-value-center {
+  background-color: #ffffcc;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  text-align: center;
+}
+
+.prog-value-right {
+  background-color: #ffffcc;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  text-align: right;
+}
+
+/* Test */
+.test-label-center-w60 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 60px;
+  text-align: center;
+}
+
+.test-label-center-w100 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 70px;
+  text-align: center;
+}
+
+.test-value-right-w100 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 70px;
+   vertical-align: top;
+   text-align: right;
+}
+
+.test-value-right-w70 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 50px;
+   vertical-align: top;
+   text-align: right;
+}
+
+.test-w60 {
+   height: 25px;
+   width: 60px;
+}
+
+.test-w80 {
+   height: 25px;
+   width: 80px;
+}
+
+/* Quality */
+.qua-value-right-w100 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 100px;
+   vertical-align: top;
+   text-align: right;
+}
+.qua-value-right-w80 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 80px;
+   vertical-align: top;
+   text-align: right;
+}
+.qua-value-center-w80 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 80px;
+   vertical-align: top;
+   text-align: center;
+}
+.qua-value-left-w600 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 15px;
+   width: 600px;
+   vertical-align: top;
+   text-align: left;
+}
+.qua-label {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  width: 100px;
+  height: 25px;
+  text-align: center;
+}
+.qua-kocyoryoku {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 60px;
+   text-align: right;
+}
+.qua-nobi {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 60px;
+   text-align: right;
+}
+.qua-tairyoku {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 60px;
+   text-align: right;
+}
+.qua-hokosei {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 60px;
+   text-align: right;
+}
+.qua-magekbn {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 60px;
+   text-align: center;
+}
+.qua-erichsen {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 60px;
+   text-align: right;
+}
+.qua-cladritsu {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 60px;
+   text-align: right;
+}
+.qua-lchi {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 60px;
+   text-align: center;
+}
+.qua-commentmoji {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 18px;
+   height: 25px;
+   width: 600px;
+   text-align: left;
+}
+.qua-list-row {
+   background-color: #eeeeee;
+   height: 18px;
+   text-align: -rave-center;
+   vertical-align: middle;
+}
+
+/* ICAS */
+.icas-center-w80 {
+   height: 15px;
+   width: 70px;
+   vertical-align: top;
+   text-align: left;
+}
+.icas-left-w100 {
+   height: 15px;
+   width: 60px;
+   vertical-align: top;
+   text-align: left;
+}
+.icas-right-w120 {
+   height: 15px;
+   width: 60px;
+   vertical-align: top;
+   text-align: right;
+}
+.icas-center-w40 {
+   height: 15px;
+   width: 30px;
+   vertical-align: top;
+   text-align: center;
+}
+.icas-left-w120 {
+   height: 15px;
+   width: 180px;
+   vertical-align: top;
+   text-align: left;
+}
+
+.icas-test {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 100%;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-ltno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 90px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+}
+.icas-knno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 85px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-cyno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 85px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-juno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 85px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-kjyo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 50px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-label-pity {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 80px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-pity {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 145px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-noki {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 70px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+}
+.icas-noki {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 120px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-label-order {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-jua {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-jub {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-jux {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 80px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-x {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-juy {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-juz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-seizo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-lta {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-ltb {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-ltx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 80px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-lty {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-ltz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-weight {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 65px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-juw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-label-jumh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-jumh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 100px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-tanw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 65px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-tanw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 90px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-label-hijyu {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-hijyu {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 80px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-skigo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-ju {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 80px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+}
+.icas-pit {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-hot {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height:15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-label-se {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-seizo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 45px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-ku {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-kura {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 45px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-su {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-slab {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 45px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-me {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-sca {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 45px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-yu {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-yukoy {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 45px;
+  height:15px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-convna {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 140px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+}
+.icas-label-cas {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-casdt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 30px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-casw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 80px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-ssw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 70px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-sswdt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 50px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-ssww {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 80px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-sca {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-scadt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 40px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-scaw {
+  font-family: "ＭＳ ゴシック";
+font-size: 18px;
+  color: red;
+  width: 90px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-rolw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 40px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-rolw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-sagw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 50px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-sagw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-pit {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-pitdt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 30px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-ptr {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 30px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-no1 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 40px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-ptj {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 40px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-label-hot {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 40px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-hotz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 80px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-mm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 50px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-ht1 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 30px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-label-doagari {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 80px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-ht2 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 30px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-label-dokensa {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 70px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-ksw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-label-otw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 40px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-otw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 30px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-label-nonna {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 15px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-nonna {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 155px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-label-okuri {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 15px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-okuri {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 155px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-label-tokui {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 20px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-tokui {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 180px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-label-yoto {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 40px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+  padding-left: 3px;
+}
+.icas-yotoc {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 80px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-yoton {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 100px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-omote {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 63px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-omote {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 67px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-ura {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-ura {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-hanten {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 43px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-hanten {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 37px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-pa {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-pa {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-clr {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 40px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-clr {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-men {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-men {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-tuya {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-tuya {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-fuko {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 43px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-fuko {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-juno202 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 97px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+}
+
+.icas-label-sikakari {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 100px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-sksbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 220px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-syusei {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-syudtm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 120px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-toroku {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-adddt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 60px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-label-koshin {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-mntdtm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 120px;
+  height: 15px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.icas-sksbsm {
+}
+.icas-syudt {
+}
+.icas-syutm {
+}
+.icas-adddt {
+}
+.icas-mntdt {
+}
+.icas-mnttm {
+}
+.icas-box-header-symbol1 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 30px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-box-header-symbol2 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 30px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-box-header-symbol3 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 30px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-box-header-symbol4 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 30px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-roll {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-hpc {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-hotpc {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 80px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-g2 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 120px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-ryou {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 60px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-ryow {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-ryon {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-bu {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 30px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-br {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 55px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-ta {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 30px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-tr {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-label-boxno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 20px;
+  height: 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-boxno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 20px;
+  height: 20px;
+  text-align: right;
+  vertical-align: middle;
+}
+/* sbsmbx */
+.icas-label-sbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 20px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-sbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+.icas-label-sbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 30px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-sbpat {
+  text-align:left;
+  vertical-align: middle;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 30px;
+  height:20px;
+}
+.icas-label-sbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 55px;
+  height: 20px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-sbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 50px;
+  height:20px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-sbw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+.icas-sbw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 50px;
+  height: 20px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-startdt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 80px;
+  height: 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+.icas-startdt{
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 80px;
+  height: 20px;
+  text-align:right;
+  vertical-align: middle;
+}
+/* jbsmbx */
+.icas-label-jbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height: 20px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-jbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 45px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+  padding-left: 5px;
+}
+.icas-jbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 20px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-label-enddt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 95px;
+  height: 20px;
+  text-align:center;
+  vertical-align: middle;
+}
+.icas-enddt{
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 95px;
+  height: 20px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-jbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+.icas-jbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 70px;
+  height:20px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-jby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height: 20px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-jby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 70px;
+  height: 20px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-jbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+.icas-jbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 70px;
+  height:20px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-jbrw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 50px;
+  height: 20px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-jbrw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 50px;
+  height:20px;
+  text-align:right;
+  vertical-align: middle;
+}
+.icas-label-jbrmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 70px;
+  height: 20px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-jbrmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 70px;
+  height:20px;
+  text-align: right;
+  vertical-align: middle;
+}
+.icas-label-jbbn {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 10px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding-left: 5px;
+}
+.icas-jbbn {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 10px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding-left: 3px;
+}
+.icas-yojyo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 150px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-aldt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: red;
+  width: 40px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-sydt {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 80px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-magmsg {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 120px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-hhmm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-jbcd {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 60px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-b {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 20px;
+  height:20px;
+  text-align:left;
+  vertical-align: middle;
+}
+
+.icas-box-footer-symbol1 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 20px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-box-footer-symbol2 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: lime;
+  width: 40px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-box-footer-symbol3 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 90px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-box-footer-symbol4 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-box-footer-symbol5 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-box-footer-symbol6 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-karikon-flg {
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  color: white;
+  width: 40px;
+  height: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+.icas-msg {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 20px;
+  text-align: left;
+  vertical-align: middle;
+  /* margin-left: 5px; */
+}
+.icas-msg1 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 75px; /* 100px */
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.icas-msg2 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 80px; /* 110px: */
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.icas-msg3 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 14px;
+  color: red;
+  width: 200px; /* 110px; */
+  text-align: left;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.icas-msg4 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 75px; /* 110px; */
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.icas-msg5 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 70px; /* 90px; */
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.icas-msg6 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 120px; /* 120px; */
+  text-align: left;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.icas-msg7 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 100px; /* 110px */
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.icas-msg8 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 30px; /* 30px; */
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.icas-msg9 {
+  font-family: "ＭＳ ゴシック";
+  font-size: 16px;
+  color: red;
+  width: 30px; /* 30px; */
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.man-item-header {
+  background-color: rgb(153, 204, 255);
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 100px;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-right: 1px;
+}
+
+.prog-header-jbsm {
+   background-color: #ffcccc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   font-weight: normal;
+   height: 15px;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.prog-header-sbsm {
+   background-color: #ccffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   font-weight: normal;
+   height: 15px;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.prog-column-sbsmbox {
+   text-align: left;
+   vertical-align: top
+}
+
+.prog-column-jbsmbox {
+   text-align: left;
+   vertical-align: top
+}
+
+/* 2010/04/28 変更  width を廃し padding で幅設定
+.prog-label-boxno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 10px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-boxno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 10px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.prog-label-sbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 40px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+
+.prog-sbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 40px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.prog-label-sbmmddc {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 70px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-sbmmddc {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 70px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+
+.prog-label-sbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 50px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-sbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 50px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-sby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 60px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+}
+.prog-sby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 60px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-sbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 60px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-sbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 60px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-sbw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 50px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-sbw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 50px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-sbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 25px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+}
+.prog-sbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 25px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.prog-label-sbyky {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 20px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-sbyky {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 20px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-sbtty {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 20px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-sbtty {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 20px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-sbmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 45px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+}
+.prog-sbmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 45px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-jbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 40px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-jbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 40px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.prog-label-jbedate {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 130px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-jbedate {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 130px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+
+.prog-label-tairyut {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 40px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-tairyut {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 40px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-jbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 50px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+}
+.prog-jbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 50px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-jby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 60px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-jby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 60px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-jbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 60px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-jbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 60px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-jbrw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 50px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-jbrw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 50px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+
+.prog-label-jbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 20px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-jbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 20px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.prog-label-jbrmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 45px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+}
+.prog-jbrmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 45px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.prog-label-jbbn {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 10px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.prog-jbbn {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  width: 10px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+*/
+.prog-label-boxno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 10px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-boxno {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 10px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+.prog-label-sbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 40px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.prog-sbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 40px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+  margin-left: 2px;
+  white-space: nowrap;
+}
+
+.prog-label-sbmmddc {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 70px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sbmmddc {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 70px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.prog-label-sbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 50px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 50px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.prog-label-sby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 60px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 60px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.prog-label-sbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 60px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 60px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.prog-label-sbw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 50px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sbw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 50px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.prog-label-sbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 25px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 25px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+  margin-left: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.prog-label-sbyky {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 20px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sbyky {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 20px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.prog-label-sbtty {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 20px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sbtty {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 20px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+
+.prog-label-sbmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 45px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-sbmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 45px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  white-space: nowrap;
+}
+.prog-label-jbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 40px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbsm {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 40px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+  margin-left: 2px;
+  white-space: nowrap;
+}
+
+.prog-label-jbedate {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 130px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbedate {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 130px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.prog-label-tairyut {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 40px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-tairyut {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 40px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.prog-label-jbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 50px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbx {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 50px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.prog-label-jby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 60px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jby {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 60px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.prog-label-jbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 60px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbz {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 60px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.prog-label-jbrw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 50px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbrw {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 50px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.prog-label-jbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 20px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbpat {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 20px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:left;
+  vertical-align: middle;
+  margin-left: 2px;
+  white-space: nowrap;
+}
+
+.prog-label-jbrmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 45px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbrmh {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 45px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+.prog-label-jbbn {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 10px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+.prog-jbbn {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  /* width: 10px; */
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+.prog-label-jbfo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbfo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+.prog-label-jbbo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.prog-jbbo {
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  padding-left: 3px;
+  padding-right: 3px;
+  height:15px;
+  text-align:right;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+/* ＩＣＡＳ画面　スタッフ／現場用スタイル切り替え */
+.staff-label-ltno {
+ font-family: "ＭＳ ゴシック";
+ font-size: 15px;
+ height: 18px;
+ text-align: left;
+ vertical-align: middle;
+ left: 4px;
+ top: 8px;
+ position: absolute;
+ width: 55px;
+}
+.staff-input-ltno {
+ height: 20px; left: 56px; top: 8px; position: absolute; width: 80px;
+}
+.staff-label-knno {
+ font-family: "ＭＳ ゴシック";
+ font-size: 15px;
+ height: 18px;
+ text-align: left;
+ vertical-align: middle;
+ left: 140px;
+ top: 8px;
+ position: absolute;
+ width: 65px;
+}
+.staff-input-knno {
+ height: 20px; left: 196px; top: 8px; position: absolute; width: 80px;
+}
+.staff-button-search {
+ height: 20px; left: 280px; top: 8px; position: absolute; vertical-align: middle; width: 60px;
+}
+.staff-button-close {
+    visibility: hidden;
+}
+.staff-text-message {
+ color:red;
+ font-family: "ＭＳ ゴシック";
+ left: 536px;
+ top: 8px;
+ position: absolute;
+ height: 18px;
+ width: 234px;
+}
+.staff-text-hitcount {
+ font-family: "ＭＳ ゴシック";
+ font-size: 15px;
+ height: 18px;
+ text-align: left;
+ vertical-align: middle;
+ left: 344px;
+ top: 8px;
+ position: absolute;
+ text-align: center;
+ vertical-align: middle;
+ width: 106px;
+}
+.staff-label-edtm {
+ font-family: "ＭＳ ゴシック";
+ font-size: 15px;
+ height: 18px;
+ text-align: left;
+ vertical-align: middle;
+ left: 768px;
+ top: 8px;
+ position: absolute;
+ width: 98px;
+}
+.staff-text-edtm {
+ font-family: "ＭＳ ゴシック";
+ font-size: 15px;
+ height: 18px;
+ text-align: left;
+ vertical-align: middle;
+ left: 852px;
+ top: 8px;
+ position: absolute;
+ width: 120px;
+}
+.staff-image-previous {
+  left: 460px; top: 8px; position: absolute; text-align: center; vertical-align: middle;
+}
+.staff-image-next {
+  left: 496px; top: 8px; position: absolute; text-align: center; vertical-align: middle;
+}
+.works-label-ltno {
+ font-family: "ＭＳ ゴシック";
+ font-size: 22px;
+ text-align: right;
+ vertical-align: top;
+ position: absolute;
+ top: 6px;
+ left: 0px;
+ height: 27px;
+ width: 80px;
+}
+.works-input-ltno {
+ font-family: "ＭＳ ゴシック";
+ font-size: 22px;
+ text-align: left;
+ vertical-align: middle;
+ position: absolute;
+ top: 5px;
+ left: 85px;
+ height: 27px;
+ width: 90px;
+}
+.works-label-knno {
+ font-family: "ＭＳ ゴシック";
+ font-size: 22px;
+ text-align: right;
+ vertical-align: top;
+ position: absolute;
+ top: 6px;
+ left: 180px;
+ height: 27px;
+ width: 90px;
+}
+.works-input-knno {
+ font-family: "ＭＳ ゴシック";
+ font-size: 22px;
+ text-align: left;
+ vertical-align: middle;
+ position: absolute;
+ top: 5px;
+ left: 275px;
+ height: 27px;
+ width: 90px;
+}
+.works-button-search {
+ font-family: "ＭＳ ゴシック";
+ font-size: 22px;
+ text-align: center;
+ vertical-align: middle;
+ position: absolute;
+ top: 3px;
+ left: 370px;
+ height: 30px;
+ width: 60px;
+}
+.works-text-hitcount {
+ font-family: "ＭＳ ゴシック";
+ font-size: 16px;
+ text-align: left;
+ vertical-align: middle;
+ position: absolute;
+ top: 10px;
+ left: 440px;
+ height: 27px;
+ width: 120px;
+}
+.works-label-edtm {
+ font-family: "ＭＳ ゴシック";
+ font-size: 16px;
+ left: 650px;
+ top: 10px;
+ position: absolute;
+ height: 18px;
+ width: 100px;
+}
+.works-text-edtm {
+ font-family: "ＭＳ ゴシック";
+ font-size: 16px;
+ left: 750px;
+ top: 10px;
+ position: absolute;
+ height: 18px;
+ width: 200px;
+}
+.works-text-message {
+ color:red;
+ font-family: "ＭＳ ゴシック";
+ font-size: 16px;
+ left: 440px;
+ top: 10px;
+ position: absolute;
+ height: 18px;
+ width: 234px;
+}
+.works-image-previous {
+ text-align: center;
+ vertical-align: middle;
+ position: absolute;
+ top: 10px;
+ left: 560px;
+}
+.works-image-next {
+ text-align: center;
+ vertical-align: middle;
+ position: absolute;
+ top: 10px;
+ left: 590px;
+}
+.works-button-close {
+ font-size: 22px;
+ text-align: center;
+ vertical-align: middle;
+ position: absolute;
+ top: 3px;
+ left: 920px;
+ height: 30px;
+ width: 70px;
+}
+.DataKbn {
+ font-family: "ＭＳ ゴシック";
+ /*font-size: 15px;*/
+ /*font-weight: bold;*/
+ text-align: center;
+ color: blue;
+ /*vertical-align: middle;*/
+ /*position: absolute;*/
+ /*height: 20px;
+ background-color: pink;*/
+}
+
+.DataKbnBlack {
+ font-family: "ＭＳ ゴシック";
+ text-align: center;
+ color: black;
+}
+
+.DataKbnBlue {
+ font-family: "ＭＳ ゴシック";
+ text-align: center;
+ color: blue;
+}
+
+.DataKbnRed {
+ font-family: "ＭＳ ゴシック";
+ text-align: center;
+ color: red;
+}
+
+.DataKbnViolet {
+ font-family: "ＭＳ ゴシック";
+ text-align: center;
+ color: violet;
+}
+
+.DataKbnGreen {
+ font-family: "ＭＳ ゴシック";
+ text-align: center;
+ color: green;
+}
+
+.Bun_Dummy {
+  width: 265px;
+}
+
+/* 2011/07/04 add */
+.clad-mensaku-value {
+  background-color: #ffffcc;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  text-align: center;
+}
+
+.clad-mensakushiro {
+  background-color: #ffffcc;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  text-align: center;
+}
+
+.clad-juryoa {
+  background-color: #ffffcc;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  text-align: center;
+}
+
+.clad-mensakugoatsu {
+  background-color: #ffffcc;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  text-align: center;
+}
+
+.clad-mensakusagyoymd {
+  background-color: #ffffcc;
+  font-family: "ＭＳ ゴシック";
+  font-size: 18px;
+  height: 15px;
+  width: 80px;
+  text-align: center;
+}
+
+.clad-pit-label {
+  background-color: #e4e3e3;
+  font-size: 15px;
+  height: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.clad-pitj-value {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.clad-pit-values {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.clad-pit-pitj {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+}
+
+.clad-pit-pit {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 25px;
+  padding-left: 23px;
+  padding-right: 23px;
+  text-align: center;
+}
+
+.clad-pit-prj {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 25px;
+  padding-left: 23px;
+  padding-right: 23px;
+  text-align: center;
+}
+
+.clad-pit-pitbi {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 25px;
+  padding-left: 23px;
+  padding-right: 23px;
+  text-align: center;
+}
+
+.clad-lbl-chuzono {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.clad-chuzono {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 22px;
+  padding-right: 22px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-lbl-zaishitsu {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 17px;
+  padding-right: 17px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-zaishitsu {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.clad-lbl-jokena {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-jokena {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 27px;
+  padding-right: 27px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.clad-lbl-roban {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-roban {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.clad-lbl-kamaban {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-kamaban {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.clad-lbl-pitsagyoymd {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-pitsagyoymd {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-lbl-fstkinnetsudate {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 22px;
+  padding-right: 22px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-fstkinnetsudate {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.clad-lbl-fstkinnetsuondo {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-fstkinnetsuondo {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.clad-lbl-sndkinnetsudate {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 22px;
+  padding-right: 22px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-sndkinnetsudate {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.clad-lbl-sndkinnetsuondo {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-sndkinnetsuondo {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.clad-lbl-roshutsudate {
+  background-color: rgb(153, 204, 255);
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 1px;
+  white-space: nowrap;
+}
+
+.clad-roshutsudate {
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 16.5px;
+  padding-right: 16.5px;
+  height:15px;
+  text-align:center;
+  vertical-align: middle;
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.list-clad-row {
+  font-family: "ＭＳ ゴシック";
+  height:15px;
+  background-color: #ffffcc;
+}
+
+.clad-border {
+    border: solid 1px;
+    border-collapse: collapse;
+}
+
+/* 2012/12/17 Add */
+.cf-item-value0 {
+   background-color: white;
+   color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 128px;
+   height: 15px;
+   width: 100px;
+   text-align: center;
+}
+
+.cf-man-item-header {
+  background-color: rgb(153, 204, 255);
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 100px;
+  text-align: left;
+}
+
+
+/* 徐例情報　優先フラグ */
+.cf-item-g1-label1 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+.cf-item-g1-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 22px;
+   width: 100px;
+   text-align: center;
+}
+
+/* 焼鈍・焼入　実績情報　CF特有情報 */
+.cf-item-g2-label1 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-weight: normal;
+  font-size: 15px;
+  height: 15px;
+  /*width: 80px;*/
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: center;
+}
+
+.cf-item-g2-label2 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-weight: normal;
+  font-size: 15px;
+  height: 15px;
+  /*width: 60px;*/
+  padding-left: 1px;
+  padding-right: 1px;
+  text-align: center;
+}
+
+.cf-item-g2-label3 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-weight: normal;
+  font-size: 15px;
+  height: 15px;
+  /*width: 90px;*/
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: center;
+}
+
+.cf-item-g2-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   /*width: 80px;*/
+  padding-left: 3px;
+  padding-right: 3px;
+   text-align: center;
+}
+
+.cf-item-g2-value2 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+  /*padding-left: 3px;*/
+   padding-right: 15px;
+   font-size: 15px;
+   height: 15px;
+   /*width: 80px;*/
+   text-align: right;
+}
+
+.cf-item-g2-value3 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   padding-left: 7px;
+   /*padding-right: 20px;*/
+   font-size: 15px;
+   height: 15px;
+   /*width: 60px;*/
+   text-align: Left;
+}
+
+.cf-item-g2-value4 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   /*padding-left: 203px;*/
+   padding-right: 5px;
+   font-size: 15px;
+   height: 15px;
+   /*width: 60px;*/
+   text-align: right;
+}
+
+.cf-item-g2-value5 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   /*padding-left: 203px;*/
+   padding-right: 15px;
+   font-size: 15px;
+   height: 15px;
+   /*width: 60px;*/
+   text-align: right;
+}
+
+.cf-item-g2-value6 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   /*padding-left: 203px;*/
+   padding-right: 5px;
+   font-size: 15px;
+   height: 15px;
+   /*width: 60px;*/
+   text-align: right;
+}
+
+.cf-item-g2-value7 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   /*width: 90px;*/
+  padding-left: 3px;
+  padding-right: 3px;
+   text-align: center;
+}
+
+
+/* 焼鈍　震度情報 */
+.cf-item-g3-label1 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  /*width: 60px;*/
+  text-align: center;
+}
+
+.cf-item-g3-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   /*padding-left: 203px;*/
+   padding-right: 10px;
+   font-size: 15px;
+   height: 15px;
+   /*width: 64px;*/
+   text-align: right;
+}
+
+.cf-item-g3-value2 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 22px;
+   width: 60px;
+   text-align: center;
+}
+
+/* 商品マスタ　指定情報 */
+.cf-item-g4-label1 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+.cf-item-g4-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 22px;
+   width: 100px;
+   text-align: center;
+}
+
+/* 押加工パレット */
+.cf-item-g5-label1 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 60px;
+  text-align: center;
+}
+
+.cf-item-g5-label2 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-weight: normal;
+  font-size: 15px;
+  height: 15px;
+  width: 110px;
+  text-align: center;
+}
+
+.cf-item-g5-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   /*padding-left: 20px;*/
+   /*padding-right: 20px;*/
+   font-size: 15px;
+   height: 15px;
+   width: 60px;
+   text-align: center;
+}
+
+.cf-item-g5-value1-padding {
+   padding-left: 1px;
+   padding-right: 1px;
+}
+
+.cf-item-g5-value2 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   /*padding-left: 20px;*/
+   padding-right: 15px;
+   font-size: 15px;
+   height: 15px;
+   width: 60px;
+   text-align: right;
+}
+
+.cf-item-g5-value3 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   width: 50px;
+   text-align: center;
+}
+
+/* 合積情報 */
+.cf-item-g51-label1 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 400px;
+  text-align: left;
+}
+
+.cf-item-g51-label2 {
+  background-color: rgb(153, 204, 255);
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 250px;
+  text-align: left;
+}
+
+.cf-item-g51-label3 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 60px;
+  text-align: center;
+}
+
+.cf-item-g51-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   width: 60px;
+   text-align: center;
+}
+
+.cf-item-g51-value2 {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 22px;
+  width: 100px;
+  text-align: center;
+}
+
+/* 検査試験情報 */
+.cf-item-g6-label1 {
+  background-color: rgb(153, 204, 255);
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 170px;
+  text-align: left;
+}
+
+.cf-item-g6-label2 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 170px;
+  text-align: left;
+}
+
+.cf-item-g6-label3 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 184px;
+  text-align: center;
+}
+
+.cf-item-g6-label4 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 50px;
+  text-align: center;
+}
+
+.cf-item-g6-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   /*padding-left: 20px;*/
+   padding-right: 7px;
+   font-size: 15px;
+   height: 15px;
+   width: 50px;
+   text-align: right;
+}
+
+.cf-item-label1 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 60px;
+  text-align: center;
+}
+
+.cf-item-value1 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   width: 60px;
+   text-align: center;
+}
+
+
+.cf-label-left {
+  background-color: #e4e3e3;
+  font-size: 15px;
+  height: 15px;
+  padding-left: 5px;
+  /*padding-left: 5px;*/
+  /*padding-right: 20px;*/
+  padding-right: 20px;
+  text-align: left;
+}
+
+.cf-value-center {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 15px;
+  /*padding-left: 20px;*/
+  /*padding-right: 20px;*/
+  text-align: center;
+}
+
+.cf-value-center1 {
+  background-color: #ffffcc;
+  font-size: 15px;
+  height: 15px;
+  width: 100px;
+  text-align: center;
+}
+
+.cf-item-label2 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-weight: normal;
+  font-size: 15px;
+  height: 15px;
+  width: 80px;
+  text-align: center;
+}
+
+.cf-item-label3 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 402px;
+  text-align: left;
+}
+
+.cf-item-label4 {
+  background-color: rgb(153, 204, 255);
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 223px;
+  text-align: left;
+}
+
+.cf-item-label5 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 50px;
+  text-align: center;
+}
+
+.cf-item-label6 {
+  background-color: rgb(153, 204, 255);
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 150px;
+  text-align: left;
+}
+
+.cf-item-label7 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 150px;
+  text-align: left;
+}
+
+.cf-item-label8 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 184px;
+  text-align: center;
+}
+
+.cf-item-label9 {
+  background-color: #e4e3e3;
+  font-family: "ＭＳ ゴシック";
+  font-size: 15px;
+  height: 15px;
+  width: 60px;
+  text-align: center;
+}
+
+.cf-item-value2 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   width: 40px;
+   text-align: center;
+}
+
+.cf-item-value3 {
+   background-color: #ffffcc;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   height: 15px;
+   width: 80px;
+   text-align: center;
+}
+
+.cf-header {
+   background-color: #e4e3e3;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   font-weight: normal;
+   height: 15px;
+   text-align: center;
+   vertical-align: middle;
+}
+
+.cf-column-white {
+   background-color: white;
+   color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   text-align: left;
+   vertical-align: middle;
+   height: 15px;
+   width: 100px;
+}
+
+.cf-column-white1 {
+   background-color: white;
+   color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   text-align: left;
+   vertical-align: middle;
+   height: 15px;
+   width: 60px;
+}
+
+.cf-column-white2 {
+   background-color: white;
+   color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   text-align: left;
+   vertical-align: middle;
+   height: 15px;
+   width: 60px;
+}
+
+.cf-column-white3 {
+   background-color: white;
+   color: white;
+   font-family: "ＭＳ ゴシック";
+   font-size: 15px;
+   text-align: left;
+   vertical-align: middle;
+   height: 15px;
+   width: 10px;
+}
+
+.nextPreviwBtnCustom {
+	width:88px;
+	height:76px;
+}
+
+.nextPreviwBtnCustomCycleList {
+	width:100px;
+	height:40px;
+}
+
+.lotdspBtnCustom {
+	width:64px;
+	height:28px;
+}
+.cmSchViewBtnCustom {
+	width:70px;
+	height:35px;
+	font-family : "ＭＳ ゴシック";
+	font-size : 14px;
+	font-weight : 900;
+	color : black;
+	background-image:linear-gradient(#F0F0F0,#F0F0F0 60%,#f5f5f5);
+}
+
+.dispBtnCustom {
+	width: 60px;
+	height: 40px;
+	font-size : 18px;
+	font-weight : 900;
+	color : black;
+	background-image:linear-gradient(#F0F0F0,#F0F0F0 60%,#f5f5f5);
+	border:solid 1px;
+	border-color:black;
+}
+
+.btnCustom {
+	font-family : "ＭＳ ゴシック";
+	font-size : 14px;
+	font-weight : 100;
+	color : black;
+	background-image:linear-gradient(#F0F0F0,#F0F0F0 60%,#f5f5f5);
+	border:solid 1px;
+	border-color:black;
+}
+.button-yotei{
+	font-size : 14pt;
+	width : 148pt;
+	height : 45pt;
+	padding-left : 0px;
+	padding-right : 0px;
+	text-align : center;
+	cursor : pointer;
+	word-wrap : break-word!important;
+	white-space : normal!important;
+	font-family : "ＭＳ ゴシック";
+	font-weight : 900;
+	color : black;
+	padding-bottom:30px;
+}
+.btn-setsubi{
+	background-color : #F0F0F0;
+	filter:none;
+	border-bottom:1px solid #F0F0F0
+}
+.btn:hover{
+	background-image:linear-gradient(#A6F4FF,#A6F4FF 60%,#A6F4FF);
+	border-color:#26A0DA;
+}
+.setsubiYoteiButton:focus{
+	background-image:linear-gradient(#A6F4FF,#A6F4FF 60%,#A6F4FF);
+	border-color:#26A0DA;
+}
+.btn:active{
+	background-image:linear-gradient(#34B4E3,#34B4E3 60%,#34B4E3);
+	border-color:#0089B4;
+}

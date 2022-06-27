@@ -1,0 +1,43 @@
+<nis-header></nis-header>
+<div class="container-fluid" id="home">
+    <div class="row">
+        <div class="col-xs-12 main">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <i class="fa fa-newspaper-o fa-fw"></i> お知らせ
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div style="height: 160px; overflow-y: auto;">
+                                <ul class="list-group" style="margin-bottom:0;">
+                                    <li class="list-group-item" ng-repeat="oshirase in oshirases">
+                                        {{oshirase.koshinHi | date:'yyyy/MM/dd'}} - <span class="large">{{oshirase.oshirase}}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <i class="fa fa-desktop fa-fw"></i> 社内システム
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                        	<ul class="list-unstyled col-sm-offset-1 large">
+                                <li>
+                                    <a ui-sref="kaigiyoyaku">会議室予約</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.multirow-table .table-bordered {
+	border-width:0;
+}
+
+.multirow-table .table-bordered > thead > tr > th {
+	border-width:1px;
+}
+
+.multirow-table .table-bordered > tbody > tr > td {
+	border-width:0 1px 1px 1px;
+}
+
+.multirow-table .multirow-table-header .table-bordered:first-child
+,.multirow-table .multirow-table-body .table-bordered:first-child {
+	border-top-width:1px;
+}
+
+.mitsumoriMeisaiShosai .multirow-table .multirow-table-header .table-bordered > thead > tr > th:first-child
+,.mitsumoriMeisaiShosai .multirow-table .multirow-table-body .table-bordered > tbody > tr > td:first-child{
+	border-bottom-width:0;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.mitsumoriMeisaiShosai .multirow-table .multirow-table-header .table-bordered:last-child > thead > tr > th:first-child
+, .mitsumoriMeisaiShosai .multirow-table .multirow-table-body .table-bordered:last-child > tbody > tr > td:first-child {
+	border-bottom-width:1px;
+}
+
+.mitsumoriMeisaiShosai .multirow-table td,.mitsumoriMeisaiShosai .multirow-table th{
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.mitsumoriMeisaiShosai .multirow-table .multirow-table-body table:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.mitsumoriIchiran .checkboxies .checkbox{
+	width: 100px;
+}

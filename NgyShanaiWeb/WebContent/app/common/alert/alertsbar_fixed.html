@@ -1,0 +1,4 @@
+<div style="position:fixed;z-index:1; bottom:0;background-color: rgba(0, 0, 0, 0.2);">
+	<button class='btn btn-default' ng-click="clearAlerts()" ng-show="isClearButtonShow()">クリア</button>
+  <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+</div>

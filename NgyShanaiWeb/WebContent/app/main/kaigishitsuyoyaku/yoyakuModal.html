@@ -1,0 +1,110 @@
+<form name="modalForm" class="form-horizontal" role="form" novalidate>
+	<div class="modal-header">
+		<div class="row">
+			<div class="col-md-9">
+				<h1>{{yoyakuInfo.yoyakuDate | date: 'yyyy年MM月dd日(EEE)'}} {{kaigishitsuInfo.roomName}}予約</h1>
+			</div>
+			<div class="col-md-3">
+				<h3 ng-if="(yoyakuInfo.isreserved == 1  && userProfile.userId != yoyakuInfo.yoyakushaCd) || today > yoyakuDate0ji" class="nonreservable">予約・更新不可</h3>
+			</div>
+			<div class="col-md-3">
+				<h3 ng-if="(yoyakuInfo.isreserved != 1 || userProfile.userId == yoyakuInfo.yoyakushaCd) && today <= yoyakuDate0ji" class="reservable">予約・更新可</h3>
+			</div>
+		</div>
+	</div>
+	<div class="modal-body">
+		<form name="mainForm" class="form-horizontal" role="form" novalidate>
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="input_roomName"><nis-required-mark></nis-required-mark>会議室名</label>
+						<div class="col-xs-8 form-inline">
+							<input type="text" class="form-control" id="input_roomName"
+								name="roomName" ng-model="kaigishitsuInfo.roomName"
+								style="width: 80%;" disabled>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-xs-12">
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="input_maishuCheck">毎週予約機能を使う</label>
+						<input type="checkbox" ng-model="maishuCheck" ng-disabled="yoyakuInfo.isreserved == 1 || today > yoyakuDate0ji">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="input_yoyakuBlockStart"><nis-required-mark></nis-required-mark>利用予定時間</label>
+						<div class="col-xs-8 form-inline">
+					        <input type="text" class="form-control" ng-model="yoyakuInfo.yoyakuBlockStart" name="yoyakuBlockStart" ng-hide="true" nis-input="YoyakuInfo">
+					        <select ng-model="yoyakuInfo.yoyakuBlockStart" blank="false" id="input_yoyakuBlockStart" ng-options="s.value as s.name for s in yoyakuBlockStarts" ctrl="mainForm.yoyakuBlockStart" class="form-control" blank="true" ng-disabled="(yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd != userProfile.userId) || today > yoyakuDate0ji"></select>
+						～
+							<input type="text" class="form-control" ng-model="yoyakuInfo.yoyakuBlockEnd" name="yoyakuBlockEnd" ng-hide="true" nis-input="YoyakuInfo">
+					        <select ng-model="yoyakuInfo.yoyakuBlockEnd" blank="false" id="input_yoyakuBlockEnd" ng-options="e.value as e.name for e in yoyakuBlockEnds" ctrl="mainForm.yoyakuBlockEnd" class="form-control" blank="true" ng-disabled="(yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd != userProfile.userId) || today > yoyakuDate0ji"></select>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6" ng-show="maishuCheck === true">
+					<div class="form-group">
+						<label class="col-xs-4 control-label" for="input_maishuEnd"><nis-required-mark></nis-required-mark>予約終了日</label>
+						<div class="col-xs-4 form-inline input-group">
+							<input type="text" class="form-control" uib-datepicker-popup datepicker-options="datePickerOptions" ng-model="maishuEnd" name="maishuEnd" id="input_maishuEnd" is-open="calOpen['maishuEnd']" placeholder="YYYY/MM/DD">
+						    <span class="input-group-btn">
+						        <button type="button" class="btn btn-default" ng-click="toggleDatePicker($event, 'maishuEnd')">
+						            <i class="glyphicon glyphicon-calendar"></i>
+						        </button>
+						    </span>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label" for="input_yoyakushaName"><nis-required-mark></nis-required-mark>名前</label>
+					<div class="col-xs-10 form-inline">
+						<input type="text" class="form-control" id="input_yoyakushaName" nis-input="YoyakuInfo.yoyakushaName"
+							name="yoyakushaName" ng-model="yoyakuInfo.yoyakushaName"
+							style="width: auto;" ng-disabled="(yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd != userProfile.userId) || today > yoyakuDate0ji">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label" for="input_tel"><nis-required-mark></nis-required-mark>内線</label>
+					<div class="col-xs-10 form-inline">
+						<input type="text" class="form-control" id="input_tel" nis-input="YoyakuInfo.tel"
+							name="tel" ng-model="yoyakuInfo.tel"
+							style="width: auto;" ng-disabled="(yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd != userProfile.userId) || today > yoyakuDate0ji">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label" for="input_importance"><nis-required-mark></nis-required-mark>重要度</label>
+					<div class="col-xs-10 form-inline">
+				        <input type="text" class="form-control" ng-model="yoyakuInfo.importance" name="importance" ng-hide="true" nis-input="YoyakuInfo.importance">
+				        <select ng-model="yoyakuInfo.importance" ng-options="i.value as i.name for i in importants" blank="false" id="input_importance" ctrl="mainForm.importance" class="form-control" blank="true" ng-disabled="(yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd != userProfile.userId) || today > yoyakuDate0ji" style="width: 20%;"></select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-2 control-label" for="input_biko">備考</label>
+					<div class="col-xs-10 form-inline">
+						<textarea class="form-control" id="input_biko" nis-input="YoyakuInfo.biko"
+							name="biko" ng-model="yoyakuInfo.biko"
+							style="width: auto;" ng-disabled="(yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd != userProfile.userId) || today > yoyakuDate0ji">
+						</textarea>
+					</div>
+				</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-success large" type="button" ng-mousedown="action.save(yoyakuInfo)" ng-disabled="yoyakuInfo.isreserved == 1" ng-if="yoyakuInfo.isreserved != '1' && today <= yoyakuDate0ji">
+	       <span class="fa fa-check" aria-hidden="true"></span> 登録
+	    </button>
+	    <button class="btn btn-success large" type="button" ng-mousedown="action.update(yoyakuInfo)" ng-if="yoyakuInfo.isreserved == '1' && yoyakuInfo.yoyakushaCd == userProfile.userId && today <= yoyakuDate0ji">
+	       <span class="fa fa-check" aria-hidden="true"></span> 更新
+	    </button>
+	    <button class="btn btn-danger large" type="button" ng-mousedown="action.yoyakudelete(yoyakuInfo)" ng-if="yoyakuInfo.yoyakushaCd == userProfile.userId && yoyakuInfo.isreserved == '1' && today <= yoyakuDate0ji">
+	       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 削除
+	    </button>
+		<button class="btn btn-warning large" type="button" ng-mousedown="action.cancel()">
+	       <span class="fa fa-close" aria-hidden="true"></span> 閉じる
+	    </button>
+	</div>
+</form>

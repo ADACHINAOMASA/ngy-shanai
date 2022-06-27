@@ -1,0 +1,47 @@
+﻿
+<div class="modal-header bg-primary panel-info ">
+    <h3 class="modal-title">新規ユーザー登録</h3>
+</div>
+
+<div class="modal-body">
+    <h4 class="text-center" style="color:#4682b4;font-weight:bold;">ユーザーID、パスワードを設定してください。</h4>
+    <h4 class="text-center" style="color:#4682b4;font-weight:bold;">半角英数字を使用でき、ユーザーIDはMAX8桁、パスワードはMAX20桁です。</h4>
+    <form name="userTorokuForm" class="form-horizontal " role="form" style="margin-top:20px;margin-bottom:10px;" novalidate>
+        <div class="form-group" nis-has-error="userTorokuForm.userId">
+            <label class="col-md-5 col-sm-5 col-xs-4 control-label" for="input_userId">ユーザーID</label>
+            <div class="col-md-4 col-sm-4 col-xs-4 ">
+                <input type="text" class="form-control" ng-model="input.userId" id="input_userId" name="userId" nis-input="UserTorokuInfo" placeholder=""  required>
+                <nis-validate-messages target="userTorokuForm.userId"></nis-validate-messages>
+            </div>
+        </div>
+        <div class="form-group" nis-has-error="userTorokuForm.userName">
+            <label class="col-md-5 col-sm-5 col-xs-4 control-label" for="input_userName">ユーザー名</label>
+            <div class="col-md-4 col-sm-4 col-xs-4 ">
+                <input type="text" class="form-control" ng-model="input.userName" id="input_userName" name="userName" nis-input="UserTorokuInfo" placeholder=""  required>
+                <nis-validate-messages target="userTorokuForm.userName"></nis-validate-messages>
+            </div>
+        </div>
+        <div class="form-group" nis-has-error="userTorokuForm.password">
+            <label class="col-md-5 col-sm-5 col-xs-4 control-label" for="input_password">パスワード</label>
+            <div class="col-md-4 col-sm-4 col-xs-4 ">
+                <input type="password" class="form-control" ng-model="input.password" id="input_password" name="password" nis-input="UserTorokuInfo" placeholder="" required>
+                <nis-validate-messages target="userTorokuForm.password"></nis-validate-messages>
+            </div>
+        </div>
+        <div class="form-group" nis-has-error="userTorokuForm.passwordConfirm">
+            <label class="col-md-5 col-sm-5 col-xs-4 control-label" for="input_passwordConfirm">パスワード(確認用)</label>
+            <div class="col-md-4 col-sm-4 col-xs-4 ">
+                <input type="password" class="form-control" ng-model="input.passwordConfirm" id="input_passwordConfirm" name="passwordConfirm" nis-input="UserTorokuInfo" placeholder="" required>
+                <nis-validate-messages target="userTorokuForm.passwordConfirm"></nis-validate-messages>
+            </div>
+        </div>
+    </form>
+    <h5 class="text-center">※アルファベットは大文字と小文字が区別されます。</h5>
+</div>
+
+<div class="modal-footer ">
+    <button class="btn btn-success" type="button" ng-click="action.save()" ng-disabled="!userTorokuForm.$valid"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>登録</button>
+    <button class="btn btn-default" type="button" ng-click="action.clear()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>クリア</button>
+    <button class="btn btn-warning" type="button" ng-click="action.back()"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>戻る</button>
+</div>
+

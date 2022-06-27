@@ -1,0 +1,687 @@
+
+@import url('custom/heading.css');
+@import url('custom/tabs.css');
+@import url('custom/icon-addon.css');
+@import url('custom/line.css');
+@import url('custom/radioCheckbox.css');
+
+.c-reset-all{
+	margin:0;
+	padding:0;
+}
+
+.c-reset-margin{
+	margin:0;
+}
+
+.c-reset-padding {
+	padding:0;
+}
+
+.c-vertical-middle {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    text-align: center;
+    width:100%;
+}
+
+.c-label-default{
+	font-size:13px !important;
+	padding:5px;
+	background-color:white;
+	border:1px solid lightgray;
+	color:#555555;
+	padding-left:10px;
+	padding-right:10px;
+	min-width:100px;
+}
+.c-label-default-yellow{
+	font-size:13px !important;
+	padding:5px;
+	background-color:#F5DA81;
+	color:#555555;
+	padding-left:10px;
+	padding-right:10px;
+	min-width:100px;
+}
+.c-label-default-lightblue{
+	font-size:13px !important;
+	padding:5px;
+	background-color:#b7dee8;
+	color:#555555;
+	padding-left:10px;
+	padding-right:10px;
+	min-width:100px;
+}
+
+.c-label-size-default{
+	font-size:13px !important;
+	padding:5px;
+	background-color:white;
+	border:1px solid lightgray;
+	color:gray;
+}
+
+.c-label-sub-total{
+	display: block;
+	background-color:#99ffcc;
+	color:black;
+	font-size:12px !important;
+	padding:5px;
+}
+
+.c-label-total{
+	display: block;
+	background-color:#F5DA81;
+	color:black;
+	font-size:12px !important;
+	padding:5px;
+}
+
+.c-label-page-break{
+	display: block;
+	background-color:#b7dee8;
+	color:black;
+	font-size:12px !important;
+	padding:5px;
+}
+
+/* ==========================================================================
+   Row
+   ========================================================================== */
+.row-center {
+    text-align: center;
+    letter-spacing: -0.4em;
+}
+.row-center > [class*='col-'] {
+    display: inline-block;
+    letter-spacing: 0;
+    vertical-align: top;
+    float: none !important;
+}
+.row-center.va-middle > [class*='col-'] {
+    vertical-align: middle;
+}
+.row-center.va-bottom > [class*='col-'] {
+    vertical-align: bottom;
+}
+.row-center.va-top > [class*='col-'] {
+    vertical-align: top;
+}
+.row-padding-l {
+    padding-left: 30px;
+}
+.row-padding-r {
+    padding-right: 30px;
+}
+.row-padding-lr {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* ==========================================================================
+   Icon
+   ========================================================================== */
+.c-icon {
+    padding-right: 5px;
+}
+.c-icon-dummy {
+    /*dummy*/
+}
+
+/* ==========================================================================
+   •
+   ========================================================================== */
+.c-w20 {
+    width: 20px !important;
+}
+.c-w30 {
+    width: 30px !important;
+}
+.c-w50 {
+    width: 50px !important;
+}
+.c-w60 {
+    width: 60px !important;
+}
+.c-w70 {
+    width: 70px !important;
+}
+.c-w80 {
+    width: 80px !important;
+}
+.c-w90 {
+    width: 90px !important;
+}
+.c-w100 {
+    width: 100px !important;
+}
+.c-w110 {
+    width: 110px !important;
+}
+.c-w120 {
+    width: 120px !important;
+}
+.c-w130 {
+    width: 130px !important;
+}
+.c-w140 {
+    width: 140px !important;
+}  
+.c-w150 {
+    width: 150px !important;
+}
+.c-w160 {
+    width: 160px !important;
+}
+.c-w170 {
+    width: 170px !important;
+}
+.c-w180 {
+    width: 180px !important;
+}
+.c-w180 {
+    width: 190px !important;
+}
+.c-w200 {
+    width: 200px !important;
+}
+.c-w210 {
+    width: 210px !important;
+}
+.c-w250 {
+    width: 250px !important;
+}
+.c-w280 {
+    width: 280px !important;
+}   
+.c-w300 {
+    width: 300px !important;
+}
+.c-w320 {
+    width: 320px !important;
+}
+
+/* ==========================================================================
+  
+   ========================================================================== */
+.c-odd{
+	background-color: white;
+}
+.c-even{
+	background-color: #f9f9f9;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.login-panel {
+	margin-top: 10%;
+}
+
+.input_number {
+	ime-mode:disabled;
+	text-align:right;
+}
+
+.input_singlebyte {
+	ime-mode:disabled;
+}
+
+.input_date {
+	ime-mode:disabled;
+}
+
+.datepicker_today {
+	background-color:red;
+}
+
+.overflow_visible {
+	overflow:visible!important;
+}
+.hissu {
+	color:red;
+}
+.text-red {
+	color:red;
+}
+.text-blue {
+	color:blue;
+}
+.bg-danger-imp {
+	background-color:#f2dede!important:
+}
+.animated.ng-enter {
+	transition: all 0.5s ease-in-out;
+	opacity: 0;
+	transform:translateY(-100px);
+}
+.animated.ng-enter.ng-enter-active{
+	opacity: 1;
+	transform:translateY(0);
+}
+.animated.ng-leave {
+	transition: all 0.5s ease-in-out;
+	transform:translateX(0);
+	opacity: 1;
+}
+
+.animated.ng-leave-active {
+	opacity: 0;
+	transform:translateX(-1000px);
+}
+
+.oshirase-list:hover  {
+	background-color: #EEE;
+}
+
+/* ŒŸ“¢’† */
+.big-records .form-control.ng-invalid.ng-dirty
+,.big-records .form-control.ng-invalid.ng-touched{
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+.big-records .form-control.ng-invalid.ng-dirty:focus
+,.big-records .form-control.ng-invalid.ng-touched:focus{
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+}
+.big-records .form-control.ng-invalid.ng-dirty ~ p
+,.big-records .form-control.ng-invalid.ng-touched ~ p{
+  color: #a94442;
+}
+.big-records .form-control.ng-invalid.ng-dirty ~ input-group-addon
+,.big-records .form-control.ng-invalid.ng-touched ~ input-group-addon{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #a94442;
+}
+.big-records .form-control.ng-invalid.ng-dirty ~ .validate-masseges
+,.big-records .form-control.ng-invalid.ng-touched ~ .validate-masseges{
+	display:block;
+}
+.big-records .form-control.ng-untouched.ng-pristine ~ .validate-masseges{
+	display:none;
+}
+
+.nis-kenshu-chart svg .axis path,
+.nis-kenshu-chart svg .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.nis-kenshu-chart svg .bar {
+  fill: steelblue;
+}
+
+.nis-kenshu-chart svg .x.axis path {
+  display: none;
+}
+
+.nis-kenshu-chart svg .x.axis .tick text{
+  transform: translate(0, 20);
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+a.nis-not-authority{
+	cursor:not-allowed;
+	color:gray;
+}
+
+.preline {
+	white-space:pre-line;
+}
+
+.first-strong:first-letter{
+	font-size:120%;
+}
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+
+/*
+ * Table HeaderFixed
+ */
+
+table.table-headerfixed {
+/*    width: 100%;*/
+}
+
+table.table-headerfixed thead,
+table.table-headerfixed tbody,
+table.table-headerfixed tr,
+table.table-headerfixed td,
+table.table-headerfixed th {
+    display: block;
+}
+
+table.table-headerfixed tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+table.table-headerfixed tbody {
+    height: 190px;
+    overflow-y: scroll;
+}
+
+table.table-headerfixed thead {
+    /* fallback */
+    width: 97%;
+    /* minus scroll bar width */
+    width: calc(100% - 17px);
+}
+
+table.table-headerfixed tbody td,
+table.table-headerfixed thead th {
+    float: left;
+    height: 38px;
+}
+
+.sidebar {
+	transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.3s;
+}
+
+.sidebar.side-opened{
+	width:180px!important;
+	opacity: 1!important;
+	padding-left:20px!important;
+}
+
+.popover-lg .popover-content {
+	width:500px;
+}
+.popover-lg .popover{
+    max-width: 100%;
+}
+
+.clickable {
+	cursor:pointer;
+	text-decoration:underline;
+}
+
+.clickable:HOVER{
+	color: blue;
+}
+
+.clickable-text {
+	cursor:pointer;
+	text-decoration:underline;
+	color: blue;
+}
+
+.clickable-text:HOVER {
+	color: #ff8000;
+}
+
+.clickable-icon {
+	cursor:pointer;
+}
+
+.clickable-icon:HOVER {
+	color: blue;
+}
+
+.chat {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.chat li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #999;
+}
+
+.chat li.left .chat-body {
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body {
+    margin-right: 60px;
+}
+
+.chat li .chat-body p {
+    margin: 0;
+}
+
+.panel .slidedown .glyphicon,
+.chat .glyphicon {
+    margin-right: 0px;
+}
+
+.chat-panel .panel-body {
+    height: 350px;
+    overflow-y: scroll;
+}
+
+.chat .chat-img {
+	width:55px;
+	text-align:center;
+}
+
+.tokoarea {
+	background-image: url("../image/main/uribo_bg.png");
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+.border-1101 {
+	border-width:1px 1px 0 1px;
+}
+
+.border-1000 {
+	border-width:1px 0 0 0;
+}
+
+.border-0100 {
+	border-width:0 1px 0 0;
+}
+
+.border-0010 {
+	border-width:0 0 1px 0;
+}
+
+.border-0001 {
+	border-width:0 0 0 1px;
+}
+
+.border-1100 {
+	border-width:1px 1px 0 0;
+}
+
+.border-1010 {
+	border-width:1px 0 1px 0;
+}
+
+.border-1001 {
+	border-width:1px 0 0 1px;
+}
+
+.border-0110 {
+	border-width:0 1px 1px 0;
+}
+
+.border-0101 {
+	border-width:0 1px 0 1px;
+}
+
+.border-0011 {
+	border-width:0 0 1px 1px;
+}
+
+.border-1110 {
+	border-width:1px 1px 1px 0;
+}
+
+.border-1101 {
+	border-width:1px 1px 0 1px;
+}
+
+.border-1011 {
+	border-width:1px 0 1px 1px;
+}
+
+.border-0111 {
+	border-width:0 1px 1px 1px;
+}
+
+.border-1111 {
+	border-width:1px 1px 1px 1px;
+}
+
+.border-none {
+	border-width:0;
+}
+
+.border-bottom-none {
+	border-bottom-width:0;
+}
+
+.btn-mini {
+	padding: 1px 3px;
+}

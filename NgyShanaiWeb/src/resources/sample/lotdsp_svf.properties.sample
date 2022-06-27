@@ -1,0 +1,24 @@
+# ====================================================== #
+# SVF\u95a2\u9023\u306e\u30d7\u30ed\u30d1\u30c6\u30a3\u3092\u5b9a\u7fa9\u3059\u308b
+# ====================================================== #
+
+# SVF\u30b5\u30fc\u30d0\u306e\u5b9a\u7fa9
+svf.server.address=NLMBSDYOK13
+svf.backup.address=NLMBSDYOK13
+
+# SVF\u306e\u5b9a\u7fa9\u30d5\u30a1\u30a4\u30eb\u30d1\u30b9
+svf.form.rootdir=C:/SVFJP/cm3sch
+svf.image.rootdir=C:/SVFJP/cm3sch/img
+svf.image.inkan.ext=.png
+
+svf.query.rootdir=
+svf.connection.string=
+
+# Svf Printer Mode
+# mode = 0  \u21d2 PDF Download
+# mode = 1  \u21d2 EMF \u203b SVF for Web/Client (Direct Print)
+svf.printer.mode=0
+
+# \u76f4\u63a5\u5370\u5237\u6642\u306e\u30d7\u30ea\u30f3\u30bf\u540d\u5b9a\u7fa9
+svf.directprint.printername=
+

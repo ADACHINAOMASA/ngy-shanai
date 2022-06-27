@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* ------------------------------------------------------
+	block element centering style.
+------------------------------------------------------ */
+
+* { margin: 0; padding: 0; }
+
+html {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: "ＭＳゴシック";
+	color:black;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#blockCentering {
+	background: url(images/bg.png) left top no-repeat;
+	text-align: left;
+	margin: 0 auto;
+	padding: 15px;
+	width: 300px;
+        /* 2010/04/29 山本 IE7+対応 */
+	/* height: 200px; */
+}
+
+/* for IE6 */
+* html body {
+	text-align: center;
+	height: 100%;
+}
+
+* html #blockCentering {
+	display: inline;
+	vertical-align: middle;
+	zoom: 1;
+}
+
+* html #dummy {
+	width: 0;
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* for IE7 */
+*:first-child+html body {
+	text-align: center;
+	height: 100%;
+}
+
+*:first-child+html #blockCentering {
+	display: inline;
+	vertical-align: middle;
+	zoom: 1;
+}
+
+*:first-child+html #dummy {
+	width: 0;
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+input {
+    width: 70px;
+    height: 16px;
+    vertical-align: middle;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.reservable {
+	background-color: lime;
+	font-size: 160%;
+	font-weight: bold;
+	padding: 5px 20px;
+	white-space: nowrap;
+}
+.nonreservable {
+	background-color: red;
+	font-size: 160%;
+	font-weight: bold;
+	padding: 5px 8px;
+	white-space: nowrap;
+}
+.sevendays {
+	background-color: lightgoldenrodyellow;
+	font-size: 100%;
+	font-weight: bold;
+	padding: 5px 20px;
+	white-space: nowrap;
+	text-align: center;
+	border: 1px solid white;
+}
+/* over here */

@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="jp" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>名古屋社内システム</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- キャッシュ関係調査中 -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+
+    <style>
+        body {
+            padding-top: 0px!important;
+            padding-bottom: 20px;
+            padding-left:5px;
+            overflow-x: hidden;
+            font-family : "ＭＳ ゴシック";
+        }
+    </style>
+
+    <!--  ./css----------------------------------------------------------------------------------/ -->
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+
+    <!--
+    <link rel="stylesheet" href="asset/css/bootstrap-carulean.css">
+    <link rel="stylesheet" href="asset/css/bootstrap-spacelab.min.css">
+    <link rel="stylesheet" href="asset/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="asset/css/bootstrap-theme.min.css">
+    -->
+    <link rel="stylesheet" href="asset/css/theme.min.css">
+    <link rel="stylesheet" href="asset/css/sticky-footer.css">
+    <link rel="stylesheet" href="asset/css/ui-grid-unstable.css">
+    <link rel="stylesheet" href="asset/css/toaster.min.css">
+    <link rel="stylesheet" href="asset/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset/css/angular-resizable.min.css">
+    <link rel="stylesheet" href="asset/css/kaigishitsuyoyaku.css">
+    <link rel="stylesheet" href="asset/css/lotdspstylesheet.css">
+    <link rel="stylesheet" href="asset/css/lotdspcss_master.css">
+
+    <!-- 各プロジェクトの固有CSS -->
+    <link rel="stylesheet" href="asset/css/back-to-top.css">
+    <link rel="stylesheet" href="asset/css/main.css">
+
+    <!--  ./js----------------------------------------------------------------------------------/ -->
+    <script src="asset/js/vendor/underscore-min.js"></script>
+    <script src="asset/js/vendor/FileSaver.min.js"></script>
+    <script src="asset/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="asset/js/vendor/jquery.floatThead.js"></script>
+    <script src="asset/js/vendor/bootstrap.min.js"></script>
+    <script src="asset/js/vendor/moji.standalone.js"></script>
+    <script src="asset/js/vendor/hamster.js"></script>
+
+    <script src="asset/js/vendor/angular1/angular.min.js"></script>
+    <script src="asset/js/vendor/angular1/i18n/angular-locale_ja-jp.js"></script>
+    <script src="asset/js/vendor/angular1/angular-resource.min.js"></script>
+    <script src="asset/js/vendor/angular1/angular-messages.min.js"></script>
+    <script src="asset/js/vendor/angular1/angular-animate.min.js"></script>
+	<script src="asset/js/vendor/angular1/angular-sanitize.min.js"></script>
+    <script src="asset/js/vendor/angular1/angular-ui-router.min.js"></script>
+    <script src="asset/js/vendor/angular1/statehelper.min.js"></script>
+    <script src="asset/js/vendor/angular1/ui-bootstrap-tpls-2.4.0.js"></script>
+    <script src="asset/js/vendor/angular1/validate.js"></script>
+    <!--  <script src="asset/js/vendor/angular1/ng-file-upload.min.js"></script> -->
+    <script src="asset/js/vendor/angular1/angular-file-upload.min.js"></script>
+
+    <script src="asset/js/vendor/angular1/angular-base64.min.js"></script>
+    <script src="asset/js/vendor/angular1/angular-image-preloader.min.js"></script>
+
+    <script src="asset/js/vendor/angular1/angular-cookies.min.js"></script>
+    <script src="asset/js/vendor/angular1/ngStorage.min.js"></script>
+    <script src="asset/js/vendor/ui-grid-unstable.js"></script>
+    <script src="asset/locale/ui-grid/ja.js"></script>
+    <script src="asset/js/vendor/toaster.min.js"></script>
+    <script src="asset/js/vendor/d3.min.js"></script>
+    <script src="asset/js/vendor/d3-tip.js"></script>
+    <script src="asset/js/vendor/html2canvas.js"></script>
+    <script src="asset/js/vendor/excanvas.js"></script>
+    <script src="asset/js/vendor/es6-promise.min.js"></script>
+    <script src="asset/js/vendor/canvas-toBlob.js"></script>
+    <script src="asset/js/lotdspcommon.js"></script>
+
+    <!-- <script src="asset/js/vendor/pdfmake.min.js"></script>  -->
+    <!-- <script src="asset/js/vendor/vfs_fonts.js"></script> -->
+    <!-- <script src="asset/js/vendor/angular1/angular-resizable.min.js"></script> -->
+
+    <!-- pdfjs -->
+    <!--
+    <script src="asset/js/vendor/pdfjs/pdf.js"></script>
+    <script src="asset/js/vendor/pdfjs/pdf.worker.js"></script>
+	-->
+
+	<!--
+	<script src="asset/js/vendor/angular-strap/angular-strap.min.js"></script>
+	<script src="asset/js/vendor/angular-strap/angular-strap.tpl.min.js"></script>
+	-->
+
+	<!-- TODO UI-TREE -->
+	<!--
+	<link rel="stylesheet" href="asset/js/vendor/ui-tree/angular-ui-tree.min.css">
+	<script src="asset/js/vendor/ui-tree/angular-ui-tree.min.js"></script>
+	-->
+
+	<!--
+	<script src="asset/js/vendor/screenfull.min.js"></script>
+	<script src="asset/js/vendor/angular-screenfull.min.js"></script>
+	<script src="asset/js/vendor/angular-fullscreen.js"></script>
+    -->
+
+</head>
+
+<body id="edgeFullScreenElement">
+    <div ui-view></div>
+
+    <!--
+    <nis-footer></nis-footer>
+    -->
+
+    <toaster-container toaster-options="{'time-out': 5000, 'close-button':true, 'position-class':'toast-bottom-right'}"></toaster-container>
+
+    <!-- nis-util.js -->
+    <script src="asset/js/nis-util.js"></script>
+
+    <!-- app.js -->
+    <script src="app/app.js"></script>
+
+    <!-- =================================================== common ================================================== -->
+
+    <!-- 	authority -->
+    <script src="app/common/authority/AuthorityService.js"></script>
+    <script src="app/common/authority/NisAuthority.js"></script>
+
+    <!-- 	constants -->
+    <script src="app/common/constants/AppConst.js"></script>
+
+    <!-- 	configs -->
+    <script src="app/common/configs/AppConfig.js"></script>
+
+    <!-- 	animations -->
+
+    <!-- 	alert -->
+    <script src="app/common/alert/NisAlertsBar.js"></script>
+    <script src="app/common/alert/AlertBarService.js"></script>
+    <script src="app/common/alert/AlertLogService.js"></script>
+    <script src="app/common/alert/AlertService.js"></script>
+
+    <!-- 	collapse -->
+    <script src="app/common/collapse/NisCollapseMark.js"></script>
+
+    <!-- 	capture -->
+    <script src="app/common/capture/NisScreenCapture.js"></script>
+
+    <!-- 	chart -->
+    <script src="app/common/chart/D3Service.js"></script>
+
+    <!-- 	disabled -->
+    <script src="app/common/disabled/NisDisabled.js"></script>
+
+    <!-- 	exists -->
+    <script src="app/common/exists/NisExists.js"></script>
+    <script src="app/common/exists/NisExistsTest.js"></script>
+
+    <!-- 	filters -->
+    <script src="app/common/filters/OptionsFilter.js"></script>
+    <script src="app/common/filters/ReplaceFilter.js"></script>
+    <script src="app/common/filters/DateElapsedFilter.js"></script>
+    <script src="app/common/filters/DotNumberFilter.js"></script>
+    <script src="app/common/filters/DotNumberNullFilter.js"></script>
+    <script src="app/common/filters/ZeroToSpaceFilter.js"></script>
+    <script src="app/common/filters/ChikuCdFilter.js"></script>
+
+    <!-- 	focus -->
+    <script src="app/common/focus/NisInitFocus.js"></script>
+
+    <!-- 	grid -->
+    <script src="app/common/grid/NisGridUtil.js"></script>
+
+    <!-- 	icon -->
+    <script src="app/common/icon/NisWarningSign.js"></script>
+
+    <!-- 	jquery -->
+    <script src="app/common/jquery/NisFloatThead.js"></script>
+
+    <!-- 	interceptor -->
+    <script src="app/common/interceptor/HttpInterceptor.js"></script>
+
+    <!-- 	lazyloadscroll -->
+    <script src="app/common/lazyloadscroll/NisLazyLoadScroll.js"></script>
+
+    <!-- 	list -->
+    <script src="app/common/list/ListService.js"></script>
+    <script src="app/common/list/ListModalController.js"></script>
+
+    <!-- 	modal -->
+    <script src="app/common/modal/ModalService.js"></script>
+    <script src="app/common/modal/ConfirmModalController.js"></script>
+    <script src="app/common/modal/InfoModalController.js"></script>
+    <script src="app/common/modal/AlertModalController.js"></script>
+    <script src="app/common/modal/ProcessingModalController.js"></script>
+
+    <!-- 	model -->
+    <script src="app/common/model/ModelService.js"></script>
+
+    <!-- 	options -->
+    <script src="app/common/options/OptionsService.js"></script>
+
+    <!-- 	radio -->
+    <script src="app/common/radio/NisRadio.js"></script>
+
+    <!-- 	required -->
+    <script src="app/common/required/NisRequiredMark.js"></script>
+
+    <!-- 	rules -->
+    <script src="app/common/rules/RulesService.js"></script>
+
+    <!-- 	ScopeSetupService -->
+    <script src="app/common/scope/ScopeSetupService.js"></script>
+
+    <!-- 	select -->
+    <script src="app/common/select/NisSelect.js"></script>
+
+    <!-- 	share -->
+    <script src="app/common/share/ShareContainerService.js"></script>
+
+    <!-- sidebar -->
+    <script src="app/common/sidebar/NisSidebar.js"></script>
+    <script src="app/common/sidebar/SidebarController.js"></script>
+
+    <!-- util -->
+	<script src="app/common/util/NIS.js"></script>
+
+    <!-- validators -->
+    <script src="app/common/validators/NisNumber.js"></script>
+    <script src="app/common/validators/NisDate.js"></script>
+    <script src="app/common/validators/NisString.js"></script>
+    <script src="app/common/validators/NisValidateMessages.js"></script>
+    <script src="app/common/validators/NisValidateMessagesShow.js"></script>
+
+    <script src="app/common/validators/NisInput.js"></script>
+    <script src="app/common/validators/NisHasError.js"></script>
+    <script src="app/common/validators/NisYubinBango.js"></script>
+    <script src="app/common/validators/NisRequired.js"></script>
+
+    <!-- back to top -->
+    <script src="app/common/backtotop/back-to-top.js"></script>
+
+    <!-- //develop//  -->
+    <!--
+    <script src="app/common/develop/LibraryInDirectiveTest.js"></script>
+    -->
+
+    <!--
+	<script src="app/common/plugin/BlockBrowserStateChangePlugin.js"></script>
+	<script src="app/common/plugin/NotCreateHistoryPlugin.js"></script>
+	<script src="app/common/plugin/PageMoveConfirmPlugin.js"></script>
+	-->
+
+    <!-- 	events //-->
+    <script src="app/common/events/NisScroll.js"></script>
+    <script src="app/common/events/NisScrollEnd.js"></script>
+    <script src="app/common/events/NisWheel.js"></script>
+
+    <!-- =================================================== main ================================================== -->
+
+    <!-- const -->
+    <script src="app/main/const/SysConst.js"></script>
+
+    <!-- common -->
+    <script src="app/main/AppUtil.js"></script>
+
+    <script src="app/main/AuthUtil.js"></script>
+
+    <script src="app/main/PkgSpecUtil.js"></script>
+
+
+    <script src="app/main/CryptoService.js"></script>
+    <script src="app/main/CommonService.js"></script>
+    <script src="app/main/CommonStorage.js"></script>
+    <script src="app/main/UserInfoStorage.js"></script>
+
+    <script src="app/main/HeaderService.js"></script>
+
+    <script src="app/main/SharedObject.js"></script>
+    <script src="app/main/MessageService.js"></script>
+    <script src="app/main/ComboService.js"></script>
+
+    <script src="app/main/MeishoService.js"></script>
+
+    <!-- pdf open -->
+    <script src="app/main/pdf/PdfOpenService.js"></script>
+    <script src="app/main/pdf/NisPdfModalViewer.js"></script>
+    <script src="app/main/pdf/PdfModalViewerController.js"></script>
+
+    <!-- direct print -->
+    <script src="app/main/directprint/NisDirectPrint.js"></script>
+    <script src="app/main/directprint/DirectPrintController.js"></script>
+    <script src="app/main/directprint/DirectPrintService.js"></script>
+
+    <!-- user -->
+    <script src="app/main/user/UserService.js"></script>
+
+    <!-- header -->
+    <script src="app/main/header/NisHeader.js"></script>
+    <script src="app/main/header/HeaderController.js"></script>
+
+    <!-- footer -->
+    <script src="app/main/footer/NisFooter.js"></script>
+    <script src="app/main/footer/FooterController.js"></script>
+
+    <!-- home -->
+    <script src="app/main/home/HomeController.js"></script>
+    <script src="app/main/home/HomeState.js"></script>
+
+    <!-- login -->
+    <script src="app/main/login/LoginService.js"></script>
+    <script src="app/main/login/LoginController.js"></script>
+    <script src="app/main/login/LoginState.js"></script>
+
+    <!-- change password -->
+    <script src="app/main/passwordhenko/PasswordHenkoService.js"></script>
+    <script src="app/main/passwordhenko/PasswordHenkoController.js"></script>
+    
+    <!-- ユーザー登録 -->
+    <script src="app/main/usertoroku/UserTorokuController.js"></script>
+    <script src="app/main/usertoroku/UserTorokuService.js"></script>
+
+    <!-- =========================================== 共通一覧モーダル系 ============================== -->
+
+     <!-- =========================================== 名古屋社内ｼｽﾃﾑ ============================================ -->
+
+	 <!-- 会議室予約画面 -->
+     <script src="app/main/kaigishitsuyoyaku/KaigiYoyakuService.js"></script>
+     <script src="app/main/kaigishitsuyoyaku/KaigiYoyakuState.js"></script>
+     <script src="app/main/kaigishitsuyoyaku/KaigiYoyakuController.js"></script>
+     
+	     <!-- 予約モーダル画面 -->
+	     <script src="app/main/kaigishitsuyoyaku/YoyakuModalController.js"></script>
+
+     <!-- バージョン -->
+     <input type="hidden" value="version 1.2">
+</body>
+
+</html>
