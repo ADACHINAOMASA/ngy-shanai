@@ -17,7 +17,7 @@ public class SearchMaishuYoyakuQuery extends NisQuery<YoyakuInfo>{
 	}
 
 	private void setParameters() {
-		addParameter("　y.MAISHU_YOYAKU_CD = ? ", maishuYoyakuCd);
+		addParameter("y.MAISHU_YOYAKU_CD = ? ", maishuYoyakuCd);
 	}
 
 	@Override

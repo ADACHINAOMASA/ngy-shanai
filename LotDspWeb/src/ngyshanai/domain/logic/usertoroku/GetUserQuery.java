@@ -16,7 +16,7 @@ public class GetUserQuery extends NisQuery<UserInfo>{
 	}
 	
 	private void setParameters() {
-		addParameter("　u.USER_CD = ? ", userCd);
+		addParameter("u.USER_CD = ? ", userCd);
 	}
 	
 	@Override
